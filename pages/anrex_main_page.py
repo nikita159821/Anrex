@@ -11,3 +11,7 @@ class MainPage(BasePage):
         logo_element = self.find_element(*logo)
         logo_src = logo_element.get_attribute('src')
         return logo_src
+
+    # Нажимаем на лого
+    def logo_click(self):
+        self.find_element(*logo).click()
