@@ -1,4 +1,4 @@
-from locators.main_page_locators import logo
+from locators.main_page_locators import logo, city
 from pages.base_page import BasePage
 
 
@@ -15,3 +15,7 @@ class MainPage(BasePage):
     # Нажимаем на лого
     def logo_click(self):
         self.find_element(*logo).click()
+
+    def city_wrap(self):
+        city_wrap = self.find_element(*city)
+        return city_wrap
