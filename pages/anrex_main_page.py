@@ -1,4 +1,4 @@
-from locators.main_page_locators import logo, city
+from locators.main_page_locators import logo, city, popup_city
 from pages.base_page import BasePage
 
 
@@ -19,3 +19,10 @@ class MainPage(BasePage):
     def city_wrap(self):
         city_wrap = self.find_element(*city)
         return city_wrap
+
+    def city_wrap_click(self):
+        self.find_element(*city).click()
+
+    def popup_city(self):
+        popup = self.find_element(*popup_city)
+        return popup
