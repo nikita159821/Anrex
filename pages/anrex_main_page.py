@@ -1,4 +1,4 @@
-from locators.main_page_locators import logo, city, popup_city, close, search
+from locators.main_page_locators import logo, city, popup_city, close, search, slider
 from pages.base_page import BasePage
 
 
@@ -33,3 +33,6 @@ class MainPage(BasePage):
     def search(self):
         search_ = self.find_element(*search).click()
         return search_
+
+    def slider_click(self):
+        self.find_element(*slider).click()

@@ -1,5 +1,3 @@
-import time
-
 from pages.anrex_main_page import MainPage
 
 
