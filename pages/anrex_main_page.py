@@ -1,4 +1,4 @@
-from locators.main_page_locators import logo, city, popup_city
+from locators.main_page_locators import logo, city, popup_city, close
 from pages.base_page import BasePage
 
 
@@ -26,3 +26,6 @@ class MainPage(BasePage):
     def popup_city(self):
         popup = self.find_element(*popup_city)
         return popup
+
+    def close_popup_click(self):
+        self.find_element(*close).click()
