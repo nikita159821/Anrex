@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Install Selenium
+      run: pip install selenium
+
     - name: Checkout repository
       uses: actions/checkout@v3
     - name: setup python
