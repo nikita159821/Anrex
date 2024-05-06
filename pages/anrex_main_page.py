@@ -1,6 +1,5 @@
-from selenium.webdriver import ActionChains
-
-from locators.main_page_locators import logo, city, popup_city, close, search, first_city, callback_link, hover_text
+from locators.main_page_locators import logo, city, popup_city, close, search, first_city, callback_link, hover_text, \
+    title_back_call
 from pages.base_page import BasePage
 
 
@@ -52,6 +51,10 @@ class MainPage(BasePage):
         link = self.find_element(*callback_link)
         return link
 
+    # Нажимает на "Заказать обратный звонок"
+    def click_callback_link(self):
+        self.get_callback_link().click()
+
     # Метод находит элемент callback_link через метод get_callback_link,
     # наводит на него курсор и получает текст ховера из элемента hover_text.
     def get_hover_tooltip_text(self):
@@ -60,5 +63,15 @@ class MainPage(BasePage):
         tooltip_text_element = self.find_element(*hover_text)
         tooltip_text = tooltip_text_element.text
         return tooltip_text
+
+    # Возвращает тайтл "Заявка на обратный звонок"
+    def get_back_call(self):
+        title = self.find_element(*title_back_call)
+        title_text = title.text
+
+        # Удаляем переносы строки из фактического значения
+        actual_text = title_text.replace('\n', ' ')
+        return actual_text
+
 
 
