@@ -101,6 +101,7 @@ class MainPage(BasePage):
     def name_input_send_keys(self):
         self.get_callback_popup_name_input().send_keys(NAME)
 
+    # Возвращает элемент с классом ошибки
     def name_input_send_keys_error(self):
         error_div = self.find_element(*name_error)
         return error_div
