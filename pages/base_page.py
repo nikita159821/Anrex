@@ -1,3 +1,4 @@
+from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -8,6 +9,7 @@ from tests.urls import URL
 class BasePage:
     def __init__(self, browser):
         self.browser = browser
+        self.actions = ActionChains(self.browser)
 
     def find_element(self, *args):
         return self.browser.find_element(*args)

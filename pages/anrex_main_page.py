@@ -7,7 +7,6 @@ from pages.base_page import BasePage
 class MainPage(BasePage):
     def __init__(self, browser):
         super().__init__(browser)
-        self.actions = ActionChains(browser)
 
     # Получаем, сохраняем и возвращаем ссылку на img
     def get_logo_src(self):
