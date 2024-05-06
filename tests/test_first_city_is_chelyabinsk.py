@@ -3,6 +3,7 @@ from tests.data import CITY
 
 
 class TestCityIsChelyabinsk:
+
     def test_first_city_is_chelyabinsk(self, browser):
         first_city = MainPage(browser)
         first_city.open()
