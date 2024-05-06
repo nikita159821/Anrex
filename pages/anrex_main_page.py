@@ -1,6 +1,7 @@
 from locators.main_page_locators import logo, city, popup_city, close, search, first_city, callback_link, hover_text, \
-    title_back_call, text_back_call, input_name, input_phone, name_placeholder, phone_placeholder
+    title_back_call, text_back_call, input_name, input_phone, name_placeholder, phone_placeholder, name_error
 from pages.base_page import BasePage
+from tests.data import NAME
 
 
 class MainPage(BasePage):
@@ -31,7 +32,7 @@ class MainPage(BasePage):
         popup = self.find_element(*popup_city)
         return popup
 
-    # Нажимает на крести в модальном окне выбора города
+    # Нажимает на крестик в модальном окне выбора города
     def close_popup_click(self):
         self.find_element(*close).click()
 
@@ -95,3 +96,11 @@ class MainPage(BasePage):
         input_placeholder_phone = self.find_element(*phone_placeholder)
         placeholder_value = input_placeholder_phone.get_attribute("placeholder")
         return placeholder_value
+
+    # Вводим в поле "Ваше имя" одну букву
+    def name_input_send_keys(self):
+        self.get_callback_popup_name_input().send_keys(NAME)
+
+    def name_input_send_keys_error(self):
+        error_div = self.find_element(*name_error)
+        return error_div
