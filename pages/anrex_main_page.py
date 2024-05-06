@@ -1,4 +1,4 @@
-from locators.main_page_locators import logo, city, popup_city, close, search, slider, first_city
+from locators.main_page_locators import logo, city, popup_city, close, search, slider, first_city, callback_link
 from pages.base_page import BasePage
 
 
@@ -48,3 +48,8 @@ class MainPage(BasePage):
         popup = self.find_element(*first_city)
         first_city_text = popup.text
         return first_city_text
+
+    # Возвращает текст-ссылку "Заказать обратный звонок"
+    def get_callback_link(self):
+        link = self.find_element(*callback_link)
+        return link
