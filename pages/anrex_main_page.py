@@ -1,5 +1,5 @@
 from locators.main_page_locators import logo, city, popup_city, close, search, first_city, callback_link, hover_text, \
-    title_back_call, text_back_call, input_name
+    title_back_call, text_back_call, input_name, input_phone
 from pages.base_page import BasePage
 
 
@@ -78,3 +78,8 @@ class MainPage(BasePage):
     def get_callback_popup_name_input(self):
         input_n = self.find_element(*input_name)
         return input_n
+
+    # Возвращает инпут "Ваш телефон" в окне "Заявка на обратный звонок"
+    def get_callback_popup_phone_input(self):
+        input_p = self.find_element(*input_phone)
+        return input_p
