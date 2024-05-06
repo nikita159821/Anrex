@@ -1,4 +1,4 @@
-from locators.main_page_locators import logo, city, popup_city, close, search, slider
+from locators.main_page_locators import logo, city, popup_city, close, search, slider, first_city
 from pages.base_page import BasePage
 
 
@@ -36,3 +36,8 @@ class MainPage(BasePage):
 
     def slider_click(self):
         self.find_element(*slider).click()
+
+    def first_sity(self):
+        popup = self.find_element(*first_city)
+        first_city_text = popup.text
+        return first_city_text
