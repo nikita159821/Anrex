@@ -52,10 +52,10 @@ class MainPage(BasePage):
         link = self.find_element(*callback_link)
         return link
 
-    # Метод находит элемент callback_link,
+    # Метод находит элемент callback_link через метод get_callback_link,
     # наводит на него курсор и получает текст ховера из элемента hover_text.
     def get_hover_tooltip_text(self):
-        hover = self.find_element(*callback_link)
+        hover = self.get_callback_link()
         self.actions.move_to_element(hover).perform()
         tooltip_text_element = self.find_element(*hover_text)
         tooltip_text = tooltip_text_element.text
