@@ -1,4 +1,4 @@
-from locators.main_page_locators import logo, city, popup_city, close, search, slider, first_city, callback_link
+from locators.main_page_locators import logo, city, popup_city, close, search, first_city, callback_link
 from pages.base_page import BasePage
 
 
@@ -38,10 +38,6 @@ class MainPage(BasePage):
     def search(self):
         search_ = self.find_element(*search).click()
         return search_
-
-    # Нажимает на оверлей для закрытия окна "Выберите Ваш регион"
-    def slider_click(self):
-        self.find_element(*slider).click()
 
     # Находит первый город в модалке "Выберите Ваш регион"
     def first_sity(self):

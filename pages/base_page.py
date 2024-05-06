@@ -1,5 +1,7 @@
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+
+from locators.main_page_locators import slider
 from tests.urls import URL
 
 
@@ -21,3 +23,7 @@ class BasePage:
     # Возвращаем текущую страницу
     def get_current_url(self):
         return self.browser.current_url
+
+    # Нажимает на оверлей для закрытия окна "Выберите Ваш регион"
+    def slider_click(self):
+        self.find_element(*slider).click()
