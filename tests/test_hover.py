@@ -1,5 +1,3 @@
-import time
-
 from pages.anrex_main_page import MainPage
 from tests.data import HOVER
 
@@ -9,5 +7,5 @@ class TestHover:
     def test_hover(self, browser):
         hover = MainPage(browser)
         hover.open()
-        hover = hover.test()
+        hover = hover.get_hover_tooltip_text()
         assert hover == HOVER
