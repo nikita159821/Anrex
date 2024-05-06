@@ -1,5 +1,5 @@
 from locators.main_page_locators import logo, city, popup_city, close, search, first_city, callback_link, hover_text, \
-    title_back_call, text_back_call, input_name, input_phone
+    title_back_call, text_back_call, input_name, input_phone, name_placeholder, phone_placeholder
 from pages.base_page import BasePage
 
 
@@ -83,3 +83,15 @@ class MainPage(BasePage):
     def get_callback_popup_phone_input(self):
         input_p = self.find_element(*input_phone)
         return input_p
+
+    # Возвращает плейсхолдер из поля "Ваше имя"
+    def get_name_input_placeholder(self):
+        input_placeholder_name = self.find_element(*name_placeholder)
+        placeholder_value = input_placeholder_name.get_attribute("placeholder")
+        return placeholder_value
+
+    # Возвращает плейсхолдер из поля "Ваше имя"
+    def get_phone_input_placeholder(self):
+        input_placeholder_phone = self.find_element(*phone_placeholder)
+        placeholder_value = input_placeholder_phone.get_attribute("placeholder")
+        return placeholder_value

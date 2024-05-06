@@ -13,3 +13,5 @@ title_back_call = (By.XPATH, "//h3[contains(., 'Заявка на обратны
 text_back_call = (By.XPATH, "//p[@class='text-center']")
 input_name = (By.XPATH, "//input[@id='callback_name']")
 input_phone = (By.XPATH, "//input[@id='callback_phone']")
+name_placeholder = (By.CSS_SELECTOR, '[placeholder="Антон"]')
+phone_placeholder = (By.CSS_SELECTOR, '[placeholder="+7 (960) 345-44-19"]')
