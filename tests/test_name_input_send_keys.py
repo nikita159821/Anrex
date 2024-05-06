@@ -5,6 +5,7 @@ from pages.anrex_main_page import MainPage
 
 
 class TestNameInputSendKeys:
+
     def test_name_input_send_keys(self, browser):
         name_input_send_keys = MainPage(browser)
         name_input_send_keys.open()
