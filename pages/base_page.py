@@ -29,3 +29,14 @@ class BasePage:
     # Нажимает на оверлей для закрытия окна "Выберите Ваш регион"
     def slider_click(self):
         self.find_element(*slider).click()
+
+    def remove_newline(self, element):
+        """
+        Удаляет переносы строк из текста элемента.
+
+        :param element: WebElement
+        :return: str
+        """
+        text = element.text
+        actual_text = text.replace('\n', ' ')
+        return actual_text

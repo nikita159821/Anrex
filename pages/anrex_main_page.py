@@ -64,17 +64,6 @@ class MainPage(BasePage):
         tooltip_text = tooltip_text_element.text
         return tooltip_text
 
-    def remove_newline(self, element):
-        """
-        Удаляет переносы строк из текста элемента.
-
-        :param element: WebElement
-        :return: str
-        """
-        text = element.text
-        actual_text = text.replace('\n', ' ')
-        return actual_text
-
     # Возвращает тайтл "Заявка на обратный звонок"
     def get_back_call(self):
         title = self.find_element(*title_back_call)
