@@ -7,5 +7,5 @@ class TestClosePopup:
         close_popup.open()
         close_popup.city_wrap_click()
         close_popup.close_popup_click()
-        city_wrap = close_popup.city_wrap()
-        assert city_wrap.is_displayed()
+        popup_city = close_popup.popup_city()
+        assert not popup_city.is_displayed()
