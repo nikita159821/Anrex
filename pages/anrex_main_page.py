@@ -16,27 +16,34 @@ class MainPage(BasePage):
     def logo_click(self):
         self.find_element(*logo).click()
 
+    # Возвращает выбарнный город на странице
     def city_wrap(self):
         city_wrap = self.find_element(*city)
         return city_wrap
 
+    # Нажимает на город на сайте
     def city_wrap_click(self):
         self.find_element(*city).click()
 
+    # Возвращает тайтл "Выберите Ваш регион"
     def popup_city(self):
         popup = self.find_element(*popup_city)
         return popup
 
+    # Нажимает на крести в модальном окне выбора города
     def close_popup_click(self):
         self.find_element(*close).click()
 
+    # Возвращает иконку поиска на главной странице  "Выберите Ваш регион"
     def search(self):
         search_ = self.find_element(*search).click()
         return search_
 
+    # Нажимает на оверлей для закрытия окна "Выберите Ваш регион"
     def slider_click(self):
         self.find_element(*slider).click()
 
+    # Находит первый город в модалке "Выберите Ваш регион"
     def first_sity(self):
         popup = self.find_element(*first_city)
         first_city_text = popup.text
