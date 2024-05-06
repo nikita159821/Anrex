@@ -1,10 +1,13 @@
-from locators.main_page_locators import logo, city, popup_city, close, search, first_city, callback_link
+from selenium.webdriver import ActionChains
+
+from locators.main_page_locators import logo, city, popup_city, close, search, first_city, callback_link, hover_text
 from pages.base_page import BasePage
 
 
 class MainPage(BasePage):
     def __init__(self, browser):
         super().__init__(browser)
+        self.actions = ActionChains(browser)
 
     # Получаем, сохраняем и возвращаем ссылку на img
     def get_logo_src(self):
@@ -49,3 +52,14 @@ class MainPage(BasePage):
     def get_callback_link(self):
         link = self.find_element(*callback_link)
         return link
+
+    # Метод находит элемент callback_link,
+    # наводит на него курсор и получает текст ховера из элемента hover_text.
+    def test(self):
+        hover = self.find_element(*callback_link)
+        self.actions.move_to_element(hover).perform()
+        tooltip_text_element = self.find_element(*hover_text)
+        tooltip_text = tooltip_text_element.text
+        return tooltip_text
+
+
