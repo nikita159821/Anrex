@@ -1,0 +1,18 @@
+from selenium.webdriver.common.by import By
+
+logo = (By.XPATH, '//img[@class="logo d-block"]')
+city = (By.CLASS_NAME, 'city_wrap')
+popup_city = (By.XPATH, "//h3[text()='Выберите Ваш регион']")
+close = (By.XPATH, "//button[@class='callback-close popup-close']")
+search = (By.XPATH, "//a[@class='action']")
+slider = (By.XPATH, "//div[@class='row header_top']")
+first_city = (By.XPATH, "//ul[@class='city_list']/li[1]")
+callback_link = (By.XPATH, "//a[@class='callback-link']")
+hover_text = (By.CSS_SELECTOR, "a.callback-link > span")
+title_back_call = (By.XPATH, "//h3[contains(., 'Заявка на обратный')]")
+text_back_call = (By.XPATH, "//p[@class='text-center']")
+input_name = (By.XPATH, "//input[@id='callback_name']")
+input_phone = (By.XPATH, "//input[@id='callback_phone']")
+name_placeholder = (By.CSS_SELECTOR, '[placeholder="Антон"]')
+phone_placeholder = (By.CSS_SELECTOR, '[placeholder="+7 (960) 345-44-19"]')
+name_error = (By.XPATH, "//div[@class='align-items-center d-flex flex-column input-field has-error']")
