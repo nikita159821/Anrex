@@ -14,8 +14,10 @@ class BasePage:
         WebDriverWait(self.browser, 5).until(expected_conditions.visibility_of_element_located(locator))
         return self.browser.find_element(*locator)
 
+    # Открываем страницу
     def open(self):
         self.browser.get(URL)
 
+    # Возвращаем текущую страницу
     def get_current_url(self):
         return self.browser.current_url
