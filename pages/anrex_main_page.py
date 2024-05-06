@@ -1,5 +1,5 @@
 from locators.main_page_locators import logo, city, popup_city, close, search, first_city, callback_link, hover_text, \
-    title_back_call
+    title_back_call, text_back_call
 from pages.base_page import BasePage
 
 
@@ -64,14 +64,23 @@ class MainPage(BasePage):
         tooltip_text = tooltip_text_element.text
         return tooltip_text
 
+    def remove_newline(self, element):
+        """
+        Удаляет переносы строк из текста элемента.
+
+        :param element: WebElement
+        :return: str
+        """
+        text = element.text
+        actual_text = text.replace('\n', ' ')
+        return actual_text
+
     # Возвращает тайтл "Заявка на обратный звонок"
     def get_back_call(self):
         title = self.find_element(*title_back_call)
-        title_text = title.text
+        return self.remove_newline(title)
 
-        # Удаляем переносы строки из фактического значения
-        actual_text = title_text.replace('\n', ' ')
-        return actual_text
-
-
-
+    # Возвращает текст в окне "Заявка на обратный звонок"
+    def get_callback_popup_title(self):
+        title = self.find_element(*text_back_call)
+        return self.remove_newline(title)
