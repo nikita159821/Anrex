@@ -1,5 +1,6 @@
 from locators.main_page_locators import logo, city, popup_city, close, search, first_city, callback_link, hover_text, \
-    title_back_call, text_back_call, input_name, input_phone, name_placeholder, phone_placeholder, name_error
+    title_back_call, text_back_call, input_name, input_phone, name_placeholder, phone_placeholder, name_error, \
+    title_sale
 from pages.base_page import BasePage
 from tests.data import NAME
 
@@ -105,3 +106,10 @@ class MainPage(BasePage):
     def name_input_send_keys_error(self):
         error_div = self.find_element(*name_error)
         return error_div
+
+    # Возвращает тайтл "Товары со скидками"
+    def get_title_sale(self):
+        title_sale_text = self.find_element(*title_sale)
+        title = title_sale_text.text
+        print(title)
+        return title_sale_text
