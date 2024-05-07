@@ -1,8 +1,8 @@
 from locators.main_page_locators import logo, city, popup_city, close, search, first_city, callback_link, hover_text, \
     title_back_call, text_back_call, input_name, input_phone, name_placeholder, phone_placeholder, name_error, \
-    title_sale
+    title_sale, button_send_application, popup_back_call
 from pages.base_page import BasePage
-from tests.data import NAME
+from tests.data import NAME, PHONE
 
 
 class MainPage(BasePage):
@@ -69,11 +69,17 @@ class MainPage(BasePage):
     # Возвращает тайтл "Заявка на обратный звонок"
     def get_back_call(self):
         title = self.find_element(*title_back_call)
+        print(title.text)
         return self.remove_newline(title)
 
     # Возвращает текст в окне "Заявка на обратный звонок"
     def get_callback_popup_title(self):
         title = self.find_element(*text_back_call)
+        return self.remove_newline(title)
+
+    # Возвращает текст в окне "Заявка на обратный звонок" после оформления заявки
+    def get_callback_title(self):
+        title = self.find_element(*popup_back_call)
         return self.remove_newline(title)
 
     # Возвращает инпут "Ваше имя" в окне "Заявка на обратный звонок"
@@ -102,6 +108,15 @@ class MainPage(BasePage):
     def name_input_send_keys(self):
         self.get_callback_popup_name_input().send_keys(NAME)
 
+    # Модифицированный метод для ввода текста в поле "Ваше имя"
+    def t_name_input_send_keys(self, name):
+        name_input = self.get_callback_popup_name_input()
+        name_input.send_keys(name)
+
+    # Вводим в поле "Ваш телефон"
+    def phone_input_send_keys(self):
+        self.get_callback_popup_phone_input().send_keys(PHONE)
+
     # Возвращает элемент с классом ошибки
     def name_input_send_keys_error(self):
         error_div = self.find_element(*name_error)
@@ -111,3 +126,12 @@ class MainPage(BasePage):
     def get_title_sale(self):
         title_sale_text = self.find_element(*title_sale)
         return title_sale_text
+
+    # Метод для генерации строки заданной длины
+    @staticmethod
+    def generate_name(length):
+        return 'а' * length  # Заменить 'A' на любой другой символ или строку
+
+    # Метод нажимает кнопку "Отправить заявку"
+    def click_submit_application_button(self):
+        self.find_element(*button_send_application).click()

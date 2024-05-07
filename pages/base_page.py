@@ -30,6 +30,7 @@ class BasePage:
     def slider_click(self):
         self.find_element(*slider).click()
 
+    # Метод удаляет переносы строк
     def remove_newline(self, element):
         """
         Удаляет переносы строк из текста элемента.
@@ -40,3 +41,5 @@ class BasePage:
         text = element.text
         actual_text = text.replace('\n', ' ')
         return actual_text
+
+
