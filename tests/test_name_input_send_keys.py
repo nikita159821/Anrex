@@ -4,7 +4,7 @@ import pytest
 
 from locators.main_page_locators import popup_back_call
 from pages.anrex_main_page import MainPage
-from tests.data import CALLBACK_POPUP_TITLE, CALLBACK_TITLE, TITLE_BACK_CALL
+from tests.data import CALLBACK_TITLE
 
 
 class TestNameInputSendKeys:
