@@ -110,6 +110,4 @@ class MainPage(BasePage):
     # Возвращает тайтл "Товары со скидками"
     def get_title_sale(self):
         title_sale_text = self.find_element(*title_sale)
-        title = title_sale_text.text
-        print(title)
         return title_sale_text
