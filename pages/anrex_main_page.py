@@ -46,7 +46,6 @@ class MainPage(BasePage):
     def first_sity(self):
         popup = self.find_element(*first_city)
         first_city_text = popup.text
-        print(first_city_text)
         return first_city_text
 
     # Возвращает текст-ссылку "Заказать обратный звонок"
