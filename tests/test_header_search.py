@@ -3,12 +3,15 @@ from tests.data import SEARCH
 
 
 class TestDisplaysSearch:
+
+    # Проверка, что отображается иконка в шапке сайта
     def test_header_displays_search(self, browser):
         displays_search = MainPage(browser)
         displays_search.open()
         svg_xmlns = displays_search.get_search_cvg()
         assert svg_xmlns == SEARCH
 
+    # Проверка отображение строки поиска в шапке сайта.
     def test_search_click(self, browser):
         search_click = MainPage(browser)
         search_click.open()
