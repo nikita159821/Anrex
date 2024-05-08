@@ -1,5 +1,3 @@
-import time
-
 import pytest
 
 from pages.anrex_main_page import MainPage
@@ -56,7 +54,6 @@ class TestPhoneInputSendKeys:
         phone_input_send_keys.open()
         phone_input_send_keys.click_callback_link()
         phone_input_send_keys.t_phone_input_send_keys(phone)
-        time.sleep(5)
         input_element = phone_input_send_keys.phone_input_send_keys_error()
         class_attribute = input_element.get_attribute('class')
         # Проверка наличия класса 'has-error'
