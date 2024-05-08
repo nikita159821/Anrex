@@ -35,7 +35,8 @@ class BasePage:
         self.find_element(*slider).click()
 
     # Метод удаляет переносы строк
-    def remove_newline(self, element):
+    @staticmethod
+    def remove_newline(element):
         """
         Удаляет переносы строк из текста элемента.
 
