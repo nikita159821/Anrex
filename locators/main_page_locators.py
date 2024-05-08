@@ -24,4 +24,4 @@ popup_back_call = (By.XPATH, "//p[contains(text(), 'Ваша заявка был
 tel_callback = (By.ID, 'tel-callback')
 search_cvg = (By.CSS_SELECTOR, ".action > svg:nth-child(1)")
 search_line = (By.XPATH, "//input[@id='search-input']")
-sale_basket = (By.XPATH, "//a[@id='sale-basket-basket-line-container]")
+sale_basket = (By.XPATH, "//div[@class='action-menu']/a[@id='sale-basket-basket-line-container']")

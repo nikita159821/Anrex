@@ -4,7 +4,7 @@ from tests.data import SEARCH
 
 class TestDisplaysSearch:
 
-    # Проверка, что отображается иконка в шапке сайта
+    # Проверка, что отображается иконка поиска в шапке сайта
     def test_header_displays_search(self, browser):
         displays_search = MainPage(browser)
         displays_search.open()

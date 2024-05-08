@@ -175,3 +175,7 @@ class MainPage(BasePage):
     # Возвращает иконку корзины
     def get_sale_basket(self):
         return self.find_element(*sale_basket)
+
+    # Нажимает на иконку корзины в шапке
+    def sale_basket_click(self):
+        return self.find_element(*sale_basket).click()
