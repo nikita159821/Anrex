@@ -1,3 +1,5 @@
+import time
+
 from pages.anrex_main_page import MainPage
 from tests.data import SEARCH
 
@@ -18,3 +20,12 @@ class TestDisplaysSearch:
         search_click.get_search_click()
         search_line = search_click.get_search_input()
         assert search_line.is_displayed()
+
+    def test_search_click_close(self, browser):
+        search_click_close = MainPage(browser)
+        search_click_close.open()
+        search_click_close.get_search_click()
+        search_click_close.get_search_click()
+        time.sleep(8)
+        search_line = search_click_close.get_search_input()
+        assert search_line is None

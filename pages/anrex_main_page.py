@@ -1,6 +1,7 @@
 from locators.main_page_locators import logo, city, popup_city, close, search, first_city, callback_link, hover_text, \
     title_back_call, text_back_call, input_name, input_phone, name_placeholder, phone_placeholder, name_error, \
-    title_sale, button_send_application, popup_back_call, phone_error, tel_callback, search_cvg, search_line
+    title_sale, button_send_application, popup_back_call, phone_error, tel_callback, search_cvg, search_line, \
+    sale_basket
 from pages.base_page import BasePage
 from tests.data import NAME, PHONE, PHONE_NEGATIVE
 
@@ -21,8 +22,7 @@ class MainPage(BasePage):
 
     # Возвращает выбарнный город на странице
     def city_wrap(self):
-        city_wrap = self.find_element(*city)
-        return city_wrap
+        return self.find_element(*city)
 
     # Нажимает на город на сайте
     def city_wrap_click(self):
@@ -30,8 +30,7 @@ class MainPage(BasePage):
 
     # Возвращает тайтл "Выберите Ваш регион"
     def popup_city(self):
-        popup = self.find_element(*popup_city)
-        return popup
+        return self.find_element(*popup_city)
 
     # Нажимает на крестик в модальном окне выбора города
     def close_popup_click(self):
@@ -39,8 +38,7 @@ class MainPage(BasePage):
 
     # Возвращает иконку поиска на главной странице  "Выберите Ваш регион"
     def search(self):
-        search_ = self.find_element(*search).click()
-        return search_
+        return self.find_element(*search).click()
 
     # Находит первый город в модалке "Выберите Ваш регион"
     def first_sity(self):
@@ -50,8 +48,7 @@ class MainPage(BasePage):
 
     # Возвращает текст-ссылку "Заказать обратный звонок"
     def get_callback_link(self):
-        link = self.find_element(*callback_link)
-        return link
+        return self.find_element(*callback_link)
 
     # Нажимает на "Заказать обратный звонок"
     def click_callback_link(self):
@@ -84,13 +81,11 @@ class MainPage(BasePage):
 
     # Возвращает инпут "Ваше имя" в окне "Заявка на обратный звонок"
     def get_callback_popup_name_input(self):
-        input_n = self.find_element(*input_name)
-        return input_n
+        return self.find_element(*input_name)
 
     # Возвращает инпут "Ваш телефон" в окне "Заявка на обратный звонок"
     def get_callback_popup_phone_input(self):
-        input_p = self.find_element(*input_phone)
-        return input_p
+        return self.find_element(*input_phone)
 
     # Возвращает плейсхолдер из поля "Ваше имя"
     def get_name_input_placeholder(self):
@@ -140,18 +135,15 @@ class MainPage(BasePage):
 
     # Возвращает элемент с классом ошибки в поле "Ваше имя"
     def name_input_send_keys_error(self):
-        error_div = self.find_element(*name_error)
-        return error_div
+        return self.find_element(*name_error)
 
     # Возвращает элемент с классом ошибки в поле "Ваш телефон"
     def phone_input_send_keys_error(self):
-        error_div = self.find_element(*phone_error)
-        return error_div
+        return self.find_element(*phone_error)
 
     # Возвращает тайтл "Товары со скидками"
     def get_title_sale(self):
-        title_sale_text = self.find_element(*title_sale)
-        return title_sale_text
+        return self.find_element(*title_sale)
 
     # Метод нажимает кнопку "Отправить заявку"
     def click_submit_application_button(self):
@@ -176,3 +168,7 @@ class MainPage(BasePage):
     # Возвращает строку поиска
     def get_search_input(self):
         return self.find_element(*search_line)
+
+    # Возвращает иконку корзины
+    def get_sale_basket(self):
+        return self.find_element(*sale_basket)
