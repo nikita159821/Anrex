@@ -111,6 +111,10 @@ class MainPage(BasePage):
     def name_input_send_keys(self):
         self.get_callback_popup_name_input().send_keys(NAME)
 
+    # Вводим в поле "Ваше имя" пробел
+    def name_input_send_keys_spaces(self):
+        self.get_callback_popup_name_input().send_keys(" ")
+
     # Модифицированный метод для ввода текста в поле "Ваше имя"
     def t_name_input_send_keys(self, name):
         name_input = self.get_callback_popup_name_input()
