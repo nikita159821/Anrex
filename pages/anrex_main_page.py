@@ -1,7 +1,9 @@
+from selenium.webdriver import ActionChains
+
 from locators.main_page_locators import logo, city, popup_city, close, search, first_city, callback_link, hover_text, \
     title_back_call, text_back_call, input_name, input_phone, name_placeholder, phone_placeholder, name_error, \
     title_sale, button_send_application, popup_back_call, phone_error, tel_callback, search_cvg, search_line, \
-    sale_basket, search_active
+    sale_basket, search_active, button_card, basket_count
 from pages.base_page import BasePage
 from tests.data import NAME, PHONE, PHONE_NEGATIVE
 
@@ -179,3 +181,20 @@ class MainPage(BasePage):
     # Нажимает на иконку корзины в шапке
     def sale_basket_click(self):
         return self.find_element(*sale_basket).click()
+
+    # Нажимает "Добавить в корзину" у карточки товара
+    def button_click_cards(self):
+        button = self.find_element(*button_card)
+        self.scroll_to_element_and_click(button)
+
+    # Скролл до карточки товара
+    def scroll_to_element_and_click(self, element):
+        actions = ActionChains(self.browser)
+        actions.move_to_element(element).perform()
+        element.click()
+
+    # Возвращает количество добавленных товаров в корзину
+    def basket_count(self):
+        test = self.find_element(*basket_count)
+        basket_count_value = test.get_attribute('textContent')
+        return basket_count_value

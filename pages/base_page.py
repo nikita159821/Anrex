@@ -7,7 +7,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from locators.main_page_locators import slider
 from tests.data import RUSSIAN_LETTERS
-from tests.urls import URL
+from tests.urls import URL, CATALOG
 
 
 class BasePage:
@@ -19,12 +19,19 @@ class BasePage:
         return self.browser.find_element(*args)
 
     def wait(self, locator):
-        WebDriverWait(self.browser, 5).until(expected_conditions.visibility_of_element_located(locator))
+        WebDriverWait(self.browser, 10).until(expected_conditions.visibility_of_element_located(locator))
         return self.browser.find_element(*locator)
 
-    # Открываем страницу
-    def open(self):
-        self.browser.get(URL)
+    # Открываем главную страницу
+    def open(self, url=None):
+        if url is not None:
+            self.browser.get(url)
+        else:
+            self.browser.get(URL)
+
+    # Открываем страницу каталога
+    def open_catalog(self):
+        self.browser.get(f'{URL}{CATALOG}')
 
     # Возвращаем текущую страницу
     def get_current_url(self):
@@ -73,4 +80,3 @@ class BasePage:
             raise ValueError("Неверный тип символов. Допустимые значения: 'russian_letters', 'digits', 'punctuation'.")
 
         return ''.join(random.choice(chars) for _ in range(length))
-
