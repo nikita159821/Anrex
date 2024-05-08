@@ -13,6 +13,5 @@ class TestDisplaysSearch:
         search_click = MainPage(browser)
         search_click.open()
         search_click.get_search_click()
-        time.sleep(5)
         search_line = search_click.get_search_input()
         assert search_line.is_displayed()
