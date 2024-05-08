@@ -8,3 +8,11 @@ class TestDisplaysSearch:
         displays_search.open()
         svg_xmlns = displays_search.get_search_cvg()
         assert svg_xmlns == SEARCH
+
+    def test_search_click(self, browser):
+        search_click = MainPage(browser)
+        search_click.open()
+        search_click.get_search_click()
+        time.sleep(5)
+        search_line = search_click.get_search_input()
+        assert search_line.is_displayed()

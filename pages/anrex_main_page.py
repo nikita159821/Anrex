@@ -1,6 +1,6 @@
 from locators.main_page_locators import logo, city, popup_city, close, search, first_city, callback_link, hover_text, \
     title_back_call, text_back_call, input_name, input_phone, name_placeholder, phone_placeholder, name_error, \
-    title_sale, button_send_application, popup_back_call, phone_error, tel_callback, search_cvg
+    title_sale, button_send_application, popup_back_call, phone_error, tel_callback, search_cvg, search_line
 from pages.base_page import BasePage
 from tests.data import NAME, PHONE, PHONE_NEGATIVE
 
@@ -168,3 +168,11 @@ class MainPage(BasePage):
         search_link = self.find_element(*search_cvg)
         search_svg = search_link.get_attribute("xmlns")
         return search_svg
+
+    # Возвращает иконку поиска в шапке сайта
+    def get_search_click(self):
+        self.find_element(*search_cvg).click()
+
+    # Возвращает строку поиска
+    def get_search_input(self):
+        return self.find_element(*search_line)
