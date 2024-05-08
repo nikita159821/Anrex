@@ -47,3 +47,15 @@ class TestNameInputSendKeys:
         # Проверяем, что значение поля не изменилось после ввода пробела
         assert name_input.get_attribute("value") == current_value
 
+    def test_name_input_delete_send_keys(self,browser):
+        name_input_delete = MainPage(browser)
+        name_input_delete.open()
+        name_input_delete.click_callback_link()
+        name_input_delete.name_input_send_keys()
+        # Получаем текущее значение поля "Ваше имя"
+        name_input = name_input_delete.get_callback_popup_name_input()
+        # Удаляем введнный текст
+        name_input_delete.name_input_delete()
+        # Проверяем, что значение поля  изменилось после удаления данных
+        assert name_input.get_attribute("value") == ''
+

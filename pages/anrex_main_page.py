@@ -115,6 +115,10 @@ class MainPage(BasePage):
     def name_input_send_keys_spaces(self):
         self.get_callback_popup_name_input().send_keys(" ")
 
+    # Удаляем данные из поля "Ваше имя"
+    def name_input_delete(self):
+        self.get_callback_popup_name_input().clear()
+
     # Модифицированный метод для ввода текста в поле "Ваше имя"
     def t_name_input_send_keys(self, name):
         name_input = self.get_callback_popup_name_input()
