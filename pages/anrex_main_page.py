@@ -2,7 +2,7 @@ from locators.main_page_locators import logo, city, popup_city, close, search, f
     title_back_call, text_back_call, input_name, input_phone, name_placeholder, phone_placeholder, name_error, \
     title_sale, button_send_application, popup_back_call
 from pages.base_page import BasePage
-from tests.data import NAME, PHONE
+from tests.data import NAME, PHONE, PHONE_NEGATIVE
 
 
 class MainPage(BasePage):
@@ -124,6 +124,10 @@ class MainPage(BasePage):
     # Вводим в поле "Ваш телефон"
     def phone_input_send_keys(self):
         self.get_callback_popup_phone_input().send_keys(PHONE)
+
+    # Вводим в поле "Ваш телефон" 12 цифр
+    def send_keys_12_digits_to_phone_input(self):
+        self.get_callback_popup_phone_input().send_keys(PHONE_NEGATIVE)
 
     # Удаляем данные из поля "Ваш телефон"
     def phone_input_delete(self):
