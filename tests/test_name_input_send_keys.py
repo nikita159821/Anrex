@@ -19,8 +19,13 @@ class TestNameInputSendKeys:
         # Проверка наличия класса 'has-error'
         assert 'input-field has-error' in class_attribute
 
-    @pytest.mark.parametrize('name',
-                             [MainPage.generate_name(2), MainPage.generate_name(49), MainPage.generate_name(50)])
+    @pytest.mark.parametrize('name', [
+        MainPage.generate_name(2, 'russian_letters'),
+        MainPage.generate_name(49, 'russian_letters'),
+        MainPage.generate_name(50, 'russian_letters'),
+        MainPage.generate_name(51, 'russian_letters'),
+        MainPage.generate_name(10, 'letters')
+    ])
     def test_positive_name_input_send_keys(self, browser, name):
         name_input_send_keys = MainPage(browser)
         name_input_send_keys.open()

@@ -11,7 +11,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 @pytest.fixture
 def browser():
     options = Options()
-    options.add_argument("--headless=new")
+    #options.add_argument("--headless=new")
     driver_browser = webdriver.Chrome(options=options)
     driver_browser.maximize_window()
     yield driver_browser

@@ -1,8 +1,11 @@
+import random
+import string
+
 from locators.main_page_locators import logo, city, popup_city, close, search, first_city, callback_link, hover_text, \
     title_back_call, text_back_call, input_name, input_phone, name_placeholder, phone_placeholder, name_error, \
     title_sale, button_send_application, popup_back_call
 from pages.base_page import BasePage
-from tests.data import NAME, PHONE
+from tests.data import NAME, PHONE, RUSSIAN_LETTERS
 
 
 class MainPage(BasePage):
@@ -129,8 +132,30 @@ class MainPage(BasePage):
 
     # Метод для генерации строки заданной длины
     @staticmethod
-    def generate_name(length):
-        return 'а' * length  # Заменить 'A' на любой другой символ или строку
+    def generate_name(length, char_type):
+        """
+        Генерирует строку заданной длины из указанного набора символов.
+
+        Args:
+            length (int): Длина строки.
+            char_type (str): Тип символов, из которых будет генерироваться строка.
+                Возможные значения: 'russian_letters','letters', 'digits', 'punctuation'.
+
+        Returns:
+            str: Сгенерированная строка.
+        """
+        if char_type == 'russian_letters':
+            chars = RUSSIAN_LETTERS
+        elif char_type == 'letters':
+            chars = string.ascii_letters
+        elif char_type == 'digits':
+            chars = string.digits
+        elif char_type == 'punctuation':
+            chars = string.punctuation
+        else:
+            raise ValueError("Неверный тип символов. Допустимые значения: 'russian_letters', 'digits', 'punctuation'.")
+
+        return ''.join(random.choice(chars) for _ in range(length))
 
     # Метод нажимает кнопку "Отправить заявку"
     def click_submit_application_button(self):
