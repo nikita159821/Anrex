@@ -125,6 +125,10 @@ class MainPage(BasePage):
     def phone_input_send_keys(self):
         self.get_callback_popup_phone_input().send_keys(PHONE)
 
+    # Удаляем данные из поля "Ваш телефон"
+    def phone_input_delete(self):
+        self.get_callback_popup_phone_input().clear()
+
     # Возвращает элемент с классом ошибки
     def name_input_send_keys_error(self):
         error_div = self.find_element(*name_error)
