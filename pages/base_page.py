@@ -1,8 +1,12 @@
+import random
+import string
+
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 from locators.main_page_locators import slider
+from tests.data import RUSSIAN_LETTERS
 from tests.urls import URL
 
 
@@ -42,4 +46,30 @@ class BasePage:
         actual_text = text.replace('\n', ' ')
         return actual_text
 
+    # Метод для генерации букв, цифра, спец.символов
+    @staticmethod
+    def generate_name(length, char_type):
+        """
+        Генерирует строку заданной длины из указанного набора символов.
+
+        Args:
+            length (int): Длина строки.
+            char_type (str): Тип символов, из которых будет генерироваться строка.
+                Возможные значения: 'russian_letters','letters', 'digits', 'punctuation'.
+
+        Returns:
+            str: Сгенерированная строка.
+        """
+        if char_type == 'russian_letters':
+            chars = RUSSIAN_LETTERS
+        elif char_type == 'letters':
+            chars = string.ascii_letters
+        elif char_type == 'digits':
+            chars = string.digits
+        elif char_type == 'punctuation':
+            chars = string.punctuation
+        else:
+            raise ValueError("Неверный тип символов. Допустимые значения: 'russian_letters', 'digits', 'punctuation'.")
+
+        return ''.join(random.choice(chars) for _ in range(length))
 
