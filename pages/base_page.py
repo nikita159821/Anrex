@@ -49,7 +49,7 @@ class BasePage:
 
     # Метод для генерации букв, цифра, спец.символов
     @staticmethod
-    def generate_name(length, char_type):
+    def generate_name_and_phone(length, char_type):
         """
         Генерирует строку заданной длины из указанного набора символов.
 

@@ -1,6 +1,6 @@
 from locators.main_page_locators import logo, city, popup_city, close, search, first_city, callback_link, hover_text, \
     title_back_call, text_back_call, input_name, input_phone, name_placeholder, phone_placeholder, name_error, \
-    title_sale, button_send_application, popup_back_call
+    title_sale, button_send_application, popup_back_call, phone_error
 from pages.base_page import BasePage
 from tests.data import NAME, PHONE, PHONE_NEGATIVE
 
@@ -121,6 +121,11 @@ class MainPage(BasePage):
         name_input = self.get_callback_popup_name_input()
         name_input.send_keys(name)
 
+    # Модифицированный метод для ввода номера телефон в поле "Ваш телефон"
+    def t_phone_input_send_keys(self, phone):
+        phone_input = self.get_callback_popup_phone_input()
+        phone_input.send_keys(phone)
+
     # Вводим в поле "Ваш телефон"
     def phone_input_send_keys(self):
         self.get_callback_popup_phone_input().send_keys(PHONE)
@@ -133,9 +138,14 @@ class MainPage(BasePage):
     def phone_input_delete(self):
         self.get_callback_popup_phone_input().clear()
 
-    # Возвращает элемент с классом ошибки
+    # Возвращает элемент с классом ошибки в поле "Ваше имя"
     def name_input_send_keys_error(self):
         error_div = self.find_element(*name_error)
+        return error_div
+
+    # Возвращает элемент с классом ошибки в поле "Ваш телефон"
+    def phone_input_send_keys_error(self):
+        error_div = self.find_element(*phone_error)
         return error_div
 
     # Возвращает тайтл "Товары со скидками"

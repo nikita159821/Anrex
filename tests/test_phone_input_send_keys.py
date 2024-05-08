@@ -1,3 +1,7 @@
+import time
+
+import pytest
+
 from pages.anrex_main_page import MainPage
 
 
@@ -39,3 +43,21 @@ class TestPhoneInputSendKeys:
         phone_input = phone_input_send_keys.get_callback_popup_phone_input()
         current_value = phone_input.get_attribute("value")
         assert phone_input.get_attribute("value") == current_value
+
+    # Вводим в поле "Ваш телефон 1 цифру, буквы, спец.символы,пробел.
+    @pytest.mark.parametrize('phone', [
+        MainPage.generate_name_and_phone(1, 'digits'),
+        MainPage.generate_name_and_phone(5, 'russian_letters'),
+        MainPage.generate_name_and_phone(5, 'punctuation'),
+        ' '  # Добавляем пробел как один из параметров
+    ])
+    def test_negative_phone_input_send_keys(self, browser, phone):
+        phone_input_send_keys = MainPage(browser)
+        phone_input_send_keys.open()
+        phone_input_send_keys.click_callback_link()
+        phone_input_send_keys.t_phone_input_send_keys(phone)
+        time.sleep(5)
+        input_element = phone_input_send_keys.phone_input_send_keys_error()
+        class_attribute = input_element.get_attribute('class')
+        # Проверка наличия класса 'has-error'
+        assert 'input-field has-error' in class_attribute

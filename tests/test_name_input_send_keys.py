@@ -7,11 +7,11 @@ from tests.data import CALLBACK_TITLE
 
 class TestNameInputSendKeys:
     @pytest.mark.parametrize('name', [
-        MainPage.generate_name(2, 'russian_letters'),
-        MainPage.generate_name(49, 'russian_letters'),
-        MainPage.generate_name(50, 'russian_letters'),
-        MainPage.generate_name(51, 'russian_letters'),
-        MainPage.generate_name(10, 'letters'),
+        MainPage.generate_name_and_phone(2, 'russian_letters'),
+        MainPage.generate_name_and_phone(49, 'russian_letters'),
+        MainPage.generate_name_and_phone(50, 'russian_letters'),
+        MainPage.generate_name_and_phone(51, 'russian_letters'),
+        MainPage.generate_name_and_phone(10, 'letters'),
     ])
     def test_positive_name_input_send_keys(self, browser, name):
         name_input_send_keys = MainPage(browser)
@@ -44,7 +44,7 @@ class TestNameInputSendKeys:
         name_input = rejects_digits.get_callback_popup_name_input()
         current_value = name_input.get_attribute("value")
         # Вводим цифры в поле "Ваше имя"
-        rejects_digits.generate_name(5, 'digits')
+        rejects_digits.generate_name_and_phone(5, 'digits')
         # Проверяем, что значение поля не изменилось после ввода цифр
         assert name_input.get_attribute("value") == current_value
 
