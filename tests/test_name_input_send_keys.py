@@ -59,3 +59,15 @@ class TestNameInputSendKeys:
         # Проверяем, что значение поля  изменилось после удаления данных
         assert name_input.get_attribute("value") == ''
 
+    def test_name_field_rejects_digits(self,browser):
+        rejects_digits = MainPage(browser)
+        rejects_digits.open()
+        rejects_digits.click_callback_link()
+        # Получаем текущее значение поля "Ваше имя"
+        name_input = rejects_digits.get_callback_popup_name_input()
+        current_value = name_input.get_attribute("value")
+        # Вводим цифры в поле "Ваше имя"
+        rejects_digits.generate_name(5,'digits')
+        # Проверяем, что значение поля не изменилось после ввода цифр
+        assert name_input.get_attribute("value") == current_value
+
