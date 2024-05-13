@@ -243,3 +243,23 @@ class MainPage(BasePage):
     # Нажимает на раздел "Скидки"
     def click_sale(self):
         self.click_element(sale)
+
+    # Возвращает текст раздела "Каталог" в шапке сайта
+    def get_about_text(self):
+        return self.get_text_of_element(about)
+
+    # Нажимает на раздел "О компании"
+    def click_about(self):
+        self.click_element(about)
+
+    # Нажимает на раздел "Информация о компании" в выпадающем списке
+    def click_about_dropdown(self):
+        self.click_element(about_dropdown)
+
+    # Нажимает на раздел "Информация о компании" в выпадающем списке
+    def click_dealers_dropdown(self):
+        self.click_element(dealers_dropdown)
+
+    # Нажимает на раздел "Информация о компании" в выпадающем списке
+    def click_contact_dropdown(self):
+        self.click_element(contact_dropdown)

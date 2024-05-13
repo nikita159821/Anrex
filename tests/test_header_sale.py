@@ -6,14 +6,14 @@ from tests.urls import URL, CHAPTER_SALE, CHAPTER_CATALOG
 class TestHeaderSale:
 
     # Проверка, что отображается раздел "Скидки" в шапке сайта
-    def test_header_delivery_visibility(self, browser):
-        delivery_visibility = MainPage(browser)
-        delivery_visibility.open()
-        assert delivery_visibility.get_sale_text() == SALE
+    def test_header_sale_visibility(self, browser):
+        sale_visibility = MainPage(browser)
+        sale_visibility.open()
+        assert sale_visibility.get_sale_text() == SALE
 
     # По клику на раздел "Скидки", редирект в "Каталог"
-    def test_redirection_delivery(self, browser):
-        redirection_delivery = MainPage(browser)
-        redirection_delivery.open()
-        redirection_delivery.click_sale()
-        assert redirection_delivery.get_current_url() == f'{URL}{CHAPTER_CATALOG}{CHAPTER_SALE}'
+    def test_redirection_catalog(self, browser):
+        redirection_catalog = MainPage(browser)
+        redirection_catalog.open()
+        redirection_catalog.click_sale()
+        assert redirection_catalog.get_current_url() == f'{URL}{CHAPTER_CATALOG}{CHAPTER_SALE}'

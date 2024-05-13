@@ -70,7 +70,9 @@ class BasePage:
     def get_elements_text(self, locator):
         try:
             elements = self.browser.find_elements(*locator)
-            return [self.remove_newline(element) for element in elements]
+            elements_text = [self.remove_newline(element) for element in elements]
+            print(elements_text)
+            return elements_text
         except NoSuchElementException:
             # Возвращаем пустой список, если элементы не найдены
             return []
