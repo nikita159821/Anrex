@@ -269,7 +269,22 @@ class MainPage(BasePage):
         actions.move_to_element(element).perform()
 
     # Возвращает блок "Товары со скидками"
-    def discounted_products(self):
+    def get_discounted_products(self):
         products = self.find_element(*discounted_products)
         self.scroll_to_element(products)
         return products
+
+    # Возвращает блок "Популярные категории"
+    def get_popular_categories(self):
+        popular_categorie = self.find_element(*popular_categories)
+        self.scroll_to_popular_categories(popular_categorie)
+        return popular_categorie
+
+    # Скролл до блока "Популярные категории"
+    def scroll_to_popular_categories(self, element):
+        actions = ActionChains(self.browser)
+        actions.move_to_element(element).perform()
+
+    # Нажимает на "Кровати и матрасы" в блоке "Популярные категории"
+    def click_popular_categories(self):
+        self.click_element(popular_section_banner)
