@@ -1,3 +1,4 @@
+from selenium.common import NoSuchElementException
 from selenium.webdriver import ActionChains
 
 from locators.main_page_locators import *
@@ -39,9 +40,7 @@ class MainPage(BasePage):
 
     # Находит первый город в модалке "Выберите Ваш регион"
     def first_sity(self):
-        popup = self.find_element(*first_city)
-        first_city_text = popup.text
-        return first_city_text
+        return self.get_text_of_element(first_city)
 
     # Возвращает текст-ссылку "Заказать обратный звонок"
     def get_callback_link(self):
@@ -56,14 +55,11 @@ class MainPage(BasePage):
     def get_hover_tooltip_text(self):
         hover = self.get_callback_link()
         self.actions.move_to_element(hover).perform()
-        tooltip_text_element = self.find_element(*hover_text)
-        tooltip_text = tooltip_text_element.text
-        return tooltip_text
+        return self.get_text_of_element(hover_text)
 
     # Возвращает тайтл "Заявка на обратный звонок"
     def get_back_call(self):
         title = self.find_element(*title_back_call)
-        print(title.text)
         return self.remove_newline(title)
 
     # Возвращает текст в окне "Заявка на обратный звонок"
@@ -148,9 +144,7 @@ class MainPage(BasePage):
 
     # Возвращает номер телефона в шапке
     def get_phone_callback(self):
-        phone_callback = self.find_element(*tel_callback)
-        phone_callback_text = phone_callback.text
-        return phone_callback_text
+        return self.get_text_of_element(tel_callback)
 
     # Возвращает svg иконки поиска в шапке сайта
     def get_search_cvg(self):
@@ -189,3 +183,15 @@ class MainPage(BasePage):
     # Возвращает количество добавленных товаров в корзину
     def basket_count(self):
         return self.get_attribute_of_element(basket_count, 'textContent')
+
+    # Возвращает текст раздела "Каталог" в шапке сайта
+    def get_catalog_text(self):
+        return self.get_text_of_element(catalog)
+
+    # Возвращает раздел "Каталог" в шапке сайта
+    def get_catalog(self):
+        return self.browser.find_element(*catalog)
+
+    # Возвращает список каталога "по типу мебели" и "По комнате"
+    def get_type_of_furniture_and_room(self):
+        return self.get_elements_text(by_type_of_furniture_and_room)

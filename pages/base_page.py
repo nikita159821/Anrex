@@ -1,7 +1,7 @@
 import random
 import string
 
-from selenium.common import TimeoutException
+from selenium.common import TimeoutException, NoSuchElementException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -45,6 +45,35 @@ class BasePage:
     def get_attribute_of_element(self, locator, attribute):
         element = self.find(locator)
         return element.get_attribute(attribute)
+
+    # Общий метод для получения текста элемента
+    def get_text_of_element(self, locator):
+        element = self.find(locator)
+        return element.text
+
+    # Общий метод для получения текста разделов из шапки
+    @staticmethod
+    def get_text_of_elements(element):
+        return element.text
+
+    # Общий метод. Наводит курсорс на выпадающий список
+    def move_cursor_to_element(self, locator):
+        element = self.browser.find_element(*locator)
+        self.actions.move_to_element(element).perform()
+
+    # Общий метод. снимает фокус с выпадающего списка
+    def defocus_element(self):
+        # Перемещает курсор на 10 пикселей вправо и 10 пикселей вниз от текущего положения
+        self.actions.move_by_offset(500, 10).perform()
+
+    # Общий метод. Проходимся циклом по разделу в шапке сайта.
+    def get_elements_text(self, locator):
+        try:
+            elements = self.browser.find_elements(*locator)
+            return [self.remove_newline(element) for element in elements]
+        except NoSuchElementException:
+            # Возвращаем пустой список, если элементы не найдены
+            return []
 
     def wait_for_element_text_to_be(self, locator):
         try:
@@ -120,4 +149,3 @@ class BasePage:
 
         # Генерируем строку случайных букв заданной длины
         return ''.join(random.choice(russian_alphabet) for _ in range(length))
-

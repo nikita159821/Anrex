@@ -28,3 +28,5 @@ sale_basket = (By.XPATH, "//div[@class='action-menu']/a[@id='sale-basket-basket-
 #cards = (By.CSS_SELECTOR, ".item-buy.btn")
 button_card = (By.XPATH, "//*[@id='bx_3966226736_1094_7e1b8e3524755c391129a9d7e6f2d206_add_basket_link']")
 basket_count = (By.XPATH, "//span[@class='basket-count']")
+catalog = (By.CSS_SELECTOR, 'div.multi-menu:nth-child(1) > a:nth-child(1)')
+by_type_of_furniture_and_room = (By.CSS_SELECTOR, 'div.multi-menu:nth-child(1) > div:nth-child(2)')
