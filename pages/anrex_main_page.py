@@ -1,4 +1,3 @@
-from selenium.common import NoSuchElementException
 from selenium.webdriver import ActionChains
 
 from locators.main_page_locators import *
@@ -263,3 +262,14 @@ class MainPage(BasePage):
     # Нажимает на раздел "Информация о компании" в выпадающем списке
     def click_contact_dropdown(self):
         self.click_element(contact_dropdown)
+
+    # Скролл до блока "Товары со скидками"
+    def scroll_to_element(self, element):
+        actions = ActionChains(self.browser)
+        actions.move_to_element(element).perform()
+
+    # Возвращает блок "Товары со скидками"
+    def discounted_products(self):
+        products = self.find_element(*discounted_products)
+        self.scroll_to_element(products)
+        return products

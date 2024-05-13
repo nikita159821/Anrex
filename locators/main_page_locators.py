@@ -44,3 +44,5 @@ about_list = By.CSS_SELECTOR, 'div.multi-menu:nth-child(6) > div:nth-child(2)'
 about_dropdown = (By.CSS_SELECTOR, 'div.multi-menu:nth-child(6) > div:nth-child(2) > a:nth-child(1)')
 dealers_dropdown = (By.CSS_SELECTOR, 'div.multi-menu:nth-child(6) > div:nth-child(2) > a:nth-child(2)')
 contact_dropdown = (By.CSS_SELECTOR, 'div.multi-menu:nth-child(6) > div:nth-child(2) > a:nth-child(3)')
+discounted_products = (By.CSS_SELECTOR, '.index-goods')
+button_card_discounted = (By.CSS_SELECTOR, 'div.catalog-item:nth-child(7) > div:nth-child(5)')
