@@ -195,3 +195,7 @@ class MainPage(BasePage):
     # Возвращает список каталога "по типу мебели" и "По комнате"
     def get_type_of_furniture_and_room(self):
         return self.get_elements_text(by_type_of_furniture_and_room)
+
+    # Нажимает на раздел "Тумбы"
+    def send_keys_tumby(self):
+        self.click_element(tumby)

@@ -1,3 +1,4 @@
 URL = 'http://dev.anrex.new.maslovart.beget.tech/'
 BASKET = 'personal/cart/'
-CATALOG = 'catalog/'
+CHAPTER_CATALOG = 'catalog/'
+CHAPTER_TUMBY = 'tumby/'

@@ -8,7 +8,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from locators.main_page_locators import slider
 from tests.data import RUSSIAN_LETTERS
-from tests.urls import URL, CATALOG
+from tests.urls import URL, CHAPTER_CATALOG
 
 
 # Класс для кастомного условия ожидания
@@ -91,7 +91,7 @@ class BasePage:
 
     # Открываем страницу каталога
     def open_catalog(self):
-        self.browser.get(f'{URL}{CATALOG}')
+        self.browser.get(f'{URL}{CHAPTER_CATALOG}')
 
     # Возвращаем текущую страницу
     def get_current_url(self):
