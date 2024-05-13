@@ -33,3 +33,9 @@ by_type_of_furniture_and_room = (By.CSS_SELECTOR, 'div.multi-menu:nth-child(1) >
 tumby = (By.CSS_SELECTOR, 'div.column:nth-child(1) > a:nth-child(2)')
 see_all = (By.CSS_SELECTOR, '.see_all')
 collections = (By.CSS_SELECTOR, '.menu > a:nth-child(2)')
+delivery = (By.CSS_SELECTOR, 'div.multi-menu:nth-child(3) > a:nth-child(1)')
+delivery_list = (By.CSS_SELECTOR, 'div.multi-menu:nth-child(3) > div:nth-child(2)')
+delivery_dropdown = (By.CSS_SELECTOR, 'div.multi-menu:nth-child(3) > div:nth-child(2) > a:nth-child(1)')
+guarantee = (By.CSS_SELECTOR, 'div.multi-menu:nth-child(3) > div:nth-child(2) > a:nth-child(2)')
+shops = (By.CSS_SELECTOR, 'div.multi-menu:nth-child(3) > div:nth-child(2) > a:nth-child(3)')
+

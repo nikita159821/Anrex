@@ -25,7 +25,7 @@ class TestHeaderCatalog:
         closes_on_focus.open()
         closes_on_focus.move_cursor_to_element(catalog)
         closes_on_focus.defocus_element()
-        assert closes_on_focus.get_type_of_furniture_and_room() == ['']
+        assert closes_on_focus.get_elements_text('') == []
 
     # Проверка, открытия раздела "Тумбы" через "Каталог"
     def test_catalog_chests_section(self, browser):

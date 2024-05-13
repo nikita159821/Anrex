@@ -193,8 +193,8 @@ class MainPage(BasePage):
         return self.browser.find_element(*catalog)
 
     # Возвращает список каталога "по типу мебели" и "По комнате"
-    def get_type_of_furniture_and_room(self):
-        return self.get_elements_text(by_type_of_furniture_and_room)
+    #def get_type_of_furniture_and_room(self):
+        #return self.get_elements_text(by_type_of_furniture_and_room)
 
     # Нажимает на раздел "Тумбы"
     def click_tumby(self):
@@ -211,3 +211,27 @@ class MainPage(BasePage):
     # Нажимает на раздел "Коллекци"
     def click_collections(self):
         self.click_element(collections)
+
+    # Возвращает раздел "Покупателям" в шапке сайта
+    def get_cdelivery(self):
+        return self.browser.find_element(*delivery)
+
+    # Возвращает текст раздела "Покупателям" в шапке сайта
+    def get_cdelivery_text(self):
+        return self.get_text_of_element(delivery)
+
+    # Нажимает на раздел "Покупателям"
+    def click_delivery(self):
+        self.click_element(delivery)
+
+    # Нажимает на раздел "Доставка и сборка" в выпадающем списке
+    def click_delivery_dropdown(self):
+        self.click_element(delivery_dropdown)
+
+    # Нажимает на раздел "Адреса магазинов" в выпадающем списке
+    def click_shops_dropdown(self):
+        self.click_element(shops)
+
+    # Нажимает на раздел "Гарантия на мебель" в выпадающем списке
+    def click_guarantee_dropdown(self):
+        self.click_element(guarantee)
