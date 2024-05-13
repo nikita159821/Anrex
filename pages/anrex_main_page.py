@@ -11,9 +11,7 @@ class MainPage(BasePage):
 
     # Получаем, сохраняем и возвращаем ссылку на img
     def get_logo_src(self):
-        logo_element = self.find_element(*logo)
-        logo_src = logo_element.get_attribute('src')
-        return logo_src
+        return self.get_attribute_of_element(logo, 'src')
 
     # Нажимаем на лого
     def logo_click(self):
@@ -92,15 +90,11 @@ class MainPage(BasePage):
 
     # Возвращает плейсхолдер из поля "Ваше имя"
     def get_name_input_placeholder(self):
-        input_placeholder_name = self.find_element(*name_placeholder)
-        placeholder_value = input_placeholder_name.get_attribute("placeholder")
-        return placeholder_value
+        return self.get_attribute_of_element(name_placeholder, 'placeholder')
 
     # Возвращает плейсхолдер из поля "Ваше имя"
     def get_phone_input_placeholder(self):
-        input_placeholder_phone = self.find_element(*phone_placeholder)
-        placeholder_value = input_placeholder_phone.get_attribute("placeholder")
-        return placeholder_value
+        return self.get_attribute_of_element(phone_placeholder, 'placeholder')
 
     # Вводим в поле "Ваше имя" одну букву
     def name_input_send_keys(self):
@@ -160,9 +154,7 @@ class MainPage(BasePage):
 
     # Возвращает svg иконки поиска в шапке сайта
     def get_search_cvg(self):
-        search_link = self.find_element(*search_cvg)
-        search_svg = search_link.get_attribute("xmlns")
-        return search_svg
+        return self.get_attribute_of_element(search_cvg, 'xmlns')
 
     # Нажимает иконку поиска в шапке сайта
     def get_search_click(self):
@@ -196,6 +188,4 @@ class MainPage(BasePage):
 
     # Возвращает количество добавленных товаров в корзину
     def basket_count(self):
-        test = self.find_element(*basket_count)
-        basket_count_value = test.get_attribute('textContent')
-        return basket_count_value
+        return self.get_attribute_of_element(basket_count, 'textContent')

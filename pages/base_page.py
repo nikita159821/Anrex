@@ -41,6 +41,11 @@ class BasePage:
         element = self.find(locator)
         element.click()
 
+    # Общий метод для получения атрибута элемента
+    def get_attribute_of_element(self, locator, attribute):
+        element = self.find(locator)
+        return element.get_attribute(attribute)
+
     def wait_for_element_text_to_be(self, locator):
         try:
             WebDriverWait(self.browser, 10).until(element_text_to_be(locator))

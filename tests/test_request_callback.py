@@ -1,5 +1,3 @@
-import time
-
 from locators.main_page_locators import popup_back_call
 from pages.anrex_main_page import MainPage
 from tests.data import CALLBACK_TITLE
