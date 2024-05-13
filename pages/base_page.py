@@ -1,6 +1,7 @@
 import random
 import string
 
+from selenium.common import TimeoutException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -10,17 +11,42 @@ from tests.data import RUSSIAN_LETTERS
 from tests.urls import URL, CATALOG
 
 
+# Класс для кастомного условия ожидания
+class element_text_to_be:
+    def __init__(self, locator):
+        self.locator = locator
+
+    def __call__(self, driver):
+        driver.find_element(*self.locator)  # Находим элемент
+
+
 class BasePage:
     def __init__(self, browser):
         self.browser = browser
         self.actions = ActionChains(self.browser)
 
-    def find_element(self, *args):
-        return self.browser.find_element(*args)
-
     def wait(self, locator):
         WebDriverWait(self.browser, 10).until(expected_conditions.visibility_of_element_located(locator))
         return self.browser.find_element(*locator)
+
+    def find_element(self, *args):
+        return self.browser.find_element(*args)
+
+    # Общий метод для поиска элемента
+    def find(self, locator):
+        return self.find_element(*locator)
+
+    # Общий метод для клика по элементу
+    def click_element(self, locator):
+        element = self.find(locator)
+        element.click()
+
+    def wait_for_element_text_to_be(self, locator):
+        try:
+            WebDriverWait(self.browser, 10).until(element_text_to_be(locator))
+        except TimeoutException:
+            return False
+        return True
 
     # Открываем главную страницу
     def open(self, url=None):

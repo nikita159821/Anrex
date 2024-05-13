@@ -1,9 +1,6 @@
 from selenium.webdriver import ActionChains
 
-from locators.main_page_locators import logo, city, popup_city, close, search, first_city, callback_link, hover_text, \
-    title_back_call, text_back_call, input_name, input_phone, name_placeholder, phone_placeholder, name_error, \
-    title_sale, button_send_application, popup_back_call, phone_error, tel_callback, search_cvg, search_line, \
-    sale_basket, search_active, button_card, basket_count
+from locators.main_page_locators import *
 from pages.base_page import BasePage
 from tests.data import NAME, PHONE, PHONE_NEGATIVE
 
@@ -20,15 +17,15 @@ class MainPage(BasePage):
 
     # Нажимаем на лого
     def logo_click(self):
-        self.find_element(*logo).click()
+        self.click_element(logo)
 
-    # Возвращает выбарнный город на странице
+    # Возвращает выбранный город на странице
     def city_wrap(self):
         return self.find_element(*city)
 
     # Нажимает на город на сайте
     def city_wrap_click(self):
-        self.find_element(*city).click()
+        self.click_element(city)
 
     # Возвращает тайтл "Выберите Ваш регион"
     def popup_city(self):
@@ -36,11 +33,11 @@ class MainPage(BasePage):
 
     # Нажимает на крестик в модальном окне выбора города
     def close_popup_click(self):
-        self.find_element(*close).click()
+        self.click_element(close)
 
     # Возвращает иконку поиска на главной странице  "Выберите Ваш регион"
     def search(self):
-        return self.find_element(*search).click()
+        self.click_element(search)
 
     # Находит первый город в модалке "Выберите Ваш регион"
     def first_sity(self):
@@ -54,7 +51,7 @@ class MainPage(BasePage):
 
     # Нажимает на "Заказать обратный звонок"
     def click_callback_link(self):
-        self.get_callback_link().click()
+        self.click_element(callback_link)
 
     # Метод находит элемент callback_link через метод get_callback_link,
     # наводит на него курсор и получает текст ховера из элемента hover_text.
@@ -149,7 +146,7 @@ class MainPage(BasePage):
 
     # Метод нажимает кнопку "Отправить заявку"
     def click_submit_application_button(self):
-        self.find_element(*button_send_application).click()
+        self.click_element(button_send_application)
 
     # Возвращает номер телефона в шапке
     def get_phone_callback(self):
@@ -165,10 +162,10 @@ class MainPage(BasePage):
 
     # Нажимает иконку поиска в шапке сайта
     def get_search_click(self):
-        self.find_element(*search).click()
+        self.click_element(search)
 
     def get_search_active(self):
-        self.find_element(*search_active).click()
+        self.click_element(search_active)
 
     # Возвращает строку поиска
     def get_search_input(self):
@@ -180,7 +177,7 @@ class MainPage(BasePage):
 
     # Нажимает на иконку корзины в шапке
     def sale_basket_click(self):
-        return self.find_element(*sale_basket).click()
+        self.click_element(sale_basket)
 
     # Нажимает "Добавить в корзину" у карточки товара
     def button_click_cards(self):

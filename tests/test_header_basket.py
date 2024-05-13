@@ -1,5 +1,4 @@
-import time
-
+from locators.main_page_locators import basket_count
 from pages.anrex_main_page import MainPage
 from tests.urls import URL, BASKET
 
@@ -13,7 +12,7 @@ class TestHeaderBasket:
         basket = displays_basket.get_sale_basket()
         assert basket.is_displayed()
 
-    # Проверка переходе в корзину через иконку на главной странице
+    # Проверка перехода в корзину через иконку на главной странице
     def test_header_basket_redirect(self, browser):
         displays_basket = MainPage(browser)
         displays_basket.open()
@@ -27,6 +26,6 @@ class TestHeaderBasket:
         count_displayed = MainPage(browser)
         count_displayed.open_catalog()
         count_displayed.button_click_cards()
-        time.sleep(3)
-        basket_count = count_displayed.basket_count()
-        assert basket_count == '(1)'
+        count_displayed.wait_for_element_text_to_be(basket_count)
+        basket_count_value = count_displayed.basket_count()
+        assert basket_count_value == '(1)'
