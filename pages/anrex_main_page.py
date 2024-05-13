@@ -203,3 +203,11 @@ class MainPage(BasePage):
     # Нажимает на раздел "Смотреть всё"
     def click_see_all(self):
         self.click_element(see_all)
+
+    # Возвращает текст раздела "Коллекци" в шапке сайта
+    def get_collections_text(self):
+        return self.get_text_of_element(collections)
+
+    # Нажимает на раздел "Коллекци"
+    def click_collections(self):
+        self.click_element(collections)
