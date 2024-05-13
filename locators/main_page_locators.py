@@ -38,4 +38,4 @@ delivery_list = (By.CSS_SELECTOR, 'div.multi-menu:nth-child(3) > div:nth-child(2
 delivery_dropdown = (By.CSS_SELECTOR, 'div.multi-menu:nth-child(3) > div:nth-child(2) > a:nth-child(1)')
 guarantee = (By.CSS_SELECTOR, 'div.multi-menu:nth-child(3) > div:nth-child(2) > a:nth-child(2)')
 shops = (By.CSS_SELECTOR, 'div.multi-menu:nth-child(3) > div:nth-child(2) > a:nth-child(3)')
-
+sale = (By.CSS_SELECTOR,'.menu > a:nth-child(4)')

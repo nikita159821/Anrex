@@ -194,7 +194,7 @@ class MainPage(BasePage):
 
     # Возвращает список каталога "по типу мебели" и "По комнате"
     #def get_type_of_furniture_and_room(self):
-        #return self.get_elements_text(by_type_of_furniture_and_room)
+    #return self.get_elements_text(by_type_of_furniture_and_room)
 
     # Нажимает на раздел "Тумбы"
     def click_tumby(self):
@@ -235,3 +235,11 @@ class MainPage(BasePage):
     # Нажимает на раздел "Гарантия на мебель" в выпадающем списке
     def click_guarantee_dropdown(self):
         self.click_element(guarantee)
+
+    # Возвращает текст раздела "Скидки" в шапке сайта
+    def get_sale_text(self):
+        return self.get_text_of_element(sale)
+
+    # Нажимает на раздел "Скидки"
+    def click_sale(self):
+        self.click_element(sale)

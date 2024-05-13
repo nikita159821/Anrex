@@ -20,3 +20,4 @@ FURNITURE_AND_ROOM = [
 COLLECTIONS = 'Коллекции'
 DELIVERY = 'Покупателям'
 DELIVERY_LIST = ['Доставка и сборка Гарантия на мебель Адреса магазинов']
+SALE = 'Скидки'
