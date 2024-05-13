@@ -197,5 +197,9 @@ class MainPage(BasePage):
         return self.get_elements_text(by_type_of_furniture_and_room)
 
     # Нажимает на раздел "Тумбы"
-    def send_keys_tumby(self):
+    def click_tumby(self):
         self.click_element(tumby)
+
+    # Нажимает на раздел "Смотреть всё"
+    def click_see_all(self):
+        self.click_element(see_all)

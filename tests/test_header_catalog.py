@@ -32,5 +32,13 @@ class TestHeaderCatalog:
         chests_section = MainPage(browser)
         chests_section.open()
         chests_section.move_cursor_to_element(catalog)
-        chests_section.send_keys_tumby()
+        chests_section.click_tumby()
         assert chests_section.get_current_url() == f'{URL}{CHAPTER_CATALOG}{CHAPTER_TUMBY}'
+
+    # Проверка, открытия раздела "Смотреть всё" через "Каталог"
+    def test_catalog_all_section_opens(self, browser):
+        section_opens = MainPage(browser)
+        section_opens.open()
+        section_opens.move_cursor_to_element(catalog)
+        section_opens.click_see_all()
+        assert section_opens.get_current_url() == f'{URL}{CHAPTER_CATALOG}'
