@@ -106,3 +106,13 @@ class BasePage:
             raise ValueError("Неверный тип символов. Допустимые значения: 'russian_letters', 'digits', 'punctuation'.")
 
         return ''.join(random.choice(chars) for _ in range(length))
+
+    # Метод генерирует имя
+    @staticmethod
+    def generate_random_russian_string(length):
+        # Русский алфавит в верхнем и нижнем регистре
+        russian_alphabet = 'абвгдежзийклмнопрстуфхцчшщъыьэюя'
+
+        # Генерируем строку случайных букв заданной длины
+        return ''.join(random.choice(russian_alphabet) for _ in range(length))
+

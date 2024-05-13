@@ -78,6 +78,10 @@ class MainPage(BasePage):
         title = self.find_element(*popup_back_call)
         return self.remove_newline(title)
 
+    # Возвращает объект веб-элемента "Заявка на обратный звонок"
+    def get_callback_title_element(self):
+        return self.find_element(*popup_back_call)
+
     # Возвращает инпут "Ваше имя" в окне "Заявка на обратный звонок"
     def get_callback_popup_name_input(self):
         return self.find_element(*input_name)

@@ -7,6 +7,7 @@ CALLBACK_TITLE = 'Ваша заявка была направлена нашим
 NAME_PLACEHOLDER = 'Антон'
 PHONE_PLACEHOLDER = '+7 (960) 345-44-19'
 NAME = 'Я'
+NAME_CALLBACK = 'Ян'
 PHONE = '+79999999999'
 PHONE_NEGATIVE = '+799999999999'
 RUSSIAN_LETTERS = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
