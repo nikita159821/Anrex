@@ -7,5 +7,4 @@ class TestTitle:
         title_back = MainPage(browser)
         title_back.open()
         title_back.click_callback_link()
-        actual_title_text = title_back.get_back_call()
-        assert TITLE_BACK_CALL == actual_title_text
+        assert title_back.get_back_call() == TITLE_BACK_CALL

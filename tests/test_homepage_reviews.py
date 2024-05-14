@@ -16,8 +16,7 @@ class TestHomepageReviews:
         reviews_displayed = MainPage(browser)
         reviews_displayed.open()
         reviews_displayed.get_section_reviews()
-        reviews_section = reviews_displayed.get_sections_reviews()
-        assert len(reviews_section) == 4
+        assert len(reviews_displayed.get_sections_reviews()) == 4
 
     # Карточка отзывов содержит имя
     def test_reviews_name(self, browser):

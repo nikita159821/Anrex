@@ -7,6 +7,5 @@ class TestDiscountedProducts:
     def test_discounted_products(self, browser):
         discounted = MainPage(browser)
         discounted.open()
-        discounted_products = discounted.get_discounted_products()
-        assert discounted_products.is_displayed()
+        assert discounted.get_discounted_products().is_displayed()
 

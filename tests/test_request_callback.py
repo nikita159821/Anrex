@@ -15,8 +15,7 @@ class TestCallbackRequestTests:
         submit_with_all.phone_input_send_keys()
         submit_with_all.click_submit_application_button()
         submit_with_all.wait(popup_back_call)
-        actual_title_text = submit_with_all.get_callback_title()
-        assert CALLBACK_TITLE == actual_title_text
+        assert submit_with_all.get_callback_title() == CALLBACK_TITLE
 
     # Отправляем заявку на обратный звонок. Ни одно поле не заполнено
     def test_callback_request_with_empty_fields(self, browser):

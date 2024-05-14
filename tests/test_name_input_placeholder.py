@@ -7,5 +7,4 @@ class TestInputNamePlaceholder:
         name_placeholder = MainPage(browser)
         name_placeholder.open()
         name_placeholder.city_wrap_click()
-        name_placeholder = name_placeholder.get_name_input_placeholder()
-        assert NAME_PLACEHOLDER == name_placeholder
+        assert name_placeholder.get_name_input_placeholder() == NAME_PLACEHOLDER

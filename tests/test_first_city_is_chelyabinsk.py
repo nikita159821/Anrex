@@ -7,5 +7,4 @@ class TestCityIsChelyabinsk:
         first_city = MainPage(browser)
         first_city.open()
         first_city.city_wrap_click()
-        popup_city = first_city.first_sity()
-        assert popup_city == CITY
+        assert first_city.first_sity() == CITY

@@ -8,5 +8,4 @@ class TestLogo:
         # Открываем страницу
         anrex_page.open()
         # Получаем и сохраняем ссылку на img
-        actual_logo_src = anrex_page.get_logo_src()
-        assert EXPECTED_LOGO_SRC == actual_logo_src
+        assert anrex_page.get_logo_src() == EXPECTED_LOGO_SRC

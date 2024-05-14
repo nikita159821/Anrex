@@ -23,8 +23,7 @@ class TestNameInputSendKeys:
         name_input_send_keys.phone_input_send_keys()
         name_input_send_keys.click_submit_application_button()
         name_input_send_keys.wait(popup_back_call)
-        actual_title_text = name_input_send_keys.get_callback_title()
-        assert CALLBACK_TITLE == actual_title_text
+        assert name_input_send_keys.get_callback_title() == CALLBACK_TITLE
 
     # Удаляем введенные данные из поля "Ваше имя"
     def test_name_input_delete_send_keys(self, browser):
@@ -32,12 +31,10 @@ class TestNameInputSendKeys:
         name_input_delete.open()
         name_input_delete.click_callback_link()
         name_input_delete.name_input_send_keys()
-        # Получаем текущее значение поля "Ваше имя"
-        name_input = name_input_delete.get_callback_popup_name_input()
         # Удаляем введнный текст
         name_input_delete.name_input_delete()
         # Проверяем, что значение поля  изменилось после удаления данных
-        assert name_input.get_attribute("value") == ''
+        assert name_input_delete.get_callback_popup_name_input().get_attribute("value") == ''
 
     # Вводим цифры в поле "Ваше имя"
     def test_negative_name_field_rejects_digits(self, browser):
