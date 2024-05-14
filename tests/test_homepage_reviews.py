@@ -56,7 +56,7 @@ class TestHomepageReviews:
         assert review_card_hover.get_read_more_link_text() == "Читать отзыв полностью"
 
     # При нажатии на "Читать отзыв полностью" появляется модальное окно
-    def test_modal_window_opens_when_read_more_link_clicked(self,browser):
+    def test_modal_window_opens_when_read_more_link_clicked(self, browser):
         modal_window_opens = MainPage(browser)
         modal_window_opens.open()
         modal_window_opens.get_section_reviews()
@@ -65,7 +65,7 @@ class TestHomepageReviews:
         assert modal_window_opens.get_review_popup().is_displayed()
 
     # Модальное окно с отзывом закрывается через крестик
-    def test_review_modal_closes_with_close_button(self,browser):
+    def test_review_modal_closes_with_close_button(self, browser):
         modal_close_button = MainPage(browser)
         modal_close_button.open()
         modal_close_button.get_section_reviews()
@@ -75,7 +75,7 @@ class TestHomepageReviews:
         assert not modal_close_button.get_review_popup().is_displayed()
 
     # Модальное окно с отзывом закрывается через оверлей
-    def test_review_popup_closes_via_overlay(self,browser):
+    def test_review_popup_closes_via_overlay(self, browser):
         closes_via_overlay = MainPage(browser)
         closes_via_overlay.open()
         closes_via_overlay.get_section_reviews()
