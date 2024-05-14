@@ -1,5 +1,7 @@
+import time
+
 from pages.anrex_main_page import MainPage
-from tests.data import TITLE_VALENCIA, TITLE_JAZZ
+from tests.data import TITLE_VALENCIA, TITLE_JAZZ, TITLE_BUTTON
 
 
 class TestHomepageCollections:
@@ -27,3 +29,9 @@ class TestHomepageCollections:
         collections_left.click_button_left()
         assert collections_left.collections_title_valencia() == TITLE_VALENCIA
 
+    # В блоке "Наши коллекции" отображается кнопка "Смотреть коллекцию"
+    def test_collection_button_is_displayed(self, browser):
+        button_is_displayed = MainPage(browser)
+        button_is_displayed.open()
+        button_is_displayed.get_section_collections()
+        assert button_is_displayed.get_button_collections() == TITLE_BUTTON

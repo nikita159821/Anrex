@@ -60,3 +60,8 @@ button_right = (By.XPATH, "//div[@class='slider-arrow next slick-arrow']")
 button_left = (By.XPATH, "//div[@class='slider-arrow prev slick-arrow']")
 collections_title_jazz = (By.XPATH, "//h4[text()='Коллекция «Джаз»']")
 collections_title_valencia = (By.XPATH, "//h4[text()='Коллекция «Валенсия»']")
+button_collections = (By.XPATH, "//h4[text()='Коллекция «Джаггер»']/following-sibling::span[@class='btn btn-success']")
+
+
+
+
