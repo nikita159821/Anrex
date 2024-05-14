@@ -66,9 +66,13 @@ reviews = (By.XPATH, "//section[@class='index-reviews']")
 review_cards = (By.CSS_SELECTOR, '.reviews-wrap .review-item')
 review_card = (By.CSS_SELECTOR, '.reviews-wrap .review-item')
 # Получение имени автора отзыва
-name = (By.CSS_SELECTOR, 'div.col-lg-3:nth-child(1) > div:nth-child(1) > h4:nth-child(1)')
+name = (By.XPATH, '//div[contains(@class, "review-item")]/h4[text()="Светлана"]')
 # Получение даты отзыва
-date = (By.CSS_SELECTOR, 'div.col-lg-3:nth-child(1) > div:nth-child(1) > span:nth-child(2)')
+date = (By.XPATH, '//span[text()="15.04.2024"]')
 # Получение текста отзыва
-content = (By.CSS_SELECTOR, 'div.col-lg-3:nth-child(1) > div:nth-child(1) > div:nth-child(4)')
+content = (By.XPATH, '//div[@class="review-content" and contains(text(), "Спасибо команде доставщиков!")]')
 stars = (By.CSS_SELECTOR, '.review-stars .stars')
+read_more_link = (By.CSS_SELECTOR, 'span.read_more > a.btn-link')
+review_popup = (By.CSS_SELECTOR, 'div.popup-box > div.review_popup')
+popup_close_review = (By.CSS_SELECTOR, '#review-item > div.popup-box > button.callback-close.popup-close')
+review_item = (By.XPATH, "//*[@id='review-item']")

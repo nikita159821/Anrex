@@ -343,7 +343,7 @@ class MainPage(BasePage):
 
     # Возвращает кнопку "Смотреть коллекцию"
     def get_click_button_collections(self):
-        return self.click_element(button_collections)
+        self.click_element(button_collections)
 
     # Возвращает текст кнопки "Смотреть все коллекции"
     def get_button_text_view_collections(self):
@@ -351,7 +351,7 @@ class MainPage(BasePage):
 
     # Возвращает кнопку "Смотреть все коллекции"
     def get_click_button_view_collections(self):
-        return self.click_element(view_collections)
+        self.click_element(view_collections)
 
     # Возвращает блок "Отзывы наших покупателей"
     def get_section_reviews(self):
@@ -375,3 +375,19 @@ class MainPage(BasePage):
     # Возвращает рейтинг в отзывах
     def get_review_stars(self):
         return self.find_element(*stars)
+
+    # Возвращает текст кнопки "Читать отзыв полностью"
+    def get_read_more_link_text(self):
+        return self.get_text_of_element(read_more_link)
+
+    # Возвращает кнопку "Читать отзыв полностью"
+    def get_read_more_link_click(self):
+        self.click_element(read_more_link)
+
+    # Возвращает модально окно с отзывом
+    def get_review_popup(self):
+        return self.find_element(*review_popup)
+
+    # Нажимает кнопку закрытия модального окна с отзывом
+    def click_popup_close_review(self):
+        self.click_element(popup_close_review)

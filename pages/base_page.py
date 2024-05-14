@@ -69,6 +69,11 @@ class BasePage:
         # Перемещает курсор на 10 пикселей вправо и 10 пикселей вниз от текущего положения
         self.actions.move_by_offset(500, 10).perform()
 
+    # Общий метод. Закрывает модальное окно через оверлей
+    def close_modal_via_overlay(self, overlay_locator):
+        overlay = self.find_element(*overlay_locator)
+        self.actions.move_to_element_with_offset(overlay, 10, 10).click().perform()
+
     # Общий метод. Проходимся циклом по разделу в шапке сайта.
     def get_elements_text(self, locator):
         try:
