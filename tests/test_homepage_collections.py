@@ -2,6 +2,7 @@ import time
 
 from pages.anrex_main_page import MainPage
 from tests.data import TITLE_VALENCIA, TITLE_JAZZ, TITLE_BUTTON
+from tests.urls import URL, COLLECTIONS_JAGGER, CHAPTER_COLLECTIONS
 
 
 class TestHomepageCollections:
@@ -34,4 +35,12 @@ class TestHomepageCollections:
         button_is_displayed = MainPage(browser)
         button_is_displayed.open()
         button_is_displayed.get_section_collections()
-        assert button_is_displayed.get_button_collections() == TITLE_BUTTON
+        assert button_is_displayed.get_button_text_collections() == TITLE_BUTTON
+
+    # Редирект в коллекцию, по нажатию на кнопку "Смотреть коллекцию"
+    def test_redirect_collection_button(self,browser):
+        redirect_collection = MainPage(browser)
+        redirect_collection.open()
+        redirect_collection.get_section_collections()
+        redirect_collection.get_click_button_collections()
+        assert redirect_collection.get_current_url() == f'{URL}{CHAPTER_COLLECTIONS}{COLLECTIONS_JAGGER}'

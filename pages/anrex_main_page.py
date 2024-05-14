@@ -338,5 +338,9 @@ class MainPage(BasePage):
         return self.get_text_of_element(collections_title_valencia)
 
     # Возвращает текст кнопки "Смотреть коллекцию"
-    def get_button_collections(self):
+    def get_button_text_collections(self):
         return self.get_text_of_element(button_collections)
+
+    # Возвращает кнопку "Смотреть коллекцию"
+    def get_click_button_collections(self):
+        return self.click_element(button_collections)
