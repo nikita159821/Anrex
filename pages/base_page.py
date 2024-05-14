@@ -12,7 +12,7 @@ from tests.urls import URL, CHAPTER_CATALOG
 
 
 # Класс для кастомного условия ожидания
-class element_text_to_be:
+class element_to_be:
     def __init__(self, locator):
         self.locator = locator
 
@@ -84,9 +84,9 @@ class BasePage:
         actions.move_to_element(element).perform()
         return element
 
-    def wait_for_element_text_to_be(self, locator):
+    def wait_for_element(self, locator):
         try:
-            WebDriverWait(self.browser, 10).until(element_text_to_be(locator))
+            WebDriverWait(self.browser, 10).until(element_to_be(locator))
         except TimeoutException:
             return False
         return True

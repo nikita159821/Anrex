@@ -26,6 +26,6 @@ class TestHeaderBasket:
         count_displayed = MainPage(browser)
         count_displayed.open_catalog()
         count_displayed.button_click_cards()
-        count_displayed.wait_for_element_text_to_be(basket_count)
+        count_displayed.wait_for_element(basket_count)
         basket_count_value = count_displayed.basket_count()
         assert basket_count_value == '(1)'

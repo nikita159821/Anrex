@@ -1,5 +1,7 @@
+from locators.main_page_locators import img
 from pages.anrex_main_page import MainPage
 from tests.data import TEXT_SLIDER_LIVING_ROOMS, TEXT_SLIDER_CABINETS, TITLE_SLIDER
+from tests.urls import URL, IMG
 
 
 class TestSectionSlider:
@@ -32,3 +34,13 @@ class TestSectionSlider:
         furniture_is_displayed.open()
         furniture_is_displayed.get_slider()
         assert furniture_is_displayed.get_text_slider_title() == TITLE_SLIDER
+
+    # При переключении разделов через карусель, меняется фото раздела
+    def test_section_photo_changes_carousel(self, browser):
+        photo_changes = MainPage(browser)
+        photo_changes.open()
+        photo_changes.get_slider()
+        photo_changes.click_up_slider()
+        photo_changes.wait_for_element(img)
+        assert photo_changes.get_slider_img() == f'{URL}{IMG}'
+
