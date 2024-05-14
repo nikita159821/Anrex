@@ -32,6 +32,9 @@ class BasePage:
     def find_element(self, *args):
         return self.browser.find_element(*args)
 
+    def find_elements(self, *args):
+        return self.browser.find_elements(*args)
+
     # Общий метод для поиска элемента
     def find(self, locator):
         return self.find_element(*locator)

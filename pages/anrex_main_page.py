@@ -352,3 +352,26 @@ class MainPage(BasePage):
     # Возвращает кнопку "Смотреть все коллекции"
     def get_click_button_view_collections(self):
         return self.click_element(view_collections)
+
+    # Возвращает блок "Отзывы наших покупателей"
+    def get_section_reviews(self):
+        return self.get_element_scroll_to_element(reviews)
+
+    # Возвращает список элементов "Отзывы наших покупателей"
+    def get_sections_reviews(self):
+        return self.find_elements(*review_cards)
+
+    # Возвращаем словарь с данными отзыва
+    def get_review_data(self):
+        name_text = self.get_text_of_element(name)
+        date_text = self.get_text_of_element(date)
+        content_text = self.get_text_of_element(content)
+        return {
+            'name': name_text,
+            'date': date_text,
+            'content': content_text
+        }
+
+    # Возвращает рейтинг в отзывах
+    def get_review_stars(self):
+        return self.find_element(*stars)

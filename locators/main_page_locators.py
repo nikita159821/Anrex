@@ -62,6 +62,13 @@ collections_title_jazz = (By.XPATH, "//h4[text()='Коллекция «Джаз�
 collections_title_valencia = (By.XPATH, "//h4[text()='Коллекция «Валенсия»']")
 button_collections = (By.XPATH, "//h4[text()='Коллекция «Джаггер»']/following-sibling::span[@class='btn btn-success']")
 view_collections = (By.CSS_SELECTOR, '.collections_slider_wrap > div:nth-child(3) > a:nth-child(1)')
-
-
-
+reviews = (By.XPATH, "//section[@class='index-reviews']")
+review_cards = (By.CSS_SELECTOR, '.reviews-wrap .review-item')
+review_card = (By.CSS_SELECTOR, '.reviews-wrap .review-item')
+# Получение имени автора отзыва
+name = (By.CSS_SELECTOR, 'div.col-lg-3:nth-child(1) > div:nth-child(1) > h4:nth-child(1)')
+# Получение даты отзыва
+date = (By.CSS_SELECTOR, 'div.col-lg-3:nth-child(1) > div:nth-child(1) > span:nth-child(2)')
+# Получение текста отзыва
+content = (By.CSS_SELECTOR, 'div.col-lg-3:nth-child(1) > div:nth-child(1) > div:nth-child(4)')
+stars = (By.CSS_SELECTOR, '.review-stars .stars')
