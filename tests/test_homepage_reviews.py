@@ -1,6 +1,9 @@
+import time
+
 from locators.main_page_locators import review_cards, reviews
 from pages.anrex_main_page import MainPage
-from tests.data import REVIEWS_NAME, REVIEWS_DATE, REVIEWS_CONTENT
+from tests.data import REVIEWS_NAME, REVIEWS_DATE, REVIEWS_CONTENT, REVIEWS_BUTTON
+from tests.urls import URL, CHAPTER_REVIEWS
 
 
 class TestHomepageReviews:
@@ -82,3 +85,18 @@ class TestHomepageReviews:
         closes_via_overlay.get_read_more_link_click()
         closes_via_overlay.close_modal_via_overlay(reviews)
         assert not closes_via_overlay.get_review_popup().is_displayed()
+
+    # В блоке "Отзывы наших покупателей" отображается кнопка "Смотреть все отзывы"
+    def test_visibility_of_view_all_reviews_button(self,browser):
+        reviews_button = MainPage(browser)
+        reviews_button.open()
+        reviews_button.get_section_reviews()
+        assert reviews_button.get_text_button_review() == REVIEWS_BUTTON
+
+    # По клику на "Смотреть все отзывы" редирект на страницу с отзывами.
+    def test_redirect_to_reviews_page_on_view_all_reviews_click(self, browser):
+        redirect_to_reviews = MainPage(browser)
+        redirect_to_reviews.open()
+        redirect_to_reviews.get_section_reviews()
+        redirect_to_reviews.button_review_click()
+        assert redirect_to_reviews.get_current_url() == f'{URL}{CHAPTER_REVIEWS}'

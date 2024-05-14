@@ -391,3 +391,11 @@ class MainPage(BasePage):
     # Нажимает кнопку закрытия модального окна с отзывом
     def click_popup_close_review(self):
         self.click_element(popup_close_review)
+
+    # Возвращает текст кнопки "Смотреть все отзывы"
+    def get_text_button_review(self):
+        return self.get_text_of_element(review_button)
+
+    # Возвращает кнопку "Смотреть все отзывы"
+    def button_review_click(self):
+        return self.click_element(review_button)
