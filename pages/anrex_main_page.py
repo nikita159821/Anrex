@@ -344,3 +344,11 @@ class MainPage(BasePage):
     # Возвращает кнопку "Смотреть коллекцию"
     def get_click_button_collections(self):
         return self.click_element(button_collections)
+
+    # Возвращает текст кнопки "Смотреть все коллекции"
+    def get_button_text_view_collections(self):
+        return self.get_text_of_element(view_collections)
+
+    # Возвращает кнопку "Смотреть все коллекции"
+    def get_click_button_view_collections(self):
+        return self.click_element(view_collections)

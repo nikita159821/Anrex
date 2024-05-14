@@ -1,7 +1,7 @@
 import time
 
 from pages.anrex_main_page import MainPage
-from tests.data import TITLE_VALENCIA, TITLE_JAZZ, TITLE_BUTTON
+from tests.data import TITLE_VALENCIA, TITLE_JAZZ, TITLE_BUTTON, TITLE_BUTTON_VIEW_COLLECTIONS
 from tests.urls import URL, COLLECTIONS_JAGGER, CHAPTER_COLLECTIONS
 
 
@@ -38,9 +38,24 @@ class TestHomepageCollections:
         assert button_is_displayed.get_button_text_collections() == TITLE_BUTTON
 
     # Редирект в коллекцию, по нажатию на кнопку "Смотреть коллекцию"
-    def test_redirect_collection_button(self,browser):
+    def test_redirect_collection_button(self, browser):
         redirect_collection = MainPage(browser)
         redirect_collection.open()
         redirect_collection.get_section_collections()
         redirect_collection.get_click_button_collections()
         assert redirect_collection.get_current_url() == f'{URL}{CHAPTER_COLLECTIONS}{COLLECTIONS_JAGGER}'
+
+    # Под блоком "Наши коллекции" отображается кнопка "Смотреть все коллекции"
+    def test_display_view_all_collections_button(self, browser):
+        collections_button = MainPage(browser)
+        collections_button.open()
+        collections_button.get_section_collections()
+        assert collections_button.get_button_text_view_collections() == TITLE_BUTTON_VIEW_COLLECTIONS
+
+    # Редирект в коллекции, по нажатию на кнопку "Смотреть все коллекции"
+    def test_redirect_collections_button(self,browser):
+        redirect_collection = MainPage(browser)
+        redirect_collection.open()
+        redirect_collection.get_section_collections()
+        redirect_collection.get_click_button_view_collections()
+        assert redirect_collection.get_current_url() == f'{URL}{CHAPTER_COLLECTIONS}'

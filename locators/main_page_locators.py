@@ -61,7 +61,7 @@ button_left = (By.XPATH, "//div[@class='slider-arrow prev slick-arrow']")
 collections_title_jazz = (By.XPATH, "//h4[text()='Коллекция «Джаз»']")
 collections_title_valencia = (By.XPATH, "//h4[text()='Коллекция «Валенсия»']")
 button_collections = (By.XPATH, "//h4[text()='Коллекция «Джаггер»']/following-sibling::span[@class='btn btn-success']")
-
+view_collections = (By.CSS_SELECTOR, '.collections_slider_wrap > div:nth-child(3) > a:nth-child(1)')
 
 
 
