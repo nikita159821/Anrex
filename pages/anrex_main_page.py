@@ -308,3 +308,7 @@ class MainPage(BasePage):
     # Возвращает текст раздела на слайдере "Кабинетов"
     def get_text_slider_cabinets(self):
         return self.get_text_of_element(slider_gostinie)
+
+    # Возвращает текст "Мебель для" из слайдера разделов
+    def get_text_slider_title(self):
+        return self.get_text_of_element(carousel_title)

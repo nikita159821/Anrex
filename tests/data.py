@@ -25,3 +25,4 @@ ABOUT = 'О компании'
 ABOUT_LIST = ['Информация о компании Дилерам Контакты']
 TEXT_SLIDER_LIVING_ROOMS = 'Гостиных'
 TEXT_SLIDER_CABINETS = 'Кабинетов'
+TITLE_SLIDER = 'Мебель для'
