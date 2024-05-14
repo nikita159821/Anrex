@@ -288,3 +288,23 @@ class MainPage(BasePage):
     # Нажимает на "Кровати и матрасы" в блоке "Популярные категории"
     def click_popular_categories(self):
         self.click_element(popular_section_banner)
+
+    # Возвращает слайдер с разделами на главной
+    def get_slider(self):
+        return self.get_element_scroll_to_element(banner_slider)
+
+    # Нажимает кнопку вверх на слайдере разделов
+    def click_up_slider(self):
+        self.click_element(button_up)
+
+    # Нажимает кнопку вверх на слайдере разделов
+    def click_down_slider(self):
+        self.click_element(button_down)
+
+    # Возвращает текст раздела на слайдере "Гостиных"
+    def get_text_slider_living_rooms(self):
+        return self.get_text_of_element(slider_gostinie)
+
+    # Возвращает текст раздела на слайдере "Кабинетов"
+    def get_text_slider_cabinets(self):
+        return self.get_text_of_element(slider_gostinie)

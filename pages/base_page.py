@@ -77,6 +77,13 @@ class BasePage:
             # Возвращаем пустой список, если элементы не найдены
             return []
 
+    # Общий метод для получения и прокрутки страницы до элемента
+    def get_element_scroll_to_element(self, locator):
+        element = self.find_element(*locator)
+        actions = ActionChains(self.browser)
+        actions.move_to_element(element).perform()
+        return element
+
     def wait_for_element_text_to_be(self, locator):
         try:
             WebDriverWait(self.browser, 10).until(element_text_to_be(locator))
