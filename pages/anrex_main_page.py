@@ -316,3 +316,23 @@ class MainPage(BasePage):
     # Возвращает изображение на на слейдере разделов
     def get_slider_img(self):
         return self.get_attribute_of_element(img, 'src')
+
+    # Возвращает блок "Наши коллекции"
+    def get_section_collections(self):
+        return self.get_element_scroll_to_element(section_collections)
+
+    # Нажимает стрелку вправо в разделе "Наши коллекции"
+    def click_button_right(self):
+        self.click_element(button_right)
+
+    # Нажимает стрелку влево в разделе "Наши коллекции"
+    def click_button_left(self):
+        self.click_element(button_left)
+
+    # Возвращает название коллекции "Джаз"
+    def collections_title_jazz(self):
+        return self.get_text_of_element(collections_title_jazz)
+
+    # Возвращает название коллекции "Валенсия"
+    def collections_title_valencia(self):
+        return self.get_text_of_element(collections_title_valencia)
