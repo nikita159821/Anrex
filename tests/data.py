@@ -1,4 +1,5 @@
 EXPECTED_LOGO_SRC = 'http://dev.anrex.new.maslovart.beget.tech/local/templates/anrex/img/logo.svg'
+LOGO_SRC_FOOTER = 'http://dev.anrex.new.maslovart.beget.tech/local/templates/anrex/img/logo.svg'
 CITY = 'Москва'
 HOVER = 'Время работы с 10.00 до 21.00'
 TITLE_BACK_CALL = 'Заявка на обратный звонок'
@@ -7,8 +8,38 @@ CALLBACK_TITLE = 'Ваша заявка была направлена нашим
 NAME_PLACEHOLDER = 'Антон'
 PHONE_PLACEHOLDER = '+7 (960) 345-44-19'
 NAME = 'Я'
+NAME_CALLBACK = 'Ян'
 PHONE = '+79999999999'
 PHONE_NEGATIVE = '+799999999999'
 RUSSIAN_LETTERS = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
 DISPLAYS_PHONE = '8-495-009-12-34'
 SEARCH = 'http://www.w3.org/2000/svg'
+CATALOG = 'Каталог'
+FURNITURE_AND_ROOM = [
+    'По типу мебели Тумбы Шкафы Комоды Кровати и матрасы Столы Витрины Полки Зеркала Вешалки Аксессуары Смотреть '
+    'всё По комнате Прихожие Спальни Гардеробные Детские Кабинеты Гостиные Столовые']
+COLLECTIONS = 'Коллекции'
+DELIVERY = 'Покупателям'
+DELIVERY_LIST = ['Доставка и сборка Гарантия на мебель Адреса магазинов']
+SALE = 'Скидки'
+ABOUT = 'О компании'
+ABOUT_LIST = ['Информация о компании Дилерам Контакты']
+TEXT_SLIDER_LIVING_ROOMS = 'Гостиных'
+TEXT_SLIDER_CABINETS = 'Кабинетов'
+TITLE_SLIDER = 'Мебель для'
+TITLE_JAZZ = 'Коллекция «Джаз»'
+TITLE_VALENCIA = 'Коллекция «Валенсия»'
+TITLE_BUTTON = 'Смотреть коллекцию'
+TITLE_BUTTON_VIEW_COLLECTIONS = 'Смотреть все коллекции'
+REVIEWS_NAME = 'Светлана'
+REVIEWS_DATE = '15.04.2024'
+REVIEWS_CONTENT = ('Спасибо команде доставщиков! Пошли на встречу, подкорректировали время доставки, занесли все в '
+                   'квартиру очень бережно разгрузили.')
+REVIEWS_BUTTON = 'Смотреть все отзывы'
+COMPANY_FOOTER = '© 2010-2022 ООО «АНРЭКС»'
+TEXT_COMMENT = ('Вы можете оставить свой комментарий, чтобы мы смогли улучшить сервис или задать нам интересующий Вас '
+                'вопрос')
+TITLE_BUTTON_FOOTER = 'Написать нам'
+TITLE_FORM_FEEDBACK = 'Форма обратной связи'
+TEXT_FORM_FEEDBACK = 'Напишите нам и поделитесь Вашим мнением о нас либо задайте любые интересующие вопросы.'
+RADIO_BUTTON = ['Благодарность', 'Предложение', 'Замечания и пожелания', 'Вопрос']

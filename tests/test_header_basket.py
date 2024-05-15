@@ -9,16 +9,14 @@ class TestHeaderBasket:
     def test_header_displays_basket(self, browser):
         displays_basket = MainPage(browser)
         displays_basket.open()
-        basket = displays_basket.get_sale_basket()
-        assert basket.is_displayed()
+        assert displays_basket.get_sale_basket().is_displayed()
 
     # Проверка перехода в корзину через иконку на главной странице
     def test_header_basket_redirect(self, browser):
         displays_basket = MainPage(browser)
         displays_basket.open()
         displays_basket.sale_basket_click()
-        basket_url = displays_basket.get_current_url()
-        assert basket_url == f'{URL}{BASKET}'
+        assert displays_basket.get_current_url() == f'{URL}{BASKET}'
 
     # Проверка, что при добавлении товара в корзину
     # возле иконки появляется кол-во товаров
@@ -26,6 +24,5 @@ class TestHeaderBasket:
         count_displayed = MainPage(browser)
         count_displayed.open_catalog()
         count_displayed.button_click_cards()
-        count_displayed.wait_for_element_text_to_be(basket_count)
-        basket_count_value = count_displayed.basket_count()
-        assert basket_count_value == '(1)'
+        count_displayed.wait_for_element(basket_count)
+        assert count_displayed.basket_count() == '(1)'

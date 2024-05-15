@@ -6,5 +6,4 @@ class TestInputName:
         name_input = MainPage(browser)
         name_input.open()
         name_input.city_wrap_click()
-        name_input = name_input.get_callback_popup_name_input()
-        assert not name_input.is_displayed()
+        assert not  name_input.get_callback_popup_name_input().is_displayed()

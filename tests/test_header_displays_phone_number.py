@@ -6,5 +6,4 @@ class TestDisplaysPhone:
     def test_header_displays_phone_number(self, browser):
         displays_phone = MainPage(browser)
         displays_phone.open()
-        phone = displays_phone.get_phone_callback()
-        assert phone == DISPLAYS_PHONE
+        assert displays_phone.get_phone_callback() == DISPLAYS_PHONE

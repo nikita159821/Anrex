@@ -7,7 +7,6 @@ class TestLogoRedirection:
         logo_redirects = MainPage(browser)
         # Открываем страницу
         logo_redirects.open()
-
         # Нажимаем на логотип anrex
         logo_redirects.logo_click()
         # Сравнимаем полученный URL с ожидаемым URL

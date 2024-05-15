@@ -1,5 +1,3 @@
-import time
-
 from pages.anrex_main_page import MainPage
 
 
@@ -9,5 +7,4 @@ class TestClosePopupOverlay:
         close_popup.open()
         close_popup.city_wrap_click()
         close_popup.slider_click()
-        popup_city = close_popup.get_title_sale()
-        assert popup_city.is_displayed()
+        assert close_popup.get_title_sale().is_displayed()

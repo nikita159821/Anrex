@@ -1,18 +1,18 @@
 import random
 import string
 
-from selenium.common import TimeoutException
+from selenium.common import TimeoutException, NoSuchElementException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 from locators.main_page_locators import slider
 from tests.data import RUSSIAN_LETTERS
-from tests.urls import URL, CATALOG
+from tests.urls import URL, CHAPTER_CATALOG
 
 
 # Класс для кастомного условия ожидания
-class element_text_to_be:
+class element_to_be:
     def __init__(self, locator):
         self.locator = locator
 
@@ -32,6 +32,9 @@ class BasePage:
     def find_element(self, *args):
         return self.browser.find_element(*args)
 
+    def find_elements(self, *args):
+        return self.browser.find_elements(*args)
+
     # Общий метод для поиска элемента
     def find(self, locator):
         return self.find_element(*locator)
@@ -41,9 +44,68 @@ class BasePage:
         element = self.find(locator)
         element.click()
 
-    def wait_for_element_text_to_be(self, locator):
+    # Общий метод для получения атрибута элемента
+    def get_attribute_of_element(self, locator, attribute):
+        element = self.find(locator)
+        return element.get_attribute(attribute)
+
+    # Общий метод для получения текста элемента
+    def get_text_of_element(self, locator):
+        element = self.find(locator)
+        return element.text
+
+    # Общий метод для получения текста разделов из шапки
+    @staticmethod
+    def get_text_of_elements(element):
+        return element.text
+
+    # Общий метод. Наводит курсорс на выпадающий список
+    def move_cursor_to_element(self, locator):
+        element = self.browser.find_element(*locator)
+        self.actions.move_to_element(element).perform()
+
+    # Общий метод. снимает фокус с выпадающего списка
+    def defocus_element(self):
+        # Перемещает курсор на 10 пикселей вправо и 10 пикселей вниз от текущего положения
+        self.actions.move_by_offset(500, 10).perform()
+
+    # Общий метод. Закрывает модальное окно через оверлей
+    def close_modal_via_overlay(self, overlay_locator):
+        overlay = self.find_element(*overlay_locator)
+        self.actions.move_to_element_with_offset(overlay, 10, 10).click().perform()
+
+    # Общий метод. Проходимся циклом по разделу в шапке сайта.
+    def get_elements_text_header(self, locator):
         try:
-            WebDriverWait(self.browser, 10).until(element_text_to_be(locator))
+            elements = self.browser.find_elements(*locator)
+            elements_text = [self.remove_newlines(element) for element in elements]
+            print(elements_text)
+            return elements_text
+        except NoSuchElementException:
+            # Возвращаем пустой список, если элементы не найдены
+            return []
+
+    # Общий метод. Проходимся циклом по каждому элементу в форме обратной связи и возвращаем текст.
+    def get_elements_text_form(self, locator):
+        try:
+            elements = self.browser.find_elements(*locator)
+            elements_text = [element.text for element in elements]
+            print(elements_text)
+            return elements_text
+        except NoSuchElementException:
+            # Возвращаем пустой список, если элементы не найдены
+            return []
+
+    # Общий метод для получения и прокрутки страницы до элемента
+    def get_element_scroll_to_element(self, locator):
+        element = self.find_element(*locator)
+        actions = ActionChains(self.browser)
+        actions.move_to_element(element).perform()
+        return element
+
+    def wait_for_element(self, locator):
+        try:
+            WebDriverWait(self.browser, 10).until(element_to_be(locator))
         except TimeoutException:
             return False
         return True
@@ -57,7 +119,7 @@ class BasePage:
 
     # Открываем страницу каталога
     def open_catalog(self):
-        self.browser.get(f'{URL}{CATALOG}')
+        self.browser.get(f'{URL}{CHAPTER_CATALOG}')
 
     # Возвращаем текущую страницу
     def get_current_url(self):
@@ -67,18 +129,28 @@ class BasePage:
     def slider_click(self):
         self.find_element(*slider).click()
 
-    # Метод удаляет переносы строк
-    @staticmethod
-    def remove_newline(element):
+    # Метод удаляет переносы строк. Используется для тестов в шапки сайта
+    def remove_newline(self, locator):
         """
-        Удаляет переносы строк из текста элемента.
+        Находит элемент по указанному локатору и возвращает его текст без переносов строк.
+
+        :param locator: кортеж, содержащий стратегию поиска и значение локатора
+        :return: str
+        """
+        element = self.find_element(*locator)
+        text = element.text
+        return text.replace('\n', ' ')
+
+    # Метод удаляет переносы строк. Используется для тестов в форме обратной связи
+    def remove_newlines(self, element):
+        """
+        Принимает WebElement и возвращает его текст без переносов строк.
 
         :param element: WebElement
         :return: str
         """
         text = element.text
-        actual_text = text.replace('\n', ' ')
-        return actual_text
+        return text.replace('\n', ' ')
 
     # Метод для генерации букв, цифра, спец.символов
     @staticmethod
@@ -106,3 +178,12 @@ class BasePage:
             raise ValueError("Неверный тип символов. Допустимые значения: 'russian_letters', 'digits', 'punctuation'.")
 
         return ''.join(random.choice(chars) for _ in range(length))
+
+    # Метод генерирует имя
+    @staticmethod
+    def generate_random_russian_string(length):
+        # Русский алфавит в верхнем и нижнем регистре
+        russian_alphabet = 'абвгдежзийклмнопрстуфхцчшщъыьэюя'
+
+        # Генерируем строку случайных букв заданной длины
+        return ''.join(random.choice(russian_alphabet) for _ in range(length))
