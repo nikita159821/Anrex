@@ -2,7 +2,7 @@ from selenium.webdriver import ActionChains
 
 from locators.main_page_locators import *
 from pages.base_page import BasePage
-from tests.data import NAME, PHONE, PHONE_NEGATIVE
+from tests.data import NAME, PHONE, PHONE_NEGATIVE, COMMENT
 
 
 class MainPage(BasePage):
@@ -105,9 +105,14 @@ class MainPage(BasePage):
         name_input = self.get_callback_popup_name_input()
         name_input.send_keys(name)
 
+    # Модифицированный метод для ввода текста в поле "Ваше имя" в форме обратной связи
+    def form_name_input_send_keys(self, name):
+        name_input = self.get_form_feedback_name_input()
+        name_input.send_keys(name)
+
     # Модифицированный метод для ввода номера телефон в поле "Ваш телефон"
-    def t_phone_input_send_keys(self, phone):
-        phone_input = self.get_callback_popup_phone_input()
+    def t_phone_input_send_keys(self, phone, input_locator):
+        phone_input = self.find_element(*input_locator)
         phone_input.send_keys(phone)
 
     # Вводим в поле "Ваш телефон"
@@ -399,7 +404,7 @@ class MainPage(BasePage):
 
     # Возвращает кнопку "Смотреть все отзывы"
     def button_review_click(self):
-        return self.click_element(review_button)
+        self.click_element(review_button)
 
     # Получаем, сохраняем и возвращаем ссылку на img в футере
     def get_logo_footer_src(self):
@@ -451,7 +456,7 @@ class MainPage(BasePage):
 
     # Возвращает поле "Ваш вопрос/комментарий" в форме обратной связи
     def get_form_feedback_question_input(self):
-        return self.find_element(*input_question_form_feedback)
+        return self.find_element(*question_placeholder_form_feedback)
 
     # Возвращает плейсхолдер из поля "Ваше имя", в форме обратной связи
     def get_placeholder_form_feedback_name_input(self):
@@ -472,3 +477,22 @@ class MainPage(BasePage):
     # Возвращает кнопку "Отправить форму" в форме обратной связи
     def get_button_form_feedback(self):
         return self.find_element(*button_form_feedback)
+
+    # Нажимает первую радиокнопку в форме обратной связи
+    def click_checkbox_radio_button(self):
+        self.click_element(checkbox_radio_button)
+
+    def text_popup_form_feedback(self):
+        return self.remove_newline(popup_form_feedback)
+
+    # Вводит данные в поле "Введите Ваш комментарий" в форме обратной связи
+    def send_keys_input_question_form_feedback(self):
+        self.get_form_feedback_question_input().send_keys(COMMENT)
+
+    # Вводит данные в поле "Ваш телефон" в форме обратной связи
+    def send_keys_input_phone_form_feedback(self):
+        self.get_form_feedback_phone_input().send_keys(PHONE)
+
+    # Нажимает кнопку "Отправить форму" в форме обратной связи
+    def click_button_form_feedback(self):
+        self.click_element(button_form_feedback)

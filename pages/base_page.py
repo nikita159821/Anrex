@@ -152,32 +152,33 @@ class BasePage:
         text = element.text
         return text.replace('\n', ' ')
 
-    # Метод для генерации букв, цифра, спец.символов
+        # Метод для генерации букв, цифра, спец.символов
     @staticmethod
     def generate_name_and_phone(length, char_type):
-        """
-        Генерирует строку заданной длины из указанного набора символов.
+            """
+            Генерирует строку заданной длины из указанного набора символов.
 
-        Args:
-            length (int): Длина строки.
-            char_type (str): Тип символов, из которых будет генерироваться строка.
-                Возможные значения: 'russian_letters','letters', 'digits', 'punctuation'.
+            Args:
+                length (int): Длина строки.
+                char_type (str): Тип символов, из которых будет генерироваться строка.
+                    Возможные значения: 'russian_letters','letters', 'digits', 'punctuation'.
 
-        Returns:
-            str: Сгенерированная строка.
-        """
-        if char_type == 'russian_letters':
-            chars = RUSSIAN_LETTERS
-        elif char_type == 'letters':
-            chars = string.ascii_letters
-        elif char_type == 'digits':
-            chars = string.digits
-        elif char_type == 'punctuation':
-            chars = string.punctuation
-        else:
-            raise ValueError("Неверный тип символов. Допустимые значения: 'russian_letters', 'digits', 'punctuation'.")
+            Returns:
+                str: Сгенерированная строка.
+            """
+            if char_type == 'russian_letters':
+                chars = RUSSIAN_LETTERS
+            elif char_type == 'letters':
+                chars = string.ascii_letters
+            elif char_type == 'digits':
+                chars = string.digits
+            elif char_type == 'punctuation':
+                chars = string.punctuation
+            else:
+                raise ValueError(
+                    "Неверный тип символов. Допустимые значения: 'russian_letters', 'digits', 'punctuation'.")
 
-        return ''.join(random.choice(chars) for _ in range(length))
+            return ''.join(random.choice(chars) for _ in range(length))
 
     # Метод генерирует имя
     @staticmethod

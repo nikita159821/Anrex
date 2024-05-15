@@ -1,13 +1,13 @@
 import pytest
 
-from locators.main_page_locators import popup_back_call
+from locators.main_page_locators import popup_back_call, input_name
 from pages.anrex_main_page import MainPage
 from tests.data import CALLBACK_TITLE
 
 
 class TestNameInputSendKeys:
 
-    # Вводим в поле "Ваше имя" 2 буквы, 49, букв, 50 букв, 51 букву
+    # Вводим в поле "Ваше имя" 2 буквы, 49, букв, 50 букв, 51 букву, 10 букв на латинице
     @pytest.mark.parametrize('name', [
         MainPage.generate_name_and_phone(2, 'russian_letters'),
         MainPage.generate_name_and_phone(49, 'russian_letters'),
@@ -81,7 +81,7 @@ class TestNameInputSendKeys:
         # Получаем текущее значение поля "Ваше имя"
         name_input = name_input_send_keys.get_callback_popup_name_input()
         current_value = name_input.get_attribute("value")
-        # Вводим спец.символы в поле "Ваше имя"
-        name_input_send_keys.generate_name_and_phone(5,'punctuation')
+        # Вводим спец. символы в поле "Ваше имя"
+        name_input_send_keys.generate_name_and_phone(5, 'punctuation')
         # Проверяем, что значение поля не изменилось после ввода пробела
         assert name_input.get_attribute("value") == current_value

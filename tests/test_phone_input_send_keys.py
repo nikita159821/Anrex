@@ -1,5 +1,6 @@
 import pytest
 
+from locators.main_page_locators import input_phone
 from pages.anrex_main_page import MainPage
 
 
@@ -27,7 +28,7 @@ class TestPhoneInputSendKeys:
         phone_input = phone_input_delete.get_callback_popup_phone_input()
         # Удаляем введнный номер
         phone_input_delete.phone_input_delete()
-        # Проверяем, что значение поля  изменилось после удаления данных
+        # Проверяем, что значение поля изменилось после удаления данных
         assert phone_input.get_attribute("value") == ''
 
     # Тест на ввод 12 цифр
@@ -42,7 +43,7 @@ class TestPhoneInputSendKeys:
         current_value = phone_input.get_attribute("value")
         assert phone_input.get_attribute("value") == current_value
 
-    # Вводим в поле "Ваш телефон 1 цифру, буквы, спец.символы,пробел.
+    # Вводим в поле "Ваш телефон 1 цифру, буквы, спец. символы, пробел.
     @pytest.mark.parametrize('phone', [
         MainPage.generate_name_and_phone(1, 'digits'),
         MainPage.generate_name_and_phone(5, 'russian_letters'),
@@ -53,7 +54,7 @@ class TestPhoneInputSendKeys:
         phone_input_send_keys = MainPage(browser)
         phone_input_send_keys.open()
         phone_input_send_keys.click_callback_link()
-        phone_input_send_keys.t_phone_input_send_keys(phone)
+        phone_input_send_keys.t_phone_input_send_keys(phone, input_phone)
         input_element = phone_input_send_keys.phone_input_send_keys_error()
         class_attribute = input_element.get_attribute('class')
         # Проверка наличия класса 'has-error'
