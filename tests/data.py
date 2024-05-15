@@ -1,4 +1,5 @@
 EXPECTED_LOGO_SRC = 'http://dev.anrex.new.maslovart.beget.tech/local/templates/anrex/img/logo.svg'
+LOGO_SRC_FOOTER = 'http://dev.anrex.new.maslovart.beget.tech/local/templates/anrex/img/logo.svg'
 CITY = 'Москва'
 HOVER = 'Время работы с 10.00 до 21.00'
 TITLE_BACK_CALL = 'Заявка на обратный звонок'
@@ -35,3 +36,7 @@ REVIEWS_DATE = '15.04.2024'
 REVIEWS_CONTENT = ('Спасибо команде доставщиков! Пошли на встречу, подкорректировали время доставки, занесли все в '
                    'квартиру очень бережно разгрузили.')
 REVIEWS_BUTTON = 'Смотреть все отзывы'
+COMPANY_FOOTER = '© 2010-2022 ООО «АНРЭКС»'
+TEXT_COMMENT = ('Вы можете оставить свой комментарий, чтобы мы смогли улучшить сервис или задать нам интересующий Вас '
+                'вопрос')
+TITLE_BUTTON_FOOTER = 'Написать нам'

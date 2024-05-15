@@ -357,6 +357,10 @@ class MainPage(BasePage):
     def get_section_reviews(self):
         return self.get_element_scroll_to_element(reviews)
 
+    # Возвращает блок футера
+    def get_section_footer(self):
+        return self.get_element_scroll_to_element(footer)
+
     # Возвращает список элементов "Отзывы наших покупателей"
     def get_sections_reviews(self):
         return self.find_elements(*review_cards)
@@ -399,3 +403,19 @@ class MainPage(BasePage):
     # Возвращает кнопку "Смотреть все отзывы"
     def button_review_click(self):
         return self.click_element(review_button)
+
+    # Получаем, сохраняем и возвращаем ссылку на img в футере
+    def get_logo_footer_src(self):
+        return self.get_attribute_of_element(logo_footer, 'src')
+
+    # Возвращает наименование организации в футере
+    def get_text_footer(self):
+        return self.get_text_of_element(name_of_company)
+
+    # Возвращает информацию для покупателя в футере
+    def get_text_comment(self):
+        return self.get_text_of_element(text_comment)
+
+    # Возвращает текст кнопки "Написать нам
+    def get_text_button_write(self):
+        return self.get_text_of_element(button_write)

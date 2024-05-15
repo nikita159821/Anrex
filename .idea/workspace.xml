@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="" />
+    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,29 +42,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for test_callback_link.TestCallbackLink.test_callback_link.executor": "Run",
-    "Python tests.Python tests for test_callback_popup_name_input.TestInputName.test_callback_popup_name_input.executor": "Run",
-    "Python tests.Python tests for test_callback_popup_phone_input.TestInputPhone.test_callback_popup_phone_input.executor": "Run",
-    "Python tests.Python tests for test_callback_popup_title.TestPopupTitle.test_callback_popup_title.executor": "Run",
-    "Python tests.Python tests for test_close_popup.TestClosePopup.executor": "Run",
-    "Python tests.Python tests for test_close_popup.TestClosePopup.test_close_popup.executor": "Run",
-    "Python tests.Python tests for test_close_popup_city.TestClosePopup.test_close_popup.executor": "Run",
-    "Python tests.Python tests for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay.executor": "Run",
-    "Python tests.Python tests for test_first_city_is_chelyabinsk.TestCityIsChelyabinsk.test_close_popup_city_overlay.executor": "Run",
-    "Python tests.Python tests for test_first_city_is_chelyabinsk.TestCityIsChelyabinsk.test_first_city_is_chelyabinsk.executor": "Run",
-    "Python tests.Python tests for test_hover.TestHover.test_hover.executor": "Run",
-    "Python tests.Python tests for test_name_input_placeholder.TestInputNamePlaceholder.test_name_input_placeholder.executor": "Run",
-    "Python tests.Python tests for test_name_input_send_keys.TestNameInputSendKeys.test_name_input_send_keys.executor": "Run",
-    "Python tests.Python tests for test_phone_input_placeholder.TestInputPhonePlaceholder.test_phone_input_placeholder.executor": "Run",
-    "Python tests.Python tests for test_title_back_call.TestTitle.test_title_back_call.executor": "Run",
-    "Python tests.Python tests for test_title_city.TestCity.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
-    "last_opened_file_path": "/home/nikita/PycharmProjects/Anrex"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_callback_link.TestCallbackLink.test_callback_link.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_callback_popup_name_input.TestInputName.test_callback_popup_name_input.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_callback_popup_phone_input.TestInputPhone.test_callback_popup_phone_input.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_callback_popup_title.TestPopupTitle.test_callback_popup_title.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_close_popup.TestClosePopup.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_close_popup.TestClosePopup.test_close_popup.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_close_popup_city.TestClosePopup.test_close_popup.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_first_city_is_chelyabinsk.TestCityIsChelyabinsk.test_close_popup_city_overlay.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_first_city_is_chelyabinsk.TestCityIsChelyabinsk.test_first_city_is_chelyabinsk.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_hover.TestHover.test_hover.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_name_input_placeholder.TestInputNamePlaceholder.test_name_input_placeholder.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_name_input_send_keys.TestNameInputSendKeys.test_name_input_send_keys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_phone_input_placeholder.TestInputPhonePlaceholder.test_phone_input_placeholder.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_title_back_call.TestTitle.test_title_back_call.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_title_city.TestCity.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nikita/PycharmProjects/Anrex&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python tests.Python tests for test_name_input_send_keys.TestNameInputSendKeys.test_name_input_send_keys">
     <configuration name="Python tests for test_callback_popup_name_input.TestInputName.test_callback_popup_name_input" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
