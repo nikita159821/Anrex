@@ -64,7 +64,7 @@ class BasePage:
         element = self.browser.find_element(*locator)
         self.actions.move_to_element(element).perform()
 
-    # Общий метод. снимает фокус с выпадающего списка
+    # Общий метод. Снимает фокус с выпадающего списка
     def defocus_element(self):
         # Перемещает курсор на 10 пикселей вправо и 10 пикселей вниз от текущего положения
         self.actions.move_by_offset(500, 10).perform()
@@ -130,6 +130,7 @@ class BasePage:
         self.find_element(*slider).click()
 
     # Метод удаляет переносы строк. Используется для тестов в шапки сайта
+
     def remove_newline(self, locator):
         """
         Находит элемент по указанному локатору и возвращает его текст без переносов строк.
@@ -152,10 +153,11 @@ class BasePage:
         text = element.text
         return text.replace('\n', ' ')
 
-        # Метод для генерации букв, цифра, спец.символов
+        # Метод для генерации букв, цифр, спец. символов
+
     @staticmethod
     def generate_name_and_phone(length, char_type):
-            """
+        """
             Генерирует строку заданной длины из указанного набора символов.
 
             Args:
@@ -166,19 +168,19 @@ class BasePage:
             Returns:
                 str: Сгенерированная строка.
             """
-            if char_type == 'russian_letters':
-                chars = RUSSIAN_LETTERS
-            elif char_type == 'letters':
-                chars = string.ascii_letters
-            elif char_type == 'digits':
-                chars = string.digits
-            elif char_type == 'punctuation':
-                chars = string.punctuation
-            else:
-                raise ValueError(
-                    "Неверный тип символов. Допустимые значения: 'russian_letters', 'digits', 'punctuation'.")
+        if char_type == 'russian_letters':
+            chars = RUSSIAN_LETTERS
+        elif char_type == 'letters':
+            chars = string.ascii_letters
+        elif char_type == 'digits':
+            chars = string.digits
+        elif char_type == 'punctuation':
+            chars = string.punctuation
+        else:
+            raise ValueError(
+                "Неверный тип символов. Допустимые значения: 'russian_letters', 'digits', 'punctuation'.")
 
-            return ''.join(random.choice(chars) for _ in range(length))
+        return ''.join(random.choice(chars) for _ in range(length))
 
     # Метод генерирует имя
     @staticmethod
