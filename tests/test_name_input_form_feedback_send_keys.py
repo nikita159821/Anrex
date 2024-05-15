@@ -1,3 +1,5 @@
+import time
+
 import pytest
 
 from locators.main_page_locators import input_name_form_feedback, popup_form_feedback
@@ -21,8 +23,9 @@ class TestNameInputSendKeys:
         name_input_form_feedback_send_keys.get_section_footer()
         name_input_form_feedback_send_keys.click_button_write()
         name_input_form_feedback_send_keys.click_checkbox_radio_button()
-        random_name = name_input_form_feedback_send_keys.generate_random_russian_string(2)
-        name_input_form_feedback_send_keys.form_name_input_send_keys(random_name)
+        time.sleep(4)
+        name_input_form_feedback_send_keys.form_name_input_send_keys(name)
+        time.sleep(4)
         name_input_form_feedback_send_keys.send_keys_input_phone_form_feedback()
         name_input_form_feedback_send_keys.send_keys_input_question_form_feedback()
         name_input_form_feedback_send_keys.click_button_form_feedback()
