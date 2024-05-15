@@ -468,3 +468,7 @@ class MainPage(BasePage):
     # Возвращает плейсхолдер из поля "Введите Ваш комментарий", в форме обратной связи
     def get_placeholder_form_question_input(self):
         return self.get_attribute_of_element(question_placeholder_form_feedback, 'placeholder')
+
+    # Возвращает кнопку "Отправить форму" в форме обратной связи
+    def get_button_form_feedback(self):
+        return self.find_element(*button_form_feedback)

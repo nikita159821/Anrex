@@ -111,3 +111,11 @@ class TestFeedbackForm:
         placeholder_form_feedback_phone.get_section_footer()
         placeholder_form_feedback_phone.click_button_write()
         assert placeholder_form_feedback_phone.get_placeholder_form_question_input() == QUESTION_PLACEHOLDER
+
+    # Форма обратной связи содержит кнопку "Отправить форму"
+    def test_button_form_feedback_is_displayed(self, browser):
+        button_form_feedback = MainPage(browser)
+        button_form_feedback.open()
+        button_form_feedback.get_section_footer()
+        button_form_feedback.click_button_write()
+        assert button_form_feedback.get_button_form_feedback().is_displayed()
