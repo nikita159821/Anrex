@@ -436,3 +436,19 @@ class MainPage(BasePage):
     # Закрыват форму обратной связи через крестик
     def click_form_close(self):
         self.click_element(form_close)
+
+    # Возвращает поле "Ваше имя" в форме обратной связи
+    def get_form_feedback_name_input(self):
+        return self.find_element(*input_name_form_feedback)
+
+    # Возвращает поле "Ваш телефон" в форме обратной связи
+    def get_form_feedback_phone_input(self):
+        return self.find_element(*input_phone_form_feedback)
+
+    # Возвращает поле "Ваша почта" в форме обратной связи
+    def get_form_feedback_email_input(self):
+        return self.find_element(*input_email_form_feedback)
+
+    # Возвращает поле "Ваш вопрос/комментарий" в форме обратной связи
+    def get_form_feedback_question_input(self):
+        return self.find_element(*input_question_form_feedback)
