@@ -17,7 +17,7 @@ class TestHeaderDelivery:
         displays_dropdown = MainPage(browser)
         displays_dropdown.open()
         displays_dropdown.move_cursor_to_element(delivery)
-        assert displays_dropdown.get_elements_text(delivery_list) == DELIVERY_LIST
+        assert displays_dropdown.get_elements_text_header(delivery_list) == DELIVERY_LIST
 
     # Проверка, что при снятии фокуса с раздела "Каталог", выпадающий список закрывается
     def test_catalog_dropdown_closes_on_focus_loss(self, browser):
@@ -25,7 +25,7 @@ class TestHeaderDelivery:
         closes_on_focus.open()
         closes_on_focus.move_cursor_to_element(delivery)
         closes_on_focus.defocus_element()
-        assert closes_on_focus.get_elements_text('') == []
+        assert closes_on_focus.get_elements_text_header('') == []
 
     # По клику на раздел "Покупателям", редирект в "Доставка и сборка"
     def test_redirection_delivery(self, browser):

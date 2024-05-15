@@ -75,10 +75,21 @@ class BasePage:
         self.actions.move_to_element_with_offset(overlay, 10, 10).click().perform()
 
     # Общий метод. Проходимся циклом по разделу в шапке сайта.
-    def get_elements_text(self, locator):
+    def get_elements_text_header(self, locator):
         try:
             elements = self.browser.find_elements(*locator)
-            elements_text = [self.remove_newline(element) for element in elements]
+            elements_text = [self.remove_newlines(element) for element in elements]
+            print(elements_text)
+            return elements_text
+        except NoSuchElementException:
+            # Возвращаем пустой список, если элементы не найдены
+            return []
+
+    # Общий метод. Проходимся циклом по каждому элементу в форме обратной связи и возвращаем текст.
+    def get_elements_text_form(self, locator):
+        try:
+            elements = self.browser.find_elements(*locator)
+            elements_text = [element.text for element in elements]
             print(elements_text)
             return elements_text
         except NoSuchElementException:
@@ -118,18 +129,28 @@ class BasePage:
     def slider_click(self):
         self.find_element(*slider).click()
 
-    # Метод удаляет переносы строк
-    @staticmethod
-    def remove_newline(element):
+    # Метод удаляет переносы строк. Используется для тестов в шапки сайта
+    def remove_newline(self, locator):
         """
-        Удаляет переносы строк из текста элемента.
+        Находит элемент по указанному локатору и возвращает его текст без переносов строк.
+
+        :param locator: кортеж, содержащий стратегию поиска и значение локатора
+        :return: str
+        """
+        element = self.find_element(*locator)
+        text = element.text
+        return text.replace('\n', ' ')
+
+    # Метод удаляет переносы строк. Используется для тестов в форме обратной связи
+    def remove_newlines(self, element):
+        """
+        Принимает WebElement и возвращает его текст без переносов строк.
 
         :param element: WebElement
         :return: str
         """
         text = element.text
-        actual_text = text.replace('\n', ' ')
-        return actual_text
+        return text.replace('\n', ' ')
 
     # Метод для генерации букв, цифра, спец.символов
     @staticmethod

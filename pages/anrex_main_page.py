@@ -58,18 +58,15 @@ class MainPage(BasePage):
 
     # Возвращает тайтл "Заявка на обратный звонок"
     def get_back_call(self):
-        title = self.find_element(*title_back_call)
-        return self.remove_newline(title)
+        return self.remove_newline(title_back_call)
 
     # Возвращает текст в окне "Заявка на обратный звонок"
     def get_callback_popup_title(self):
-        title = self.find_element(*text_back_call)
-        return self.remove_newline(title)
+        return self.remove_newline(text_back_call)
 
     # Возвращает текст в окне "Заявка на обратный звонок" после оформления заявки
     def get_callback_title(self):
-        title = self.find_element(*popup_back_call)
-        return self.remove_newline(title)
+        return self.remove_newline(popup_back_call)
 
     # Возвращает объект веб-элемента "Заявка на обратный звонок"
     def get_callback_title_element(self):
@@ -416,6 +413,23 @@ class MainPage(BasePage):
     def get_text_comment(self):
         return self.get_text_of_element(text_comment)
 
-    # Возвращает текст кнопки "Написать нам
+    # Возвращает текст кнопки "Написать нам"
     def get_text_button_write(self):
         return self.get_text_of_element(button_write)
+
+    # Нажимает кнопку "Написать нам"
+    def click_button_write(self):
+        self.click_element(button_write)
+
+    # Возвращает тайтл "Форма обратной связи"
+    def get_title_form_feedback(self):
+        return self.get_text_of_element(title_form_feedback)
+
+    # Возвращает текст в форме обратной связи
+    def get_text_form_feedback(self):
+        return self.remove_newline(text_form_feedback)
+
+    # Возвращает текст радиокнопок в форме обратной связи
+    def get_text_radio_buttons(self):
+        return self.get_elements_text_form(radio_buttons)
+

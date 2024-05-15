@@ -24,7 +24,7 @@ class TestHeaderAbout:
         displays_dropdown = MainPage(browser)
         displays_dropdown.open()
         displays_dropdown.move_cursor_to_element(about)
-        assert displays_dropdown.get_elements_text(about_list) == ABOUT_LIST
+        assert displays_dropdown.get_elements_text_header(about_list) == ABOUT_LIST
 
     # Проверка, что при снятии фокуса с раздела "О компании", выпадающий список закрывается
     def test_about_dropdown_closes_on_focus_loss(self, browser):
@@ -32,7 +32,7 @@ class TestHeaderAbout:
         closes_on_focus.open()
         closes_on_focus.move_cursor_to_element(about)
         closes_on_focus.defocus_element()
-        assert closes_on_focus.get_elements_text('') == []
+        assert closes_on_focus.get_elements_text_header('') == []
 
     # При нажатии на "Информация о компании" редирект в раздел "Информация о компании"
     def test_displays_dropdown_redirection_dropdown(self, browser):

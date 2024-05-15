@@ -17,7 +17,7 @@ class TestHeaderCatalog:
         displays_dropdown = MainPage(browser)
         displays_dropdown.open()
         displays_dropdown.move_cursor_to_element(catalog)
-        assert displays_dropdown.get_elements_text(by_type_of_furniture_and_room) == FURNITURE_AND_ROOM
+        assert displays_dropdown.get_elements_text_header(by_type_of_furniture_and_room) == FURNITURE_AND_ROOM
 
     # Проверка, что при снятии фокуса с раздела "Каталог", выпадающий список закрывается
     def test_catalog_dropdown_closes_on_focus_loss(self, browser):
@@ -25,7 +25,7 @@ class TestHeaderCatalog:
         closes_on_focus.open()
         closes_on_focus.move_cursor_to_element(catalog)
         closes_on_focus.defocus_element()
-        assert closes_on_focus.get_elements_text('') == []
+        assert closes_on_focus.get_elements_text_header('') == []
 
     # Проверка, открытия раздела "Тумбы" через "Каталог"
     def test_catalog_chests_section(self, browser):
