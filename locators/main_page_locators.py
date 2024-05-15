@@ -86,4 +86,4 @@ title_form_feedback = (By.XPATH, "//h3[text()='Форма обратной св�
 text_form_feedback = (By.XPATH, "//p[contains(., 'Напишите нам и поделитесь Вашим мнением о нас')]")
 radio_buttons = (By.CSS_SELECTOR, "div.form-control-radio label")
 form_close = (By.XPATH, "//div[@id='callback_form']/div/button")
-test = (By.XPATH, "//div[@id='callback_form']")
+form_overlay_close = (By.XPATH, "//div[@id='callback_form']")

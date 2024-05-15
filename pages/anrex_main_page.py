@@ -433,6 +433,6 @@ class MainPage(BasePage):
     def get_text_radio_buttons(self):
         return self.get_elements_text_form(radio_buttons)
 
-    # Закрыват форму обратной связи
+    # Закрыват форму обратной связи через крестик
     def click_form_close(self):
         self.click_element(form_close)

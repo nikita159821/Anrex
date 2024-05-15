@@ -1,6 +1,4 @@
-import time
-
-from locators.main_page_locators import reviews, test, footer, section_collections
+from locators.main_page_locators import form_overlay_close
 from pages.anrex_main_page import MainPage
 from tests.data import TITLE_FORM_FEEDBACK, TEXT_FORM_FEEDBACK, RADIO_BUTTON
 
@@ -46,6 +44,6 @@ class TestFeedbackForm:
         form_close_overlay.open()
         form_close_overlay.get_section_footer()
         form_close_overlay.click_button_write()
-        time.sleep(3)
-        form_close_overlay.close_modal_via_overlay(test)
-        time.sleep(5)
+        form_close_overlay.close_modal_via_overlay(form_overlay_close)
+        assert form_close_overlay.get_title_form_feedback() == ''
+
