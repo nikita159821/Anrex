@@ -33,7 +33,7 @@ class TestNameInputSendKeys:
         name_input_delete.name_input_send_keys()
         # Удаляем введнный текст
         name_input_delete.name_input_delete()
-        # Проверяем, что значение поля  изменилось после удаления данных
+        # Проверяем, что значение поля изменилось после удаления данных
         assert name_input_delete.get_callback_popup_name_input().get_attribute("value") == ''
 
     # Вводим цифры в поле "Ваше имя"
@@ -73,7 +73,7 @@ class TestNameInputSendKeys:
         # Проверяем, что значение поля не изменилось после ввода пробела
         assert name_input.get_attribute("value") == current_value
 
-    # Вводим спец.символы в поле "Ваше имя"
+    # Вводим спец. символы в поле "Ваше имя"
     def test_special_chars_allowed_in_name_field(self, browser):
         name_input_send_keys = MainPage(browser)
         name_input_send_keys.open()

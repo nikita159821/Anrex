@@ -100,7 +100,7 @@ class MainPage(BasePage):
     def name_input_delete(self):
         self.get_callback_popup_name_input().clear()
 
-    # Модифицированный метод для ввода текста в поле "Ваше имя"
+    # Модифицированный метод для ввода текста в поле "Ваше имя" в форме обратный звонок
     def t_name_input_send_keys(self, name):
         name_input = self.get_callback_popup_name_input()
         name_input.send_keys(name)
