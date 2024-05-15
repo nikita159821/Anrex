@@ -452,3 +452,19 @@ class MainPage(BasePage):
     # Возвращает поле "Ваш вопрос/комментарий" в форме обратной связи
     def get_form_feedback_question_input(self):
         return self.find_element(*input_question_form_feedback)
+
+    # Возвращает плейсхолдер из поля "Ваше имя", в форме обратной связи
+    def get_placeholder_form_feedback_name_input(self):
+        return self.get_attribute_of_element(name_placeholder_form_feedback, 'placeholder')
+
+    # Возвращает плейсхолдер из поля "Ваш телефон", в форме обратной связи
+    def get_placeholder_form_feedback_phone_input(self):
+        return self.get_attribute_of_element(phone_placeholder_form_feedback, 'placeholder')
+
+    # Возвращает плейсхолдер из поля "Ваша почта", в форме обратной связи
+    def get_placeholder_form_feedback_email_input(self):
+        return self.get_attribute_of_element(email_placeholder_form_feedback, 'placeholder')
+
+    # Возвращает плейсхолдер из поля "Введите Ваш комментарий", в форме обратной связи
+    def get_placeholder_form_question_input(self):
+        return self.get_attribute_of_element(question_placeholder_form_feedback, 'placeholder')

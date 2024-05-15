@@ -1,6 +1,7 @@
 from locators.main_page_locators import form_overlay_close
 from pages.anrex_main_page import MainPage
-from tests.data import TITLE_FORM_FEEDBACK, TEXT_FORM_FEEDBACK, RADIO_BUTTON
+from tests.data import TITLE_FORM_FEEDBACK, TEXT_FORM_FEEDBACK, RADIO_BUTTON, NAME_PLACEHOLDER, PHONE_PLACEHOLDER, \
+    QUESTION_PLACEHOLDER, EMAIL_PLACEHOLDER
 
 
 class TestFeedbackForm:
@@ -78,3 +79,35 @@ class TestFeedbackForm:
         form_feedback_question.get_section_footer()
         form_feedback_question.click_button_write()
         assert form_feedback_question.get_form_feedback_question_input().is_displayed()
+
+    # Инпут "Ваше Имя" в Форме обратной связи содержит плейсхолдер
+    def test_placeholder_form_feedback_name_input(self, browser):
+        placeholder_form_feedback_name = MainPage(browser)
+        placeholder_form_feedback_name.open()
+        placeholder_form_feedback_name.get_section_footer()
+        placeholder_form_feedback_name.click_button_write()
+        assert placeholder_form_feedback_name.get_placeholder_form_feedback_name_input() == NAME_PLACEHOLDER
+
+    # Инпут "Ваше телефон" в Форме обратной связи содержит плейсхолдер
+    def test_placeholder_form_feedback_phone_input(self, browser):
+        placeholder_form_feedback_phone = MainPage(browser)
+        placeholder_form_feedback_phone.open()
+        placeholder_form_feedback_phone.get_section_footer()
+        placeholder_form_feedback_phone.click_button_write()
+        assert placeholder_form_feedback_phone.get_placeholder_form_feedback_phone_input() == PHONE_PLACEHOLDER
+
+    # Инпут "Ваша почта" в Форме обратной связи содержит плейсхолдер
+    def test_placeholder_form_feedback_email_input(self, browser):
+        placeholder_form_feedback_email = MainPage(browser)
+        placeholder_form_feedback_email.open()
+        placeholder_form_feedback_email.get_section_footer()
+        placeholder_form_feedback_email.click_button_write()
+        assert placeholder_form_feedback_email.get_placeholder_form_feedback_email_input() == EMAIL_PLACEHOLDER
+
+    # Инпут "Ваш вопрос/комментарий*" в Форме обратной связи содержит плейсхолдер
+    def test_placeholder_form_feedback_question_input(self, browser):
+        placeholder_form_feedback_phone = MainPage(browser)
+        placeholder_form_feedback_phone.open()
+        placeholder_form_feedback_phone.get_section_footer()
+        placeholder_form_feedback_phone.click_button_write()
+        assert placeholder_form_feedback_phone.get_placeholder_form_question_input() == QUESTION_PLACEHOLDER
