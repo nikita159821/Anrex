@@ -1,6 +1,6 @@
 import pytest
 
-from locators.main_page_locators import popup_back_call, input_name
+from locators.main_page_locators import popup_back_call
 from pages.anrex_main_page import MainPage
 from tests.data import CALLBACK_TITLE
 
@@ -9,11 +9,11 @@ class TestNameInputSendKeys:
 
     # Вводим в поле "Ваше имя" 2 буквы, 49, букв, 50 букв, 51 букву, 10 букв на латинице
     @pytest.mark.parametrize('name', [
-        MainPage.generate_name_and_phone(2, 'russian_letters'),
-        MainPage.generate_name_and_phone(49, 'russian_letters'),
-        MainPage.generate_name_and_phone(50, 'russian_letters'),
-        MainPage.generate_name_and_phone(51, 'russian_letters'),
-        MainPage.generate_name_and_phone(10, 'letters'),
+        MainPage.generate_random_string(2, 'russian_letters'),
+        MainPage.generate_random_string(49, 'russian_letters'),
+        MainPage.generate_random_string(50, 'russian_letters'),
+        MainPage.generate_random_string(51, 'russian_letters'),
+        MainPage.generate_random_string(10, 'letters'),
     ])
     def test_positive_name_input_send_keys(self, browser, name):
         name_input_send_keys = MainPage(browser)
@@ -45,7 +45,7 @@ class TestNameInputSendKeys:
         name_input = rejects_digits.get_callback_popup_name_input()
         current_value = name_input.get_attribute("value")
         # Вводим цифры в поле "Ваше имя"
-        rejects_digits.generate_name_and_phone(5, 'digits')
+        rejects_digits.generate_random_string(5, 'digits')
         # Проверяем, что значение поля не изменилось после ввода цифр
         assert name_input.get_attribute("value") == current_value
 
@@ -82,6 +82,6 @@ class TestNameInputSendKeys:
         name_input = name_input_send_keys.get_callback_popup_name_input()
         current_value = name_input.get_attribute("value")
         # Вводим спец. символы в поле "Ваше имя"
-        name_input_send_keys.generate_name_and_phone(5, 'punctuation')
+        name_input_send_keys.generate_random_string(5, 'punctuation')
         # Проверяем, что значение поля не изменилось после ввода пробела
         assert name_input.get_attribute("value") == current_value

@@ -156,7 +156,7 @@ class BasePage:
         # Метод для генерации букв, цифр, спец. символов
 
     @staticmethod
-    def generate_name_and_phone(length, char_type):
+    def generate_random_string(length, char_type):
         """
             Генерирует строку заданной длины из указанного набора символов.
 
@@ -182,11 +182,19 @@ class BasePage:
 
         return ''.join(random.choice(chars) for _ in range(length))
 
-    # Метод генерирует имя
-    @staticmethod
-    def generate_random_russian_string(length):
+    # Метод генерирует имя или цифры
+    #@staticmethod
+    #def generate_random_string(length, string_type='russian_letters'):
         # Русский алфавит в верхнем и нижнем регистре
-        russian_alphabet = 'абвгдежзийклмнопрстуфхцчшщъыьэюя'
+        #russian_alphabet = 'абвгдежзийклмнопрстуфхцчшщъыьэюя'
+        #digits = string.digits  # Использование встроенного модуля string для получения цифр
 
-        # Генерируем строку случайных букв заданной длины
-        return ''.join(random.choice(russian_alphabet) for _ in range(length))
+        #if string_type == 'russian_letters':
+            #characters = russian_alphabet
+        #elif string_type == 'digits':
+            #characters = digits
+        #else:
+            #raise ValueError('Invalid string_type. Use "russian_letters" or "digits".')
+
+        # Генерируем строку случайных символов заданной длины
+        #return ''.join(random.choice(characters) for _ in range(length))

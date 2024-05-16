@@ -45,9 +45,9 @@ class TestPhoneInputSendKeys:
 
     # Вводим в поле "Ваш телефон 1 цифру, буквы, спец. символы, пробел.
     @pytest.mark.parametrize('phone', [
-        MainPage.generate_name_and_phone(1, 'digits'),
-        MainPage.generate_name_and_phone(5, 'russian_letters'),
-        MainPage.generate_name_and_phone(5, 'punctuation'),
+        MainPage.generate_random_string(1, 'digits'),
+        MainPage.generate_random_string(5, 'russian_letters'),
+        MainPage.generate_random_string(5, 'punctuation'),
         ' '  # Добавляем пробел как один из параметров
     ])
     def test_negative_phone_input_send_keys(self, browser, phone):
