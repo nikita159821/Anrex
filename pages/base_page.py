@@ -64,7 +64,7 @@ class BasePage:
         element = self.browser.find_element(*locator)
         self.actions.move_to_element(element).perform()
 
-    # Общий метод. снимает фокус с выпадающего списка
+    # Общий метод. Снимает фокус с выпадающего списка
     def defocus_element(self):
         # Перемещает курсор на 10 пикселей вправо и 10 пикселей вниз от текущего положения
         self.actions.move_by_offset(500, 10).perform()
@@ -72,7 +72,7 @@ class BasePage:
     # Общий метод. Закрывает модальное окно через оверлей
     def close_modal_via_overlay(self, overlay_locator):
         overlay = self.find_element(*overlay_locator)
-        self.actions.move_to_element_with_offset(overlay, 10, 10).click().perform()
+        self.actions.move_to_element_with_offset(overlay, 300, 10).click().perform()
 
     # Общий метод. Проходимся циклом по разделу в шапке сайта.
     def get_elements_text_header(self, locator):
@@ -130,6 +130,7 @@ class BasePage:
         self.find_element(*slider).click()
 
     # Метод удаляет переносы строк. Используется для тестов в шапки сайта
+
     def remove_newline(self, locator):
         """
         Находит элемент по указанному локатору и возвращает его текст без переносов строк.
@@ -152,20 +153,21 @@ class BasePage:
         text = element.text
         return text.replace('\n', ' ')
 
-    # Метод для генерации букв, цифра, спец.символов
+        # Метод для генерации букв, цифр, спец. символов
+
     @staticmethod
-    def generate_name_and_phone(length, char_type):
+    def generate_random_string(length, char_type):
         """
-        Генерирует строку заданной длины из указанного набора символов.
+            Генерирует строку заданной длины из указанного набора символов.
 
-        Args:
-            length (int): Длина строки.
-            char_type (str): Тип символов, из которых будет генерироваться строка.
-                Возможные значения: 'russian_letters','letters', 'digits', 'punctuation'.
+            Args:
+                length (int): Длина строки.
+                char_type (str): Тип символов, из которых будет генерироваться строка.
+                    Возможные значения: 'russian_letters','letters', 'digits', 'punctuation'.
 
-        Returns:
-            str: Сгенерированная строка.
-        """
+            Returns:
+                str: Сгенерированная строка.
+            """
         if char_type == 'russian_letters':
             chars = RUSSIAN_LETTERS
         elif char_type == 'letters':
@@ -175,15 +177,24 @@ class BasePage:
         elif char_type == 'punctuation':
             chars = string.punctuation
         else:
-            raise ValueError("Неверный тип символов. Допустимые значения: 'russian_letters', 'digits', 'punctuation'.")
+            raise ValueError(
+                "Неверный тип символов. Допустимые значения: 'russian_letters', 'digits', 'punctuation'.")
 
         return ''.join(random.choice(chars) for _ in range(length))
 
-    # Метод генерирует имя
-    @staticmethod
-    def generate_random_russian_string(length):
+    # Метод генерирует имя или цифры
+    #@staticmethod
+    #def generate_random_string(length, string_type='russian_letters'):
         # Русский алфавит в верхнем и нижнем регистре
-        russian_alphabet = 'абвгдежзийклмнопрстуфхцчшщъыьэюя'
+        #russian_alphabet = 'абвгдежзийклмнопрстуфхцчшщъыьэюя'
+        #digits = string.digits  # Использование встроенного модуля string для получения цифр
 
-        # Генерируем строку случайных букв заданной длины
-        return ''.join(random.choice(russian_alphabet) for _ in range(length))
+        #if string_type == 'russian_letters':
+            #characters = russian_alphabet
+        #elif string_type == 'digits':
+            #characters = digits
+        #else:
+            #raise ValueError('Invalid string_type. Use "russian_letters" or "digits".')
+
+        # Генерируем строку случайных символов заданной длины
+        #return ''.join(random.choice(characters) for _ in range(length))
