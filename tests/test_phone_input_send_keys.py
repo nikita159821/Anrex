@@ -1,3 +1,4 @@
+import allure
 import pytest
 
 from locators.main_page_locators import input_phone
@@ -6,7 +7,7 @@ from pages.anrex_main_page import MainPage
 
 class TestPhoneInputSendKeys:
 
-    # Тест на ввод 11 цифр
+    @allure.title('В форме "Заявка на обратный звонок", в поле "Ваш телефон" вводим 11 цифр')
     def test_positive_phone_input_send_keys(self, browser):
         phone_input_send_keys = MainPage(browser)
         phone_input_send_keys.open()
@@ -18,7 +19,7 @@ class TestPhoneInputSendKeys:
         current_value = phone_input.get_attribute("value")
         assert phone_input.get_attribute("value") == current_value
 
-    # Тест на удаление цифр
+    @allure.title('В форме "Заявка на обратный звонок", в поле "Ваш телефон" удаляем введенные значения')
     def test_phone_input_delete_send_keys(self, browser):
         phone_input_delete = MainPage(browser)
         phone_input_delete.open()
@@ -31,7 +32,7 @@ class TestPhoneInputSendKeys:
         # Проверяем, что значение поля изменилось после удаления данных
         assert phone_input.get_attribute("value") == ''
 
-    # Тест на ввод 12 цифр
+    @allure.title('В форме "Заявка на обратный звонок", в поле "Ваш телефон" вводим 12 цифр')
     def test_negative_phone_input_send_keys(self, browser):
         phone_input_send_keys = MainPage(browser)
         phone_input_send_keys.open()
@@ -43,13 +44,14 @@ class TestPhoneInputSendKeys:
         current_value = phone_input.get_attribute("value")
         assert phone_input.get_attribute("value") == current_value
 
-    # Вводим в поле "Ваш телефон" 1 цифру, буквы, спец. символы, пробел.
     @pytest.mark.parametrize('phone', [
         MainPage.generate_random_string(1, 'digits'),
         MainPage.generate_random_string(5, 'russian_letters'),
         MainPage.generate_random_string(5, 'punctuation'),
         ' '  # Добавляем пробел как один из параметров
     ])
+    @allure.title('В форме "Заявка на обратный звонок", в поле "Ваш телефон" вводим 1 цифру, буквы, спец. символы, '
+                  'пробел.')
     def test_negative_phone_input_send_keys(self, browser, phone):
         phone_input_send_keys = MainPage(browser)
         phone_input_send_keys.open()

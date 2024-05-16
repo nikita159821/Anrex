@@ -59,7 +59,7 @@ class BasePage:
     def get_text_of_elements(element):
         return element.text
 
-    # Общий метод. Наводит курсорс на выпадающий список
+    # Общий метод. Наводит курсор на выпадающий список
     def move_cursor_to_element(self, locator):
         element = self.browser.find_element(*locator)
         self.actions.move_to_element(element).perform()

@@ -317,7 +317,7 @@ class MainPage(BasePage):
     def get_text_slider_title(self):
         return self.get_text_of_element(carousel_title)
 
-    # Возвращает изображение на на слейдере разделов
+    # Возвращает изображение на слейдере разделов
     def get_slider_img(self):
         return self.get_attribute_of_element(img, 'src')
 

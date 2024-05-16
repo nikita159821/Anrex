@@ -1,8 +1,12 @@
+import allure
+
 from pages.anrex_main_page import MainPage
 from tests.data import TITLE_BACK_CALL
 
 
 class TestTitle:
+
+    @allure.title('В "Заявка на обратный звонок" отображается тайтл "Заявка на обратный звонок"')
     def test_title_back_call(self, browser):
         title_back = MainPage(browser)
         title_back.open()
