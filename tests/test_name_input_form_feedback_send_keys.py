@@ -41,8 +41,7 @@ class TestNameInputSendKeys:
         name_input_form_feedback_send_keys.open()
         name_input_form_feedback_send_keys.get_section_footer()
         name_input_form_feedback_send_keys.click_button_write()
-        name_input_form_feedback_send_keys.click_checkbox_radio_button()
-        name_input_form_feedback_send_keys.send_keys_form_feedback_name_input(name)
+        name_input_form_feedback_send_keys.form_name_input_send_keys(name)
         input_element = name_input_form_feedback_send_keys.name_input_send_keys_error()
         class_attribute = input_element.get_attribute('class')
         # Проверка наличия класса 'has-error'

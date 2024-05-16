@@ -102,13 +102,11 @@ class MainPage(BasePage):
 
     # Модифицированный метод для ввода текста в поле "Ваше имя" в форме обратный звонок
     def t_name_input_send_keys(self, name):
-        name_input = self.get_callback_popup_name_input()
-        name_input.send_keys(name)
+        self.get_callback_popup_name_input().send_keys(name)
 
     # Модифицированный метод для ввода текста в поле "Ваше имя" в форме обратной связи
     def form_name_input_send_keys(self, name):
-        name_input = self.get_form_feedback_name_input()
-        name_input.send_keys(name)
+         self.get_form_feedback_name_input().send_keys(name)
 
     # Модифицированный метод для ввода номера телефон в поле "Ваш телефон"
     def t_phone_input_send_keys(self, phone, input_locator):
@@ -496,11 +494,3 @@ class MainPage(BasePage):
     # Нажимает кнопку "Отправить форму" в форме обратной связи
     def click_button_form_feedback(self):
         self.click_element(button_form_feedback)
-
-    # Вводит данные в поле "Ваше имя" в форме обратной связи
-    def send_keys_form_feedback_name_input(self, name):
-        self.get_form_feedback_name_input().send_keys(name)
-
-    # Вводит пробел в поле "Ваше имя" в форме обратной связи
-    def send_keys_spaces_form_feedback_name_input(self):
-        self.get_form_feedback_name_input().send_keys(' ')
