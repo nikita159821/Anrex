@@ -108,6 +108,10 @@ class MainPage(BasePage):
     def form_name_input_send_keys(self, name):
          self.get_form_feedback_name_input().send_keys(name)
 
+    # Модифицированный метод для ввода текста в поле "Ваш телефон" в форме обратной связи
+    def form_phone_input_send_keys(self, phone):
+        self.get_form_feedback_phone_input().send_keys(phone)
+
     # Модифицированный метод для ввода номера телефон в поле "Ваш телефон"
     def t_phone_input_send_keys(self, phone, input_locator):
         phone_input = self.find_element(*input_locator)
@@ -494,3 +498,11 @@ class MainPage(BasePage):
     # Нажимает кнопку "Отправить форму" в форме обратной связи
     def click_button_form_feedback(self):
         self.click_element(button_form_feedback)
+
+    # Удаляем данные из поля "Ваш телефон"
+    def phone_input_delete_form_feedback(self):
+        self.get_form_feedback_phone_input().clear()
+
+    # Вводим в поле "Ваш телефон" 12 цифр в форме обратной связи
+    def send_keys_12_digits_form_feedback_phone_input(self):
+        self.get_form_feedback_phone_input().send_keys(PHONE_NEGATIVE)
