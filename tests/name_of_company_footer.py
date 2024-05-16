@@ -1,10 +1,11 @@
 from pages.anrex_main_page import MainPage
 from tests.data import COMPANY_FOOTER
+import allure
 
 
 class TestFooterCompany:
 
-    # В футере отображается наименование организации
+    @allure.title('В футере отображается наименование организации')
     def test_name_of_company_footer(self, browser):
         company_footer = MainPage(browser)
         company_footer.open()

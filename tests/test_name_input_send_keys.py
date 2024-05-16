@@ -1,3 +1,4 @@
+import allure
 import pytest
 
 from locators.main_page_locators import popup_back_call
@@ -7,7 +8,6 @@ from tests.data import CALLBACK_TITLE
 
 class TestNameInputSendKeys:
 
-    # Вводим в поле "Ваше имя" 2 буквы, 49, букв, 50 букв, 51 букву, 10 букв на латинице
     @pytest.mark.parametrize('name', [
         MainPage.generate_random_string(2, 'russian_letters'),
         MainPage.generate_random_string(49, 'russian_letters'),
@@ -15,6 +15,8 @@ class TestNameInputSendKeys:
         MainPage.generate_random_string(51, 'russian_letters'),
         MainPage.generate_random_string(10, 'letters'),
     ])
+    @allure.title('В форме "Заявка на обратный звонок", вводим в поле "Ваше имя" 2 буквы, 49, букв, 50 букв, '
+                  '51 букву, 10 букв на латинице')
     def test_positive_name_input_send_keys(self, browser, name):
         name_input_send_keys = MainPage(browser)
         name_input_send_keys.open()
@@ -25,7 +27,7 @@ class TestNameInputSendKeys:
         name_input_send_keys.wait(popup_back_call)
         assert name_input_send_keys.get_callback_title() == CALLBACK_TITLE
 
-    # Удаляем введенные данные из поля "Ваше имя"
+    @allure.title('В форме "Заявка на обратный звонок", удаляем введенные данные из поля "Ваше имя"')
     def test_name_input_delete_send_keys(self, browser):
         name_input_delete = MainPage(browser)
         name_input_delete.open()
@@ -42,9 +44,9 @@ class TestNameInputSendKeys:
         MainPage.generate_random_string(5, 'punctuation'),
         ' '
     ])
-    # Ввод в поле “Ваше имя” одной буквы, одной цифры, 5 спец. символов, пробел. Ожидаем, что поле подсвечивается
-    # красным. Форма обратной связи
-    def test_negative_name_input_send_keys(self, browser,name):
+    @allure.title('В форме "Заявка на обратный звонок", вводим в поле "Ваше имя" 1 букву, 1 цифру, 5 спец. символов, '
+                  'пробел.')
+    def test_negative_name_input_send_keys(self, browser, name):
         name_input_send_keys = MainPage(browser)
         name_input_send_keys.open()
         name_input_send_keys.click_callback_link()

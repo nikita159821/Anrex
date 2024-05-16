@@ -1,3 +1,4 @@
+import allure
 import pytest
 
 from locators.main_page_locators import popup_form_feedback, input_name_form_feedback
@@ -7,7 +8,6 @@ from tests.data import POPUP_TEXT_FORM_FEEDBACK
 
 class TestNameInputSendKeys:
 
-    # Вводим в поле "Ваше имя" 2 буквы, 49, букв, 50 букв, 51 букву, 10 букв на латинице
     @pytest.mark.parametrize('name', [
         MainPage.generate_random_string(2, 'russian_letters'),
         MainPage.generate_random_string(49, 'russian_letters'),
@@ -15,6 +15,8 @@ class TestNameInputSendKeys:
         MainPage.generate_random_string(51, 'russian_letters'),
         MainPage.generate_random_string(10, 'letters'),
     ])
+    @allure.title('Вводим в поле "Ваше имя" в форме обратной связи: 2 буквы, 49, букв, 50 букв, 51 букву, 10 букв на '
+                  'латинице')
     def test_positive_name_input_form_feedback_send_keys(self, browser, name):
         name_input_form_feedback_send_keys = MainPage(browser)
         name_input_form_feedback_send_keys.open()
@@ -34,8 +36,8 @@ class TestNameInputSendKeys:
         MainPage.generate_random_string(5, 'punctuation'),
         ' '
     ])
-    # Ввод в поле “Ваше имя” одной буквы, одной цифры, 5 спец. символов, пробел. Ожидаем, что поле подсвечивается
-    # красным. Форма обратной связи
+    @allure.title('Вводим в поле "Ваше имя" в форме обратной связи: одну букву, одну цифру, 5 спец. символов, '
+                  'пробел. Ожидаем, что поле подсвечивается красным.')
     def test_negative_name_input_form_feedback_send_keys(self, browser, name):
         name_input_form_feedback_send_keys = MainPage(browser)
         name_input_form_feedback_send_keys.open()

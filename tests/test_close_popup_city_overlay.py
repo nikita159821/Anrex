@@ -1,7 +1,10 @@
+import allure
+
 from pages.anrex_main_page import MainPage
 
 
 class TestClosePopupOverlay:
+    @allure.title('Модальное окно с выбором города закрывается через оверлей')
     def test_close_popup_city_overlay(self, browser):
         close_popup = MainPage(browser)
         close_popup.open()
