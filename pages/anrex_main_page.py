@@ -496,3 +496,11 @@ class MainPage(BasePage):
     # Нажимает кнопку "Отправить форму" в форме обратной связи
     def click_button_form_feedback(self):
         self.click_element(button_form_feedback)
+
+    # Вводит данные в поле "Ваше имя" в форме обратной связи
+    def send_keys_form_feedback_name_input(self, name):
+        self.get_form_feedback_name_input().send_keys(name)
+
+    # Вводит пробел в поле "Ваше имя" в форме обратной связи
+    def send_keys_spaces_form_feedback_name_input(self):
+        self.get_form_feedback_name_input().send_keys(' ')
