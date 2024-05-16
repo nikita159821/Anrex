@@ -9,6 +9,9 @@ class TestPopupTitle:
     @allure.title('В модальном окне "Заказать обратный звонок" отображается текст о том, что с пользователем свяжутся"')
     def test_callback_popup_title(self, browser):
         title_back = MainPage(browser)
-        title_back.open()
-        title_back.click_callback_link()
-        assert title_back.get_callback_popup_title() == CALLBACK_POPUP_TITLE
+        with allure.step('Открываем главную страницу'):
+            title_back.open()
+        with allure.step('Нажимаем на "Заказать обратный звонок"'):
+            title_back.click_callback_link()
+        with allure.step('Получаем текст в форме "Заказать обратный звонок" и сравниваем с ожидаемым'):
+            assert title_back.get_callback_popup_title() == CALLBACK_POPUP_TITLE

@@ -9,21 +9,30 @@ class TestDisplaysSearch:
     @allure.title('Проверка, что отображается иконка поиска в шапке сайта')
     def test_header_displays_search(self, browser):
         displays_search = MainPage(browser)
-        displays_search.open()
-        assert displays_search.get_search_cvg() == SEARCH
+        with allure.step('Открываем главную страницу'):
+            displays_search.open()
+        with allure.step('Находим иконку поиска в шапке сайта и сравниваем с ожидаемой'):
+            assert displays_search.get_search_cvg() == SEARCH
 
     @allure.title('Проверка отображение строки поиска в шапке сайта.')
     def test_search_click(self, browser):
         search_click = MainPage(browser)
-        search_click.open()
-        search_click.get_search_click()
-        assert search_click.get_search_input().is_displayed()
+        with allure.step('Открываем главную страницу'):
+            search_click.open()
+        with allure.step('Нажимаем на иконку поиска'):
+            search_click.get_search_click()
+        with allure.step('Проверяем, что появилась строка поиска'):
+            assert search_click.get_search_input().is_displayed()
 
     @allure.title('По нажатию строка поиска закрывается')
     def test_search_click_close(self, browser):
         search_click_close = MainPage(browser)
-        search_click_close.open()
-        search_click_close.get_search_click()
-        search_click_close.get_search_active()
-        assert not search_click_close.get_search_input().is_displayed()
+        with allure.step('Открываем главную страницу'):
+            search_click_close.open()
+        with allure.step('Нажимаем на иконку поиска'):
+            search_click_close.get_search_click()
+        with allure.step('Нажимаем на иконку поиска еще раз'):
+            search_click_close.get_search_active()
+        with allure.step('Проверяем, что строка поиска больше не отображается'):
+            assert not search_click_close.get_search_input().is_displayed()
 

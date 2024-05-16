@@ -9,6 +9,9 @@ class TestFooterButton:
     @allure.title('футере отображается кнопка "Написать нам"')
     def test_footer_write_us_button(self, browser):
         write_us_button = MainPage(browser)
-        write_us_button.open()
-        write_us_button.get_section_footer()
-        assert write_us_button.get_text_button_write() == TITLE_BUTTON_FOOTER
+        with allure.step('Открываем главную страницу'):
+            write_us_button.open()
+        with allure.step('Скроллим до футера'):
+            write_us_button.get_section_footer()
+        with allure.step('Находим кнопку "Написать нам" и получем её текст. Сравниваем с ожидаемым'):
+            assert write_us_button.get_text_button_write() == TITLE_BUTTON_FOOTER
