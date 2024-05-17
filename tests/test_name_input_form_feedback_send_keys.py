@@ -59,6 +59,7 @@ class TestNameInputSendKeys:
         with allure.step('Заполняем поле "Ваше имя" данными'):
             name_input_form_feedback_send_keys.form_name_input_send_keys(name)
         with allure.step('Ожидаем пока поле "Ваше имя" будет подсвечиваться красным'):
+
             input_element = name_input_form_feedback_send_keys.name_input_send_keys_error()
         with allure.step('Сохраняем полученный класс'):
             class_attribute = input_element.get_attribute('class')
