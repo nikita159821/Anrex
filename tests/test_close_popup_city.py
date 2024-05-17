@@ -1,6 +1,7 @@
 import allure
 
 from pages.anrex_main_page import MainPage
+from tests.data import CITY_TITLE
 
 
 class TestClosePopup:
@@ -15,4 +16,4 @@ class TestClosePopup:
         with allure.step('Нажимаем на крестик в модальном окне выбора города'):
             close_popup.close_popup_click()
         with allure.step('Проверяем, что модальное окно закрыто. Если не получен тайтл - окно закрыто'):
-            assert not close_popup.popup_city().is_displayed()
+            assert not close_popup.popup_city() == CITY_TITLE

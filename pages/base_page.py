@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 from locators.main_page_locators import slider
-from tests.data import RUSSIAN_LETTERS
+from tests.data import RUSSIAN_LETTERS, PUNCTUATION
 from tests.urls import URL, CHAPTER_CATALOG
 
 
@@ -175,7 +175,7 @@ class BasePage:
         elif char_type == 'digits':
             chars = string.digits
         elif char_type == 'punctuation':
-            chars = string.punctuation
+            chars = PUNCTUATION
         else:
             raise ValueError(
                 "Неверный тип символов. Допустимые значения: 'russian_letters', 'digits', 'punctuation'.")

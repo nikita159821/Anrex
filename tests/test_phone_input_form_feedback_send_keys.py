@@ -9,7 +9,6 @@ from tests.data import PHONE_FORM
 class TestPhoneInputSendKeys:
 
     @allure.title('В форме "Обратной сявзи" в поле "Ваш телефон" вводим 11 цифр')
-    # Тест на ввод 11 цифр
     def test_positive_phone_input_form_feedback_send_keys(self, browser):
         phone_input_form_feedback_send_keys = MainPage(browser)
         with allure.step('Открываем главную страницу'):
