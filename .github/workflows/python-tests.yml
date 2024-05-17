@@ -27,8 +27,13 @@ jobs:
       run: pytest tests/test_title_city.py --alluredir=allure-results
     - name: Install Allure
       run: |
-        wget -qO - https://repo.maven.apache.org/maven2/io/qameta/allure/allure/2.20.1/allure-2.20.1.tgz | tar -xz
-        sudo ln -s $(pwd)/allure-2.20.1/bin/allure /usr/bin/allure
+        sudo apt-get update
+        sudo apt-get install -y gnupg2 wget
+        wget -qO - https://repo.maven.apache.org/maven2/io/qameta/allure/allure/2.20.1/allure-2.20.1.deb.asc | sudo gpg --dearmor > allure.gpg
+        sudo install -o root -g root -m 644 allure.gpg /usr/share/keyrings/allure-keyring.gpg
+        echo "deb [signed-by=/usr/share/keyrings/allure-keyring.gpg] https://repo.maven.apache.org/maven2/io/qameta/allure/allure/2.20.1 allure-bintray/" | sudo tee /etc/apt/sources.list.d/allure.list
+        sudo apt-get update
+        sudo apt-get install -y allure
     - name: Install curl
       run: sudo apt-get install curl
     - name: Generate Allure Report
