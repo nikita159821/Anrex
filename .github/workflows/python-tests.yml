@@ -113,8 +113,8 @@ jobs:
       - name: success
         if: needs.test.outputs.good != 'failure' && needs.test.outputs.bad != 'failure' && needs.test.outputs.all != 'failure'
         run: |
-          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \--header 'Content-Type: application/json' \--data '{"chat_id":5030902696,"text": "Tests failed. Report https://nikita159821.github.io/Anrex/""}'
+          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \--header 'Content-Type: application/json' \--data '{"chat_id":5030902696,"text": "Tests PASSED. Report https://nikita159821.github.io/Anrex/"}'
       - name: failure
         if: needs.test.outputs.good == 'failure' || needs.test.outputs.bad == 'failure' || needs.test.outputs.all == 'failure'
         run: |
-          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \--header 'Content-Type: application/json' \--data '{"chat_id":5030902696,"text": "Tests failed. Report https://nikita159821.github.io/Anrex/"}'
+          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \--header 'Content-Type: application/json' \--data '{"chat_id":5030902696,"text": "Tests FAILED. Report https://nikita159821.github.io/Anrex/"}'
