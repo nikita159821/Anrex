@@ -1,4 +1,5 @@
 name: Python Selenium Tests
+
 on:
   push:
   schedule:
@@ -9,32 +10,62 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install Selenium
-        run: pip install selenium
+    - name: Install Selenium
+      run: pip install selenium
 
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: setup python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.12"
+    - name: Install Chrome
+      run: sudo apt-get install google-chrome-stable
+    - name: install dependencies
+      run: pip install -r requirements.txt
+    - name: Run tests
+      run: pytest tests/test_title_city.py --alluredir=allure-results
+    - name: Store allure results
+      uses: action/upload-artifact@v3
+      with:
+        name: allure-results
+        path:
+          allure-results
+        retention-days: 1
 
-      - name: setup python
-        uses: actions/setup-python@v4
+
+
+  generate-report:
+    runs-on: ubuntu-latest
+    needs: test
+    name: Generate report
+    steps:
+      - uses: actions/setup-java@v3
         with:
-          python-version: "3.12"
+          distribution: 'microsoft'
+          java version: '17'
+      - run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz && sudo tar -zxvf allure-2.23.1.tgz -C /opt/ && sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
+      - name: Download all workflow run artifact
+        uses: action/downloadartifact@v3
+      - run: allure generate -c allure-results -o _site
+      - name: Store generated report
+        uses: actions/upload-artifact@v3
+        with:
+            name: _site
+            path:
+              _site
+            retention-days: 1
 
-      - name: Install Chrome
-        run: sudo apt-get install google-chrome-stable
 
-      - name: install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Run tests
-        run: pytest tests/test_title_city.py
-
-      - name: Install Allure Command Line
-        run: wget https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.14.0/allure-commandline-2.14.0.zip && unzip allure-commandline-2.14.0.zip && sudo mv allure-2.14.0/bin/allure /usr/bin/allure
-
-      - name: Generate Allure report
-        run: allure generate allure-results --clean -o allure-report
-
-      - name: Send Allure report to Telegram
-        run: allure report send --report-dir=allure-report \
-          --telegram-bot-token=${{ secrets.TELEGRAM_BOT_TOKEN }} --telegram-chat-id=${{ secrets.TELEGRAM_CHAT_ID }}
+  publish-report:
+      runs-on: ubuntu-latest
+      needs: generate-report
+      name: Generate report
+      steps:
+        - name: Download all workflow run artifacts
+          uses: actions/download-artifact@v3
+        - name: Upload Pages artifact
+          uses: actions/upload-pages-artifact@v2
+        - name: Deploy to GitHub Pages
+          id: deployment
+          uses: actions/deploy-pages@v1.2.9
