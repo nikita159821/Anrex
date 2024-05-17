@@ -43,6 +43,11 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    outputs:
+      good: ${{ steps.good.outcome }}
+      bad: ${{ steps.bad.outcome }}
+      all: ${{ steps.all.outcome }}
+
     needs: download-history
 
     steps:
@@ -105,6 +110,13 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1.2.9
-      - name: send notification
+      - name: success
+        if: needs.test.outputs.good != 'failure' && needs.test.outputs.bad != 'failure' && needs.test.outputs.all != 'failure'
         run: |
-            curl --location 'https://api.telegram.org/bot%{{secrets.TELEGRAM_BOT_TOKEN}}/sendMessage' \--header 'Content-Type: application/json' \--data '{"chat_id":5030902696,"text": "Tests passed. Report https://github.com/nikita159821/Anrex"}'
+          curl --location 'https://api.telegram.org/bot%{{secrets.TELEGRAM_BOT_TOKEN}}/sendMessage' \--header 'Content-Type: application/json' \--data '{"chat_id":5030902696,"text": "Tests failed. Report https://github.com/nikita159821/Anrex"}'
+      - name: failure
+        if: needs.test.outputs.good == 'failure' || needs.test.outputs.bad == 'failure' || needs.test.outputs.all == 'failure'
+        run: |
+          curl --location 'https://api.telegram.org/bot%{{secrets.TELEGRAM_BOT_TOKEN}}/sendMessage' \--header 'Content-Type: application/json' \--data '{"chat_id":5030902696,"text": "Tests failed. Report https://github.com/nikita159821/Anrex"}'
+      
+
