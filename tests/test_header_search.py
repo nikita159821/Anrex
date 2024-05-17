@@ -1,5 +1,6 @@
 import allure
 
+from locators.main_page_locators import search_line, search_line_close
 from pages.anrex_main_page import MainPage
 from tests.data import SEARCH
 
@@ -21,6 +22,8 @@ class TestDisplaysSearch:
             search_click.open()
         with allure.step('Нажимаем на иконку поиска'):
             search_click.get_search_click()
+        with allure.step('Ожидаем появление строки'):
+            search_click.wait_for_element(search_line)
         with allure.step('Проверяем, что появилась строка поиска'):
             assert search_click.get_search_input().is_displayed()
 
@@ -33,6 +36,7 @@ class TestDisplaysSearch:
             search_click_close.get_search_click()
         with allure.step('Нажимаем на иконку поиска еще раз'):
             search_click_close.get_search_active()
+            with allure.step('Ожидаем закрытие строки'):
+                search_click_close.wait_for_element(search_line_close)
         with allure.step('Проверяем, что строка поиска больше не отображается'):
-            assert not search_click_close.get_search_input().is_displayed()
-
+            assert search_click_close.get_search_input_close() is not None

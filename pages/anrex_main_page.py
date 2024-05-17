@@ -164,6 +164,10 @@ class MainPage(BasePage):
     def get_search_input(self):
         return self.find_element(*search_line)
 
+    # Возвращает элемент после закрытия строки поиска
+    def get_search_input_close(self):
+        return self.find_element(*search_line_close)
+
     # Возвращает иконку корзины
     def get_sale_basket(self):
         return self.find_element(*sale_basket)
