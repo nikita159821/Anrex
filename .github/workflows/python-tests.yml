@@ -1,9 +1,10 @@
-name: My Test Pipeline
+name: Python Selenium Tests
 
 on:
   push:
   schedule:
     - cron: '0 * * * *'
+
 
 permissions:
   contents: read
@@ -53,7 +54,7 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: "3.12"
-    - name: setup chrome
+    - name: Install Chrome
       run: sudo apt-get install google-chrome-stable
     - name: install dependencies
       run: pip install -r requirements.txt
@@ -80,22 +81,15 @@ jobs:
           distribution: 'microsoft'
           java-version: '17'
       - run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz && sudo tar -zxvf allure-2.23.1.tgz -C /opt/ && sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
-      - name: Download all workflow run artifacts
+      - name: Download all workflow run artifact
         uses: actions/download-artifact@v3
-      - run: allure generate -c allure-results -o _site && allure history -o history.html
+      - run: allure generate -c allure-results -o _site
       - name: Store generated report
         uses: actions/upload-artifact@v3
         with:
             name: _site
             path:
               _site
-            retention-days: 1
-      - name: Store generated history
-        uses: actions/upload-artifact@v3
-        with:
-            name: history
-            path:
-              history.html
             retention-days: 1
 
 
