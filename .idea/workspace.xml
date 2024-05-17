@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="" />
+    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/python-tests.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/python-tests.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,6 +65,7 @@
     "Python tests.pytest for test_close_popup_city.TestClosePopup.test_close_popup.executor": "Run",
     "Python tests.pytest for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay.executor": "Run",
     "Python tests.pytest for test_header_basket.TestHeaderBasket.executor": "Run",
+    "Python tests.pytest for test_header_basket.TestHeaderBasket.test_basket_count_displayed_after_adding_product.executor": "Run",
     "Python tests.pytest for test_header_basket.TestHeaderBasket.test_header_displays_basket.executor": "Run",
     "Python tests.pytest for test_header_sale.TestHeaderSale.executor": "Run",
     "Python tests.pytest for test_header_search.TestDisplaysSearch.executor": "Run",
@@ -89,7 +93,7 @@
     "last_opened_file_path": "/home/nikita/PycharmProjects/Anrex"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.pytest for test_header_basket.TestHeaderBasket">
+  <component name="RunManager" selected="Python tests.pytest for test_request_callback.TestCallbackRequestTests">
     <configuration name="pytest for test_header_basket.TestHeaderBasket" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
@@ -121,23 +125,6 @@
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_header_basket.TestHeaderBasket.test_basket_count_displayed_after_adding_product&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for test_header_sale.TestHeaderSale" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="Anrex" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_header_sale.TestHeaderSale&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -175,13 +162,30 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest for test_request_callback.TestCallbackRequestTests" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Anrex" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_request_callback.TestCallbackRequestTests&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test_request_callback.TestCallbackRequestTests" />
         <item itemvalue="Python tests.pytest for test_header_basket.TestHeaderBasket" />
         <item itemvalue="Python tests.pytest for test_header_basket.TestHeaderBasket.test_basket_count_displayed_after_adding_product" />
         <item itemvalue="Python tests.pytest for test_header_search.TestDisplaysSearch.test_search_click_close" />
         <item itemvalue="Python tests.pytest for test_header_search.TestDisplaysSearch" />
-        <item itemvalue="Python tests.pytest for test_header_sale.TestHeaderSale" />
       </list>
     </recent_temporary>
   </component>

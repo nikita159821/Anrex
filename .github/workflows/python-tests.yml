@@ -5,7 +5,6 @@ on:
   schedule:
     - cron: '0 * * * *'
 
-
 permissions:
   contents: read
   pages: write
@@ -60,7 +59,7 @@ jobs:
     - name: Download all workflow run artifact
       uses: actions/download-artifact@v3
     - name: Run tests
-      run: pytest tests --alluredir=allure-results
+      run: pytest tests/test_close_popup_city.py --alluredir=allure-results
     - name: Store allure results
       uses: actions/upload-artifact@v3
       with:
@@ -91,6 +90,7 @@ jobs:
               _site
             retention-days: 1
 
+
   publish-report:
     runs-on: ubuntu-latest
     needs: generate-report
@@ -103,3 +103,18 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1.2.9
+
+
+  notify-telegram:
+    runs-on: ubuntu-latest
+    needs: publish-report
+    if: ${{ always() }}
+    steps:
+      - name: Notify in Telegram
+        uses: appleboy/telegram-action@master
+        with:
+          apikey: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
+          message: ${{ steps.generate-report.outputs.page_url }}
+
+
