@@ -26,12 +26,12 @@ jobs:
     - name: Run tests
       run: pytest tests/test_title_city.py --alluredir=allure-results
     - name: Store allure results
-      uses: action/upload-artifact@v3
+      uses: actions/upload-artifact@v3
       with:
         name: allure-results
-        path:
-          allure-results
+        path: allure-results
         retention-days: 1
+
 
 
 
