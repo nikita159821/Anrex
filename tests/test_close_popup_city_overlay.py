@@ -1,6 +1,8 @@
 import allure
 
+from locators.main_page_locators import slider
 from pages.anrex_main_page import MainPage
+from tests.data import PRODUCT_SALE
 
 
 class TestClosePopupOverlay:
@@ -12,6 +14,6 @@ class TestClosePopupOverlay:
         with allure.step('Нажимаем на город в шапке сайта'):
             close_popup.city_wrap_click()
         with allure.step('Нажимаем вне модального окна'):
-            close_popup.slider_click()
+            close_popup.close_modal_via_overlay(slider)
         with allure.step('Проверяем, что модальное окно закрыто. Если получен тайтл - окно закрыто'):
-            assert close_popup.get_title_sale().is_displayed()
+            assert close_popup.get_title_sale() == PRODUCT_SALE

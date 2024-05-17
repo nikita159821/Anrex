@@ -143,7 +143,7 @@ class MainPage(BasePage):
 
     # Возвращает тайтл "Товары со скидками"
     def get_title_sale(self):
-        return self.find_element(*title_sale)
+        return self.get_text_of_element(title_sale)
 
     # Метод нажимает кнопку "Отправить заявку"
     def click_submit_application_button(self):

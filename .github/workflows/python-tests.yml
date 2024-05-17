@@ -5,14 +5,12 @@ on:
   schedule:
     - cron: '0 * * * *'
 
-
 permissions:
   contents: read
   pages: write
   id-token: write
 
 jobs:
-
   download-history:
     runs-on: ubuntu-latest
     name: Download-history
@@ -61,7 +59,7 @@ jobs:
     - name: Download all workflow run artifact
       uses: actions/download-artifact@v3
     - name: Run tests
-      run: pytest tests/test_hover.py --alluredir=allure-results
+      run: pytest tests --alluredir=allure-results
     - name: Store allure results
       uses: actions/upload-artifact@v3
       with:
@@ -105,3 +103,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1.2.9
+
+
+
+
