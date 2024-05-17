@@ -113,8 +113,9 @@ jobs:
       - name: Notify in Telegram
         uses: appleboy/telegram-action@master
         with:
-          apikey: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
           message: ${{ steps.generate-report.outputs.page_url }}
+
 
 
