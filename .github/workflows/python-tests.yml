@@ -1,6 +1,7 @@
 name: Python Selenium Tests
 
 on:
+  push:
   schedule:
     - cron: '0 * * * *'
 
