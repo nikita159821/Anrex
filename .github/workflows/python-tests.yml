@@ -107,4 +107,4 @@ jobs:
         uses: actions/deploy-pages@v1.2.9
       - name: send notification
         run: |
-            curl --location 'https://api.telegram.org/bot6744410597:AAE4cqJdId1vIc1Mz0gjM_WKY5QxRX_sNY8/sendMessage' \--header 'Content-Type: application/json' \--data '{"chat_id":5030902696,"text": "demo"}'
+            curl --location 'https://api.telegram.org/bot%{{secrets.TELEGRAM_BOT_TOKEN}}/sendMessage' \--header 'Content-Type: application/json' \--data '{"chat_id":5030902696,"text": "Tests passed. Report https://github.com/nikita159821/Anrex"}'
