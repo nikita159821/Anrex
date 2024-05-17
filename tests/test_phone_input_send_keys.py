@@ -1,9 +1,9 @@
 import allure
 import pytest
 
-from locators.main_page_locators import input_phone
+from locators.main_page_locators import input_phone, phone_error
 from pages.anrex_main_page import MainPage
-from tests.data import PHONE_FORM
+from tests.data import PHONE_FORM, HAS_ERROR
 
 
 class TestPhoneInputSendKeys:
@@ -62,9 +62,7 @@ class TestPhoneInputSendKeys:
             phone_input_send_keys.click_callback_link()
         with allure.step('Заполняем поле "Ваш телефон" данными'):
             phone_input_send_keys.t_phone_input_send_keys(phone, input_phone)
-        with allure.step('Ожидаем пока поле "Ваш телефон" будет подсвечиваться красным'):
-            input_element = phone_input_send_keys.phone_input_send_keys_error()
-        with allure.step('Сохраняем полученный класс'):
-            class_attribute = input_element.get_attribute('class')
+        with allure.step('Ожидаем пока поле "Ваше имя" будет подсвечиваться красным'):
+            phone_input_send_keys.wait(phone_error)
         with allure.step('Проверка наличия класса "has-error"'):
-            assert 'input-field has-error' in class_attribute
+            assert phone_input_send_keys.phone_input_send_keys_error() == HAS_ERROR

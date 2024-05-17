@@ -131,11 +131,15 @@ class MainPage(BasePage):
 
     # Возвращает элемент с классом ошибки в поле "Ваше имя"
     def name_input_send_keys_error(self):
-        return self.find_element(*name_error)
+        input_element = self.find_element(*name_error)
+        class_attribute = input_element.get_attribute('class')
+        return class_attribute
 
     # Возвращает элемент с классом ошибки в поле "Ваш телефон"
     def phone_input_send_keys_error(self):
-        return self.find_element(*phone_error)
+        input_element = self.find_element(*phone_error)
+        class_attribute = input_element.get_attribute('class')
+        return class_attribute
 
     # Возвращает тайтл "Товары со скидками"
     def get_title_sale(self):
