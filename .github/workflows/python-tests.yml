@@ -1,19 +1,9 @@
-name: Automated tests
+name: Python Selenium Tests
 
 on:
   push:
-  workflow_dispatch:
-    inputs:
-      deployment_target:
-        description: Choose target
-        required: true
-        default: good
-        type: choice
-        options:
-          - good
-          - bad
-          - all
-
+  schedule:
+    - cron: '0 * * * *'
 
 permissions:
   contents: read
@@ -21,68 +11,99 @@ permissions:
   id-token: write
 
 jobs:
-  test:
+  download-history:
     runs-on: ubuntu-latest
-    outputs:
-      good: ${{ steps.good.outcome }}
-      bad: ${{ steps.bad.outcome }}
-      all: ${{ steps.all.outcome }}
+    name: Download-history
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: setup Python
-        uses: actions/setup-python@v5
+      - name: setup python
+        uses: actions/setup-python@v4
         with:
           python-version: "3.12"
-      - name: install dependencies
-        run: pip install -r requirements.txt
-      - name: good
-        id: good
-        if: "github.event.inputs.deployment_target == 'good'"
-        run: pytest -m good --alluredir=allure-results
-        continue-on-error: true
-      - name: bad
-        id: bad
-        if: "github.event.inputs.deployment_target == 'bad'"
-        run: pytest -m bad --alluredir=allure-results
-        continue-on-error: true
-      - name: all
-        id: all
-        if: "github.event.inputs.deployment_target == 'all'"
-        run: pytest --alluredir=allure-results
-        continue-on-error: true
-      - uses: actions/setup-java@v4
+      - run: >
+          ARTIFACT_ID=$(curl -L -H "Accept: application/vnd.github+json" 
+          -H "X-GitHub-Api-Version:2022-11-28" 
+          "https://api.github.com/repos/nikita159821/Anrex/actions/artifacts?name=allure-results" 
+          | python3 -c "import sys, json; print(json.load(sys.stdin)['artifacts'][0]['id']);")
+          &&
+          curl -L -H "Accept: application/vnd.github+json" 
+          -H "Authorization: Bearer ${{ secrets.TOKEN }}" 
+          -H "X-GitHub-Api-Version:2022-11-28" 
+          https://api.github.com/repos/nikita159821/Anrex/actions/artifacts/$ARTIFACT_ID/zip 
+          -o artifacts.zip
+      - run: mkdir "allure results" && unzip -j artifacts.zip -d "allure results"
+      - name: Store allure history
+        uses: actions/upload-artifact@v3
         with:
-          distribution: 'microsoft' # See 'Supported distributions' for available options
+          name: allure-results
+          path: allure results
+          retention-days: 1
+
+
+  test:
+    runs-on: ubuntu-latest
+    needs: download-history
+
+    steps:
+    - name: Install Selenium
+      run: pip install selenium
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: setup python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.12"
+    - name: Install Chrome
+      run: sudo apt-get install google-chrome-stable
+    - name: install dependencies
+      run: pip install -r requirements.txt
+    - name: Download all workflow run artifact
+      uses: actions/download-artifact@v3
+    - name: Run tests
+      run: pytest tests --alluredir=allure-results
+    - name: Store allure results
+      uses: actions/upload-artifact@v3
+      with:
+        name: allure-results
+        path:
+          allure-results
+        retention-days: 1
+
+
+  generate-report:
+    runs-on: ubuntu-latest
+    needs: test
+    name: Generate report
+    steps:
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'microsoft'
           java-version: '17'
       - run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz && sudo tar -zxvf allure-2.23.1.tgz -C /opt/ && sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
+      - name: Download all workflow run artifact
+        uses: actions/download-artifact@v3
       - run: allure generate -c allure-results -o _site
       - name: Store generated report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
-          name: _site
-          path:
-            _site
-          retention-days: 1
+            name: _site
+            path:
+              _site
+            retention-days: 1
 
 
   publish-report:
     runs-on: ubuntu-latest
-    needs: test
+    needs: generate-report
     name: Report publication
     steps:
       - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v3
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
-      - name: success
-        if: needs.test.outputs.good != 'failure' && needs.test.outputs.bad != 'failure' && needs.test.outputs.all != 'failure'
-        run: |
-          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' --header 'Content-Type: application/json' --data '{"chat_id": 6744410597, "text": "Tests passed. Report: https://nikita159821.github.io/Anrex/}'
-      - name: failure
-        if: needs.test.outputs.good == 'failure' || needs.test.outputs.bad == 'failure' || needs.test.outputs.all == 'failure'
-        run: |
-          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' --header 'Content-Type: application/json' --data '{"chat_id": 6744410597, "text": "Tests FAILED. Report: https://nikita159821.github.io/Anrex/"}'
+        uses: actions/deploy-pages@v1.2.9
+
+
+
+
