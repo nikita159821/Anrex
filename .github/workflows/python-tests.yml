@@ -1,6 +1,7 @@
 name: Automated tests
 
 on:
+  push:
   workflow_dispatch:
     inputs:
       deployment_target:
