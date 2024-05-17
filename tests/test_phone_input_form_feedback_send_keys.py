@@ -3,7 +3,7 @@ import pytest
 
 from locators.main_page_locators import phone_error
 from pages.anrex_main_page import MainPage
-from tests.data import PHONE_FORM
+from tests.data import PHONE_FORM, HAS_ERROR
 
 
 class TestPhoneInputSendKeys:
@@ -67,7 +67,7 @@ class TestPhoneInputSendKeys:
         MainPage.generate_random_string(5, 'punctuation'),
         ' '  # Добавляем пробел как один из параметров
     ])
-    @allure.title('В форме "Обратной сявзи" в поле "Ваш телефон" вводим 1 цифру, буквы, спец. символы, пробел.')
+    @allure.title('В форме "Обратной связи" в поле "Ваш телефон" вводим 1 цифру, буквы, спец. символы, пробел.')
     def test_negative_phone_form_feedback_input_send_keys(self, browser, phone):
         phone_form_feedback_input_send_keys = MainPage(browser)
         with allure.step('Открываем главную страницу'):
@@ -80,10 +80,6 @@ class TestPhoneInputSendKeys:
             phone_form_feedback_input_send_keys.form_phone_input_send_keys(phone)
         with allure.step('Ожидание'):
             phone_form_feedback_input_send_keys.wait(phone_error)
-        with allure.step('Получаем ошибку и сохраняем'):
-            input_element = phone_form_feedback_input_send_keys.phone_input_send_keys_error()
-        with allure.step('Получаем класс элемента с ошибкой'):
-            class_attribute = input_element.get_attribute('class')
         with allure.step('Проверка наличия класса "has-error"'):
-            assert 'input-field has-error' in class_attribute
+            assert phone_form_feedback_input_send_keys.name_input_send_keys_error() == HAS_ERROR
 
