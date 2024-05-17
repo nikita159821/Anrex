@@ -27,13 +27,13 @@ class MainPage(BasePage):
 
     # Возвращает тайтл "Выберите Ваш регион"
     def popup_city(self):
-        return self.find_element(*popup_city)
+        return self.get_text_of_element(popup_city)
 
     # Нажимает на крестик в модальном окне выбора города
     def close_popup_click(self):
         self.click_element(close)
 
-    # Возвращает иконку поиска на главной странице  "Выберите Ваш регион"
+    # Возвращает иконку поиска на главной странице "Выберите Ваш регион"
     def search(self):
         self.click_element(search)
 
@@ -278,15 +278,11 @@ class MainPage(BasePage):
 
     # Возвращает блок "Товары со скидками"
     def get_discounted_products(self):
-        products = self.find_element(*discounted_products)
-        self.scroll_to_element(products)
-        return products
+        return self.get_element_scroll_to_element(discounted_products)
 
     # Возвращает блок "Популярные категории"
     def get_popular_categories(self):
-        popular_categorie = self.find_element(*popular_categories)
-        self.scroll_to_popular_categories(popular_categorie)
-        return popular_categorie
+        return self.get_element_scroll_to_element(popular_categories)
 
     # Скролл до блока "Популярные категории"
     def scroll_to_popular_categories(self, element):

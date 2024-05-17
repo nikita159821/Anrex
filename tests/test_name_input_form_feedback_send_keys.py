@@ -1,7 +1,7 @@
 import allure
 import pytest
 
-from locators.main_page_locators import popup_form_feedback, input_name_form_feedback
+from locators.main_page_locators import popup_form_feedback, input_name_form_feedback, name_error
 from pages.anrex_main_page import MainPage
 from tests.data import POPUP_TEXT_FORM_FEEDBACK
 
@@ -59,9 +59,10 @@ class TestNameInputSendKeys:
         with allure.step('Заполняем поле "Ваше имя" данными'):
             name_input_form_feedback_send_keys.form_name_input_send_keys(name)
         with allure.step('Ожидаем пока поле "Ваше имя" будет подсвечиваться красным'):
-
-            input_element = name_input_form_feedback_send_keys.name_input_send_keys_error()
+            name_input_form_feedback_send_keys.wait_for_element(name_error)
         with allure.step('Сохраняем полученный класс'):
+            input_element = name_input_form_feedback_send_keys.name_input_send_keys_error()
+        with allure.step('Получаем сохраненный класс'):
             class_attribute = input_element.get_attribute('class')
         with allure.step('Проверка наличия класса "has-error"'):
             assert 'input-field has-error' in class_attribute

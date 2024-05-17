@@ -9,6 +9,9 @@ class TestCommentFooter:
     @allure.title('В футере отображается наименование организации')
     def test_text_comment_footer(self, browser):
         comment_footer = MainPage(browser)
-        comment_footer.open()
-        comment_footer.get_section_footer()
-        assert comment_footer.get_text_comment() == TEXT_COMMENT
+        with allure.step('Открываем главную страницу'):
+            comment_footer.open()
+        with allure.step('Скроллим до футера'):
+            comment_footer.get_section_footer()
+        with allure.step('Проверяем, что в футере отображается информация для покупателей'):
+            assert comment_footer.get_text_comment() == TEXT_COMMENT
