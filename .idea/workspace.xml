@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/python-tests.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/python-tests.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,13 +62,35 @@
     &quot;Python tests.Python tests for test_phone_input_placeholder.TestInputPhonePlaceholder.test_phone_input_placeholder.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_title_back_call.TestTitle.test_title_back_call.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_title_city.TestCity.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for safasf.test_calculate_commission.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_close_popup_city.TestClosePopup.test_close_popup.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_header_search.TestDisplaysSearch.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_header_search.TestDisplaysSearch.test_header_displays_search.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_header_search.TestDisplaysSearch.test_search_click.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_header_search.TestDisplaysSearch.test_search_click_close.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_name_input_form_feedback_send_keys.TestNameInputSendKeys.test_negative_name_input_form_feedback_send_keys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_name_input_send_keys.TestNameInputSendKeys.test_negative_name_input_send_keys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.test_negative_phone_form_feedback_input_send_keys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_negative_phone_input_send_keys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_negative_phone_input_send_keys_12_digits.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_phone_input_delete_send_keys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_positive_phone_input_send_keys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_popup_city.TestPopup.test_popup_city.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_redirect_to_beds_section.TestRedirectBedsSection.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_redirect_to_beds_section.TestRedirectBedsSection.test_redirect_krovati_i_matrasi.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_request_callback.TestCallbackRequestTests.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_text_comment_footer.TestCommentFooter.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_title_back_call.TestTitle.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_title_city.TestCity.test_title_city.executor&quot;: &quot;Run&quot;,
+    &quot;Python.safasf.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/nikita/PycharmProjects/Anrex&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python tests.Python tests for test_name_input_send_keys.TestNameInputSendKeys.test_name_input_send_keys">
-    <configuration name="Python tests for test_callback_popup_name_input.TestInputName.test_callback_popup_name_input" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_negative_phone_input_send_keys">
+    <configuration name="pytest for test_close_popup_city.TestClosePopup.test_close_popup" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -76,12 +100,14 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_callback_popup_name_input.TestInputName.test_callback_popup_name_input&quot;" />
+      <option name="_new_target" value="&quot;test_close_popup_city.TestClosePopup.test_close_popup&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_callback_popup_phone_input.TestInputPhone.test_callback_popup_phone_input" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_name_input_form_feedback_send_keys.TestNameInputSendKeys.test_negative_name_input_form_feedback_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -91,12 +117,14 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_callback_popup_phone_input.TestInputPhone.test_callback_popup_phone_input&quot;" />
+      <option name="_new_target" value="&quot;test_name_input_form_feedback_send_keys.TestNameInputSendKeys.test_negative_name_input_form_feedback_send_keys&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_name_input_placeholder.TestInputNamePlaceholder.test_name_input_placeholder" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_name_input_send_keys.TestNameInputSendKeys.test_negative_name_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -106,12 +134,14 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_name_input_placeholder.TestInputNamePlaceholder.test_name_input_placeholder&quot;" />
+      <option name="_new_target" value="&quot;test_name_input_send_keys.TestNameInputSendKeys.test_negative_name_input_send_keys&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_name_input_send_keys.TestNameInputSendKeys.test_name_input_send_keys" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.test_negative_phone_form_feedback_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -121,12 +151,14 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_name_input_send_keys.TestNameInputSendKeys.test_name_input_send_keys&quot;" />
+      <option name="_new_target" value="&quot;test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.test_negative_phone_form_feedback_input_send_keys&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_phone_input_placeholder.TestInputPhonePlaceholder.test_phone_input_placeholder" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_negative_phone_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -136,18 +168,20 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_phone_input_placeholder.TestInputPhonePlaceholder.test_phone_input_placeholder&quot;" />
+      <option name="_new_target" value="&quot;test_phone_input_send_keys.TestPhoneInputSendKeys.test_negative_phone_input_send_keys&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_name_input_send_keys.TestNameInputSendKeys.test_name_input_send_keys" />
-        <item itemvalue="Python tests.Python tests for test_phone_input_placeholder.TestInputPhonePlaceholder.test_phone_input_placeholder" />
-        <item itemvalue="Python tests.Python tests for test_name_input_placeholder.TestInputNamePlaceholder.test_name_input_placeholder" />
-        <item itemvalue="Python tests.Python tests for test_callback_popup_phone_input.TestInputPhone.test_callback_popup_phone_input" />
-        <item itemvalue="Python tests.Python tests for test_callback_popup_name_input.TestInputName.test_callback_popup_name_input" />
+        <item itemvalue="Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_negative_phone_input_send_keys" />
+        <item itemvalue="Python tests.pytest for test_name_input_form_feedback_send_keys.TestNameInputSendKeys.test_negative_name_input_form_feedback_send_keys" />
+        <item itemvalue="Python tests.pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.test_negative_phone_form_feedback_input_send_keys" />
+        <item itemvalue="Python tests.pytest for test_name_input_send_keys.TestNameInputSendKeys.test_negative_name_input_send_keys" />
+        <item itemvalue="Python tests.pytest for test_close_popup_city.TestClosePopup.test_close_popup" />
       </list>
     </recent_temporary>
   </component>
