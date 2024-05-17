@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locators/main_page_locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/locators/main_page_locators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/anrex_main_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/anrex_main_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_close_popup_city_overlay.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_close_popup_city_overlay.py" afterDir="false" />
-    </list>
+    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,6 +63,7 @@
     "Python tests.pytest for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay.executor": "Run",
     "Python tests.pytest for test_header_basket.TestHeaderBasket.executor": "Run",
     "Python tests.pytest for test_header_basket.TestHeaderBasket.test_header_displays_basket.executor": "Run",
+    "Python tests.pytest for test_header_sale.TestHeaderSale.executor": "Run",
     "Python tests.pytest for test_header_search.TestDisplaysSearch.executor": "Run",
     "Python tests.pytest for test_header_search.TestDisplaysSearch.test_header_displays_search.executor": "Run",
     "Python tests.pytest for test_header_search.TestDisplaysSearch.test_search_click.executor": "Run",
@@ -94,7 +89,7 @@
     "last_opened_file_path": "/home/nikita/PycharmProjects/Anrex"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.pytest for test_header_search.TestDisplaysSearch.test_search_click_close">
+  <component name="RunManager" selected="Python tests.pytest for test_header_basket.TestHeaderBasket">
     <configuration name="pytest for test_header_basket.TestHeaderBasket" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
@@ -112,7 +107,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_header_basket.TestHeaderBasket.test_header_displays_basket" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_header_basket.TestHeaderBasket.test_basket_count_displayed_after_adding_product" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -125,7 +120,7 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_header_basket.TestHeaderBasket.test_header_displays_basket&quot;" />
+      <option name="_new_target" value="&quot;test_header_basket.TestHeaderBasket.test_basket_count_displayed_after_adding_product&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -182,11 +177,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test_header_basket.TestHeaderBasket" />
+        <item itemvalue="Python tests.pytest for test_header_basket.TestHeaderBasket.test_basket_count_displayed_after_adding_product" />
         <item itemvalue="Python tests.pytest for test_header_search.TestDisplaysSearch.test_search_click_close" />
         <item itemvalue="Python tests.pytest for test_header_search.TestDisplaysSearch" />
         <item itemvalue="Python tests.pytest for test_header_sale.TestHeaderSale" />
-        <item itemvalue="Python tests.pytest for test_header_basket.TestHeaderBasket" />
-        <item itemvalue="Python tests.pytest for test_header_basket.TestHeaderBasket.test_header_displays_basket" />
       </list>
     </recent_temporary>
   </component>
