@@ -35,10 +35,7 @@ jobs:
       run: sudo apt-get install curl
     - name: Generate Allure Report
       run: allure generate --clean ./allure-results -o allure-report
-    - name: Send Allure Report to Telegram
-      env:
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+    - name: Read Allure Status
       run: |
         status=$(allure-results/environment.properties | grep 'Status:' | awk -F':' '{print $2}' | tr -d ' ')
         if [ "$status" == "Passed" ]; then
@@ -46,4 +43,10 @@ jobs:
         else
           message="Тесты не пройдены. Ссылка на отчет Allure: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
         fi
-        curl -X POST -H 'Content-Type: application/json' -d '{"chat_id": "'$TELEGRAM_CHAT_ID'", "text": "'$message'"}' https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage
+        echo "::set-output name=message::$message"
+    - name: Send Allure Report to Telegram
+      env:
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      run: |
+        curl -X POST -H 'Content-Type: application/json' -d '{"chat_id": "'$TELEGRAM_CHAT_ID'", "text": "${{ steps.read-allure-status.outputs.message }}"}' https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage
