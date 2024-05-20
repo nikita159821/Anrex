@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="" />
+    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,57 +42,75 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for test_callback_link.TestCallbackLink.test_callback_link.executor": "Run",
-    "Python tests.Python tests for test_callback_popup_name_input.TestInputName.test_callback_popup_name_input.executor": "Run",
-    "Python tests.Python tests for test_callback_popup_phone_input.TestInputPhone.test_callback_popup_phone_input.executor": "Run",
-    "Python tests.Python tests for test_callback_popup_title.TestPopupTitle.test_callback_popup_title.executor": "Run",
-    "Python tests.Python tests for test_close_popup.TestClosePopup.executor": "Run",
-    "Python tests.Python tests for test_close_popup.TestClosePopup.test_close_popup.executor": "Run",
-    "Python tests.Python tests for test_close_popup_city.TestClosePopup.test_close_popup.executor": "Run",
-    "Python tests.Python tests for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay.executor": "Run",
-    "Python tests.Python tests for test_first_city_is_chelyabinsk.TestCityIsChelyabinsk.test_close_popup_city_overlay.executor": "Run",
-    "Python tests.Python tests for test_first_city_is_chelyabinsk.TestCityIsChelyabinsk.test_first_city_is_chelyabinsk.executor": "Run",
-    "Python tests.Python tests for test_hover.TestHover.test_hover.executor": "Run",
-    "Python tests.Python tests for test_name_input_placeholder.TestInputNamePlaceholder.test_name_input_placeholder.executor": "Run",
-    "Python tests.Python tests for test_name_input_send_keys.TestNameInputSendKeys.test_name_input_send_keys.executor": "Run",
-    "Python tests.Python tests for test_phone_input_placeholder.TestInputPhonePlaceholder.test_phone_input_placeholder.executor": "Run",
-    "Python tests.Python tests for test_title_back_call.TestTitle.test_title_back_call.executor": "Run",
-    "Python tests.Python tests for test_title_city.TestCity.executor": "Run",
-    "Python tests.pytest for safasf.test_calculate_commission.executor": "Run",
-    "Python tests.pytest for test_close_popup_city.TestClosePopup.test_close_popup.executor": "Run",
-    "Python tests.pytest for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay.executor": "Run",
-    "Python tests.pytest for test_header_basket.TestHeaderBasket.executor": "Run",
-    "Python tests.pytest for test_header_basket.TestHeaderBasket.test_basket_count_displayed_after_adding_product.executor": "Run",
-    "Python tests.pytest for test_header_basket.TestHeaderBasket.test_header_displays_basket.executor": "Run",
-    "Python tests.pytest for test_header_sale.TestHeaderSale.executor": "Run",
-    "Python tests.pytest for test_header_search.TestDisplaysSearch.executor": "Run",
-    "Python tests.pytest for test_header_search.TestDisplaysSearch.test_header_displays_search.executor": "Run",
-    "Python tests.pytest for test_header_search.TestDisplaysSearch.test_search_click.executor": "Run",
-    "Python tests.pytest for test_header_search.TestDisplaysSearch.test_search_click_close.executor": "Run",
-    "Python tests.pytest for test_name_input_form_feedback_send_keys.TestNameInputSendKeys.test_negative_name_input_form_feedback_send_keys.executor": "Run",
-    "Python tests.pytest for test_name_input_send_keys.TestNameInputSendKeys.test_negative_name_input_send_keys.executor": "Run",
-    "Python tests.pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.test_negative_phone_form_feedback_input_send_keys.executor": "Run",
-    "Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.executor": "Run",
-    "Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_negative_phone_input_send_keys.executor": "Run",
-    "Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_negative_phone_input_send_keys_12_digits.executor": "Run",
-    "Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_phone_input_delete_send_keys.executor": "Run",
-    "Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_positive_phone_input_send_keys.executor": "Run",
-    "Python tests.pytest for test_popup_city.TestPopup.test_popup_city.executor": "Run",
-    "Python tests.pytest for test_redirect_to_beds_section.TestRedirectBedsSection.executor": "Run",
-    "Python tests.pytest for test_redirect_to_beds_section.TestRedirectBedsSection.test_redirect_krovati_i_matrasi.executor": "Run",
-    "Python tests.pytest for test_request_callback.TestCallbackRequestTests.executor": "Run",
-    "Python tests.pytest for test_text_comment_footer.TestCommentFooter.executor": "Run",
-    "Python tests.pytest for test_title_back_call.TestTitle.executor": "Run",
-    "Python tests.pytest for test_title_city.TestCity.test_title_city.executor": "Run",
-    "Python.safasf.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
-    "last_opened_file_path": "/home/nikita/PycharmProjects/Anrex"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_callback_link.TestCallbackLink.test_callback_link.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_callback_popup_name_input.TestInputName.test_callback_popup_name_input.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_callback_popup_phone_input.TestInputPhone.test_callback_popup_phone_input.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_callback_popup_title.TestPopupTitle.test_callback_popup_title.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_close_popup.TestClosePopup.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_close_popup.TestClosePopup.test_close_popup.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_close_popup_city.TestClosePopup.test_close_popup.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_first_city_is_chelyabinsk.TestCityIsChelyabinsk.test_close_popup_city_overlay.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_first_city_is_chelyabinsk.TestCityIsChelyabinsk.test_first_city_is_chelyabinsk.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_hover.TestHover.test_hover.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_name_input_placeholder.TestInputNamePlaceholder.test_name_input_placeholder.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_name_input_send_keys.TestNameInputSendKeys.test_name_input_send_keys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_phone_input_placeholder.TestInputPhonePlaceholder.test_phone_input_placeholder.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_title_back_call.TestTitle.test_title_back_call.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_title_city.TestCity.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for fasfasf.TestBonusService.test_calculate_bonus_with_zero_productivity.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for safasf.test_calculate_commission.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_close_popup_city.TestClosePopup.test_close_popup.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_header_basket.TestHeaderBasket.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_header_basket.TestHeaderBasket.test_basket_count_displayed_after_adding_product.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_header_basket.TestHeaderBasket.test_header_displays_basket.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_header_sale.TestHeaderSale.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_header_search.TestDisplaysSearch.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_header_search.TestDisplaysSearch.test_header_displays_search.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_header_search.TestDisplaysSearch.test_search_click.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_header_search.TestDisplaysSearch.test_search_click_close.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_name_input_form_feedback_send_keys.TestNameInputSendKeys.test_negative_name_input_form_feedback_send_keys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_name_input_send_keys.TestNameInputSendKeys.test_negative_name_input_send_keys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.test_negative_phone_form_feedback_input_send_keys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_negative_phone_input_send_keys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_negative_phone_input_send_keys_12_digits.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_phone_input_delete_send_keys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_positive_phone_input_send_keys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_popup_city.TestPopup.test_popup_city.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_redirect_to_beds_section.TestRedirectBedsSection.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_redirect_to_beds_section.TestRedirectBedsSection.test_redirect_krovati_i_matrasi.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_request_callback.TestCallbackRequestTests.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_text_comment_footer.TestCommentFooter.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_title_back_call.TestTitle.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_title_city.TestCity.test_title_city.executor&quot;: &quot;Run&quot;,
+    &quot;Python.safasf.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nikita/PycharmProjects/Anrex&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Python tests.pytest for test_request_callback.TestCallbackRequestTests">
+}</component>
+  <component name="RunManager" selected="Python tests.pytest for fasfasf.TestBonusService.test_calculate_bonus_with_zero_productivity">
+    <configuration name="pytest for fasfasf.TestBonusService.test_calculate_bonus_with_zero_productivity" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Anrex" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;fasfasf.TestBonusService.test_calculate_bonus_with_zero_productivity&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="pytest for test_header_basket.TestHeaderBasket" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
@@ -122,23 +142,6 @@
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_header_basket.TestHeaderBasket.test_basket_count_displayed_after_adding_product&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for test_header_search.TestDisplaysSearch" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="Anrex" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_header_search.TestDisplaysSearch&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -178,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for fasfasf.TestBonusService.test_calculate_bonus_with_zero_productivity" />
         <item itemvalue="Python tests.pytest for test_request_callback.TestCallbackRequestTests" />
         <item itemvalue="Python tests.pytest for test_header_basket.TestHeaderBasket" />
         <item itemvalue="Python tests.pytest for test_header_basket.TestHeaderBasket.test_basket_count_displayed_after_adding_product" />
         <item itemvalue="Python tests.pytest for test_header_search.TestDisplaysSearch.test_search_click_close" />
-        <item itemvalue="Python tests.pytest for test_header_search.TestDisplaysSearch" />
       </list>
     </recent_temporary>
   </component>
