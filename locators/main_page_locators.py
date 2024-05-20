@@ -45,7 +45,7 @@ about_list = By.CSS_SELECTOR, 'div.multi-menu:nth-child(6) > div:nth-child(2)'
 about_dropdown = (By.CSS_SELECTOR, 'div.multi-menu:nth-child(6) > div:nth-child(2) > a:nth-child(1)')
 dealers_dropdown = (By.CSS_SELECTOR, 'div.multi-menu:nth-child(6) > div:nth-child(2) > a:nth-child(2)')
 contact_dropdown = (By.CSS_SELECTOR, 'div.multi-menu:nth-child(6) > div:nth-child(2) > a:nth-child(3)')
-discounted_products = (By.CSS_SELECTOR, '.index-goods')
+discounted_products = (By.CSS_SELECTOR, '.good_list')
 button_card_discounted = (By.CSS_SELECTOR, 'div.catalog-item:nth-child(7) > div:nth-child(5)')
 popular_categories = (By.XPATH, "//section[@class='index-sections']")
 popular_section_banner = (By.CSS_SELECTOR, 'div.section_banner-item:nth-child(1) > a:nth-child(1)')
