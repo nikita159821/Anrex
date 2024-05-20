@@ -1,7 +1,7 @@
 import allure
 import pytest
 
-from locators.main_page_locators import input_phone, phone_error
+from locators.main_page_locators import input_phone, phone_error, callback_link
 from pages.anrex_main_page import MainPage
 from tests.data import PHONE_FORM, HAS_ERROR
 
@@ -58,6 +58,8 @@ class TestPhoneInputSendKeys:
         phone_input_send_keys = MainPage(browser)
         with allure.step('Открываем главную страницу'):
             phone_input_send_keys.open()
+        with allure.step('Ожидаем пока загрузится страница'):
+            phone_input_send_keys.wait(callback_link)
         with allure.step('Нажимаем на "Заказать обратный звонок"'):
             phone_input_send_keys.click_callback_link()
         with allure.step('Заполняем поле "Ваш телефон" данными'):
