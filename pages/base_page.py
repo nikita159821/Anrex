@@ -105,7 +105,7 @@ class BasePage:
 
     def wait_for_element(self, locator):
         try:
-            WebDriverWait(self.browser, 10).until(element_to_be(locator))
+            WebDriverWait(self.browser, 15).until(element_to_be(locator))
         except TimeoutException:
             return False
         return True

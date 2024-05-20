@@ -13,6 +13,8 @@ class TestHomepageReviews:
         reviews_section = MainPage(browser)
         with allure.step('Открываем главную страницу'):
             reviews_section.open()
+        with allure.step('Скроллим до блока "Отзывы наших покупателей"'):
+            reviews_section.get_section_reviews()
         with allure.step('Проверяем, что отображается блок "Отзывы наших покупателей"'):
             assert reviews_section.get_section_reviews().is_displayed()
 
