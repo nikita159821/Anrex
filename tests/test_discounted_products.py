@@ -1,3 +1,5 @@
+import time
+
 import allure
 
 from pages.anrex_main_page import MainPage
@@ -10,6 +12,8 @@ class TestDiscountedProducts:
         discounted = MainPage(browser)
         with allure.step('Открываем главную страницу'):
             discounted.open()
-        with allure.step('Находим и проверям блок "Товары со скидками"'):
+        with allure.step('Добавляем ожидание'):
+            time.sleep(5)
+        with allure.step('Находим и проверяем блок "Товары со скидками"'):
             assert discounted.get_discounted_products().is_displayed()
 
