@@ -36,10 +36,9 @@ jobs:
       - name: Сохранение истории Allure
         uses: actions/upload-artifact@v3
         with:
-            name: allure-results
-            path: allure-results
-            if-no-files-found: error
-            retention-days: 30
+          name: allure-results
+          path: allure results
+          retention-days: 1
 
 
   test:
