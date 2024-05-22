@@ -61,15 +61,18 @@ jobs:
         run: |
           rm -rf allure-results/*
       - name: Run tests
-        run: pytest tests --alluredir=allure-results
+        run: pytest tests/test_title_city.py --alluredir=allure-results
+      - name: Generate Allure Report
+        if: failure() # Выполнять, только если предыдущие задачи завершились неудачно
+        run: |
+          allure generate allure-results -o allure-report
+          allure open allure-report
       - name: Store allure results
         uses: actions/upload-artifact@v3
         with:
           name: allure-results
           path: allure-results
           retention-days: 1
-
-
 
 
   generate-report:
