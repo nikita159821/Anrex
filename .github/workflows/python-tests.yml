@@ -11,60 +11,34 @@ permissions:
   id-token: write
 
 jobs:
-
   download-history:
     runs-on: ubuntu-latest
-    name: Download-history
+    name: Скачивание истории
     steps:
-      - name: setup python
+      - name: Установка Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.12"
-      - name: Cache Allure reports
-        uses: actions/cache@v3
-        with:
-          path: allure-results
-          key: ${{ runner.os }}-allure-${{ hashFiles('**/allure-results') }}
-          restore-keys: |
-            ${{ runner.os }}-allure-
-      - name: Download artifacts
-        run: |
-          import requests
-          import os
-          import zipfile
-
-          # Получаем список артефактов
-          artifact_list = requests.get(
-              "https://api.github.com/repos/nikita159821/Anrex/actions/artifacts?per_page=50&page=1",
-              headers={
-                  "Accept": "application/vnd.github+json",
-                  "X-GitHub-Api-Version": "2022-11-28"
-              }
-          ).json()
-
-          # Загружаем артефакты
-          for artifact in artifact_list["artifacts"]:
-              artifact_id = artifact["id"]
-              response = requests.get(
-                  f"https://api.github.com/repos/nikita159821/Anrex/actions/artifacts/{artifact_id}/zip",
-                  headers={
-                      "Accept": "application/vnd.github+json",
-                      "X-GitHub-Api-Version": "2022-11-28",
-                      "Authorization": f"Bearer {os.environ['TOKEN']}"
-                  },
-                  stream=True
-              )
-              with open(f"artifact_{artifact_id}.zip", "wb") as f:
-                  for chunk in response.iter_content(chunk_size=8192):
-                      f.write(chunk)
-              # Распаковываем артефакт
-              with zipfile.ZipFile(f"artifact_{artifact_id}.zip", "r") as zip_ref:
-                  zip_ref.extractall("allure-results")
-      - name: Store allure history
+      - run: >
+          ARTIFACT_LIST=$(curl -L -H "Accept: application/vnd.github+json" 
+          -H "X-GitHub-Api-Version:2022-11-28" 
+          "https://api.github.com/repos/nikita159821/Anrex/actions/artifacts?per_page=1&page=1" 
+          | python3 -c "import sys, json; print(','.join([str(artifact['id']) for artifact in json.load(sys.stdin)['artifacts']]));")
+          &&
+          for ARTIFACT_ID in $(echo $ARTIFACT_LIST | tr ',' '\n'); do
+            curl -L -H "Accept: application/vnd.github+json" 
+            -H "Authorization: Bearer ${{ secrets.TOKEN }}" 
+            -H "X-GitHub-Api-Version:2022-11-28" 
+            https://api.github.com/repos/nikita159821/Anrex/actions/artifacts/$ARTIFACT_ID/zip 
+            -o $ARTIFACT_ID.zip
+            unzip -j $ARTIFACT_ID.zip -d "allure results"
+            rm $ARTIFACT_ID.zip
+          done
+      - name: Сохранение истории Allure
         uses: actions/upload-artifact@v3
         with:
           name: allure-results
-          path: allure-results
+          path: allure results
           retention-days: 1
 
 
@@ -90,12 +64,7 @@ jobs:
         run: |
           rm -rf allure-results/*
       - name: Run tests
-        run: pytest tests/test_title_city.py --alluredir=allure-results
-      - name: Generate Allure Report
-        if: failure() # Выполнять, только если предыдущие задачи завершились неудачно
-        run: |
-          allure generate allure-results -o allure-report
-          allure open allure-report
+        run: pytest tests --alluredir=allure-results
       - name: Store allure results
         uses: actions/upload-artifact@v3
         with:
@@ -104,32 +73,39 @@ jobs:
           retention-days: 1
 
 
+
+
   generate-report:
     runs-on: ubuntu-latest
     needs: test
+    name: Generate report
     steps:
-      - name: Generate Allure Report
-        run: |
-          
-          allure generate allure-results -o allure-report
-          allure open allure-report
-          - name: Store allure results
-          uses: actions/upload-artifact@v3
-          with:
-          name: allure-results
-          path: allure-results
-          retention-days: 1
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'microsoft'
+          java-version: '17'
+      - run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz && sudo tar -zxvf allure-2.23.1.tgz -C /opt/ && sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
+      - name: Download all workflow run artifact
+        uses: actions/download-artifact@v3
+      - run: allure generate -c allure-results -o _site
+      - name: Store generated report
+        uses: actions/upload-artifact@v3
+        with:
+            name: _site
+            path:
+              _site
+            retention-days: 1
 
 
-          publish-report:
-          runs-on: ubuntu-latest
-          needs: generate-report
-          name: Report publication
-          steps:
-          - name: Download all workflow run artifacts
-          uses: actions/download-artifact@v3
-          - name: Upload Pages artifact
-          uses: actions/upload-pages-artifact@v2
-          - name: Deploy to GitHub Pages
-          id: deployment
-          uses: actions/deploy-pages@v1.2.9
+  publish-report:
+    runs-on: ubuntu-latest
+    needs: generate-report
+    name: Report publication
+    steps:
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v3
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1.2.9
