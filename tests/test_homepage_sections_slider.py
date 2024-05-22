@@ -13,6 +13,8 @@ class TestSectionSlider:
         sections_slider = MainPage(browser)
         with allure.step('Открываем главную страницу'):
             sections_slider.open()
+        with allure.step('Скроллим до блока со слайдером разделов'):
+            sections_slider.get_slider()
         with allure.step('Проверяем, что отображается слайдер разделов'):
             assert sections_slider.get_slider().is_displayed()
 
