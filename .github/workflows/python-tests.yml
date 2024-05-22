@@ -84,23 +84,18 @@ jobs:
   generate-report:
     runs-on: ubuntu-latest
     needs: test
-    name: Generate report
     steps:
-      - uses: actions/setup-java@v3
-        with:
-          distribution: 'microsoft'
-          java-version: '17'
-      - run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz && sudo tar -zxvf allure-2.23.1.tgz -C /opt/ && sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
-      - name: Download all workflow run artifact
-        uses: actions/download-artifact@v3
-      - run: allure generate -c allure-results -o _site
-      - name: Store generated report
+      - name: Generate Allure Report
+        run: |
+          allure generate allure-results -o allure-report
+          allure open allure-report
+      - name: Store allure results
         uses: actions/upload-artifact@v3
         with:
-            name: _site
-            path:
-              _site
-            retention-days: 1
+          name: allure-results
+          path: allure-results
+          retention-days: 1
+
 
 
   publish-report:
