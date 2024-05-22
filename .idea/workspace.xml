@@ -72,6 +72,7 @@
     "Python tests.pytest for test_header_search.TestDisplaysSearch.test_search_click_close.executor": "Run",
     "Python tests.pytest for test_homepage_sections_slider.TestSectionSlider.executor": "Run",
     "Python tests.pytest for test_homepage_sections_slider.TestSectionSlider.test_homepage_sections_slider.executor": "Run",
+    "Python tests.pytest for test_logo_footer_anrex_.TestLogoFooter.test_logo_footer.executor": "Run",
     "Python tests.pytest for test_name_input_form_feedback_send_keys.TestNameInputSendKeys.test_negative_name_input_form_feedback_send_keys.executor": "Run",
     "Python tests.pytest for test_name_input_send_keys.TestNameInputSendKeys.test_negative_name_input_send_keys.executor": "Run",
     "Python tests.pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.test_negative_phone_form_feedback_input_send_keys.executor": "Run",
@@ -93,24 +94,7 @@
     "last_opened_file_path": "/home/nikita/PycharmProjects/Anrex"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.pytest for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay">
-    <configuration name="pytest for fasfasf.TestBonusService.test_calculate_bonus_with_zero_productivity" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="Anrex" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;fasfasf.TestBonusService.test_calculate_bonus_with_zero_productivity&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python tests.pytest for test_logo_footer_anrex_.TestLogoFooter.test_logo_footer">
     <configuration name="pytest for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
@@ -179,13 +163,30 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest for test_logo_footer_anrex_.TestLogoFooter.test_logo_footer" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Anrex" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_logo_footer_anrex_.TestLogoFooter.test_logo_footer&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test_logo_footer_anrex_.TestLogoFooter.test_logo_footer" />
         <item itemvalue="Python tests.pytest for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay" />
         <item itemvalue="Python tests.pytest for test_homepage_sections_slider.TestSectionSlider" />
         <item itemvalue="Python tests.pytest for test_homepage_sections_slider.TestSectionSlider.test_homepage_sections_slider" />
         <item itemvalue="Python tests.pytest for test_header_basket.TestHeaderBasket.test_basket_count_displayed_after_adding_product" />
-        <item itemvalue="Python tests.pytest for fasfasf.TestBonusService.test_calculate_bonus_with_zero_productivity" />
       </list>
     </recent_temporary>
   </component>
