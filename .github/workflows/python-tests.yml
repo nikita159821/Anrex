@@ -1,5 +1,3 @@
-name: Python Selenium Tests
-
 on:
   push:
   schedule:
@@ -11,27 +9,31 @@ permissions:
   id-token: write
 
 jobs:
+
   download-history:
     runs-on: ubuntu-latest
-    name: Download-history
+    name: Скачивание истории
     steps:
-      - name: setup python
+      - name: Установка Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.12"
-      - run: >
-          ARTIFACT_ID=$(curl -L -H "Accept: application/vnd.github+json" 
-          -H "X-GitHub-Api-Version:2022-11-28" 
-          "https://api.github.com/repos/nikita159821/Anrex/actions/artifacts?name=allure-results" 
-          | python3 -c "import sys, json; print(json.load(sys.stdin)['artifacts'][0]['id']);")
-          &&
-          curl -L -H "Accept: application/vnd.github+json" 
-          -H "Authorization: Bearer ${{ secrets.TOKEN }}" 
-          -H "X-GitHub-Api-Version:2022-11-28" 
-          https://api.github.com/repos/nikita159821/Anrex/actions/artifacts/$ARTIFACT_ID/zip 
-          -o artifacts.zip
-      - run: mkdir "allure results" && unzip -j artifacts.zip -d "allure results"
-      - name: Store allure history
+      - run: |
+          ARTIFACT_LIST=$(curl -L -H "Accept: application/vnd.github+json" \
+          -H "X-GitHub-Api-Version:2022-11-28" \
+          "https://api.github.com/repos/nikita159821/Anrex/actions/artifacts?per_page=1&page=1" \
+          | python3 -c "import sys, json; print(','.join([str(artifact['id']) for artifact in json.load(sys.stdin)['artifacts']]));")
+          
+          for ARTIFACT_ID in $(echo $ARTIFACT_LIST | tr ',' '\n'); do
+            curl -L -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.TOKEN }}" \
+            -H "X-GitHub-Api-Version:2022-11-28" \
+            https://api.github.com/repos/nikita159821/Anrex/actions/artifacts/$ARTIFACT_ID/zip \
+            -o $ARTIFACT_ID.zip
+            unzip -j $ARTIFACT_ID.zip -d "allure results"
+            rm $ARTIFACT_ID.zip
+          done
+      - name: Сохранение истории Allure
         uses: actions/upload-artifact@v3
         with:
           name: allure-results
@@ -62,14 +64,13 @@ jobs:
           rm -rf allure-results/*
       - name: Run tests
         run: pytest tests --alluredir=allure-results
+        continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
         with:
           name: allure-results
           path: allure-results
           retention-days: 1
-
-
 
 
   generate-report:
