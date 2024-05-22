@@ -35,4 +35,4 @@ class TestHeaderBasket:
         with allure.step('Ждем пока товар добавится в корзину'):
             count_displayed.wait_for_element(basket_count)
         with allure.step('Проверяем, что в корзину добавился один товар'):
-            assert count_displayed.basket_count() == '(1)'
+            assert count_displayed.basket_count() == '1'

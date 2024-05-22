@@ -193,7 +193,10 @@ class MainPage(BasePage):
 
     # Возвращает количество добавленных товаров в корзину
     def basket_count(self):
-        return self.get_attribute_of_element(basket_count, 'textContent')
+        count_text = self.get_attribute_of_element(basket_count, 'textContent')
+        # Удалить скобки из текста счетчика
+        count_text = count_text.replace('(', '').replace(')', '')
+        return count_text
 
     # Возвращает текст раздела "Каталог" в шапке сайта
     def get_catalog_text(self):
