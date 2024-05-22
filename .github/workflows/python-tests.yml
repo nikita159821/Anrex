@@ -33,6 +33,9 @@ jobs:
             unzip -j $ARTIFACT_ID.zip -d "allure results"
             rm $ARTIFACT_ID.zip
           done
+      - name: Cleanup old artifacts
+        run: |
+          rm -rf allure-results/*
       - name: Сохранение истории Allure
         uses: actions/upload-artifact@v3
         with:
