@@ -19,17 +19,17 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.12"
-      - run: >
-          ARTIFACT_LIST=$(curl -L -H "Accept: application/vnd.github+json" 
-          -H "X-GitHub-Api-Version:2022-11-28" 
-          "https://api.github.com/repos/nikita159821/Anrex/actions/artifacts?per_page=1&page=1" 
+      - run: |
+          ARTIFACT_LIST=$(curl -L -H "Accept: application/vnd.github+json" \
+          -H "X-GitHub-Api-Version:2022-11-28" \
+          "https://api.github.com/repos/nikita159821/Anrex/actions/artifacts?per_page=1&page=1" \
           | python3 -c "import sys, json; print(','.join([str(artifact['id']) for artifact in json.load(sys.stdin)['artifacts']]));")
-          &&
+          
           for ARTIFACT_ID in $(echo $ARTIFACT_LIST | tr ',' '\n'); do
-            curl -L -H "Accept: application/vnd.github+json" 
-            -H "Authorization: Bearer ${{ secrets.TOKEN }}" 
-            -H "X-GitHub-Api-Version:2022-11-28" 
-            https://api.github.com/repos/nikita159821/Anrex/actions/artifacts/$ARTIFACT_ID/zip 
+            curl -L -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.TOKEN }}" \
+            -H "X-GitHub-Api-Version:2022-11-28" \
+            https://api.github.com/repos/nikita159821/Anrex/actions/artifacts/$ARTIFACT_ID/zip \
             -o $ARTIFACT_ID.zip
             unzip -j $ARTIFACT_ID.zip -d "allure results"
             rm $ARTIFACT_ID.zip
@@ -40,6 +40,7 @@ jobs:
           name: allure-results
           path: allure results
           retention-days: 1
+
 
 
   test:
