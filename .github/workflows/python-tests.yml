@@ -11,6 +11,7 @@ permissions:
   id-token: write
 
 jobs:
+
   download-history:
     runs-on: ubuntu-latest
     name: Download-history
@@ -19,6 +20,13 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.12"
+      - name: Cache Allure reports
+        uses: actions/cache@v3
+        with:
+          path: allure-results
+          key: ${{ runner.os }}-allure-${{ hashFiles('**/allure-results') }}
+          restore-keys: |
+            ${{ runner.os }}-allure-
       - run: |
           # Получаем список артефактов
           ARTIFACT_LIST=$(curl -L -H "Accept: application/vnd.github+json" \
