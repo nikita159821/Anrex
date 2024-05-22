@@ -34,10 +34,11 @@ jobs:
             rm $ARTIFACT_ID.zip
           done
       - name: Сохранение истории Allure
-        uses: actions/download-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
-            name: allure-results
-            path: .
+          name: allure-results
+          path: allure results
+          retention-days: 1
 
 
   test:
