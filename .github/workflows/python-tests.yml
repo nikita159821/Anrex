@@ -1,3 +1,30 @@
+
+Skip to content
+Navigation Menu
+
+    nikita159821
+    /
+    Anrex
+
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+Insights
+
+    Settings
+
+.github/workflows/python-tests.yml
+Update python-tests.yml #305
+
+Jobs
+
+Run details
+
+Workflow file for this run
+.github/workflows/python-tests.yml at 5c6fd4c
 on:
   push:
   schedule:
@@ -79,48 +106,28 @@ jobs:
     needs: test
     name: Generate report
     steps:
-    - uses: actions/setup-java@v3
-      with:
-        distribution: 'microsoft'
-        java-version: '17'
-    - run: |
-        sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz
-        sudo tar -zxvf allure-2.23.1.tgz -C /opt/
-        sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
-    - name: Download all workflow run artifact
-      uses: actions/download-artifact@v3
-    - run: allure generate -c allure-results -o _site
-    - name: Store generated report
-      uses: actions/upload-artifact@v3
-      with:
-        name: _site
-        path: _site
-        retention-days: 1
-    - name: Send Allure report to Telegram
-      env:
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-      run: |
-        if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
-          echo "Telegram bot token or chat ID is not set. Skipping Telegram notification."
-          exit 0
-        fi
-
-        if [ -f allure-results/history/history-trend.json ]; then
-          status=$(jq -r '.report.status' allure-results/history/history-trend.json)
-          if [ "$status" = "FAILED" ]; then
-            curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \--header 'Content-Type: application/json' \--data '{"chat_id":5030902696,"text": "Tests FAILED. Report https://nikita159821.github.io/Anrex/"}'
-          else
-            curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \--header 'Content-Type: application/json' \--data '{"chat_id":5030902696,"text": "Tests PASSED. Report https://nikita159821.github.io/Anrex/"}'
-            curl --location "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
-          fi
-        else
-          echo "Allure history file not found. Skipping Telegram notification."
-        fi
-    - name: Install jq
-      run: sudo apt-get install -y jq
-
-
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'microsoft'
+          java-version: '17'
+      - run: |
+          sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz
+          sudo tar -zxvf allure-2.23.1.tgz -C /opt/
+          sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
+      - name: Download all workflow run artifact
+        uses: actions/download-artifact@v3
+      - run: allure generate -c allure-results -o _site
+      - name: Store generated report
+        uses: actions/upload-artifact@v3
+        with:
+          name: _site
+          path: _site
+          retention-days: 1
+      - name: Send Allure report to Telegram
+        run: |
+          allure serve _site & sleep 10
+          allure_results_path=$(allure generate -c allure-results -o _site | grep -E '^Report generated at (.+)$' | sed 's/Report generated at //')
+          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \--header 'Content-Type: application/json' \--data '{"chat_id":5030902696,"text": "Tests PASSED. Report https://nikita159821.github.io/Anrex/"}'
   publish-report:
     runs-on: ubuntu-latest
     needs: generate-report
@@ -133,3 +140,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1.2.9
+Update python-tests.yml · nikita159821/Anrex@5c6fd4c 
