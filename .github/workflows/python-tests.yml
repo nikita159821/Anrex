@@ -68,14 +68,14 @@ jobs:
           rm -rf allure-results/*
       - name: Run tests
         id: run-tests
+        continue-on-error: true
         run: |
           pytest tests/test_title_city.py --alluredir=allure-results
-            if [ $? -eq 0 ]; then
-              echo "test-result=success" >> $GITHUB_OUTPUT
-            else
-              echo "test-result=failure" >> $GITHUB_OUTPUT
+          if [ $? -eq 0 ]; then
+            echo "test-result=success" >> $GITHUB_OUTPUT
+          else
+            echo "test-result=failure" >> $GITHUB_OUTPUT
       - name: Save test result
-        continue-on-error: true
         run: |
           echo "test-result=${{ steps.run-tests.outputs.test-result }}" >> $GITHUB_OUTPUT
       - name: Store allure results
@@ -84,6 +84,7 @@ jobs:
           name: allure-results
           path: allure-results
           retention-days: 1
+
 
   generate-report:
     runs-on: ubuntu-latest
