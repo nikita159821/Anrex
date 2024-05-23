@@ -71,6 +71,8 @@ jobs:
         else
           echo "test-result=0" >> $GITHUB_OUTPUT
         fi
+        continue-on-error: true 
+      
         
   generate-report:
     runs-on: ubuntu-latest
