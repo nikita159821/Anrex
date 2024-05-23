@@ -100,7 +100,7 @@ jobs:
         run: |
           allure serve _site & sleep 10
           allure_results_path=$(allure generate -c allure-results -o _site | grep -E '^Report generated at (.+)$' | sed 's/Report generated at //')
-          curl -s -X POST https://api.telegram.org/bot{secrets.TELEGRAM_BOT_TOKEN}/sendMessage -d chat_id={secrets.TELEGRAM_CHAT_ID} -d text="Allure report generated: $allure_results_path"
+          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \--header 'Content-Type: application/json' \--data '{"chat_id":5030902696,"text": "Tests PASSED. Report https://nikita159821.github.io/Anrex/"}'
 
 
   publish-report:
