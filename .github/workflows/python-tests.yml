@@ -68,12 +68,12 @@ jobs:
       - name: Run tests
         id: run-tests
         run: |
-          pytest tests/test_title_city.py --alluredir=allure-results
-          if pytest --exitfirst tests/test_title_city.py --alluredir=allure-results; then
+          if pytest tests/test_title_city.py --alluredir=allure-results; then
             echo "::set-output name=test-result::passed"
           else
             echo "::set-output name=test-result::failed"
           fi
+
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
