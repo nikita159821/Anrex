@@ -106,6 +106,20 @@ jobs:
             echo "Telegram bot token or chat ID is not set. Skipping Telegram notification."
             exit 0
           fi
+          
+          if [ -f allure-results/history/history-trend.json ]; then
+            status=$(jq -r '.report.status' allure-results/history/history-trend.json)
+            if [ "$status" = "PASSED" ]; then
+              curl --location -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+              --header 'Content-Type: application/json' \
+              --data "{\"chat_id\":\"$TELEGRAM_CHAT_ID\",\"text\":\"Tests PASSED. Report: https://nikita159821.github.io/Anrex/\"}"
+            else
+              curl --location -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+              --header 'Content-Type: application/json' \
+              --data "{\"chat_id\":\"$TELEGRAM_CHAT_ID\",\"text\":\"Tests FAILED. Report: https://nikita159821.github.io/Anrex/\"}"
+            fi
+          fi
+
 
   publish-report:
     runs-on: ubuntu-latest
