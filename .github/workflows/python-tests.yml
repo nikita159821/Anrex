@@ -67,7 +67,7 @@ jobs:
         run: rm -rf allure-results/*
       - name: Run tests
         id: run-tests
-        run: pytest -m tests/test_title_city.py --alluredir=allure-results
+        run: pytest  tests/ -m test_title_city.py --alluredir=allure-results
       - name: Store allure results
         uses: actions/upload-artifact@v3
         with:
