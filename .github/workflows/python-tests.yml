@@ -18,7 +18,8 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.12"
-      - run: |
+      - name: Скачать историю
+        run: |
           ARTIFACT_LIST=$(curl -L -H "Accept: application/vnd.github+json" \
           -H "X-GitHub-Api-Version:2022-11-28" \
           "https://api.github.com/repos/nikita159821/Anrex/actions/artifacts?per_page=1&page=1" \
@@ -81,21 +82,23 @@ jobs:
     needs: test
     name: Generate report
     steps:
-      - uses: actions/setup-java@v3
+      - name: Setup Java
+        uses: actions/setup-java@v3
         with:
           distribution: 'microsoft'
           java-version: '17'
-      - run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz && sudo tar -zxvf allure-2.23.1.tgz -C /opt/ && sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
+      - name: Install Allure
+        run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz && sudo tar -zxvf allure-2.23.1.tgz -C /opt/ && sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
       - name: Download all workflow run artifact
         uses: actions/download-artifact@v3
-      - run: allure generate -c allure-results -o _site
+      - name: Generate Allure Report
+        run: allure generate -c allure-results -o _site
       - name: Store generated report
         uses: actions/upload-artifact@v3
         with:
-            name: _site
-            path:
-              _site
-            retention-days: 1
+          name: _site
+          path: _site
+          retention-days: 1
 
 
   publish-report:
@@ -103,7 +106,19 @@ jobs:
     name: Report publication
     steps:
       - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v2
+      - name: Deploy to GitHub Pages
+        id: deployment
+      - name: Update Report Number
+        id: update_report_number
+        env:
+          REPORT_NUMBER: ${{ secrets.REPORT_NUMBER }}
+        run: |
+          REPORT_NUMBER=$((REPORT_NUMBER + 1))
+          echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_OUTPUT
+      - name: Send Telegram Notification
+        env:
+        
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2
       - name: Deploy to GitHub Pages
@@ -117,6 +132,10 @@ jobs:
           echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_OUTPUT
       - name: Send Telegram Notification
         env:
+          REPORT_NUMBER: ${{ steps.update_report_number.outputs.REPORT_NUMBER }}
+        run: |
+          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \--header 'Content-Type: application/json' \--data "{\"chat_id\":5030902696,\"text\": \"Report_$REPORT_NUMBER https://nikita159821.github.io/Anrex/\"}"
+
           REPORT_NUMBER: ${{ steps.update_report_number.outputs.REPORT_NUMBER }}
         run: |
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \--header 'Content-Type: application/json' \--data "{\"chat_id\":5030902696,\"text\": \"Report_$REPORT_NUMBER https://nikita159821.github.io/Anrex/\"}"
