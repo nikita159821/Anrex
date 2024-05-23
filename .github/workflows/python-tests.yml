@@ -44,7 +44,7 @@ jobs:
           retention-days: 1
 
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
     needs: download-history
     outputs:
       test-result: ${{ steps.run-tests.outputs.test-result }}
@@ -68,12 +68,8 @@ jobs:
       - name: Run tests
         id: run-tests
         run: |
-          if pytest tests/test_title_city.py --alluredir=allure-results; then
-            echo "::set-output name=test-result::passed"
-          else
-            echo "::set-output name=test-result::failed"
-          fi
-
+          pytest tests/test_title_city.py --alluredir=allure-results
+          echo "::set-output name=test-result::$(cat allure-results/*.xml | grep -c '<testcase')"
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
@@ -86,6 +82,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     name: Generate report
+    inputs:
+      test-result:
+        description: 'Результат тестов (0 если пройдены, 1 если не пройдены)'
+        required: true
+        default: ${{ needs.test.outputs.test-result }}
     steps:
       - uses: actions/setup-java@v3
         with:
@@ -105,13 +106,13 @@ jobs:
           path: _site
           retention-days: 1
 
-        
   publish-report:
     runs-on: ubuntu-latest
     needs: generate-report
     name: Report publication
     steps:
       - name: Download all workflow run artifacts
+    
         uses: actions/download-artifact@v3
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2
@@ -120,13 +121,12 @@ jobs:
         uses: actions/deploy-pages@v1.2.9
       - name: Check test results and send Telegram message
         run: |
-          if [ ${{ needs.test.outputs.test-result }} -ne 0 ]; then
-          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
-          --header 'Content-Type: application/json' \
+          if [ needs.test.outputs.test−result−ne0];thencurl−−location′https://api.telegram.org/botneeds.test.outputs.test−result−ne0];thencurl−−location′https://api.telegram.org/bot{{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage'
+          --header 'Content-Type: application/json'
           --data '{"chat_id":5030902696,"text": "Tests FAILED. Report: https://nikita159821.github.io/Anrex/"}'
           else
-          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
-          --header 'Content-Type: application/json' \
+          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage'
+          --header 'Content-Type: application/json'
           --data '{"chat_id":5030902696,"text": "Tests PASSED. Report: https://nikita159821.github.io/Anrex/"}'
           fi
 
