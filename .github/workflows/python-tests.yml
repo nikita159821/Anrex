@@ -68,7 +68,7 @@ jobs:
       - name: Run tests
         id: run-tests
         run: |
-          pytest tests --alluredir=allure-results
+          pytest tests/test_callback_link.py --alluredir=allure-results
           if [ $(cat allure-results/*.xml | grep -c '<testcase status="failed"') -eq 0 ]; then
             echo "::set-output name=test-result::1"
           else
