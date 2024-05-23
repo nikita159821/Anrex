@@ -115,7 +115,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1.2.9
       - name: Check test results and send Telegram message if failed
-        if: ${{ needs.test.outputs.test-result == 'failure' }}
+        if: ${{ needs.test.outputs.test-result == '0' }}
         run: |
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
           --header 'Content-Type: application/json' \
