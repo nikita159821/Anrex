@@ -122,7 +122,7 @@ jobs:
           --data '{"chat_id":5030902696,"text": "Tests FAILED. Report: https://nikita159821.github.io/Anrex/"}'
           
       - name: Check test results and send Telegram message if passed
-        if: ${{ needs.test.outputs.test-result == 'passed' }}
+        if: ${{ needs.test.outputs.test-result == '1' }}
         run: |
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
           --header 'Content-Type: application/json' \
