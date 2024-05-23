@@ -104,13 +104,13 @@ jobs:
         
   publish-report:
     runs-on: ubuntu-latest
-    needs: test
+    needs: generate-report
     name: Report publication
     steps:
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1.2.9
