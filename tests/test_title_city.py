@@ -14,4 +14,4 @@ class TestCity:
         with allure.step('Нажимаем на выбранный город на сайте'):
             popup_city.city_wrap_click()
         with allure.step('Проверяем, что в модальном окне есть тайтл "Выберите Ваш регион"'):
-            assert popup_city.popup_city() == CITY_TITLE
+            assert popup_city.popup_city() == 'fsafsaf'
