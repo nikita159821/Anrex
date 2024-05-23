@@ -68,7 +68,7 @@ jobs:
       - name: Run tests
         id: run-tests
         run: |
-          pytest tests/tests/test_title_city.py --alluredir=allure-results
+          pytest tests/test_title_city.py --alluredir=allure-results
           echo "::set-output name=test-result::$(cat allure-results/*.xml | grep -c '<testcase')"
         continue-on-error: true
       - name: Store allure results
@@ -115,7 +115,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1.2.9
       - name: Check test results and send Telegram message if failed
-        if: ${{ needs.test.outputs.test-result == '0' }}
+        if: ${{ needs.test.outputs.test-result == 'failure' }}
         run: |
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
           --header 'Content-Type: application/json' \
