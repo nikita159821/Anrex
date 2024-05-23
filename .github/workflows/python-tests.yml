@@ -97,7 +97,14 @@ jobs:
           sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
       - name: Download all workflow run artifact
         uses: actions/download-artifact@v3
-      - run: allure generate -c allure-results -o _site
+      - run: |
+          allure generate -c allure-results -o _site
+          if [ -d "_site" ]; then
+            echo "Directory _site exists"
+          else
+            echo "Directory _site does not exist"
+            exit 1
+          fi
       - name: Store generated report
         uses: actions/upload-artifact@v3
         with:
@@ -107,15 +114,19 @@ jobs:
 
   publish-report:
     runs-on: ubuntu-latest
-    needs: test
+    needs: [test, generate-report]
     steps:
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
+        with:
+          name: _site
+          path: _site
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2
+        with:
+          path: _site
       - name: Deploy to GitHub Pages
         id: deployment
-        
         uses: actions/deploy-pages@v1.2.9
       - name: Send Telegram message
         if: needs.test.outputs.test-result == 'failure'
