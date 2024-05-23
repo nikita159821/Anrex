@@ -108,13 +108,15 @@ jobs:
         uses: actions/upload-pages-artifact@v2
       - name: Deploy to GitHub Pages
         id: deployment
-      - name: success
+      - name: Update Report Number
+        id: update_report_number
         env:
           REPORT_NUMBER: ${{ secrets.REPORT_NUMBER }}
         run: |
           REPORT_NUMBER=$((REPORT_NUMBER + 1))
           echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_OUTPUT
-          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \--header 'Content-Type: application/json' \--data "{\"chat_id\":5030902696,\"text\": \"Report_$REPORT_NUMBER https://nikita159821.github.io/Anrex/\"}"
-      - name: Update Report Number
+      - name: Send Telegram Notification
+        env:
+          REPORT_NUMBER: ${{ steps.update_report_number.outputs.REPORT_NUMBER }}
         run: |
-          echo "${{ steps.success.outputs.REPORT_NUMBER }}" >> $GITHUB_ENV
+          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \--header 'Content-Type: application/json' \--data "{\"chat_id\":5030902696,\"text\": \"Report_$REPORT_NUMBER https://nikita159821.github.io/Anrex/\"}"
