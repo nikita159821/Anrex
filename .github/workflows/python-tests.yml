@@ -104,24 +104,23 @@ jobs:
     needs: generate-report
     name: Report publication
     steps:
-    - name: Download all workflow run artifacts
-      uses: actions/download-artifact@v3
-    - name: Upload Pages artifact
-      uses: actions/upload-pages-artifact@v2
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v1.2.9
-    - name: Check test results and send Telegram message if failed
-      if: needs.test.outputs.test-result == 'failure' 
-      run: |
-        curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
-        --header 'Content-Type: application/json' \
-        --data '{"chat_id":5030902696,"text": "Tests FAILED. Report: https://nikita159821.github.io/Anrex/"}'
-        
-    - name: Check test results and send Telegram message if passed
-      if: needs.test.outputs.test-result == 'success' 
-      run: |
-        curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
-        --header 'Content-Type: application/json' \
-        --data '{"chat_id":5030902696,"text": ""Tests PASSED. Report: https://nikita159821.github.io/Anrex/"}'
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v3
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1.2.9
+      - name: Check test results and send Telegram message if failed
+        if: needs.test.outputs.test-result == '0' 
+        run: |
+          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
+          --header 'Content-Type: application/json' \
+          --data '{"chat_id":5030902696,"text": "Tests FAILED. Report: https://nikita159821.github.io/Anrex/"}'
           
+      - name: Check test results and send Telegram message if passed
+        if: needs.test.outputs.test-result  == '1' 
+        run: |
+          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
+          --header 'Content-Type: application/json' \
+          --data '{"chat_id":5030902696,"text": "Tests PASSED. Report: https://nikita159821.github.io/Anrex/"}'
