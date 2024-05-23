@@ -112,14 +112,14 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1.2.9
       - name: Check test results and send Telegram message if failed
-        if: needs.test.outputs.test-result == 'failure' 
+        if: test-result.test.outputs.test-result == 'failure' 
         run: |
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
           --header 'Content-Type: application/json' \
           --data '{"chat_id":5030902696,"text": "Tests FAILED. Report: https://nikita159821.github.io/Anrex/"}'
           
       - name: Check test results and send Telegram message if passed
-        if: needs.test.outputs.test-result  == 'passed' 
+        if: test-result.test.outputs.test-result  == 'passed' 
         run: |
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
           --header 'Content-Type: application/json' \
