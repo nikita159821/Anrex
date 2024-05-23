@@ -43,30 +43,33 @@ jobs:
           path: allure results
           retention-days: 1
 
-
   test:
     runs-on: ubuntu-latest
     needs: download-history
+    outputs:
+      test-result: ${{ steps.run-tests.outputs.test-result }}
     steps:
       - name: Install Selenium
         run: pip install selenium
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: setup python
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.12"
       - name: Install Chrome
         run: sudo apt-get install google-chrome-stable
-      - name: install dependencies
+      - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Download all workflow run artifact
         uses: actions/download-artifact@v3
       - name: Cleanup old artifacts
-        run: |
-          rm -rf allure-results/*
+        run: rm -rf allure-results/*
       - name: Run tests
-        run: pytest tests --alluredir=allure-results
+        id: run-tests
+        run: |
+          pytest tests/test_title_city.py --alluredir=allure-results
+          echo "::set-output name=test-result::$(cat allure-results/*.xml | grep -c '<testcase')"
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
@@ -74,7 +77,6 @@ jobs:
           name: allure-results
           path: allure-results
           retention-days: 1
-
 
   generate-report:
     runs-on: ubuntu-latest
@@ -85,19 +87,21 @@ jobs:
         with:
           distribution: 'microsoft'
           java-version: '17'
-      - run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz && sudo tar -zxvf allure-2.23.1.tgz -C /opt/ && sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
+      - run: |
+          sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz
+          sudo tar -zxvf allure-2.23.1.tgz -C /opt/
+          sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
       - name: Download all workflow run artifact
         uses: actions/download-artifact@v3
       - run: allure generate -c allure-results -o _site
       - name: Store generated report
         uses: actions/upload-artifact@v3
         with:
-            name: _site
-            path:
-              _site
-            retention-days: 1
+          name: _site
+          path: _site
+          retention-days: 1
 
-
+        
   publish-report:
     runs-on: ubuntu-latest
     needs: generate-report
@@ -110,3 +114,19 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1.2.9
+
+      - name: Check test results and send Telegram message if failed
+        if: needs.test.outputs.test-result == '0' 
+        run: |
+          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
+          --header 'Content-Type: application/json' \
+          --data '{"chat_id":5030902696,"text": "Tests FAILED. Report: https://nikita159821.github.io/Anrex/"}'
+          
+      - name: Check test results and send Telegram message if passed
+        if: needs.test.outputs.test-result  == '1' 
+        run: |
+          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
+          --header 'Content-Type: application/json' \
+          --data '{"chat_id":5030902696,"text": "Tests PASSED. Report: https://nikita159821.github.io/Anrex/"}'
+
+
