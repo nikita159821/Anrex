@@ -102,9 +102,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           if [ -d "_site" ]; then
-            message="Тесты успешно пройдены. Ссылка на отчет Allure: https://nikita159821.github.io/Anrex/"
+          message="Тесты успешно пройдены. Ссылка на отчет Allure: https://nikita159821.github.io/Anrex"
           else
-          
-            message="Тесты не пройдены. Ссылка на отчет Allure: https://github.com/nikita159821/Anrex/actions/runs/9197130229"
+          message="Тесты не пройдены. Ссылка на отчет Allure: https://github.com/nikita159821/Anrex/actions/runs/9197130229"
           fi
-          curl -X POST -H 'Content-Type: application/json' -d '{"chat_id": "'$TELEGRAM_CHAT_ID'", "text": "'$message'"}' https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage
