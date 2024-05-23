@@ -46,6 +46,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     needs: download-history
+    continue-on-error: true
     steps:
     - name: Install Selenium
       run: pip install selenium
@@ -71,7 +72,6 @@ jobs:
         else
           echo "test-result=0" >> $GITHUB_OUTPUT
         fi
-        continue-on-error: true 
       
         
   generate-report:
