@@ -43,7 +43,6 @@ jobs:
           path: allure results
           retention-days: 1
 
-
   test:
     runs-on: ubuntu-latest
     needs: download-history
@@ -66,7 +65,7 @@ jobs:
         run: |
           rm -rf allure-results/*
       - name: Run tests
-        run: pytest tests/test_callback_popup_name_input.py --alluredir=allure-results
+        run: pytest tests --alluredir=allure-results
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
@@ -74,7 +73,6 @@ jobs:
           name: allure-results
           path: allure-results
           retention-days: 1
-
 
   generate-report:
     runs-on: ubuntu-latest
@@ -85,24 +83,35 @@ jobs:
         with:
           distribution: 'microsoft'
           java-version: '17'
-      - run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz && sudo tar -zxvf allure-2.23.1.tgz -C /opt/ && sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
+      - run: |
+          sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz
+          sudo tar -zxvf allure-2.23.1.tgz -C /opt/
+          sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
       - name: Download all workflow run artifact
         uses: actions/download-artifact@v3
       - run: allure generate -c allure-results -o _site
       - name: Store generated report
         uses: actions/upload-artifact@v3
         with:
-            name: _site
-            path:
-              _site
-            retention-days: 1
-      - name: Notify Telegram
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          name: _site
+          path: _site
+          retention-days: 1
+      - name: Send Allure report to Telegram
         run: |
-          if [ -d "_site" ]; then
-          message="Тесты успешно пройдены. Ссылка на отчет Allure: https://nikita159821.github.io/Anrex"
-          else
-          message="Тесты не пройдены. Ссылка на отчет Allure: https://github.com/nikita159821/Anrex/actions/runs/9197130229"
-          fi
+          allure serve _site & sleep 10
+          allure_results_path=$(allure generate -c allure-results -o _site | grep -E '^Report generated at (.+)$' | sed 's/Report generated at //')
+          curl -s -X POST https://api.telegram.org/bot{secrets.TELEGRAM_BOT_TOKEN}/sendMessage -d chat_id={secrets.TELEGRAM_CHAT_ID} -d text="Allure report generated: $allure_results_path"
+
+
+  publish-report:
+    runs-on: ubuntu-latest
+    needs: generate-report
+    name: Report publication
+    steps:
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v3
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1.2.9
