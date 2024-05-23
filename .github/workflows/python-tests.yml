@@ -75,9 +75,9 @@ jobs:
             else
               echo "test-result=failure" >> $GITHUB_OUTPUT
       - name: Save test result
+        continue-on-error: true
         run: |
           echo "test-result=${{ steps.run-tests.outputs.test-result }}" >> $GITHUB_OUTPUT
-        continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
         with:
