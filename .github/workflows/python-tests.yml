@@ -68,7 +68,7 @@ jobs:
       - name: Run tests
         id: run-tests
         run: |
-          pytest tests/test_title_city.py --alluredir=allure-results
+          pytest tests --alluredir=allure-results
           echo "::set-output name=test-result::$(cat allure-results/*.xml | grep -c '<testcase')"
         continue-on-error: true
       - name: Store allure results
