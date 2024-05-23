@@ -117,4 +117,4 @@ jobs:
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \--header 'Content-Type: application/json' \--data "{\"chat_id\":5030902696,\"text\": \"Report_$REPORT_NUMBER https://nikita159821.github.io/Anrex/\"}"
       - name: Update Report Number
         run: |
-          echo "${{ steps.success.outputs.REPORT_NUMBER }}" >> $GITHUB_OUTPUT
+          echo "${{ steps.success.outputs.REPORT_NUMBER }}" >> $GITHUB_ENV
