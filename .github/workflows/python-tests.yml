@@ -44,43 +44,46 @@ jobs:
           retention-days: 1
 
   test:
-    runs-on: ubuntu-latest
-    outputs:
-      test-result: ${{ steps.run-tests.outputs.test-result }}
-    steps:
-    - name: Install Selenium
-      run: pip install selenium
-    - name: Checkout repository
-      uses: actions/checkout@v3
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.12"
-    - name: Install Chrome
-      run: sudo apt-get install google-chrome-stable
-    - name: Install dependencies
-      run: pip install -r requirements.txt
-    - name: Download all workflow run artifact
-      uses: actions/download-artifact@v3
-    - name: Cleanup old artifacts
-      run: |
-        rm -rf allure-results/*
-    - name: Run tests
-      id: run-tests
-      run: |
-        pytest tests/test_title_city.py --alluredir=allure-results
-        if [ $? -eq 0 ]; then
-          echo "test-result=success" >> $GITHUB_OUTPUT
-        else
-          echo "test-result=failure" >> $GITHUB_OUTPUT
-        fi
-      continue-on-error: true
-    - name: Store allure results
-      uses: actions/upload-artifact@v3
-      with:
-        name: allure-results
-        path: allure-results
-        retention-days: 1
+  runs-on: ubuntu-latest
+  outputs:
+    test-result: ${{ steps.run-tests.outputs.test-result }}
+  steps:
+  - name: Install Selenium
+    run: pip install selenium
+  - name: Checkout repository
+    uses: actions/checkout@v3
+  - name: Setup Python
+    uses: actions/setup-python@v4
+    with:
+      python-version: "3.12"
+  - name: Install Chrome
+    run: sudo apt-get install google-chrome-stable
+  - name: Install dependencies
+    run: pip install -r requirements.txt
+  - name: Download all workflow run artifact
+    uses: actions/download-artifact@v3
+  - name: Cleanup old artifacts
+    run: |
+      rm -rf allure-results/*
+  - name: Run tests
+    id: run-tests
+    run: |
+      pytest tests/test_title_city.py --alluredir=allure-results
+      if [ $? -eq 0 ]; then
+        echo "test-result=success" >> $GITHUB_OUTPUT
+      else
+        echo "test-result=failure" >> $GITHUB_OUTPUT
+      fi
+    continue-on-error: true
+  - name: Store allure results
+    uses: actions/upload-artifact@v3
+    with:
+      name: allure-results
+      path: allure-results
+      retention-days: 1
+  - name: Save test result
+    run: |
+      echo "test-result=${{ steps.run-tests.outputs.test-result }}" >> $GITHUB_OUTPUT
 
   generate-report:
     runs-on: ubuntu-latest
@@ -116,24 +119,29 @@ jobs:
     runs-on: ubuntu-latest
     needs: [test, generate-report]
     steps:
-      - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: _site
-          path: _site
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: _site
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1.2.9
-      - name: Send Telegram message
-        if: needs.test.outputs.test-result == 'failure'
-        run: |
-          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \--header 'Content-Type: application/json' \--data '{"chat_id":5030902696,"text": "Tests FAILED. Report https://nikita159821.github.io/Anrex/"}'
-      - name: Send Telegram message
-        if: needs.test.outputs.test-result == 'success'
-        run: |
-          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \--header 'Content-Type: application/json' \--data '{"chat_id":5030902696,"text": "Tests PASSED. Report https://nikita159821.github.io/Anrex/"}'
+    - name: Download all workflow run artifacts
+      uses: actions/download-artifact@v3
+      with:
+        name: _site
+        path: _site
+    - name: Upload Pages artifact
+      uses: actions/upload-pages-artifact@v2
+      with:
+        path: _site
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1.2.9
+    - name: Send Telegram message
+      if: needs.test.outputs.test-result == 'failure'
+      run: |
+        curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
+        --header 'Content-Type: application/json' \
+        --data '{"chat_id":5030902696,"text": "Tests FAILED. Report https://nikita159821.github.io/Anrex/"}'
+    - name: Send Telegram message
+      if: needs.test.outputs.test-result == 'success'
+      run: |
+        curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
+        --header 'Content-Type: application/json' \
+        --data '{"chat_id":5030902696,"text": "Tests PASSED. Report https://nikita159821.github.io/Anrex/"}'
+
 
