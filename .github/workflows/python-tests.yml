@@ -116,15 +116,17 @@ jobs:
         uses: actions/deploy-pages@v1.2.9
       - name: Check test results and send Telegram message
         run: |
-          if [ ${{ needs.test.outputs.test-result }} -eq 0 ]; then
-            curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
-            --header 'Content-Type: application/json' \
-            --data '{"chat_id":5030902696,"text": "Tests FAILED. Report: https://nikita159821.github.io/Anrex/"}'
+          if [ ${{ needs.test.outputs.test-result }} -ne 0 ]; then
+          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
+          --header 'Content-Type: application/json' \
+          --data '{"chat_id":5030902696,"text": "Tests FAILED. Report: https://nikita159821.github.io/Anrex/"}'
           else
-            curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
-            --header 'Content-Type: application/json' \
-            --data '{"chat_id":5030902696,"text": "Tests PASSED. Report: https://nikita159821.github.io/Anrex/"}'
+          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
+          --header 'Content-Type: application/json' \
+          --data '{"chat_id":5030902696,"text": "Tests PASSED. Report: https://nikita159821.github.io/Anrex/"}'
           fi
+
+          
 
           
 
