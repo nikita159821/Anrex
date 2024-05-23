@@ -44,46 +44,45 @@ jobs:
           retention-days: 1
 
   test:
-  runs-on: ubuntu-latest
-  outputs:
-    test-result: ${{ steps.run-tests.outputs.test-result }}
-  steps:
-  - name: Install Selenium
-    run: pip install selenium
-  - name: Checkout repository
-    uses: actions/checkout@v3
-  - name: Setup Python
-    uses: actions/setup-python@v4
-    with:
-      python-version: "3.12"
-  - name: Install Chrome
-    run: sudo apt-get install google-chrome-stable
-  - name: Install dependencies
-    run: pip install -r requirements.txt
-  - name: Download all workflow run artifact
-    uses: actions/download-artifact@v3
-  - name: Cleanup old artifacts
-    run: |
-      rm -rf allure-results/*
-  - name: Run tests
-    id: run-tests
-    run: |
-      pytest tests/test_title_city.py --alluredir=allure-results
-      if [ $? -eq 0 ]; then
-        echo "test-result=success" >> $GITHUB_OUTPUT
-      else
-        echo "test-result=failure" >> $GITHUB_OUTPUT
-      fi
-    continue-on-error: true
-  - name: Store allure results
-    uses: actions/upload-artifact@v3
-    with:
-      name: allure-results
-      path: allure-results
-      retention-days: 1
-  - name: Save test result
-    run: |
-      echo "test-result=${{ steps.run-tests.outputs.test-result }}" >> $GITHUB_OUTPUT
+    runs-on: ubuntu-latest
+    outputs:
+      test-result: ${{ steps.run-tests.outputs.test-result }}
+    needs: download-history
+    steps:
+      - name: Install Selenium
+        run: pip install selenium
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+      - name: Install Chrome
+        run: sudo apt-get install google-chrome-stable
+      - name: install dependencies
+        run: pip install -r requirements.txt
+      - name: Download all workflow run artifact
+        uses: actions/download-artifact@v3
+      - name: Cleanup old artifacts
+        run: |
+          rm -rf allure-results/*
+      - name: Run tests
+        id: run-tests
+        run: |
+          pytest tests/test_title_city.py --alluredir=allure-results
+            if [ $? -eq 0 ]; then
+              echo "test-result=success" >> $GITHUB_OUTPUT
+            else
+              echo "test-result=failure" >> $GITHUB_OUTPUT
+      - name: Save test result
+        run: |
+          echo "test-result=${{ steps.run-tests.outputs.test-result }}" >> $GITHUB_OUTPUT
+      - name: Store allure results
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-results
+          path: allure-results
+          retention-days: 1
 
   generate-report:
     runs-on: ubuntu-latest
