@@ -109,13 +109,10 @@ jobs:
         if [ -f allure-results/history/history-trend.json ]; then
           status=$(jq -r '.report.status' allure-results/history/history-trend.json)
           if [ "$status" = "FAILED" ]; then
-            curl --location "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
-            --header 'Content-Type: application/json' \
-            --data "{\"chat_id\":$TELEGRAM_CHAT_ID,\"text\":\"Tests FAILED. Report: https://nikita159821.github.io/Anrex/\"}"
+            curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \--header 'Content-Type: application/json' \--data '{"chat_id":5030902696,"text": "Tests FAILED. Report https://nikita159821.github.io/Anrex/"}'
           else
+            curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \--header 'Content-Type: application/json' \--data '{"chat_id":5030902696,"text": "Tests PASSED. Report https://nikita159821.github.io/Anrex/"}'
             curl --location "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
-            --header 'Content-Type: application/json' \
-            --data "{\"chat_id\":$TELEGRAM_CHAT_ID,\"text\":\"Tests PASSED. Report: https://nikita159821.github.io/Anrex/\"}"
           fi
         else
           echo "Allure history file not found. Skipping Telegram notification."
