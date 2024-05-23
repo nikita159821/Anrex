@@ -119,4 +119,4 @@ jobs:
         env:
           REPORT_NUMBER: ${{ steps.success.outputs.REPORT_NUMBER }}
         run: |
-          echo "$REPORT_NUMBER" >> $GITHUB_OUTPUT
+          echo "$REPORT_NUMBER" >> $GITHUB_ENV
