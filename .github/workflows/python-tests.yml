@@ -65,7 +65,7 @@ jobs:
         run: |
           rm -rf allure-results/*
       - name: Run tests
-        run: pytest tests --alluredir=allure-results
+        run: pytest tests/tests/test_title_city.py --alluredir=allure-results
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
@@ -96,11 +96,16 @@ jobs:
           name: _site
           path: _site
           retention-days: 1
-      - name: Send Allure report to Telegram
+      - name: Run tests
+        run: pytest tests --alluredir=allure-results
+        continue-on-error: true
+      - name: Check test results and send Telegram message if failed
+        if: ${{ failure() }}
         run: |
-          allure serve _site & sleep 10
-          allure_results_path=$(allure generate -c allure-results -o _site | grep -E '^Report generated at (.+)$' | sed 's/Report generated at //')
-          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \--header 'Content-Type: application/json' \--data '{"chat_id":5030902696,"text": "Tests. Report https://nikita159821.github.io/Anrex/"}'
+          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \--header 'Content-Type: application/json' \--data '{"chat_id":5030902696,"text": "Some tests failed. Check the report at https://nikita159821.github.io/Anrex/"}'
+
+
+        
   publish-report:
     runs-on: ubuntu-latest
     needs: generate-report
