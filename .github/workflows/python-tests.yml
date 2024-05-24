@@ -79,54 +79,56 @@ jobs:
   generate-report:
     runs-on: ubuntu-latest
     needs: test
-    name: Generate report
+    name: Генерация отчета
     steps:
       - uses: actions/setup-java@v3
         with:
           distribution: 'microsoft'
           java-version: '17'
       - run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz && sudo tar -zxvf allure-2.23.1.tgz -C /opt/ && sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
-      - name: Download all workflow run artifact
+      - name: Скачивание артефактов
         uses: actions/download-artifact@v3
       - run: allure generate -c allure-results -o _site
-      - name: Store generated report
+      - name: Сохранение ссылки на отчет
+        run: |
+          echo "REPORT_URL=https://nikita159821.github.io/Anrex/" >> $GITHUB_OUTPUT
+      - name: Сохранение сгенерированного отчета
         uses: actions/upload-artifact@v3
         with:
-            name: _site
-            path:
-              _site
-            retention-days: 1
+          name: _site
+          path:
+            _site
+          retention-days: 1
 
 
   publish-report:
     runs-on: ubuntu-latest
     needs: generate-report
-    name: Report publication
+    name: Публикация отчета
     steps:
-      - name: Download all workflow run artifacts
+      - name: Скачивание артефактов
         uses: actions/download-artifact@v3
-      - name: Upload Pages artifact
+      - name: Загрузка артефакта страниц
         uses: actions/upload-pages-artifact@v2
-      - name: Deploy to GitHub Pages
+      - name: Развертывание на GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1.2.9
-      - name: Update Report Number
+
+      - name: Обновление номера отчета
         id: update_report_number
         run: |
-          if [ -f report_number.txt ]; then
-            REPORT_NUMBER=$(( $(cat report_number.txt) + 1 ))
-            echo "$REPORT_NUMBER" > report_number.txt
-            echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_OUTPUT
-            echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "report_number.txt file not found"
-            exit 1
-          fi
-      - name: Send Telegram Notification
+          REPORT_NUMBER=$(( $(cat report_number.txt 2>/dev/null || echo "0") + 1 ))
+          echo "$REPORT_NUMBER" > report_number.txt
+          echo "REPORT_URL=${{ steps.generate-report.outputs.REPORT_URL }}/Report_$REPORT_NUMBER" >> $GITHUB_OUTPUT
+          echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_OUTPUT
+          echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_STEP_SUMMARY
+      - name: Отправка уведомления в Telegram
         env:
+          REPORT_URL: ${{ steps.update_report_number.outputs.REPORT_URL }}
           REPORT_NUMBER: ${{ steps.update_report_number.outputs.REPORT_NUMBER }}
         run: |
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
           --header 'Content-Type: application/json' \
-          --data "{\"chat_id\":${{ secrets.TELEGRAM_CHAT_ID }},\"text\": \"Report_$REPORT_NUMBER https://nikita159821.github.io/Anrex/\"}"
+          --data "{\"chat_id\":${{ secrets.TELEGRAM_CHAT_ID }},\"text\": \"Отчет_$REPORT_NUMBER $REPORT_URL\"}"
+
   
