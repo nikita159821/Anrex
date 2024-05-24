@@ -117,18 +117,17 @@ jobs:
       - name: Update Report Number
         id: update_report_number_2
         env:
-            REPORT_NUMBER_2: ${{ secrets.REPORT_NUMBER_2 }}
+          REPORT_NUMBER_2: ${{ secrets.REPORT_NUMBER_2 }}
         run: |
-            REPORT_NUMBER_2=$((REPORT_NUMBER_2 + 1))
-            echo "REPORT_NUMBER_2=$REPORT_NUMBER_2" >> $GITHUB_OUTPUT
-            echo "REPORT_NUMBER=$REPORT_NUMBER_2" >> $GITHUB_STEP_SUMMARY
-            echo "REPORT_NUMBER_2=$REPORT_NUMBER_2" >> $GITHUB_ENV
-            echo "Current REPORT_NUMBER_2 value before update: $REPORT_NUMBER_2"
+          REPORT_NUMBER_2=$((REPORT_NUMBER_2 + 1))
+          echo "REPORT_NUMBER_2=$REPORT_NUMBER_2" >> $GITHUB_OUTPUT
+          echo "REPORT_NUMBER=$REPORT_NUMBER_2" >> $GITHUB_STEP_SUMMARY
+          echo "REPORT_NUMBER_2=$REPORT_NUMBER_2" >> $GITHUB_ENV
+          echo "Current REPORT_NUMBER_2 value before update: $REPORT_NUMBER_2"
 
-            # Обновленное значение
-            REPORT_NUMBER_2=$((REPORT_NUMBER_2))
-            echo "Current REPORT_NUMBER_2 value after update: $REPORT_NUMBER_2"
-      
+          # Обновленное значение
+          REPORT_NUMBER_2=$((REPORT_NUMBER_2))
+          echo "Current REPORT_NUMBER_2 value after update: $REPORT_NUMBER_2"
 
       - name: Setup GitHub CLI
         uses: actions/setup-python@v4
@@ -146,7 +145,7 @@ jobs:
           import requests
           import json
           import os
-          
+
           # Обновление секрета
           url = f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/actions/secrets/REPORT_NUMBER_2"
           payload = {
@@ -158,9 +157,9 @@ jobs:
               'Authorization': f'Bearer {os.environ["GITHUB_TOKEN"]}',
               'X-GitHub-Api-Version': '2022-11-28'
           }
-          
+
           response = requests.put(url, headers=headers, data=json.dumps(payload))
-          
+
           if response.status_code == 204:
               print("Секрет успешно обновлен")
           else:
