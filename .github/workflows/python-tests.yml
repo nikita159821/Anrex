@@ -146,6 +146,9 @@ jobs:
           import json
           import os
 
+          # Вывод значения REPORT_NUMBER_2 перед обновлением
+          print(f"REPORT_NUMBER_2 value before update: {os.environ['REPORT_NUMBER_2']}")
+
           # Обновление секрета
           url = f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/actions/secrets/REPORT_NUMBER_2"
           payload = {
@@ -160,6 +163,10 @@ jobs:
 
           response = requests.put(url, headers=headers, data=json.dumps(payload))
 
+          # Вывод ответа от GitHub API
+          print(f"GitHub API response status code: {response.status_code}")
+          print(f"GitHub API response text: {response.text}")
+
           if response.status_code == 204:
               print("Секрет успешно обновлен")
           else:
@@ -172,6 +179,7 @@ jobs:
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
           --header 'Content-Type: application/json' \
           --data "{\"chat_id\":5030902696,\"text\": \"Report_$REPORT_NUMBER_2 https://nikita159821.github.io/Anrex/\"}"
+  
         
       
         
