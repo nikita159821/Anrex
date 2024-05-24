@@ -1,6 +1,6 @@
 on:
   push:
-  schedule:
+  schedule: 
     - cron: '0 * * * *'
 
 permissions:
@@ -10,33 +10,8 @@ permissions:
 
 jobs:
 
-  download-history:
-    runs-on: ubuntu-latest
-    name: Скачивание истории
-    steps:
-      - name: Установка Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.12"
-      - name: Download Artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: allure-results
-          path: allure-results
-      - name: Cleanup old artifacts
-        run: |
-          rm -rf allure-results/*
-      - name: Сохранение истории Allure
-        uses: actions/upload-artifact@v3
-        with:
-          name: allure-results
-          path: allure results
-          retention-days: 1
-
-
   test:
     runs-on: ubuntu-latest
-    needs: download-history
     name: Запуск тестов
     steps:
       - name: Install Selenium
@@ -57,7 +32,7 @@ jobs:
         run: |
           rm -rf allure-results/*
       - name: Run tests
-        run: pytest tests/test_callback_link.py --alluredir=allure-results
+        run: pytest tests/test_title_city.py --alluredir=allure-results
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
@@ -65,7 +40,6 @@ jobs:
           name: allure-results
           path: allure-results
           retention-days: 1
-
 
 
   generate-report:
@@ -136,60 +110,32 @@ jobs:
           import requests
           import json
           import os
-          
-          # Получение списка ключей шифрования
-          url = f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/actions/secrets/public-keys"
+
+          # Вывод значения REPORT_NUMBER_2 перед обновлением
+          print(f"REPORT_NUMBER_2 value before update: {os.environ['REPORT_NUMBER_2']}")
+
+          # Обновление секрета
+          url = f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/actions/secrets/REPORT_NUMBER_2"
+          payload = {
+              "encrypted_value": "wtbo12EY4WLpuAQ+WOCc+l42hxp7OzPG9vZUwOgol3AGWjDMCvCl+2mF/GnmEDPdqA==",
+              "key_id": "3380204578043523366"
+          }
           headers = {
               'Accept': 'application/vnd.github+json',
               'Authorization': f'Bearer {os.environ["GITHUB_TOKEN"]}',
               'X-GitHub-Api-Version': '2022-11-28'
           }
-          response = requests.get(url, headers=headers)
-          
-          if response.status_code == 200:
-              keys = json.loads(response.text)['keys']
-              for key in keys:
-                  if key['name'] == 'REPORT_NUMBER_2':
-                      key_id = key['key_id']
-                      break
-              else:
-                  print("Ошибка: ключ шифрования для REPORT_NUMBER_2 не найден")
-                  exit(1)
-          
-              # Получение существующего значения секрета
-              url = f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/actions/secrets/REPORT_NUMBER_2"
-              response = requests.get(url, headers=headers)
-              existing_secret = json.loads(response.text)
-          
-              # Расшифровка существующего значения
-              from cryptography.fernet import Fernet
-              fernet = Fernet(key_id.encode())
-              existing_value = fernet.decrypt(existing_secret['encrypted_value'].encode()).decode()
-          
-              # Увеличение значения на 1
-              new_value = str(int(existing_value) + 1)
-          
-              # Зашифровка нового значения
-              new_encrypted_value = fernet.encrypt(new_value.encode()).decode()
-          
-              # Обновление секрета с новым значением
-              url = f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/actions/secrets/REPORT_NUMBER_2"
-              payload = {
-                  "encrypted_value": new_encrypted_value,
-                  "key_id": key_id
-              }
-              response = requests.put(url, headers=headers, data=json.dumps(payload))
-          
-              print(f"GitHub API response status code: {response.status_code}")
-              print(f"GitHub API response text: {response.text}")
-          
-              if response.status_code == 204:
-                  print("Секрет успешно обновлен")
-              else:
-                  print(f"Ошибка обновления секрета: {response.status_code} - {response.text}")
-          else:
-              print(f"Ошибка: {response.status_code} - {response.text}")
 
+          response = requests.post(url, headers=headers, data=json.dumps(payload))
+
+          # Вывод ответа от GitHub API
+          print(f"GitHub API response status code: {response.status_code}")
+          print(f"GitHub API response text: {response.text}")
+
+          if response.status_code == 204:
+              print("Секрет успешно обновлен")
+          else:
+              print(f"Ошибка обновления секрета: {response.status_code} - {response.text}")
 
       - name: Send Telegram Notification
         env:
@@ -198,3 +144,21 @@ jobs:
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
           --header 'Content-Type: application/json' \
           --data "{\"chat_id\":5030902696,\"text\": \"Report_$REPORT_NUMBER_2 https://nikita159821.github.io/Anrex/\"}"
+  
+        
+      
+        
+  
+  
+  
+
+  
+      
+  
+  
+  
+  
+      
+      
+
+  
