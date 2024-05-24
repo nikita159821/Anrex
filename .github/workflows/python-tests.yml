@@ -32,7 +32,7 @@ jobs:
         run: |
           rm -rf allure-results/*
       - name: Run tests
-        run: pytest tests/ --alluredir=allure-results
+        run: pytest tests --alluredir=allure-results
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
