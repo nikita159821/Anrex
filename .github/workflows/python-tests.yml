@@ -137,9 +137,9 @@ jobs:
         env:
           REPORT_NUMBER: ${{ steps.update_report_number.outputs.REPORT_NUMBER }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
         run: |
           gh secret set REPORT_NUMBER --body "$REPORT_NUMBER"
-        shell: /usr/bin/bash
 
       - name: Send Telegram Notification
         env:
@@ -148,6 +148,7 @@ jobs:
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
           --header 'Content-Type: application/json' \
           --data "{\"chat_id\":5030902696,\"text\": \"Report_$REPORT_NUMBER https://nikita159821.github.io/Anrex/\"}"
+  
   
   
   
