@@ -115,22 +115,34 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1.2.9
 
+      - name: Send Telegram Notification for First Report
+        if: ${{ steps.update_report_number.outputs.REPORT_NUMBER == '1' }}
+        env:
+          REPORT_NUMBER: 1
+          REPORT_URL: https://nikita159821.github.io/Anrex/
+        run: |
+          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
+          --header 'Content-Type: application/json' \
+          --data "{\"chat_id\":${{ secrets.TELEGRAM_CHAT_ID }},\"text\": \"Report_$REPORT_NUMBER $REPORT_URL\"}"
+
       - name: Обновление номера отчета
         id: update_report_number
         run: |
-          REPORT_NUMBER=$(( $(cat report_number.txt 2>/dev/null || echo "0") + 1 ))
-          echo "$REPORT_NUMBER" > report_number.txt
+          REPORT_NUMBER=$(($(cat report_number.txt 2>/dev/null || echo "0") + 1))
           echo "REPORT_URL=${{ steps.generate-report.outputs.REPORT_URL }}/Report_$REPORT_NUMBER" >> $GITHUB_OUTPUT
           echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_OUTPUT
           echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_STEP_SUMMARY
-      - name: Отправка уведомления в Telegram
+
+      - name: Отправка уведомления в Telegram для последующих отчетов
+        if: ${{ steps.update_report_number.outputs.REPORT_NUMBER != '1' }}
         env:
-          REPORT_URL: ${{ steps.generate-report.outputs.REPORT_URL }}/Report_${{ steps.update_report_number.outputs.REPORT_NUMBER }}
+          REPORT_URL: ${{ steps.update_report_number.outputs.REPORT_URL }}
           REPORT_NUMBER: ${{ steps.update_report_number.outputs.REPORT_NUMBER }}
         run: |
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
           --header 'Content-Type: application/json' \
           --data "{\"chat_id\":${{ secrets.TELEGRAM_CHAT_ID }},\"text\": \"Отчет_$REPORT_NUMBER - $REPORT_URL\"}"
+      
       
 
   
