@@ -142,25 +142,12 @@ jobs:
           import json
           import os
           
-          # Получение ключа id для существующего секрета
-          url = "https://api.github.com/repos/nikita159821/Anrex/actions/secrets/REPORT_NUMBER"
-          headers = {
-              'Accept': 'application/vnd.github.v3+json',
-              'Authorization': f'Bearer {os.environ["GITHUB_TOKEN"]}'
-          }
-          response = requests.get(url, headers=headers)
-          
-          if response.status_code == 200:
-              key_id = response.json()['key_id']
-          else:
-              print(f"Ошибка получения ключа id: {response.status_code} - {response.text}")
-              exit(1)
           
           # Обновление секрета
-          url = f"https://api.github.com/repos/nikita159821/Anrex/actions/secrets/REPORT_NUMBER/repositories/{os.environ['GITHUB_REPOSITORY']}"
+          url = f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/actions/secrets/REPORT_NUMBER_2"
           payload = {
-              "encrypted_value": os.environ["REPORT_NUMBER"],
-              "key_id": key_id
+              "encrypted_value": "wtbo12EY4WLpuAQ+WOCc+l42hxp7OzPG9vZUwOgol3AGWjDMCvCl+2mF/GnmEDPdqA==",
+              "key_id": "3380204578043523366"
           }
           headers = {
               'Accept': 'application/vnd.github+json',
@@ -174,7 +161,6 @@ jobs:
               print("Секрет успешно обновлен")
           else:
               print(f"Ошибка обновления секрета: {response.status_code} - {response.text}")
-
 
 
       - name: Send Telegram Notification
