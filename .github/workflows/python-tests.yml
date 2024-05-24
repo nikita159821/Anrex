@@ -105,7 +105,7 @@ jobs:
   publish-report:
     runs-on: ubuntu-latest
     needs: generate-report
-    name: Публикация отчета и отправка в Telegram
+    name: Публикация отчета и отправка
     steps:
       - name: Скачивание артефактов
         uses: actions/download-artifact@v3
@@ -125,11 +125,12 @@ jobs:
           echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_STEP_SUMMARY
       - name: Отправка уведомления в Telegram
         env:
-          REPORT_URL: ${{ steps.update_report_number.outputs.REPORT_URL }}
+          REPORT_URL: ${{ steps.generate-report.outputs.REPORT_URL }}/Report_${{ steps.update_report_number.outputs.REPORT_NUMBER }}
           REPORT_NUMBER: ${{ steps.update_report_number.outputs.REPORT_NUMBER }}
         run: |
-            curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
-            --header 'Content-Type: application/json' \
-            --data "{\"chat_id\":${{ secrets.TELEGRAM_CHAT_ID }},\"text\": \"Отчет_$REPORT_NUMBER - $REPORT_URL\"}"
+          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
+          --header 'Content-Type: application/json' \
+          --data "{\"chat_id\":${{ secrets.TELEGRAM_CHAT_ID }},\"text\": \"Отчет_$REPORT_NUMBER - $REPORT_URL\"}"
+      
 
   
