@@ -105,47 +105,30 @@ jobs:
   publish-report:
     runs-on: ubuntu-latest
     needs: generate-report
-    name: Публикация отчета
-    env:
-      GH_TOKEN: ${{ secrets.TOKEN }}
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
+    name: Report publication
     steps:
-      - name: Скачать все артефакты рабочего процесса
+      - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
-      - name: Проверить текущий каталог
-        run: pwd
-      - name: Publish GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          token: ${{ secrets.TOKEN }}
-          branch: gh-pages
-          folder: _site
-          clean: true
-          force: true
-      - name: Получить текущий номер отчета
-        id: get_report_number
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1.2.9
+      - name: Update Report Number
+        id: update_report_number
         env:
           REPORT_NUMBER: ${{ secrets.REPORT_NUMBER }}
         run: |
-          echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_OUTPUT
-      - name: Отправить уведомление в Telegram
+          REPORT_NUMBER=$((REPORT_NUMBER + 1))
+          echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_ENV
+          echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_STEP_SUMMARY
+      - name: Send Telegram Notification
         env:
-          REPORT_NUMBER: ${{ steps.get_report_number.outputs.REPORT_NUMBER }}
+          REPORT_NUMBER: ${{ steps.update_report_number.outputs.REPORT_NUMBER }}
         run: |
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
           --header 'Content-Type: application/json' \
-          --data "{\"chat_id\":5030902696,\"text\": \"Отчет_$REPORT_NUMBER https://nikita159821.github.io/Anrex/\"}"
-      - name: Клонировать репозиторий
-        uses: actions/checkout@v3
-      - name: Обновить номер отчета
-        env:
-          REPORT_NUMBER: ${{ steps.get_report_number.outputs.REPORT_NUMBER }}
-        run: |
-          REPORT_NUMBER=$((REPORT_NUMBER + 1))
-          echo "$REPORT_NUMBER" | gh secret set REPORT_NUMBER
+          --data "{\"chat_id\":5030902696,\"text\": \"Report_$REPORT_NUMBER https://nikita159821.github.io/Anrex/\"}"
   
   
   
