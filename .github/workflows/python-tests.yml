@@ -166,6 +166,9 @@ jobs:
           # Вывод ответа от GitHub API
           print(f"GitHub API response status code: {response.status_code}")
           print(f"GitHub API response text: {response.text}")
+          # Проверка значения REPORT_NUMBER_2 после обновления секрета
+          print(f"REPORT_NUMBER_2 value after update: {os.environ['REPORT_NUMBER_2']}")
+
 
           if response.status_code == 204:
               print("Секрет успешно обновлен")
