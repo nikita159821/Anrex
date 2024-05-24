@@ -18,6 +18,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -91,7 +96,7 @@
     "Python tests.pytest for test_title_city.TestCity.test_title_city.executor": "Run",
     "Python.safasf.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "develop",
     "last_opened_file_path": "/home/nikita/PycharmProjects/Anrex"
   }
 }]]></component>
@@ -183,11 +188,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_discounted_products.TestDiscountedProducts.test_discounted_products" />
         <item itemvalue="Python tests.pytest for test_logo_footer_anrex_.TestLogoFooter.test_logo_footer" />
-        <item itemvalue="Python tests.pytest for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay" />
-        <item itemvalue="Python tests.pytest for test_homepage_sections_slider.TestSectionSlider" />
         <item itemvalue="Python tests.pytest for test_homepage_sections_slider.TestSectionSlider.test_homepage_sections_slider" />
+        <item itemvalue="Python tests.pytest for test_homepage_sections_slider.TestSectionSlider" />
+        <item itemvalue="Python tests.pytest for test_discounted_products.TestDiscountedProducts.test_discounted_products" />
+        <item itemvalue="Python tests.pytest for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay" />
       </list>
     </recent_temporary>
   </component>
