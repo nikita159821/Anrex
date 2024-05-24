@@ -108,6 +108,9 @@ jobs:
     name: Публикация отчета
     env:
       GH_TOKEN: ${{ github.token }}
+    permissions:
+      contents: read
+      actions: write
     steps:
       - name: Скачать все артефакты рабочего процесса
         uses: actions/download-artifact@v3
