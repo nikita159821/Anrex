@@ -107,18 +107,20 @@ jobs:
     needs: generate-report
     name: Публикация отчета
     env:
-      GH_TOKEN: ${{ github.token }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     permissions:
       contents: read
-      actions: write
+      pages: write
+      id-token: write
     steps:
       - name: Скачать все артефакты рабочего процесса
         uses: actions/download-artifact@v3
-      - name: Загрузить артефакт в GitHub Pages
-        uses: actions/upload-pages-artifact@v2
-      - name: Развернуть на GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1.2.9
+      - name: Publish GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: _site
       - name: Получить текущий номер отчета
         id: get_report_number
         env:
