@@ -126,14 +126,18 @@ jobs:
           echo "Current REPORT_NUMBER value: $REPORT_NUMBER"
 
       - name: Update REPORT_NUMBER Secret
+        uses: actions/github-script@v6
         env:
           REPORT_NUMBER: ${{ steps.update_report_number.outputs.REPORT_NUMBER }}
-        run: |
-          gh secret set REPORT_NUMBER --body "$REPORT_NUMBER"
-        shell: /usr/bin/bash
-        # Если вы используете GitHub CLI, раскомментируйте эту строку
-        # env:
-        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.actions.createOrUpdateRepoSecret({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              secret_name: 'REPORT_NUMBER',
+              encrypted_value: process.env.REPORT_NUMBER
+            })
 
       - name: Send Telegram Notification
         env:
@@ -142,6 +146,7 @@ jobs:
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
           --header 'Content-Type: application/json' \
           --data "{\"chat_id\":5030902696,\"text\": \"Report_$REPORT_NUMBER https://nikita159821.github.io/Anrex/\"}"
+  
       
   
   
