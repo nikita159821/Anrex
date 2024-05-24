@@ -113,10 +113,15 @@ jobs:
       - name: Update Report Number
         id: update_report_number
         run: |
-          REPORT_NUMBER=$(( $(cat report_number.txt) + 1 ))
-          echo "$REPORT_NUMBER" > report_number.txt
-          echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_OUTPUT
-          echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_STEP_SUMMARY
+          if [ -f report_number.txt ]; then
+            REPORT_NUMBER=$(( $(cat report_number.txt) + 1 ))
+            echo "$REPORT_NUMBER" > report_number.txt
+            echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_OUTPUT
+            echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "report_number.txt file not found"
+            exit 1
+          fi
       - name: Send Telegram Notification
         env:
           REPORT_NUMBER: ${{ steps.update_report_number.outputs.REPORT_NUMBER }}
