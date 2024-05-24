@@ -1,6 +1,6 @@
 on:
   push:
-  schedule: 
+  schedule:
     - cron: '0 * * * *'
 
 permissions:
@@ -10,8 +10,33 @@ permissions:
 
 jobs:
 
+  download-history:
+    runs-on: ubuntu-latest
+    name: Скачивание истории
+    steps:
+      - name: Установка Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+      - name: Download Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: allure-results
+          path: allure-results
+      - name: Cleanup old artifacts
+        run: |
+          rm -rf allure-results/*
+      - name: Сохранение истории Allure
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-results
+          path: allure results
+          retention-days: 1
+
+
   test:
     runs-on: ubuntu-latest
+    needs: download-history
     name: Запуск тестов
     steps:
       - name: Install Selenium
@@ -32,7 +57,7 @@ jobs:
         run: |
           rm -rf allure-results/*
       - name: Run tests
-        run: pytest tests/test_title_city.py --alluredir=allure-results
+        run: pytest tests/test_callback_link.py --alluredir=allure-results
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
@@ -40,6 +65,7 @@ jobs:
           name: allure-results
           path: allure-results
           retention-days: 1
+
 
 
   generate-report:
@@ -172,21 +198,3 @@ jobs:
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
           --header 'Content-Type: application/json' \
           --data "{\"chat_id\":5030902696,\"text\": \"Report_$REPORT_NUMBER_2 https://nikita159821.github.io/Anrex/\"}"
-  
-        
-      
-        
-  
-  
-  
-
-  
-      
-  
-  
-  
-  
-      
-      
-
-  
