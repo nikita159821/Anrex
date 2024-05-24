@@ -140,6 +140,7 @@ jobs:
         run: |
           import requests
           import json
+          import os
 
           url = "https://api.github.com/repos/nikita159821/Anrex/actions/secrets/REPORT_NUMBER"
           payload = {
