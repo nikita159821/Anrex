@@ -18,6 +18,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -90,27 +95,33 @@
     "Python tests.pytest for test_title_back_call.TestTitle.executor": "Run",
     "Python tests.pytest for test_title_city.TestCity.test_title_city.executor": "Run",
     "Python.safasf.executor": "Run",
+    "Python.пывпвы.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "develop",
     "last_opened_file_path": "/home/nikita/PycharmProjects/Anrex"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.pytest for test_discounted_products.TestDiscountedProducts.test_discounted_products">
-    <configuration name="pytest for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.пывпвы">
+    <configuration name="пывпвы" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/пывпвы.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <configuration name="pytest for test_discounted_products.TestDiscountedProducts.test_discounted_products" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
@@ -183,11 +194,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_discounted_products.TestDiscountedProducts.test_discounted_products" />
+        <item itemvalue="Python.пывпвы" />
         <item itemvalue="Python tests.pytest for test_logo_footer_anrex_.TestLogoFooter.test_logo_footer" />
-        <item itemvalue="Python tests.pytest for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay" />
-        <item itemvalue="Python tests.pytest for test_homepage_sections_slider.TestSectionSlider" />
         <item itemvalue="Python tests.pytest for test_homepage_sections_slider.TestSectionSlider.test_homepage_sections_slider" />
+        <item itemvalue="Python tests.pytest for test_homepage_sections_slider.TestSectionSlider" />
+        <item itemvalue="Python tests.pytest for test_discounted_products.TestDiscountedProducts.test_discounted_products" />
       </list>
     </recent_temporary>
   </component>
