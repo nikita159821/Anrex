@@ -141,23 +141,40 @@ jobs:
           import requests
           import json
           import os
-
+          
+          # Получение key_id для существующего секрета
           url = "https://api.github.com/repos/nikita159821/Anrex/actions/secrets/REPORT_NUMBER"
-          payload = {
-              "encrypted_value": "${{ secrets.REPORT_NUMBER }}",
-              "key_id": "${{ secrets.REPORT_NUMBER_KEY }}"
-          }
           headers = {
               'Accept': 'application/vnd.github.v3+json',
               'Authorization': f'Bearer {os.environ["GITHUB_TOKEN"]}'
           }
-
+          response = requests.get(url, headers=headers)
+          
+          if response.status_code == 200:
+              key_id = response.json()['key_id']
+          else:
+              print(f"Error getting key_id: {response.status_code} - {response.text}")
+              exit(1)
+          
+          # Обновление секрета
+          url = "https://api.github.com/repos/nikita159821/Anrex/actions/secrets/REPORT_NUMBER"
+          payload = {
+              "encrypted_value": "${{ secrets.REPORT_NUMBER }}",
+              "key_id": key_id
+          }
+          headers = {
+              'Accept': 'application/vnd.github+json',
+              'Authorization': f'Bearer {os.environ["GITHUB_TOKEN"]}',
+              'X-GitHub-Api-Version': '2022-11-28'
+          }
+          
           response = requests.request("PUT", url, headers=headers, data=json.dumps(payload))
-
+          
           if response.status_code == 204:
               print("Secret updated successfully")
           else:
               print(f"Error updating secret: {response.status_code} - {response.text}")
+
 
       - name: Send Telegram Notification
         env:
