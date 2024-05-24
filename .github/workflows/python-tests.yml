@@ -1,6 +1,6 @@
 on:
   push:
-  schedule: 
+  schedule:
     - cron: '0 * * * *'
 
 permissions:
@@ -32,7 +32,7 @@ jobs:
         run: |
           rm -rf allure-results/*
       - name: Run tests
-        run: pytest tests/test_title_city.py --alluredir=allure-results
+        run: pytest tests --alluredir=allure-results
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
@@ -144,21 +144,3 @@ jobs:
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
           --header 'Content-Type: application/json' \
           --data "{\"chat_id\":5030902696,\"text\": \"Report_$REPORT_NUMBER_2 https://nikita159821.github.io/Anrex/\"}"
-  
-        
-      
-        
-  
-  
-  
-
-  
-      
-  
-  
-  
-  
-      
-      
-
-  
