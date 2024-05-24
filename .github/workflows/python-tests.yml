@@ -129,6 +129,6 @@ jobs:
         run: |
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
           --header 'Content-Type: application/json' \
-          --data "{\"chat_id\":${{ secrets.TELEGRAM_CHAT_ID }},\"text\": \"Отчет_$REPORT_NUMBER $REPORT_URL\"}"
+          --data "{\"chat_id\":${{ secrets.TELEGRAM_CHAT_ID }},\"text\": \"Отчет_1 - https://nikita159821.github.io/Anrex/Report_1"}"
 
   
