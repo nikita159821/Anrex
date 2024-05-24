@@ -105,7 +105,7 @@ jobs:
   publish-report:
     runs-on: ubuntu-latest
     needs: generate-report
-    name: Публикация отчёта и отправка
+    name: Публикация и отправка
     steps:
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
@@ -117,13 +117,13 @@ jobs:
       - name: Update Report Number
         id: update_report_number
         env:
-          REPORT_NUMBER: ${{ secrets.REPORT_NUMBER }}
+          REPORT_NUMBER: ${{ secrets.REPORT_NUMBER_2 }}
         run: |
-          REPORT_NUMBER=$((REPORT_NUMBER + 1))
-          echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_OUTPUT
-          echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_STEP_SUMMARY
-          echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_ENV
-          echo "Current REPORT_NUMBER value: $REPORT_NUMBER"
+          REPORT_NUMBER_2=$((REPORT_NUMBER_2 + 1))
+          echo "REPORT_NUMBER_2=$REPORT_NUMBER_2" >> $GITHUB_OUTPUT
+          echo "REPORT_NUMBER=$REPORT_NUMBER_2" >> $GITHUB_STEP_SUMMARY
+          echo "REPORT_NUMBER_2=$REPORT_NUMBER_2" >> $GITHUB_ENV
+          echo "Current REPORT_NUMBER_2 value: $REPORT_NUMBER_2"
 
       - name: Setup GitHub CLI
         uses: actions/setup-python@v4
@@ -134,7 +134,7 @@ jobs:
 
       - name: Update REPORT_NUMBER Secret
         env:
-          REPORT_NUMBER: ${{ steps.update_report_number.outputs.REPORT_NUMBER }}
+          REPORT_NUMBER: ${{ steps.update_report_number.outputs.REPORT_NUMBER_2 }}
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         shell: python
         run: |
@@ -165,11 +165,11 @@ jobs:
 
       - name: Send Telegram Notification
         env:
-          REPORT_NUMBER: ${{ steps.update_report_number.outputs.REPORT_NUMBER }}
+          REPORT_NUMBER: ${{ steps.update_report_number.outputs.REPORT_NUMBER_2 }}
         run: |
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
           --header 'Content-Type: application/json' \
-          --data "{\"chat_id\":5030902696,\"text\": \"Report_$REPORT_NUMBER https://nikita159821.github.io/Anrex/\"}"
+          --data "{\"chat_id\":5030902696,\"text\": \"Report_$REPORT_NUMBER_2 https://nikita159821.github.io/Anrex/\"}"
   
   
   
