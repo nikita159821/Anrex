@@ -132,7 +132,7 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Update TOKEN Secret
+      - name: Update REPORT_NUMBER Secret
         env:
           REPORT_NUMBER: ${{ steps.update_report_number.outputs.REPORT_NUMBER }}
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
@@ -141,13 +141,14 @@ jobs:
           import requests
           import json
 
-          url = "https://api.github.com/repos/nikita159821/Anrex/actions/secrets/TOKEN"
+          url = "https://api.github.com/repos/nikita159821/Anrex/actions/secrets/REPORT_NUMBER"
           payload = {
-              "value": "${{ steps.update_report_number.outputs.REPORT_NUMBER }}"
+              "encrypted_value": "${{ secrets.REPORT_NUMBER }}",
+              "key_id": "${{ secrets.REPORT_NUMBER_KEY }}"
           }
           headers = {
               'Accept': 'application/vnd.github.v3+json',
-              'Authorization': 'Bearer ${{ secrets.TOKEN }}'
+              'Authorization': f'Bearer {os.environ["GITHUB_TOKEN"]}'
           }
 
           response = requests.request("PUT", url, headers=headers, data=json.dumps(payload))
@@ -159,11 +160,12 @@ jobs:
 
       - name: Send Telegram Notification
         env:
-          REPORT_NUMBER: ${{ secrets.REPORT_NUMBER }}
+          REPORT_NUMBER: ${{ steps.update_report_number.outputs.REPORT_NUMBER }}
         run: |
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
           --header 'Content-Type: application/json' \
           --data "{\"chat_id\":5030902696,\"text\": \"Report_$REPORT_NUMBER https://nikita159821.github.io/Anrex/\"}"
+  
   
   
   
