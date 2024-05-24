@@ -112,10 +112,9 @@ jobs:
         uses: actions/deploy-pages@v1.2.9
       - name: Update Report Number
         id: update_report_number
-        env:
-          REPORT_NUMBER: ${{ secrets.REPORT_NUMBER }}
         run: |
-          REPORT_NUMBER=$((REPORT_NUMBER + 1))
+          REPORT_NUMBER=$(( $(cat report_number.txt) + 1 ))
+          echo "$REPORT_NUMBER" > report_number.txt
           echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_OUTPUT
           echo "REPORT_NUMBER=$REPORT_NUMBER" >> $GITHUB_STEP_SUMMARY
       - name: Send Telegram Notification
@@ -124,4 +123,5 @@ jobs:
         run: |
           curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
           --header 'Content-Type: application/json' \
-          --data "{\"chat_id\":5030902696,\"text\": \"Report_$REPORT_NUMBER https://nikita159821.github.io/Anrex/\"}"
+          --data "{\"chat_id\":${{ secrets.TELEGRAM_CHAT_ID }},\"text\": \"Report_$REPORT_NUMBER https://nikita159821.github.io/Anrex/\"}"
+  
