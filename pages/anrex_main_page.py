@@ -295,7 +295,7 @@ class MainPage(BasePage):
 
     # Возвращает блок "Товары со скидками"
     def get_discounted_products(self):
-        return self.get_element_scroll_to_element(discounted_products)
+        return self.find(discounted_products)
 
     # Возвращает блок "Популярные категории"
     def get_popular_categories(self):

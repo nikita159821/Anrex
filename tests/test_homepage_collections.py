@@ -1,5 +1,6 @@
 import allure
 
+from locators.main_page_locators import button_right, button_left, button_collections, view_collections
 from pages.anrex_main_page import MainPage
 from tests.data import TITLE_VALENCIA, TITLE_JAZZ, TITLE_BUTTON, TITLE_BUTTON_VIEW_COLLECTIONS
 from tests.urls import URL, COLLECTIONS_JAGGER, CHAPTER_COLLECTIONS
@@ -22,6 +23,8 @@ class TestHomepageCollections:
             collections_right.open()
         with allure.step('Скроллим до блока "Наши коллекции"'):
             collections_right.get_section_collections()
+        with allure.step('Добавляем ожидание после скролла'):
+            collections_right.wait_for_element(button_right)
         with allure.step('Нажимаем стрелку вправо в разделе "Наши коллекции"'):
             collections_right.click_button_right()
         with allure.step('Проверяем, что отображается коллекция "Джаз"'):
@@ -34,6 +37,8 @@ class TestHomepageCollections:
             collections_left.open()
         with allure.step('Скроллим до блока "Наши коллекции"'):
             collections_left.get_section_collections()
+        with allure.step('Добавляем ожидание после скролла'):
+            collections_left.wait_for_element(button_left)
         with allure.step('Нажимаем стрелку влево в разделе "Наши коллекции"'):
             collections_left.click_button_left()
         with allure.step('Проверяем, что отображается коллекция "Валенсия"'):
@@ -56,6 +61,8 @@ class TestHomepageCollections:
             redirect_collection.open()
         with allure.step('Скроллим до блока "Наши коллекции"'):
             redirect_collection.get_section_collections()
+        with allure.step('Добавляем ожидание после скролла'):
+            redirect_collection.wait_for_element(button_collections)
         with allure.step('Нажимаем кнопку "Смотреть коллекцию"'):
             redirect_collection.get_click_button_collections()
         with allure.step('Проверяем, что открылась страница с коллекцией "Джаггер"'):
@@ -78,6 +85,8 @@ class TestHomepageCollections:
             redirect_collection.open()
         with allure.step('Скроллим до блока "Наши коллекции"'):
             redirect_collection.get_section_collections()
+        with allure.step('Добавляем ожидание после скролла'):
+            redirect_collection.wait_for_element(view_collections)
         with allure.step('Нажимаем кнопку "Смотреть все коллекции"'):
             redirect_collection.get_click_button_view_collections()
         with allure.step('Проверяем, что открылась страница со всеми коллекциями'):

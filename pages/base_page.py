@@ -99,13 +99,12 @@ class BasePage:
     # Общий метод для получения и прокрутки страницы до элемента
     def get_element_scroll_to_element(self, locator):
         element = self.find_element(*locator)
-        actions = ActionChains(self.browser)
-        actions.move_to_element(element).perform()
+        self.browser.execute_script("arguments[0].scrollIntoView(true);", element)
         return element
 
     def wait_for_element(self, locator):
         try:
-            WebDriverWait(self.browser, 15).until(element_to_be(locator))
+            WebDriverWait(self.browser, 10).until(element_to_be(locator))
         except TimeoutException:
             return False
         return True

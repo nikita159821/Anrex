@@ -4,6 +4,7 @@ import sys
 import os
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
+
 # Добавляем путь к директории "pages"
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
@@ -25,4 +26,3 @@ def browser(request):
     driver.maximize_window()
     yield driver
     driver.quit()
-

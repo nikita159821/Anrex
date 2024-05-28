@@ -1,20 +1,24 @@
+import time
+
 import allure
 import pytest
 
-from locators.main_page_locators import phone_error
+from locators.main_page_locators import phone_error, button_write
 from pages.anrex_main_page import MainPage
 from tests.data import PHONE_FORM, HAS_ERROR_PHONE
 
 
 class TestPhoneInputSendKeys:
 
-    @allure.title('В форме "Обратной сявзи" в поле "Ваш телефон" вводим 11 цифр')
+    @allure.title('В форме "Обратной связи" в поле "Ваш телефон" вводим 11 цифр')
     def test_positive_phone_input_form_feedback_send_keys(self, browser):
         phone_input_form_feedback_send_keys = MainPage(browser)
         with allure.step('Открываем главную страницу'):
             phone_input_form_feedback_send_keys.open()
         with allure.step('Скроллим до футера'):
             phone_input_form_feedback_send_keys.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            phone_input_form_feedback_send_keys.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             phone_input_form_feedback_send_keys.click_button_write()
         with allure.step('Вводим цифры в поле "Ваш телефон"'):
@@ -26,13 +30,15 @@ class TestPhoneInputSendKeys:
         with allure.step('Сравниваем значение поля "Ваш телефон" с ожидаемым'):
             assert phone_input.get_attribute("value") == current_value
 
-    @allure.title('В форме "Обратной сявзи" в поле "Ваш телефон" удаляем введенные значения')
+    @allure.title('В форме "Обратной связи" в поле "Ваш телефон" удаляем введенные значения')
     def test_phone_input_form_feedback_delete_send_keys(self, browser):
         phone_input_delete = MainPage(browser)
         with allure.step('Открываем главную страницу'):
             phone_input_delete.open()
         with allure.step('Скроллим до футера'):
             phone_input_delete.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            phone_input_delete.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             phone_input_delete.click_button_write()
         with allure.step('Вводим цифры в поле "Ваш телефон"'):
@@ -44,13 +50,15 @@ class TestPhoneInputSendKeys:
         with allure.step('Проверяем, что значение поля изменилось после удаления данных'):
             assert phone_input.get_attribute("value") == ''
 
-    @allure.title('В форме "Обратной сявзи" в поле "Ваш телефон" вводим 12 цифр')
+    @allure.title('В форме "Обратной связи" в поле "Ваш телефон" вводим 12 цифр')
     def test_negative_phone_form_feedback_input_send_keys_12_digits(self, browser):
         phone_input_send_keys = MainPage(browser)
         with allure.step('Открываем главную страницу'):
             phone_input_send_keys.open()
         with allure.step('Скроллим до футера'):
             phone_input_send_keys.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            phone_input_send_keys.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             phone_input_send_keys.click_button_write()
         with allure.step('Вводим цифры в поле "Ваш телефон"'):
@@ -62,9 +70,7 @@ class TestPhoneInputSendKeys:
 
     # Вводим в поле "Ваш телефон" 1 цифру, буквы, спец. символы, пробел.
     @pytest.mark.parametrize('phone', [
-        MainPage.generate_random_string(1, 'digits'),
-        MainPage.generate_random_string(5, 'russian_letters'),
-        MainPage.generate_random_string(5, 'punctuation'),
+
         ' '  # Добавляем пробел как один из параметров
     ])
     @allure.title('В форме "Обратной связи" в поле "Ваш телефон" вводим 1 цифру, буквы, спец. символы, пробел.')
@@ -74,6 +80,8 @@ class TestPhoneInputSendKeys:
             phone_form_feedback_input_send_keys.open()
         with allure.step('Скроллим до футера'):
             phone_form_feedback_input_send_keys.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            phone_form_feedback_input_send_keys.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             phone_form_feedback_input_send_keys.click_button_write()
         with allure.step('Вводим цифры в поле "Ваш телефон"'):

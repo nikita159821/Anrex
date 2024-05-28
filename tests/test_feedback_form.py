@@ -1,6 +1,6 @@
 import allure
 
-from locators.main_page_locators import form_overlay_close
+from locators.main_page_locators import form_overlay_close, button_write
 from pages.anrex_main_page import MainPage
 from tests.data import TITLE_FORM_FEEDBACK, TEXT_FORM_FEEDBACK, RADIO_BUTTON, NAME_PLACEHOLDER, PHONE_PLACEHOLDER, \
     QUESTION_PLACEHOLDER, EMAIL_PLACEHOLDER
@@ -15,6 +15,8 @@ class TestFeedbackForm:
             opens_feedback_form.open()
         with allure.step('Скроллим до футера'):
             opens_feedback_form.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            opens_feedback_form.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             opens_feedback_form.click_button_write()
         with allure.step('Сохраняем тайтл "Форма обратной связи" - если тайтл есть, форма открыта'):
@@ -27,6 +29,8 @@ class TestFeedbackForm:
             description_content.open()
         with allure.step('Скроллим до футера'):
             description_content.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            description_content.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             description_content.click_button_write()
         with allure.step('Сохраняем текст из "Форма обратной связи" и сравниваем с ожидаемым'):
@@ -39,6 +43,8 @@ class TestFeedbackForm:
             description_content.open()
         with allure.step('Скроллим до футера'):
             description_content.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            description_content.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             description_content.click_button_write()
         with allure.step('Сохраняем текст радиокнопок из "Форма обратной связи" и сравниваем с ожидаемым'):
@@ -51,6 +57,8 @@ class TestFeedbackForm:
             form_close.open()
         with allure.step('Скроллим до футера'):
             form_close.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            form_close.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             form_close.click_button_write()
         with allure.step('Закрываем форму через крестик'):
@@ -65,6 +73,8 @@ class TestFeedbackForm:
             form_close_overlay.open()
         with allure.step('Скроллим до футера'):
             form_close_overlay.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            form_close_overlay.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             form_close_overlay.click_button_write()
         with allure.step('Закрываем форму через оверлей'):
@@ -79,6 +89,8 @@ class TestFeedbackForm:
             form_feedback_name.open()
         with allure.step('Скроллим до футера'):
             form_feedback_name.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            form_feedback_name.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             form_feedback_name.click_button_write()
         with allure.step('Находим поле "Ваше имя" и проверяем отображение'):
@@ -91,6 +103,8 @@ class TestFeedbackForm:
             form_feedback_phone.open()
         with allure.step('Скроллим до футера'):
             form_feedback_phone.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            form_feedback_phone.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             form_feedback_phone.click_button_write()
         with allure.step('Находим поле "Ваш телефон" и проверяем отображение'):
@@ -103,6 +117,8 @@ class TestFeedbackForm:
             form_feedback_email.open()
         with allure.step('Скроллим до футера'):
             form_feedback_email.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            form_feedback_email.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             form_feedback_email.click_button_write()
         with allure.step('Находим поле "Ваша почта" и проверяем отображение'):
@@ -115,6 +131,8 @@ class TestFeedbackForm:
             form_feedback_question.open()
         with allure.step('Скроллим до футера'):
             form_feedback_question.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            form_feedback_question.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             form_feedback_question.click_button_write()
         with allure.step('Находим поле "Ваш вопрос/комментарий" и проверяем отображение'):
@@ -127,6 +145,8 @@ class TestFeedbackForm:
             placeholder_form_feedback_name.open()
         with allure.step('Скроллим до футера'):
             placeholder_form_feedback_name.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            placeholder_form_feedback_name.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             placeholder_form_feedback_name.click_button_write()
         with allure.step('Находим поле "Ваше Имя" и проверяем отображение плейсхолдера'):
@@ -139,6 +159,8 @@ class TestFeedbackForm:
             placeholder_form_feedback_phone.open()
         with allure.step('Скроллим до футера'):
             placeholder_form_feedback_phone.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            placeholder_form_feedback_phone.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             placeholder_form_feedback_phone.click_button_write()
         with allure.step('Находим поле "Ваш телефон" и проверяем отображение плейсхолдера'):
@@ -151,6 +173,8 @@ class TestFeedbackForm:
             placeholder_form_feedback_email.open()
         with allure.step('Скроллим до футера'):
             placeholder_form_feedback_email.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            placeholder_form_feedback_email.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             placeholder_form_feedback_email.click_button_write()
         with allure.step('Находим поле "Ваша почта" и проверяем отображение плейсхолдера'):
@@ -163,6 +187,8 @@ class TestFeedbackForm:
             placeholder_form_feedback_question.open()
         with allure.step('Скроллим до футера'):
             placeholder_form_feedback_question.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            placeholder_form_feedback_question.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             placeholder_form_feedback_question.click_button_write()
         with allure.step('Находим поле "Ваш вопрос/комментарий*" и проверяем отображение плейсхолдера'):
@@ -175,6 +201,8 @@ class TestFeedbackForm:
             button_form_feedback.open()
         with allure.step('Скроллим до футера'):
             button_form_feedback.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            button_form_feedback.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             button_form_feedback.click_button_write()
         with allure.step('Находим кнопку в форме и проверяем отображение'):

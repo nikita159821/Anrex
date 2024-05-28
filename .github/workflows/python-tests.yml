@@ -62,10 +62,6 @@ jobs:
           retention-days: 1
 
 
-
-
-
-
   generate-report:
     runs-on: ubuntu-latest
     needs: test

@@ -1,6 +1,6 @@
 import allure
 
-from locators.main_page_locators import review_cards, reviews
+from locators.main_page_locators import review_cards, reviews, review_button
 from pages.anrex_main_page import MainPage
 from tests.data import REVIEWS_NAME, REVIEWS_DATE, REVIEWS_CONTENT, REVIEWS_BUTTON, READ_REVIEW
 from tests.urls import URL, CHAPTER_REVIEWS
@@ -75,6 +75,8 @@ class TestHomepageReviews:
             review_card_hover.open()
         with allure.step('Скроллим до блока "Отзывы наших покупателей"'):
             review_card_hover.get_section_reviews()
+        with allure.step('Добавляем ожидание после скролла'):
+            review_card_hover.wait_for_element(review_cards)
         with allure.step('Наводим курсор на карточку с отзывом'):
             review_card_hover.move_cursor_to_element(review_cards)
         with allure.step('Проверяем, что на карточке появляется текст "Читать отзыв полностью"'):
@@ -87,6 +89,8 @@ class TestHomepageReviews:
             modal_window_opens.open()
         with allure.step('Скроллим до блока "Отзывы наших покупателей"'):
             modal_window_opens.get_section_reviews()
+        with allure.step('Добавляем ожидание после скролла'):
+            modal_window_opens.wait_for_element(review_cards)
         with allure.step('Наводим курсор на карточку с отзывом'):
             modal_window_opens.move_cursor_to_element(review_cards)
         with allure.step('Нажимаем кнопку "Читать отзыв полностью"'):
@@ -101,6 +105,8 @@ class TestHomepageReviews:
             modal_close_button.open()
         with allure.step('Скроллим до блока "Отзывы наших покупателей"'):
             modal_close_button.get_section_reviews()
+        with allure.step('Добавляем ожидание после скролла'):
+            modal_close_button.wait_for_element(review_cards)
         with allure.step('Наводим курсор на карточку с отзывом'):
             modal_close_button.move_cursor_to_element(review_cards)
         with allure.step('Нажимаем кнопку "Читать отзыв полностью"'):
@@ -117,6 +123,8 @@ class TestHomepageReviews:
             closes_via_overlay.open()
         with allure.step('Скроллим до блока "Отзывы наших покупателей"'):
             closes_via_overlay.get_section_reviews()
+        with allure.step('Добавляем ожидание после скролла'):
+            closes_via_overlay.wait_for_element(review_cards)
         with allure.step('Наводим курсор на карточку с отзывом'):
             closes_via_overlay.move_cursor_to_element(review_cards)
         with allure.step('Нажимаем кнопку "Читать отзыв полностью"'):
@@ -143,6 +151,8 @@ class TestHomepageReviews:
             redirect_to_reviews.open()
         with allure.step('Скроллим до блока "Отзывы наших покупателей"'):
             redirect_to_reviews.get_section_reviews()
+        with allure.step('Добавляем ожидание после скролла'):
+            redirect_to_reviews.wait_for_element(review_button)
         with allure.step('Нажимаем кнопку "Смотреть все отзывы"'):
             redirect_to_reviews.button_review_click()
         with allure.step('Проверяем, что открылась страница со всеми отзывами'):

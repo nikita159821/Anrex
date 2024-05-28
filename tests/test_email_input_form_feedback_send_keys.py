@@ -1,7 +1,7 @@
 import allure
 import pytest
 
-from locators.main_page_locators import email_error
+from locators.main_page_locators import email_error, button_write
 from pages.anrex_main_page import MainPage
 from tests.data import HAS_ERROR_EMAIL
 
@@ -27,6 +27,8 @@ class TestEmailInputSendKeys:
             email_input_form_feedback_send_keys.open()
         with allure.step('Скроллим до футера'):
             email_input_form_feedback_send_keys.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            email_input_form_feedback_send_keys.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             email_input_form_feedback_send_keys.click_button_write()
         with allure.step('Вводим почту в поле "Ваша почта"'):
@@ -50,6 +52,8 @@ class TestEmailInputSendKeys:
             email_input_form_feedback_send_keys.open()
         with allure.step('Скроллим до футера'):
             email_input_form_feedback_send_keys.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            email_input_form_feedback_send_keys.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             email_input_form_feedback_send_keys.click_button_write()
         with allure.step('Вводим почту в поле "Ваша почта"'):
@@ -66,6 +70,8 @@ class TestEmailInputSendKeys:
             invalid_email.open()
         with allure.step('Скроллим до футера'):
             invalid_email.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            invalid_email.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             invalid_email.click_button_write()
         with allure.step('Вводим почту c пробелом в поле "Ваша почта"'):

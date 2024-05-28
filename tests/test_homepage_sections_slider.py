@@ -1,6 +1,6 @@
 import allure
 
-from locators.main_page_locators import img
+from locators.main_page_locators import img, button_up, button_down
 from pages.anrex_main_page import MainPage
 from tests.data import TEXT_SLIDER_LIVING_ROOMS, TEXT_SLIDER_CABINETS, TITLE_SLIDER
 from tests.urls import URL, IMG
@@ -25,6 +25,8 @@ class TestSectionSlider:
             carousel_section.open()
         with allure.step('Скроллим до блока со слайдером разделов'):
             carousel_section.get_slider()
+        with allure.step('Добавляем ожидание после скролла'):
+            carousel_section.wait_for_element(button_up)
         with allure.step('Нажимаем кнопку вверх на слайдере разделов'):
             carousel_section.click_up_slider()
         with allure.step('Проверяем, что произошло переключение на раздел "Гостиных"'):
@@ -37,6 +39,8 @@ class TestSectionSlider:
             carousel_section.open()
         with allure.step('Скроллим до блока со слайдером разделов'):
             carousel_section.get_slider()
+        with allure.step('Добавляем ожидание после скролла'):
+            carousel_section.wait_for_element(button_down)
         with allure.step('Нажимаем кнопку вниз на слайдере разделов'):
             carousel_section.click_down_slider()
         with allure.step('Проверяем, что произошло переключение на раздел "Кабинетов"'):
@@ -59,6 +63,8 @@ class TestSectionSlider:
             photo_changes.open()
         with allure.step('Скроллим до блока со слайдером разделов'):
             photo_changes.get_slider()
+        with allure.step('Добавляем ожидание после скролла'):
+            photo_changes.wait_for_element(button_up)
         with allure.step('Нажимаем кнопку вверх на слайдере разделов'):
             photo_changes.click_up_slider()
         with allure.step('Ждем смены раздела и фото'):
