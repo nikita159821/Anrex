@@ -25,7 +25,12 @@ jobs:
       - name: Install Chrome
         run: sudo apt-get install google-chrome-stable
       - name: Install Firefox
-        run: sudo apt-get install firefox
+        run: sudo apt-get install firefox-stable
+      - name: Install Geckodriver
+        run: |
+          wget https://github.com/mozilla/geckodriver/releases/download/v0.32.0/geckodriver-v0.32.0-linux64.tar.gz
+          tar -xzf geckodriver-v0.32.0-linux64.tar.gz
+          sudo mv geckodriver /usr/local/bin/
       - name: install dependencies
         run: pip install -r requirements.txt
       - name: Download all workflow run artifact
@@ -34,7 +39,7 @@ jobs:
         run: |
           rm -rf allure-results/*
       - name: Run tests
-        run: pytest tests/test_callback_link.py --alluredir=allure-results
+        run: pytest tests/test_callback_link.py --driver Firefox --alluredir=allure-results
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
@@ -42,6 +47,7 @@ jobs:
           name: allure-results
           path: allure-results
           retention-days: 1
+
 
 
   generate-report:
