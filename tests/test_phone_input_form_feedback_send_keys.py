@@ -3,7 +3,7 @@ import pytest
 
 from locators.main_page_locators import phone_error
 from pages.anrex_main_page import MainPage
-from tests.data import PHONE_FORM, HAS_ERROR
+from tests.data import PHONE_FORM, HAS_ERROR_PHONE
 
 
 class TestPhoneInputSendKeys:
@@ -81,5 +81,5 @@ class TestPhoneInputSendKeys:
         with allure.step('Ожидание'):
             phone_form_feedback_input_send_keys.wait(phone_error)
         with allure.step('Проверка наличия класса "has-error"'):
-            assert phone_form_feedback_input_send_keys.name_input_send_keys_error() == HAS_ERROR
+            assert phone_form_feedback_input_send_keys.name_input_send_keys_error() == HAS_ERROR_PHONE
 

@@ -3,7 +3,7 @@ import pytest
 
 from locators.main_page_locators import popup_form_feedback, name_error
 from pages.anrex_main_page import MainPage
-from tests.data import POPUP_TEXT_FORM_FEEDBACK, HAS_ERROR
+from tests.data import POPUP_TEXT_FORM_FEEDBACK, HAS_ERROR_NAME
 
 
 class TestNameInputSendKeys:
@@ -61,4 +61,4 @@ class TestNameInputSendKeys:
         with allure.step('Ожидаем пока поле "Ваше имя" будет подсвечиваться красным'):
             name_input_form_feedback_send_keys.wait(name_error)
         with allure.step('Проверка наличия класса "has-error"'):
-            assert name_input_form_feedback_send_keys.phone_input_send_keys_error() == HAS_ERROR
+            assert name_input_form_feedback_send_keys.phone_input_send_keys_error() == HAS_ERROR_NAME

@@ -158,16 +158,16 @@ class BasePage:
     @staticmethod
     def generate_random_string(length, char_type):
         """
-            Генерирует строку заданной длины из указанного набора символов.
+        Генерирует строку заданной длины из указанного набора символов.
 
-            Args:
-                length (int): Длина строки.
-                char_type (str): Тип символов, из которых будет генерироваться строка.
-                    Возможные значения: 'russian_letters','letters', 'digits', 'punctuation'.
+        Args:
+            length (int): Длина строки.
+            char_type (str): Тип символов, из которых будет генерироваться строка.
+                Возможные значения: 'russian_letters', 'letters', 'digits', 'punctuation'.
 
-            Returns:
-                str: Сгенерированная строка.
-            """
+        Returns:
+            str: Сгенерированная строка.
+        """
         if char_type == 'russian_letters':
             chars = RUSSIAN_LETTERS
         elif char_type == 'letters':
@@ -178,7 +178,7 @@ class BasePage:
             chars = PUNCTUATION
         else:
             raise ValueError(
-                "Неверный тип символов. Допустимые значения: 'russian_letters', 'digits', 'punctuation'.")
+                "Неверный тип символов. Допустимые значения: 'russian_letters', 'letters', 'digits', 'punctuation'.")
 
         return ''.join(random.choice(chars) for _ in range(length))
 

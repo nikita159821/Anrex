@@ -112,6 +112,10 @@ class MainPage(BasePage):
     def form_phone_input_send_keys(self, phone):
         self.get_form_feedback_phone_input().send_keys(phone)
 
+    # Модифицированный метод для ввода текста в поле "Ваша почта" в форме обратной связи
+    def form_email_input_send_keys(self, email):
+        self.get_form_feedback_email_input().send_keys(email)
+
     # Модифицированный метод для ввода номера телефон в поле "Ваш телефон"
     def t_phone_input_send_keys(self, phone, input_locator):
         phone_input = self.find_element(*input_locator)
@@ -138,6 +142,12 @@ class MainPage(BasePage):
     # Возвращает элемент с классом ошибки в поле "Ваш телефон"
     def phone_input_send_keys_error(self):
         input_element = self.find_element(*phone_error)
+        class_attribute = input_element.get_attribute('class')
+        return class_attribute
+
+    # Возвращает элемент с классом ошибки в поле "Ваш телефон"
+    def email_input_send_keys_error(self):
+        input_element = self.find_element(*email_error)
         class_attribute = input_element.get_attribute('class')
         return class_attribute
 
