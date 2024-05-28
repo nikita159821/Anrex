@@ -25,7 +25,9 @@ jobs:
       - name: Install Chrome
         run: sudo apt-get install google-chrome-stable
       - name: Install Firefox
-        run: sudo apt-get install firefox
+        run: |
+          sudo apt-get remove --purge firefox firefox-* 
+          sudo apt-get install -y firefox
       - name: Install Geckodriver
         run: |
           wget https://github.com/mozilla/geckodriver/releases/download/v0.32.0/geckodriver-v0.32.0-linux64.tar.gz
@@ -49,6 +51,7 @@ jobs:
           name: allure-results
           path: allure-results
           retention-days: 1
+
 
 
 

@@ -4,8 +4,6 @@ import sys
 import os
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
-from selenium.webdriver.firefox.service import Service as FirefoxService
-from webdriver_manager.firefox import GeckoDriverManager
 # Добавляем путь к директории "pages"
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
@@ -19,13 +17,8 @@ def browser(request):
         driver = webdriver.Chrome(options=chrome_options)
     elif browser_name == "firefox":
         firefox_options = FirefoxOptions()
-        firefox_options.add_argument("--headless=new")
-        firefox_options.set_preference("marionette.logLevel", "DEBUG")
-
-        # Явно указываем путь к Geckodriver
-        gecko_driver_path = "/home/nikita/WebDriver/bin/geckodriver"
-        firefox_service = FirefoxService(executable_path=gecko_driver_path)
-        driver = webdriver.Firefox(options=firefox_options, service=firefox_service)
+        firefox_options.add_argument("--headless")
+        driver = webdriver.Firefox(options=firefox_options)
     else:
         raise ValueError(f"Unsupported browser: {browser_name}")
 
