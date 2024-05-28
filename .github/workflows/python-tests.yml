@@ -39,7 +39,7 @@ jobs:
         run: |
           rm -rf allure-results/*
       - name: Run tests
-        run: pytest tests/test_callback_link.py --driver Firefox --alluredir=allure-results
+        run: pytest tests/test_callback_link.py --alluredir=allure-results
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
@@ -47,7 +47,6 @@ jobs:
           name: allure-results
           path: allure-results
           retention-days: 1
-
 
 
   generate-report:
