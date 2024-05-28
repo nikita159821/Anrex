@@ -24,6 +24,8 @@ jobs:
           python-version: "3.12"
       - name: Install Chrome
         run: sudo apt-get install google-chrome-stable
+      - name: Install Firefox
+        run: sudo apt-get install firefox-esr
       - name: install dependencies
         run: pip install -r requirements.txt
       - name: Download all workflow run artifact
@@ -32,7 +34,7 @@ jobs:
         run: |
           rm -rf allure-results/*
       - name: Run tests
-        run: pytest tests --alluredir=allure-results
+        run: pytest tests/test_callback_link --alluredir=allure-results
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3

@@ -1,9 +1,11 @@
 import allure
+import pytest
 
 from locators.main_page_locators import callback_link
 from pages.anrex_main_page import MainPage
 
 
+@pytest.mark.parametrize("browser", ["chrome", "firefox"], indirect=True)
 class TestCallbackLink:
 
     @allure.title('В шапке отображается текст-ссылка "Заказать обратный звонок"')
