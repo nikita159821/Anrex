@@ -21,7 +21,10 @@ def browser(request):
         firefox_options = FirefoxOptions()
         firefox_options.add_argument("--headless=new")
         firefox_options.set_preference("marionette.logLevel", "DEBUG")
-        firefox_service = FirefoxService(GeckoDriverManager().install())
+
+        # Явно указываем путь к Geckodriver
+        gecko_driver_path = "/home/nikita/WebDriver/bin/geckodriver"
+        firefox_service = FirefoxService(executable_path=gecko_driver_path)
         driver = webdriver.Firefox(options=firefox_options, service=firefox_service)
     else:
         raise ValueError(f"Unsupported browser: {browser_name}")
