@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="" />
+    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,7 +109,7 @@
     "last_opened_file_path": "/home/nikita/PycharmProjects/Anrex"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.pytest for test_callback_link.TestCallbackLink">
+  <component name="RunManager" selected="Python tests.pytest for test_callback_link.TestCallbackLink.test_callback_link">
     <configuration name="pytest for test_callback_link.TestCallbackLink" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
@@ -125,7 +127,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_callback_link.TestCallbackLink.test_callback_link" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -138,7 +140,7 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_email_input_form_feedback_send_keys.TestEmailInputSendKeys&quot;" />
+      <option name="_new_target" value="&quot;test_callback_link.TestCallbackLink.test_callback_link&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -195,11 +197,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test_callback_link.TestCallbackLink.test_callback_link" />
         <item itemvalue="Python tests.pytest for test_callback_link.TestCallbackLink" />
         <item itemvalue="Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_negative_phone_input_send_keys" />
         <item itemvalue="Python tests.pytest for test_name_input_send_keys.TestNameInputSendKeys.test_negative_name_input_send_keys" />
         <item itemvalue="Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_negative_email_input_form_feedback_send_keys" />
-        <item itemvalue="Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys" />
       </list>
     </recent_temporary>
   </component>

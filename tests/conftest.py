@@ -4,6 +4,8 @@ import sys
 import os
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from webdriver_manager.firefox import GeckoDriverManager
 # Добавляем путь к директории "pages"
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
@@ -18,7 +20,8 @@ def browser(request):
     elif browser_name == "firefox":
         firefox_options = FirefoxOptions()
         firefox_options.add_argument("--headless=new")
-        driver = webdriver.Firefox(options=firefox_options)
+        firefox_service = FirefoxService(GeckoDriverManager().install())
+        driver = webdriver.Firefox(options=firefox_options, service=firefox_service)
     else:
         raise ValueError(f"Unsupported browser: {browser_name}")
 
