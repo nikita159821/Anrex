@@ -39,7 +39,7 @@ jobs:
           Pin-Priority: 1000
           ' | sudo tee /etc/apt/preferences.d/mozilla
       - name: Install Firefox
-        run: sudo apt update && sudo apt install firefox
+        run: sudo apt update && sudo apt install --allow-downgrades firefox
       - name: Install webdriver_manager
         run: pip install webdriver_manager
       - name: install dependencies
@@ -58,6 +58,7 @@ jobs:
           name: allure-results
           path: allure-results
           retention-days: 1
+
 
 
 
