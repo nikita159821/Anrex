@@ -148,7 +148,24 @@
     "last_opened_file_path": "/home/nikita/PycharmProjects/Anrex"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.pytest for test_text_comment_footer.TestCommentFooter.test_text_comment_footer">
+  <component name="RunManager" selected="Python tests.pytest for test_callback_link.TestCallbackLink.test_callback_link">
+    <configuration name="pytest for test_callback_link.TestCallbackLink.test_callback_link" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Anrex" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_callback_link.TestCallbackLink.test_callback_link&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
@@ -180,23 +197,6 @@
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.test_negative_phone_form_feedback_input_send_keys&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.test_negative_phone_form_feedback_input_send_keys_12_digits" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="Anrex" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.test_negative_phone_form_feedback_input_send_keys_12_digits&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -236,11 +236,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test_callback_link.TestCallbackLink.test_callback_link" />
         <item itemvalue="Python tests.pytest for test_text_comment_footer.TestCommentFooter.test_text_comment_footer" />
         <item itemvalue="Python tests.pytest for test_redirect_to_beds_section.TestRedirectBedsSection.test_redirect_krovati_i_matrasi" />
         <item itemvalue="Python tests.pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.test_negative_phone_form_feedback_input_send_keys" />
         <item itemvalue="Python tests.pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys" />
-        <item itemvalue="Python tests.pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.test_negative_phone_form_feedback_input_send_keys_12_digits" />
       </list>
     </recent_temporary>
   </component>

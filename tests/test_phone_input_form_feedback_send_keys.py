@@ -70,7 +70,9 @@ class TestPhoneInputSendKeys:
 
     # Вводим в поле "Ваш телефон" 1 цифру, буквы, спец. символы, пробел.
     @pytest.mark.parametrize('phone', [
-
+        MainPage.generate_random_string(1, 'digits'),
+        MainPage.generate_random_string(5, 'russian_letters'),
+        MainPage.generate_random_string(5, 'punctuation'),
         ' '  # Добавляем пробел как один из параметров
     ])
     @allure.title('В форме "Обратной связи" в поле "Ваш телефон" вводим 1 цифру, буквы, спец. символы, пробел.')
