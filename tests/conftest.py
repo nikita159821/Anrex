@@ -20,6 +20,7 @@ def browser(request):
     elif browser_name == "firefox":
         firefox_options = FirefoxOptions()
         firefox_options.add_argument("--headless=new")
+        firefox_options.set_preference("marionette.logLevel", "DEBUG")
         firefox_service = FirefoxService(GeckoDriverManager().install())
         driver = webdriver.Firefox(options=firefox_options, service=firefox_service)
     else:
