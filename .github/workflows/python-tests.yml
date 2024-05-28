@@ -25,7 +25,7 @@ jobs:
       - name: Install Chrome
         run: sudo apt-get install google-chrome-stable
       - name: Install Firefox
-        run: sudo apt-get install firefox-stable
+        run: sudo apt-get install firefox
       - name: Install Geckodriver
         run: |
           wget https://github.com/mozilla/geckodriver/releases/download/v0.32.0/geckodriver-v0.32.0-linux64.tar.gz
