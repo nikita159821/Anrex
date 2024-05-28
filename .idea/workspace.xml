@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +109,7 @@
     "last_opened_file_path": "/home/nikita/PycharmProjects/Anrex"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.pytest for test_callback_link.TestCallbackLink.test_callback_link">
+  <component name="RunManager" selected="Python tests.pytest for test_callback_link.TestCallbackLink">
     <configuration name="pytest for test_callback_link.TestCallbackLink" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
@@ -197,8 +197,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_callback_link.TestCallbackLink.test_callback_link" />
         <item itemvalue="Python tests.pytest for test_callback_link.TestCallbackLink" />
+        <item itemvalue="Python tests.pytest for test_callback_link.TestCallbackLink.test_callback_link" />
         <item itemvalue="Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_negative_phone_input_send_keys" />
         <item itemvalue="Python tests.pytest for test_name_input_send_keys.TestNameInputSendKeys.test_negative_name_input_send_keys" />
         <item itemvalue="Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_negative_email_input_form_feedback_send_keys" />

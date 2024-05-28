@@ -22,17 +22,24 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.12"
-      - name: Install Chrome
-        run: sudo apt-get install google-chrome-stable
+      - name: Uninstall the Firefox Snap
+        run: sudo snap remove firefox
+      - name: Create an APT keyring
+        run: sudo install -d -m 0755 /etc/apt/keyrings
+      - name: Import the Mozilla APT repo signing key
+        run: wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
+      - name: Add the Mozilla signing key to your sources.list
+        run: |
+          echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
+      - name: Set the Firefox package priority
+        run: |
+          echo '
+          Package: *
+          Pin: origin packages.mozilla.org
+          Pin-Priority: 1000
+          ' | sudo tee /etc/apt/preferences.d/mozilla
       - name: Install Firefox
-        run: |
-          sudo apt-get remove --purge firefox firefox-* 
-          sudo apt-get install -y firefox
-      - name: Install Geckodriver
-        run: |
-          wget https://github.com/mozilla/geckodriver/releases/download/v0.32.0/geckodriver-v0.32.0-linux64.tar.gz
-          tar -xzf geckodriver-v0.32.0-linux64.tar.gz
-          sudo mv geckodriver /usr/local/bin/
+        run: sudo apt update && sudo apt install firefox
       - name: Install webdriver_manager
         run: pip install webdriver_manager
       - name: install dependencies
@@ -51,6 +58,7 @@ jobs:
           name: allure-results
           path: allure-results
           retention-days: 1
+
 
 
 
