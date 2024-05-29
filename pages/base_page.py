@@ -3,7 +3,7 @@ import string
 
 from selenium.common import TimeoutException, NoSuchElementException
 from selenium.webdriver import ActionChains
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as EC, expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 from locators.main_page_locators import slider
@@ -107,12 +107,13 @@ class BasePage:
     # Общий метод для получения и прокрутки страницы до элемента
     def get_element_scroll_to_element(self, locator):
         element = self.find_element(*locator)
-        self.browser.execute_script("arguments[0].scrollIntoView(true);", element)
+        actions = ActionChains(self.browser)
+        actions.move_to_element(element).perform()
         return element
 
     def wait_for_element(self, locator):
         try:
-            WebDriverWait(self.browser, 10).until(element_to_be(locator))
+            WebDriverWait(self.browser, 15).until(element_to_be(locator))
         except TimeoutException:
             return False
         return True

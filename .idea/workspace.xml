@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/anrex_main_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/anrex_main_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/base_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_email_input_form_feedback_send_keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_email_input_form_feedback_send_keys.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_feedback_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_feedback_form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_home_page_collections.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_home_page_collections.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_name_input_form_feedback_send_keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_name_input_form_feedback_send_keys.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
