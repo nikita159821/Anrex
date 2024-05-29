@@ -1,5 +1,7 @@
 import allure
 
+from locators.main_page_locators import button_right, button_left, button_collections, view_collections, \
+    section_collections
 from pages.anrex_main_page import MainPage
 from tests.data import TITLE_VALENCIA, TITLE_JAZZ, TITLE_BUTTON, TITLE_BUTTON_VIEW_COLLECTIONS
 from tests.urls import URL, COLLECTIONS_JAGGER, CHAPTER_COLLECTIONS
@@ -22,8 +24,12 @@ class TestHomepageCollections:
             collections_right.open()
         with allure.step('Скроллим до блока "Наши коллекции"'):
             collections_right.get_section_collections()
+        with allure.step('Добавляем ожидание после скролла'):
+            collections_right.wait_for_element(button_right)
         with allure.step('Нажимаем стрелку вправо в разделе "Наши коллекции"'):
             collections_right.click_button_right()
+        with allure.step('Добавляем ожидание'):
+            collections_right.wait_for_element(button_right)
         with allure.step('Проверяем, что отображается коллекция "Джаз"'):
             assert collections_right.collections_title_jazz() == TITLE_JAZZ
 
@@ -34,8 +40,12 @@ class TestHomepageCollections:
             collections_left.open()
         with allure.step('Скроллим до блока "Наши коллекции"'):
             collections_left.get_section_collections()
+        with allure.step('Добавляем ожидание после скролла'):
+            collections_left.wait_for_element(button_left)
         with allure.step('Нажимаем стрелку влево в разделе "Наши коллекции"'):
             collections_left.click_button_left()
+        with allure.step('Добавляем ожидание'):
+            collections_left.wait_for_element(button_left)
         with allure.step('Проверяем, что отображается коллекция "Валенсия"'):
             assert collections_left.collections_title_valencia() == TITLE_VALENCIA
 
@@ -46,6 +56,8 @@ class TestHomepageCollections:
             button_is_displayed.open()
         with allure.step('Скроллим до блока "Наши коллекции"'):
             button_is_displayed.get_section_collections()
+        with allure.step('Добавляем ожидание'):
+            button_is_displayed.wait_for_element(section_collections)
         with allure.step('Проверяем, что отображается кнопка "Смотреть коллекцию"'):
             assert button_is_displayed.get_button_text_collections() == TITLE_BUTTON
 
@@ -56,8 +68,12 @@ class TestHomepageCollections:
             redirect_collection.open()
         with allure.step('Скроллим до блока "Наши коллекции"'):
             redirect_collection.get_section_collections()
+        with allure.step('Добавляем ожидание после скролла'):
+            redirect_collection.wait_for_element(button_collections)
         with allure.step('Нажимаем кнопку "Смотреть коллекцию"'):
             redirect_collection.get_click_button_collections()
+        with allure.step('Добавляем ожидание'):
+            redirect_collection.wait_for_page_load(f'{URL}{CHAPTER_COLLECTIONS}{COLLECTIONS_JAGGER}')
         with allure.step('Проверяем, что открылась страница с коллекцией "Джаггер"'):
             assert redirect_collection.get_current_url() == f'{URL}{CHAPTER_COLLECTIONS}{COLLECTIONS_JAGGER}'
 
@@ -78,7 +94,11 @@ class TestHomepageCollections:
             redirect_collection.open()
         with allure.step('Скроллим до блока "Наши коллекции"'):
             redirect_collection.get_section_collections()
+        with allure.step('Добавляем ожидание после скролла'):
+            redirect_collection.wait_for_element(view_collections)
         with allure.step('Нажимаем кнопку "Смотреть все коллекции"'):
             redirect_collection.get_click_button_view_collections()
+        with allure.step('Добавляем ожидание'):
+            redirect_collection.wait_for_page_load(f'{URL}{CHAPTER_COLLECTIONS}')
         with allure.step('Проверяем, что открылась страница со всеми коллекциями'):
             assert redirect_collection.get_current_url() == f'{URL}{CHAPTER_COLLECTIONS}'

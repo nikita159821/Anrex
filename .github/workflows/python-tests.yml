@@ -24,6 +24,26 @@ jobs:
           python-version: "3.12"
       - name: Install Chrome
         run: sudo apt-get install google-chrome-stable
+      - name: Uninstall the Firefox Snap
+        run: sudo snap remove firefox
+      - name: Create an APT keyring
+        run: sudo install -d -m 0755 /etc/apt/keyrings
+      - name: Import the Mozilla APT repo signing key
+        run: wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
+      - name: Add the Mozilla signing key to your sources.list
+        run: |
+          echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
+      - name: Set the Firefox package priority
+        run: |
+          echo '
+          Package: *
+          Pin: origin packages.mozilla.org
+          Pin-Priority: 1000
+          ' | sudo tee /etc/apt/preferences.d/mozilla
+      - name: Install Firefox
+        run: sudo apt update && sudo apt install --allow-downgrades firefox
+      - name: Install webdriver_manager
+        run: pip install webdriver_manager
       - name: install dependencies
         run: pip install -r requirements.txt
       - name: Download all workflow run artifact
