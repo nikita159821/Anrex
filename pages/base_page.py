@@ -1,6 +1,6 @@
 import random
 import string
-
+import pyautogui
 from selenium.common import TimeoutException, NoSuchElementException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions
@@ -101,6 +101,21 @@ class BasePage:
         element = self.find_element(*locator)
         self.browser.execute_script("arguments[0].scrollIntoView(true);", element)
         return element
+
+    def scroll_with_mouse(self, x_offset, y_offset):
+        """
+        Скроллит страницу на указанное расстояние с помощью мыши.
+
+        Args:
+            x_offset (int): Расстояние для скроллинга по горизонтали.
+            y_offset (int): Расстояние для скроллинга по вертикали.
+        """
+        actions = ActionChains(self.browser)
+        actions.scroll_by_amount(x_offset, y_offset).perform()
+
+    def scroll_page_down(self, steps=1):
+        for _ in range(steps):
+            pyautogui.scroll(-1400)
 
     def wait_for_element(self, locator):
         try:

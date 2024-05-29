@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locators/main_page_locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/locators/main_page_locators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/anrex_main_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/anrex_main_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/base_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_home_page_reviews.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_home_page_reviews.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_home_page_collections.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_home_page_collections.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,10 +234,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.pytest for test_home_page_collections.TestHomepageCollections.test_redirect_collections_button" />
+        <item itemvalue="Python tests.pytest for test_home_page_collections.TestHomepageCollections" />
         <item itemvalue="Python tests.pytest for test_header_basket.TestHeaderBasket.test_basket_count_displayed_after_adding_product" />
         <item itemvalue="Python tests.pytest for test_home_page_reviews.TestHomepageReviews.test_modal_window_opens_when_read_more_link_clicked" />
         <item itemvalue="Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys" />
-        <item itemvalue="Python tests.pytest for test_home_page_collections.TestHomepageCollections" />
       </list>
     </recent_temporary>
   </component>
