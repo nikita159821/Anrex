@@ -1,5 +1,6 @@
 import random
 import string
+
 from selenium.common import TimeoutException, NoSuchElementException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions
@@ -103,7 +104,7 @@ class BasePage:
 
     def wait_for_element(self, locator):
         try:
-            WebDriverWait(self.browser, 15).until(element_to_be(locator))
+            WebDriverWait(self.browser, 10).until(element_to_be(locator))
         except TimeoutException:
             return False
         return True

@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="" />
+    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/base_page.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,7 +143,7 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.pytest for test_callback_link.TestCallbackLink">
+  <component name="RunManager" selected="Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys">
     <configuration name="pytest for test_callback_link.TestCallbackLink" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
@@ -158,7 +161,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_header_basket.TestHeaderBasket.test_basket_count_displayed_after_adding_product" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -171,11 +174,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_header_basket.TestHeaderBasket.test_basket_count_displayed_after_adding_product&quot;" />
+      <option name="_new_target" value="&quot;test_email_input_form_feedback_send_keys.TestEmailInputSendKeys&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_home_page_collections.TestHomepageCollections" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_form_feedback_invalid_email_input" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -188,11 +191,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_home_page_collections.TestHomepageCollections&quot;" />
+      <option name="_new_target" value="&quot;test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_form_feedback_invalid_email_input&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_home_page_collections.TestHomepageCollections.test_redirect_collections_button" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_negative_email_input_form_feedback_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -205,11 +208,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_home_page_collections.TestHomepageCollections.test_redirect_collections_button&quot;" />
+      <option name="_new_target" value="&quot;test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_negative_email_input_form_feedback_send_keys&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_home_page_reviews.TestHomepageReviews.test_modal_window_opens_when_read_more_link_clicked" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_positive_email_input_form_feedback_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -222,17 +225,17 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_home_page_reviews.TestHomepageReviews.test_modal_window_opens_when_read_more_link_clicked&quot;" />
+      <option name="_new_target" value="&quot;test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_positive_email_input_form_feedback_send_keys&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys" />
+        <item itemvalue="Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_form_feedback_invalid_email_input" />
+        <item itemvalue="Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_negative_email_input_form_feedback_send_keys" />
+        <item itemvalue="Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_positive_email_input_form_feedback_send_keys" />
         <item itemvalue="Python tests.pytest for test_callback_link.TestCallbackLink" />
-        <item itemvalue="Python tests.pytest for test_home_page_collections.TestHomepageCollections.test_redirect_collections_button" />
-        <item itemvalue="Python tests.pytest for test_home_page_collections.TestHomepageCollections" />
-        <item itemvalue="Python tests.pytest for test_header_basket.TestHeaderBasket.test_basket_count_displayed_after_adding_product" />
-        <item itemvalue="Python tests.pytest for test_home_page_reviews.TestHomepageReviews.test_modal_window_opens_when_read_more_link_clicked" />
       </list>
     </recent_temporary>
   </component>
