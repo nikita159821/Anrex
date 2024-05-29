@@ -1,7 +1,7 @@
 import allure
 import pytest
 
-from locators.main_page_locators import popup_form_feedback, name_error, button_write
+from locators.main_page_locators import popup_form_feedback, name_error, button_write, input_name_form_feedback
 from pages.anrex_main_page import MainPage
 from tests.data import POPUP_TEXT_FORM_FEEDBACK, HAS_ERROR_NAME
 
@@ -27,6 +27,8 @@ class TestNameInputSendKeys:
             name_input_form_feedback_send_keys.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             name_input_form_feedback_send_keys.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            name_input_form_feedback_send_keys.wait_for_element(input_name_form_feedback)
         with allure.step('Нажимаем первую радиокнопку в форме обратной связи'):
             name_input_form_feedback_send_keys.click_checkbox_radio_button()
         with allure.step('Заполняем поле "Ваше имя" данными'):
@@ -60,6 +62,8 @@ class TestNameInputSendKeys:
             name_input_form_feedback_send_keys.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             name_input_form_feedback_send_keys.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            name_input_form_feedback_send_keys.wait_for_element(input_name_form_feedback)
         with allure.step('Заполняем поле "Ваше имя" данными'):
             name_input_form_feedback_send_keys.form_name_input_send_keys(name)
         with allure.step('Ожидаем пока поле "Ваше имя" будет подсвечиваться красным'):

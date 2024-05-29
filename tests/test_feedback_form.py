@@ -1,6 +1,6 @@
 import allure
 
-from locators.main_page_locators import form_overlay_close, button_write
+from locators.main_page_locators import form_overlay_close, button_write, input_email_form_feedback
 from pages.anrex_main_page import MainPage
 from tests.data import TITLE_FORM_FEEDBACK, TEXT_FORM_FEEDBACK, RADIO_BUTTON, NAME_PLACEHOLDER, PHONE_PLACEHOLDER, \
     QUESTION_PLACEHOLDER, EMAIL_PLACEHOLDER
@@ -19,6 +19,8 @@ class TestFeedbackForm:
             opens_feedback_form.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             opens_feedback_form.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            opens_feedback_form.wait_for_element(input_email_form_feedback)
         with allure.step('Сохраняем тайтл "Форма обратной связи" - если тайтл есть, форма открыта'):
             assert opens_feedback_form.get_title_form_feedback() == TITLE_FORM_FEEDBACK
 
@@ -33,6 +35,8 @@ class TestFeedbackForm:
             description_content.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             description_content.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            description_content.wait_for_element(input_email_form_feedback)
         with allure.step('Сохраняем текст из "Форма обратной связи" и сравниваем с ожидаемым'):
             assert description_content.get_text_form_feedback() == TEXT_FORM_FEEDBACK
 
@@ -47,6 +51,8 @@ class TestFeedbackForm:
             description_content.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             description_content.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            description_content.wait_for_element(input_email_form_feedback)
         with allure.step('Сохраняем текст радиокнопок из "Форма обратной связи" и сравниваем с ожидаемым'):
             assert description_content.get_text_radio_buttons() == RADIO_BUTTON
 
@@ -61,6 +67,8 @@ class TestFeedbackForm:
             form_close.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             form_close.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            form_close.wait_for_element(input_email_form_feedback)
         with allure.step('Закрываем форму через крестик'):
             form_close.click_form_close()
         with allure.step('Проверяем, если нет тайтла из формы, значит закрыта'):
@@ -77,6 +85,8 @@ class TestFeedbackForm:
             form_close_overlay.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             form_close_overlay.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            form_close_overlay.wait_for_element(input_email_form_feedback)
         with allure.step('Закрываем форму через оверлей'):
             form_close_overlay.close_modal_via_overlay(form_overlay_close)
         with allure.step('Проверяем, если нет тайтла из формы, значит закрыта'):
@@ -93,6 +103,8 @@ class TestFeedbackForm:
             form_feedback_name.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             form_feedback_name.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            form_feedback_name.wait_for_element(input_email_form_feedback)
         with allure.step('Находим поле "Ваше имя" и проверяем отображение'):
             assert form_feedback_name.get_form_feedback_name_input().is_displayed()
 
@@ -107,6 +119,8 @@ class TestFeedbackForm:
             form_feedback_phone.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             form_feedback_phone.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            form_feedback_phone.wait_for_element(input_email_form_feedback)
         with allure.step('Находим поле "Ваш телефон" и проверяем отображение'):
             assert form_feedback_phone.get_form_feedback_phone_input().is_displayed()
 
@@ -121,6 +135,8 @@ class TestFeedbackForm:
             form_feedback_email.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             form_feedback_email.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            form_feedback_email.wait_for_element(input_email_form_feedback)
         with allure.step('Находим поле "Ваша почта" и проверяем отображение'):
             assert form_feedback_email.get_form_feedback_email_input().is_displayed()
 
@@ -135,6 +151,8 @@ class TestFeedbackForm:
             form_feedback_question.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             form_feedback_question.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            form_feedback_question.wait_for_element(input_email_form_feedback)
         with allure.step('Находим поле "Ваш вопрос/комментарий" и проверяем отображение'):
             assert form_feedback_question.get_form_feedback_question_input().is_displayed()
 
@@ -149,6 +167,8 @@ class TestFeedbackForm:
             placeholder_form_feedback_name.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             placeholder_form_feedback_name.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            placeholder_form_feedback_name.wait_for_element(input_email_form_feedback)
         with allure.step('Находим поле "Ваше Имя" и проверяем отображение плейсхолдера'):
             assert placeholder_form_feedback_name.get_placeholder_form_feedback_name_input() == NAME_PLACEHOLDER
 
@@ -163,6 +183,8 @@ class TestFeedbackForm:
             placeholder_form_feedback_phone.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             placeholder_form_feedback_phone.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            placeholder_form_feedback_phone.wait_for_element(input_email_form_feedback)
         with allure.step('Находим поле "Ваш телефон" и проверяем отображение плейсхолдера'):
             assert placeholder_form_feedback_phone.get_placeholder_form_feedback_phone_input() == PHONE_PLACEHOLDER
 
@@ -177,6 +199,8 @@ class TestFeedbackForm:
             placeholder_form_feedback_email.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             placeholder_form_feedback_email.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            placeholder_form_feedback_email.wait_for_element(input_email_form_feedback)
         with allure.step('Находим поле "Ваша почта" и проверяем отображение плейсхолдера'):
             assert placeholder_form_feedback_email.get_placeholder_form_feedback_email_input() == EMAIL_PLACEHOLDER
 
@@ -191,6 +215,8 @@ class TestFeedbackForm:
             placeholder_form_feedback_question.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             placeholder_form_feedback_question.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            placeholder_form_feedback_question.wait_for_element(input_email_form_feedback)
         with allure.step('Находим поле "Ваш вопрос/комментарий*" и проверяем отображение плейсхолдера'):
             assert placeholder_form_feedback_question.get_placeholder_form_question_input() == QUESTION_PLACEHOLDER
 
@@ -205,5 +231,7 @@ class TestFeedbackForm:
             button_form_feedback.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             button_form_feedback.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            button_form_feedback.wait_for_element(input_email_form_feedback)
         with allure.step('Находим кнопку в форме и проверяем отображение'):
             assert button_form_feedback.get_button_form_feedback().is_displayed()

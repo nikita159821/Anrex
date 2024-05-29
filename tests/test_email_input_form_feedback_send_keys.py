@@ -1,7 +1,7 @@
 import allure
 import pytest
 
-from locators.main_page_locators import email_error, button_write
+from locators.main_page_locators import email_error, button_write, input_email_form_feedback
 from pages.anrex_main_page import MainPage
 from tests.data import HAS_ERROR_EMAIL
 
@@ -31,6 +31,8 @@ class TestEmailInputSendKeys:
             email_input_form_feedback_send_keys.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             email_input_form_feedback_send_keys.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            email_input_form_feedback_send_keys.wait_for_element(input_email_form_feedback)
         with allure.step('Вводим почту в поле "Ваша почта"'):
             email_input_form_feedback_send_keys.form_email_input_send_keys(email)
         with allure.step('Находим поле "Ваша почта"'):
@@ -56,6 +58,8 @@ class TestEmailInputSendKeys:
             email_input_form_feedback_send_keys.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             email_input_form_feedback_send_keys.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            email_input_form_feedback_send_keys.wait_for_element(input_email_form_feedback)
         with allure.step('Вводим почту в поле "Ваша почта"'):
             email_input_form_feedback_send_keys.form_email_input_send_keys(email)
         with allure.step('Ожидаем пока поле "Ваше имя" будет подсвечиваться красным'):
@@ -74,6 +78,8 @@ class TestEmailInputSendKeys:
             invalid_email.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             invalid_email.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            invalid_email.wait_for_element(input_email_form_feedback)
         with allure.step('Вводим почту c пробелом в поле "Ваша почта"'):
             invalid_email.form_email_input_send_keys('lxg Xrn@example.com')
         with allure.step('Находим поле "Ваша почта"'):

@@ -3,7 +3,7 @@ import string
 
 from selenium.common import TimeoutException, NoSuchElementException
 from selenium.webdriver import ActionChains
-from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 from locators.main_page_locators import slider
@@ -43,6 +43,14 @@ class BasePage:
     def click_element(self, locator):
         element = self.find(locator)
         element.click()
+
+    def wait_for_page_load(self, url):
+        """
+        Ждет загрузки страницы с указанным URL.
+        :param url: URL страницы, которую нужно дождаться.
+        """
+        wait = WebDriverWait(self.browser, 10)
+        wait.until(EC.url_to_be(url))
 
     # Общий метод для получения атрибута элемента
     def get_attribute_of_element(self, locator, attribute):

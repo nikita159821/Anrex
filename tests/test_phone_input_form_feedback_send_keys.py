@@ -3,7 +3,7 @@ import time
 import allure
 import pytest
 
-from locators.main_page_locators import phone_error, button_write
+from locators.main_page_locators import phone_error, button_write, input_phone_form_feedback
 from pages.anrex_main_page import MainPage
 from tests.data import PHONE_FORM, HAS_ERROR_PHONE
 
@@ -21,6 +21,8 @@ class TestPhoneInputSendKeys:
             phone_input_form_feedback_send_keys.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             phone_input_form_feedback_send_keys.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            phone_input_form_feedback_send_keys.wait_for_element(input_phone_form_feedback)
         with allure.step('Вводим цифры в поле "Ваш телефон"'):
             phone_input_form_feedback_send_keys.send_keys_input_phone_form_feedback()
         with allure.step('Находим поле "Ваш телефон"'):
@@ -41,6 +43,8 @@ class TestPhoneInputSendKeys:
             phone_input_delete.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             phone_input_delete.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            phone_input_delete.wait_for_element(input_phone_form_feedback)
         with allure.step('Вводим цифры в поле "Ваш телефон"'):
             phone_input_delete.send_keys_input_phone_form_feedback()
         with allure.step('Возвращаем поле "Ваш телефон" и сохраняем его значение'):
@@ -61,6 +65,8 @@ class TestPhoneInputSendKeys:
             phone_input_send_keys.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             phone_input_send_keys.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            phone_input_send_keys.wait_for_element(input_phone_form_feedback)
         with allure.step('Вводим цифры в поле "Ваш телефон"'):
             phone_input_send_keys.send_keys_12_digits_form_feedback_phone_input()
         with allure.step('Возвращаем поле "Ваш телефон" и сохраняем его значение'):
@@ -86,6 +92,8 @@ class TestPhoneInputSendKeys:
             phone_form_feedback_input_send_keys.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             phone_form_feedback_input_send_keys.click_button_write()
+        with allure.step('Добавляем ожидание'):
+            phone_form_feedback_input_send_keys.wait_for_element(input_phone_form_feedback)
         with allure.step('Вводим цифры в поле "Ваш телефон"'):
             phone_form_feedback_input_send_keys.form_phone_input_send_keys(phone)
         with allure.step('Ожидание'):
