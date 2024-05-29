@@ -106,7 +106,7 @@ class MainPage(BasePage):
 
     # Модифицированный метод для ввода текста в поле "Ваше имя" в форме обратной связи
     def form_name_input_send_keys(self, name):
-         self.get_form_feedback_name_input().send_keys(name)
+        self.get_form_feedback_name_input().send_keys(name)
 
     # Модифицированный метод для ввода текста в поле "Ваш телефон" в форме обратной связи
     def form_phone_input_send_keys(self, phone):
@@ -192,14 +192,12 @@ class MainPage(BasePage):
 
     # Нажимает "Добавить в корзину" у карточки товара
     def button_click_cards(self):
-        button = self.find_element(*button_card)
-        self.scroll_to_element_and_click(button)
+        self.click_element(button_card)
 
     # Скролл до карточки товара
-    def scroll_to_element_and_click(self, element):
-        actions = ActionChains(self.browser)
-        actions.move_to_element(element).perform()
-        element.click()
+    #def scroll_to_element_and_click(self, element):
+    #self.browser.execute_script("arguments[0].scrollIntoView(true);", element)
+    #element.click()
 
     # Возвращает количество добавленных товаров в корзину
     def basket_count(self):

@@ -95,6 +95,8 @@ class TestHomepageReviews:
             modal_window_opens.move_cursor_to_element(review_cards)
         with allure.step('Нажимаем кнопку "Читать отзыв полностью"'):
             modal_window_opens.get_read_more_link_click()
+        with allure.step('Добавляем ожидание после скролла'):
+            modal_window_opens.wait_for_element(review_cards)
         with allure.step('Проверяем, что появилось модальное окно с отзывом'):
             assert modal_window_opens.get_review_popup().is_displayed()
 
