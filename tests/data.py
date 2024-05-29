@@ -52,4 +52,6 @@ RADIO_BUTTON = ['Благодарность', 'Предложение', 'Зам�
 COMMENT = 'Тест'
 POPUP_TEXT_FORM_FEEDBACK = 'Ваша заявка была направлена нашим менеджерам.'
 READ_REVIEW = 'Читать отзыв полностью'
-HAS_ERROR = 'align-items-center d-flex flex-column input-field has-error'
+HAS_ERROR_NAME = 'align-items-center d-flex flex-column input-field has-error'
+HAS_ERROR_PHONE = 'align-items-center d-flex flex-column input-field has-error'
+HAS_ERROR_EMAIL = 'form-control input-field form-control-plaintext has-error'

@@ -106,11 +106,15 @@ class MainPage(BasePage):
 
     # Модифицированный метод для ввода текста в поле "Ваше имя" в форме обратной связи
     def form_name_input_send_keys(self, name):
-         self.get_form_feedback_name_input().send_keys(name)
+        self.get_form_feedback_name_input().send_keys(name)
 
     # Модифицированный метод для ввода текста в поле "Ваш телефон" в форме обратной связи
     def form_phone_input_send_keys(self, phone):
         self.get_form_feedback_phone_input().send_keys(phone)
+
+    # Модифицированный метод для ввода текста в поле "Ваша почта" в форме обратной связи
+    def form_email_input_send_keys(self, email):
+        self.get_form_feedback_email_input().send_keys(email)
 
     # Модифицированный метод для ввода номера телефон в поле "Ваш телефон"
     def t_phone_input_send_keys(self, phone, input_locator):
@@ -138,6 +142,12 @@ class MainPage(BasePage):
     # Возвращает элемент с классом ошибки в поле "Ваш телефон"
     def phone_input_send_keys_error(self):
         input_element = self.find_element(*phone_error)
+        class_attribute = input_element.get_attribute('class')
+        return class_attribute
+
+    # Возвращает элемент с классом ошибки в поле "Ваш телефон"
+    def email_input_send_keys_error(self):
+        input_element = self.find_element(*email_error)
         class_attribute = input_element.get_attribute('class')
         return class_attribute
 
@@ -182,14 +192,12 @@ class MainPage(BasePage):
 
     # Нажимает "Добавить в корзину" у карточки товара
     def button_click_cards(self):
-        button = self.find_element(*button_card)
-        self.scroll_to_element_and_click(button)
+        self.click_element(button_card)
 
     # Скролл до карточки товара
-    def scroll_to_element_and_click(self, element):
-        actions = ActionChains(self.browser)
-        actions.move_to_element(element).perform()
-        element.click()
+    #def scroll_to_element_and_click(self, element):
+    #self.browser.execute_script("arguments[0].scrollIntoView(true);", element)
+    #element.click()
 
     # Возвращает количество добавленных товаров в корзину
     def basket_count(self):

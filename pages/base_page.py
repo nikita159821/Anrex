@@ -3,7 +3,7 @@ import string
 
 from selenium.common import TimeoutException, NoSuchElementException
 from selenium.webdriver import ActionChains
-from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support import expected_conditions as EC, expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 from locators.main_page_locators import slider
@@ -43,6 +43,14 @@ class BasePage:
     def click_element(self, locator):
         element = self.find(locator)
         element.click()
+
+    def wait_for_page_load(self, url):
+        """
+        Ждет загрузки страницы с указанным URL.
+        :param url: URL страницы, которую нужно дождаться.
+        """
+        wait = WebDriverWait(self.browser, 10)
+        wait.until(EC.url_to_be(url))
 
     # Общий метод для получения атрибута элемента
     def get_attribute_of_element(self, locator, attribute):
@@ -158,16 +166,16 @@ class BasePage:
     @staticmethod
     def generate_random_string(length, char_type):
         """
-            Генерирует строку заданной длины из указанного набора символов.
+        Генерирует строку заданной длины из указанного набора символов.
 
-            Args:
-                length (int): Длина строки.
-                char_type (str): Тип символов, из которых будет генерироваться строка.
-                    Возможные значения: 'russian_letters','letters', 'digits', 'punctuation'.
+        Args:
+            length (int): Длина строки.
+            char_type (str): Тип символов, из которых будет генерироваться строка.
+                Возможные значения: 'russian_letters', 'letters', 'digits', 'punctuation'.
 
-            Returns:
-                str: Сгенерированная строка.
-            """
+        Returns:
+            str: Сгенерированная строка.
+        """
         if char_type == 'russian_letters':
             chars = RUSSIAN_LETTERS
         elif char_type == 'letters':
@@ -178,7 +186,7 @@ class BasePage:
             chars = PUNCTUATION
         else:
             raise ValueError(
-                "Неверный тип символов. Допустимые значения: 'russian_letters', 'digits', 'punctuation'.")
+                "Неверный тип символов. Допустимые значения: 'russian_letters', 'letters', 'digits', 'punctuation'.")
 
         return ''.join(random.choice(chars) for _ in range(length))
 

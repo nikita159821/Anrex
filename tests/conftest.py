@@ -16,4 +16,3 @@ def browser():
     driver_browser.maximize_window()
     yield driver_browser
     driver_browser.quit()
-
