@@ -14,11 +14,11 @@ def browser(request):
     browser_name = request.param
     if browser_name == "chrome":
         chrome_options = ChromeOptions()
-        chrome_options.add_argument("--headless=new")
+        #chrome_options.add_argument("--headless=new")
         driver = webdriver.Chrome(options=chrome_options)
     elif browser_name == "firefox":
         firefox_options = FirefoxOptions()
-        firefox_options.add_argument("--headless")
+        #firefox_options.add_argument("--headless")
         driver = webdriver.Firefox(options=firefox_options)
     else:
         raise ValueError(f"Unsupported browser: {browser_name}")

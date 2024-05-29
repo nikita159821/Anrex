@@ -1,7 +1,7 @@
 import allure
 import pytest
 
-from locators.main_page_locators import popup_form_feedback, name_error
+from locators.main_page_locators import popup_form_feedback, name_error, button_write
 from pages.anrex_main_page import MainPage
 from tests.data import POPUP_TEXT_FORM_FEEDBACK, HAS_ERROR_NAME
 
@@ -23,6 +23,8 @@ class TestNameInputSendKeys:
             name_input_form_feedback_send_keys.open()
         with allure.step('Скроллим до футера'):
             name_input_form_feedback_send_keys.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            name_input_form_feedback_send_keys.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             name_input_form_feedback_send_keys.click_button_write()
         with allure.step('Нажимаем первую радиокнопку в форме обратной связи'):
@@ -54,6 +56,8 @@ class TestNameInputSendKeys:
             name_input_form_feedback_send_keys.open()
         with allure.step('Скроллим до футера'):
             name_input_form_feedback_send_keys.get_section_footer()
+        with allure.step('Добавляем ожидание после скролла'):
+            name_input_form_feedback_send_keys.wait_for_element(button_write)
         with allure.step('Нажимаем кнопку "Написать нам"'):
             name_input_form_feedback_send_keys.click_button_write()
         with allure.step('Заполняем поле "Ваше имя" данными'):
