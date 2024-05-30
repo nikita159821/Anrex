@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/anrex_main_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/anrex_main_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/base_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/data.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,12 +35,12 @@
     &quot;assignee&quot;: &quot;nikita159821&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/nikita159821/Anrex.git&quot;,
-    &quot;accountId&quot;: &quot;a0cce2a1-622e-400e-b914-496262845ca9&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/nikita159821/Anrex.git",
+    "accountId": "3b96ff09-32b7-40f1-9cc8-3e0b2df8f184"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -49,101 +49,102 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests for test_callback_link.TestCallbackLink.test_callback_link.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_callback_popup_name_input.TestInputName.test_callback_popup_name_input.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_callback_popup_phone_input.TestInputPhone.test_callback_popup_phone_input.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_callback_popup_title.TestPopupTitle.test_callback_popup_title.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_close_popup.TestClosePopup.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_close_popup.TestClosePopup.test_close_popup.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_close_popup_city.TestClosePopup.test_close_popup.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_first_city_is_chelyabinsk.TestCityIsChelyabinsk.test_close_popup_city_overlay.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_first_city_is_chelyabinsk.TestCityIsChelyabinsk.test_first_city_is_chelyabinsk.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_hover.TestHover.test_hover.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_name_input_placeholder.TestInputNamePlaceholder.test_name_input_placeholder.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_name_input_send_keys.TestNameInputSendKeys.test_name_input_send_keys.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_phone_input_placeholder.TestInputPhonePlaceholder.test_phone_input_placeholder.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_title_back_call.TestTitle.test_title_back_call.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_title_city.TestCity.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for fasfasf.TestBonusService.test_calculate_bonus_with_zero_productivity.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for safasf.test_calculate_commission.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_callback_link.TestCallbackLink.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_callback_link.TestCallbackLink.test_callback_link.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_callback_popup_name_input.TestInputName.test_callback_popup_name_input.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_close_popup_city.TestClosePopup.test_close_popup.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_discounted_products.TestDiscountedProducts.test_discounted_products.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_form_feedback_invalid_email_input.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_negative_email_input_form_feedback_send_keys.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_positive_email_input_form_feedback_send_keys.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_feedback_form.TestFeedbackForm.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_feedback_form.TestFeedbackForm.test_write_us_button_opens_feedback_form.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_footer_write_us_button.TestFooterButton.test_footer_write_us_button.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_header_basket.TestHeaderBasket.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_header_basket.TestHeaderBasket.test_basket_count_displayed_after_adding_product.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_header_basket.TestHeaderBasket.test_header_basket_redirect.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_header_basket.TestHeaderBasket.test_header_displays_basket.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_header_sale.TestHeaderSale.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_header_search.TestDisplaysSearch.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_header_search.TestDisplaysSearch.test_header_displays_search.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_header_search.TestDisplaysSearch.test_search_click.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_header_search.TestDisplaysSearch.test_search_click_close.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_home_page_collections.TestHomepageCollections.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_home_page_collections.TestHomepageCollections.test_redirect_collections_button.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_home_page_reviews.TestHomepageReviews.test_modal_window_opens_when_read_more_link_clicked.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_collections.TestHomepageCollections.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_collections.TestHomepageCollections.test_collection_button_is_displayed.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_collections.TestHomepageCollections.test_display_view_all_collections_button.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_collections.TestHomepageCollections.test_homepage_collections_is_displayed.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_collections.TestHomepageCollections.test_redirect_collection_button.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_collections.TestHomepageCollections.test_redirect_collections_button.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_collections.TestHomepageCollections.test_switch_carousel_collections_right.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_reviews.TestHomepageReviews.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_reviews.TestHomepageReviews.test_four_reviews_displayed.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_reviews.TestHomepageReviews.test_homepage_reviews_section_is_displayed.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_reviews.TestHomepageReviews.test_read_more_link_appears_on_review_card_hover.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_reviews.TestHomepageReviews.test_redirect_to_reviews_page_on_view_all_reviews_click.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_reviews.TestHomepageReviews.test_reviews_content.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_reviews.TestHomepageReviews.test_reviews_date.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_reviews.TestHomepageReviews.test_reviews_name.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_reviews.TestHomepageReviews.test_reviews_stars.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_reviews.TestHomepageReviews.test_visibility_of_view_all_reviews_button.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_sections_slider.TestSectionSlider.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_sections_slider.TestSectionSlider.test_homepage_sections_slider.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_homepage_sections_slider.TestSectionSlider.test_switch_carousel_section_up.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_logo_footer_anrex_.TestLogoFooter.test_logo_footer.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_name_input_form_feedback_send_keys.TestNameInputSendKeys.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_name_input_form_feedback_send_keys.TestNameInputSendKeys.test_negative_name_input_form_feedback_send_keys.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_name_input_form_feedback_send_keys.TestNameInputSendKeys.test_positive_name_input_form_feedback_send_keys.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_name_input_send_keys.TestNameInputSendKeys.test_negative_name_input_send_keys.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.test_negative_phone_form_feedback_input_send_keys.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.test_negative_phone_form_feedback_input_send_keys_12_digits.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_negative_phone_input_send_keys.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_negative_phone_input_send_keys_12_digits.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_phone_input_delete_send_keys.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_positive_phone_input_send_keys.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_popup_city.TestPopup.test_popup_city.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_redirect_to_beds_section.TestRedirectBedsSection.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_redirect_to_beds_section.TestRedirectBedsSection.test_redirect_krovati_i_matrasi.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_request_callback.TestCallbackRequestTests.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_text_comment_footer.TestCommentFooter.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_text_comment_footer.TestCommentFooter.test_text_comment_footer.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_title_back_call.TestTitle.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_title_city.TestCity.test_title_city.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest in test_name_input_form_feedback_send_keys.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest in test_phone_input_form_feedback_send_keys.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.safasf.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/nikita/PycharmProjects/Anrex&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for test_callback_link.TestCallbackLink.test_callback_link.executor": "Run",
+    "Python tests.Python tests for test_callback_popup_name_input.TestInputName.test_callback_popup_name_input.executor": "Run",
+    "Python tests.Python tests for test_callback_popup_phone_input.TestInputPhone.test_callback_popup_phone_input.executor": "Run",
+    "Python tests.Python tests for test_callback_popup_title.TestPopupTitle.test_callback_popup_title.executor": "Run",
+    "Python tests.Python tests for test_close_popup.TestClosePopup.executor": "Run",
+    "Python tests.Python tests for test_close_popup.TestClosePopup.test_close_popup.executor": "Run",
+    "Python tests.Python tests for test_close_popup_city.TestClosePopup.test_close_popup.executor": "Run",
+    "Python tests.Python tests for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay.executor": "Run",
+    "Python tests.Python tests for test_first_city_is_chelyabinsk.TestCityIsChelyabinsk.test_close_popup_city_overlay.executor": "Run",
+    "Python tests.Python tests for test_first_city_is_chelyabinsk.TestCityIsChelyabinsk.test_first_city_is_chelyabinsk.executor": "Run",
+    "Python tests.Python tests for test_hover.TestHover.test_hover.executor": "Run",
+    "Python tests.Python tests for test_name_input_placeholder.TestInputNamePlaceholder.test_name_input_placeholder.executor": "Run",
+    "Python tests.Python tests for test_name_input_send_keys.TestNameInputSendKeys.test_name_input_send_keys.executor": "Run",
+    "Python tests.Python tests for test_phone_input_placeholder.TestInputPhonePlaceholder.test_phone_input_placeholder.executor": "Run",
+    "Python tests.Python tests for test_title_back_call.TestTitle.test_title_back_call.executor": "Run",
+    "Python tests.Python tests for test_title_city.TestCity.executor": "Run",
+    "Python tests.pytest for fasfasf.TestBonusService.test_calculate_bonus_with_zero_productivity.executor": "Run",
+    "Python tests.pytest for name_of_company_footer.TestFooterCompany.test_name_of_company_footer.executor": "Run",
+    "Python tests.pytest for safasf.test_calculate_commission.executor": "Run",
+    "Python tests.pytest for test_callback_link.TestCallbackLink.executor": "Run",
+    "Python tests.pytest for test_callback_link.TestCallbackLink.test_callback_link.executor": "Run",
+    "Python tests.pytest for test_callback_popup_name_input.TestInputName.test_callback_popup_name_input.executor": "Run",
+    "Python tests.pytest for test_close_popup_city.TestClosePopup.test_close_popup.executor": "Run",
+    "Python tests.pytest for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay.executor": "Run",
+    "Python tests.pytest for test_discounted_products.TestDiscountedProducts.test_discounted_products.executor": "Run",
+    "Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.executor": "Run",
+    "Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_form_feedback_invalid_email_input.executor": "Run",
+    "Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_negative_email_input_form_feedback_send_keys.executor": "Run",
+    "Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_positive_email_input_form_feedback_send_keys.executor": "Run",
+    "Python tests.pytest for test_feedback_form.TestFeedbackForm.executor": "Run",
+    "Python tests.pytest for test_feedback_form.TestFeedbackForm.test_write_us_button_opens_feedback_form.executor": "Run",
+    "Python tests.pytest for test_footer_write_us_button.TestFooterButton.test_footer_write_us_button.executor": "Run",
+    "Python tests.pytest for test_header_basket.TestHeaderBasket.executor": "Run",
+    "Python tests.pytest for test_header_basket.TestHeaderBasket.test_basket_count_displayed_after_adding_product.executor": "Run",
+    "Python tests.pytest for test_header_basket.TestHeaderBasket.test_header_basket_redirect.executor": "Run",
+    "Python tests.pytest for test_header_basket.TestHeaderBasket.test_header_displays_basket.executor": "Run",
+    "Python tests.pytest for test_header_sale.TestHeaderSale.executor": "Run",
+    "Python tests.pytest for test_header_search.TestDisplaysSearch.executor": "Run",
+    "Python tests.pytest for test_header_search.TestDisplaysSearch.test_header_displays_search.executor": "Run",
+    "Python tests.pytest for test_header_search.TestDisplaysSearch.test_search_click.executor": "Run",
+    "Python tests.pytest for test_header_search.TestDisplaysSearch.test_search_click_close.executor": "Run",
+    "Python tests.pytest for test_home_page_collections.TestHomepageCollections.executor": "Run",
+    "Python tests.pytest for test_home_page_collections.TestHomepageCollections.test_redirect_collections_button.executor": "Run",
+    "Python tests.pytest for test_home_page_reviews.TestHomepageReviews.test_modal_window_opens_when_read_more_link_clicked.executor": "Run",
+    "Python tests.pytest for test_homepage_collections.TestHomepageCollections.executor": "Run",
+    "Python tests.pytest for test_homepage_collections.TestHomepageCollections.test_collection_button_is_displayed.executor": "Run",
+    "Python tests.pytest for test_homepage_collections.TestHomepageCollections.test_display_view_all_collections_button.executor": "Run",
+    "Python tests.pytest for test_homepage_collections.TestHomepageCollections.test_homepage_collections_is_displayed.executor": "Run",
+    "Python tests.pytest for test_homepage_collections.TestHomepageCollections.test_redirect_collection_button.executor": "Run",
+    "Python tests.pytest for test_homepage_collections.TestHomepageCollections.test_redirect_collections_button.executor": "Run",
+    "Python tests.pytest for test_homepage_collections.TestHomepageCollections.test_switch_carousel_collections_right.executor": "Run",
+    "Python tests.pytest for test_homepage_reviews.TestHomepageReviews.executor": "Run",
+    "Python tests.pytest for test_homepage_reviews.TestHomepageReviews.test_four_reviews_displayed.executor": "Run",
+    "Python tests.pytest for test_homepage_reviews.TestHomepageReviews.test_homepage_reviews_section_is_displayed.executor": "Run",
+    "Python tests.pytest for test_homepage_reviews.TestHomepageReviews.test_read_more_link_appears_on_review_card_hover.executor": "Run",
+    "Python tests.pytest for test_homepage_reviews.TestHomepageReviews.test_redirect_to_reviews_page_on_view_all_reviews_click.executor": "Run",
+    "Python tests.pytest for test_homepage_reviews.TestHomepageReviews.test_reviews_content.executor": "Run",
+    "Python tests.pytest for test_homepage_reviews.TestHomepageReviews.test_reviews_date.executor": "Run",
+    "Python tests.pytest for test_homepage_reviews.TestHomepageReviews.test_reviews_name.executor": "Run",
+    "Python tests.pytest for test_homepage_reviews.TestHomepageReviews.test_reviews_stars.executor": "Run",
+    "Python tests.pytest for test_homepage_reviews.TestHomepageReviews.test_visibility_of_view_all_reviews_button.executor": "Run",
+    "Python tests.pytest for test_homepage_sections_slider.TestSectionSlider.executor": "Run",
+    "Python tests.pytest for test_homepage_sections_slider.TestSectionSlider.test_homepage_sections_slider.executor": "Run",
+    "Python tests.pytest for test_homepage_sections_slider.TestSectionSlider.test_switch_carousel_section_up.executor": "Run",
+    "Python tests.pytest for test_logo_footer_anrex_.TestLogoFooter.test_logo_footer.executor": "Run",
+    "Python tests.pytest for test_name_input_form_feedback_send_keys.TestNameInputSendKeys.executor": "Run",
+    "Python tests.pytest for test_name_input_form_feedback_send_keys.TestNameInputSendKeys.test_negative_name_input_form_feedback_send_keys.executor": "Run",
+    "Python tests.pytest for test_name_input_form_feedback_send_keys.TestNameInputSendKeys.test_positive_name_input_form_feedback_send_keys.executor": "Run",
+    "Python tests.pytest for test_name_input_send_keys.TestNameInputSendKeys.test_negative_name_input_send_keys.executor": "Run",
+    "Python tests.pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.executor": "Run",
+    "Python tests.pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.test_negative_phone_form_feedback_input_send_keys.executor": "Run",
+    "Python tests.pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.test_negative_phone_form_feedback_input_send_keys_12_digits.executor": "Run",
+    "Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.executor": "Run",
+    "Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_negative_phone_input_send_keys.executor": "Run",
+    "Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_negative_phone_input_send_keys_12_digits.executor": "Run",
+    "Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_phone_input_delete_send_keys.executor": "Run",
+    "Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_positive_phone_input_send_keys.executor": "Run",
+    "Python tests.pytest for test_popup_city.TestPopup.test_popup_city.executor": "Run",
+    "Python tests.pytest for test_redirect_to_beds_section.TestRedirectBedsSection.executor": "Run",
+    "Python tests.pytest for test_redirect_to_beds_section.TestRedirectBedsSection.test_redirect_krovati_i_matrasi.executor": "Run",
+    "Python tests.pytest for test_request_callback.TestCallbackRequestTests.executor": "Run",
+    "Python tests.pytest for test_text_comment_footer.TestCommentFooter.executor": "Run",
+    "Python tests.pytest for test_text_comment_footer.TestCommentFooter.test_text_comment_footer.executor": "Run",
+    "Python tests.pytest for test_title_back_call.TestTitle.executor": "Run",
+    "Python tests.pytest for test_title_city.TestCity.test_title_city.executor": "Run",
+    "Python tests.pytest in test_name_input_form_feedback_send_keys.py.executor": "Run",
+    "Python tests.pytest in test_phone_input_form_feedback_send_keys.py.executor": "Run",
+    "Python.safasf.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "/home/nikita/PycharmProjects/Anrex",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Python tests.pytest for name_of_company_footer.TestFooterCompany.test_name_of_company_footer">
     <configuration name="pytest for name_of_company_footer.TestFooterCompany.test_name_of_company_footer" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
@@ -243,7 +244,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
+        <option value="bundled-python-sdk-48aec45f0201-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.17011.127" />
       </set>
     </attachedChunks>
   </component>
