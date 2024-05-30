@@ -144,8 +144,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys">
-    <configuration name="pytest for test_callback_link.TestCallbackLink" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.pytest for name_of_company_footer.TestFooterCompany.test_name_of_company_footer">
+    <configuration name="pytest for name_of_company_footer.TestFooterCompany.test_name_of_company_footer" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -158,7 +158,7 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_callback_link.TestCallbackLink&quot;" />
+      <option name="_new_target" value="&quot;name_of_company_footer.TestFooterCompany.test_name_of_company_footer&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -232,11 +232,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for name_of_company_footer.TestFooterCompany.test_name_of_company_footer" />
         <item itemvalue="Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys" />
         <item itemvalue="Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_form_feedback_invalid_email_input" />
         <item itemvalue="Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_negative_email_input_form_feedback_send_keys" />
         <item itemvalue="Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_positive_email_input_form_feedback_send_keys" />
-        <item itemvalue="Python tests.pytest for test_callback_link.TestCallbackLink" />
       </list>
     </recent_temporary>
   </component>
