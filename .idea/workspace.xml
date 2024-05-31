@@ -36,12 +36,6 @@
     &quot;assignee&quot;: &quot;nikita159821&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/nikita159821/Anrex.git",
-    "accountId": "3b96ff09-32b7-40f1-9cc8-3e0b2df8f184"
-  }
-}]]></component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/nikita159821/Anrex.git&quot;,
@@ -239,7 +233,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_block_your_order.TestBlockYourOrder" />
         <item itemvalue="Python tests.pytest for test_block_your_order.TestBlockYourOrder.test_contact_info_block_contains_your_comment_input" />
         <item itemvalue="Python tests.pytest for test_block_your_order.TestBlockYourOrder.test_contact_info_block_contains_full_name_input" />
         <item itemvalue="Python tests.pytest in name_of_company_footer.py" />

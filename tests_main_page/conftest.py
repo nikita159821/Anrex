@@ -6,12 +6,12 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 
-@pytest.fixture(params=['firefox'])
+@pytest.fixture(params=['chrome'])
 def browser(request):
     browser_name = request.param
     if browser_name == "chrome":
         chrome_options = ChromeOptions()
-        #chrome_options.add_argument("--headless=new")
+        chrome_options.add_argument("--headless=new")
         driver = webdriver.Chrome(options=chrome_options)
     elif browser_name == "firefox":
         firefox_options = FirefoxOptions()
