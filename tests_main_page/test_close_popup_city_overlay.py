@@ -16,6 +16,6 @@ class TestClosePopupOverlay:
         with allure.step('Нажимаем вне модального окна'):
             close_popup.close_modal_via_overlay(slider)
         with allure.step('Добавляем ожидание'):
-            close_popup.wait(title_sale)
+            close_popup.wait_for_element(title_sale)
         with allure.step('Проверяем, что модальное окно закрыто. Если получен тайтл - окно закрыто'):
             assert close_popup.get_title_sale() == PRODUCT_SALE
