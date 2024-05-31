@@ -2,8 +2,8 @@ import allure
 
 from locators.main_page_locators import about, about_list
 from pages.anrex_main_page import MainPage
-from tests.data import ABOUT, ABOUT_LIST
-from tests.urls import URL, CHAPTER_ABOUT, CHAPTER_DEALERS, CHAPTER_CONTACT
+from tests_main_page.data import ABOUT, ABOUT_LIST
+from tests_main_page.urls import URL, CHAPTER_ABOUT, CHAPTER_DEALERS, CHAPTER_CONTACT
 
 
 class TestHeaderAbout:

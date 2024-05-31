@@ -1,7 +1,7 @@
 import allure
 
 from pages.anrex_main_page import MainPage
-from tests.data import TITLE_BACK_CALL
+from tests_main_page.data import TITLE_BACK_CALL
 
 
 class TestTitle:

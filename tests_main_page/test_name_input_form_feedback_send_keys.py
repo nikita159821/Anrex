@@ -3,7 +3,7 @@ import pytest
 
 from locators.main_page_locators import popup_form_feedback, name_error, button_write, input_name_form_feedback
 from pages.anrex_main_page import MainPage
-from tests.data import POPUP_TEXT_FORM_FEEDBACK, HAS_ERROR_NAME
+from tests_main_page.data import POPUP_TEXT_FORM_FEEDBACK, HAS_ERROR_NAME
 
 
 class TestNameInputSendKeys:

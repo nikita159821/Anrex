@@ -1,8 +1,8 @@
 import allure
 
 from pages.anrex_main_page import MainPage
-from tests.data import SALE
-from tests.urls import URL, CHAPTER_SALE, CHAPTER_CATALOG
+from tests_main_page.data import SALE
+from tests_main_page.urls import URL, CHAPTER_SALE, CHAPTER_CATALOG
 
 
 class TestHeaderSale:

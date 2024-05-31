@@ -2,7 +2,7 @@ import allure
 
 from locators.main_page_locators import popup_back_call
 from pages.anrex_main_page import MainPage
-from tests.data import CALLBACK_TITLE
+from tests_main_page.data import CALLBACK_TITLE
 
 
 class TestCallbackRequestTests:

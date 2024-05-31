@@ -2,7 +2,7 @@ import allure
 
 from locators.main_page_locators import search_line, search_line_close
 from pages.anrex_main_page import MainPage
-from tests.data import SEARCH
+from tests_main_page.data import SEARCH
 
 
 class TestDisplaysSearch:

@@ -2,8 +2,8 @@ import allure
 
 from locators.main_page_locators import delivery, delivery_list
 from pages.anrex_main_page import MainPage
-from tests.data import DELIVERY, DELIVERY_LIST
-from tests.urls import URL, CHAPTER_DELIVERY, CHAPTER_SHOPS, CHAPTER_QUARANTEE
+from tests_main_page.data import DELIVERY, DELIVERY_LIST
+from tests_main_page.urls import URL, CHAPTER_DELIVERY, CHAPTER_SHOPS, CHAPTER_QUARANTEE
 
 
 class TestHeaderDelivery:

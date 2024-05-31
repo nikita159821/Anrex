@@ -1,7 +1,7 @@
 import allure
 
 from pages.anrex_main_page import MainPage
-from tests.data import CALLBACK_POPUP_TITLE
+from tests_main_page.data import CALLBACK_POPUP_TITLE
 
 
 class TestPopupTitle:

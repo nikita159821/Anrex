@@ -1,8 +1,8 @@
 import allure
 
 from pages.anrex_main_page import MainPage
-from tests.data import COLLECTIONS
-from tests.urls import URL, CHAPTER_COLLECTIONS
+from tests_main_page.data import COLLECTIONS
+from tests_main_page.urls import URL, CHAPTER_COLLECTIONS
 
 
 class TestHeaderCollections:

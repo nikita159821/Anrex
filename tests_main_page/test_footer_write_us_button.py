@@ -2,7 +2,7 @@ import allure
 
 from locators.main_page_locators import button_write
 from pages.anrex_main_page import MainPage
-from tests.data import TITLE_BUTTON_FOOTER
+from tests_main_page.data import TITLE_BUTTON_FOOTER
 
 
 class TestFooterButton:

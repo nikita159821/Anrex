@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/data.py" afterDir="false" />
-    </list>
+    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="anrex" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,12 +31,12 @@
     &quot;assignee&quot;: &quot;nikita159821&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/nikita159821/Anrex.git",
-    "accountId": "3b96ff09-32b7-40f1-9cc8-3e0b2df8f184"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/nikita159821/Anrex.git&quot;,
+    &quot;accountId&quot;: &quot;3b96ff09-32b7-40f1-9cc8-3e0b2df8f184&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -70,6 +66,11 @@
     "Python tests.pytest for fasfasf.TestBonusService.test_calculate_bonus_with_zero_productivity.executor": "Run",
     "Python tests.pytest for name_of_company_footer.TestFooterCompany.test_name_of_company_footer.executor": "Run",
     "Python tests.pytest for safasf.test_calculate_commission.executor": "Run",
+    "Python tests.pytest for test_block_your_order.TestBlockYourOrder.executor": "Run",
+    "Python tests.pytest for test_block_your_order.TestBlockYourOrder.test_basket_count_displayed_after_adding_product.executor": "Run",
+    "Python tests.pytest for test_block_your_order.TestBlockYourOrder.test_contact_info_block_contains_full_name_input (1).executor": "Run",
+    "Python tests.pytest for test_block_your_order.TestBlockYourOrder.test_contact_info_block_contains_full_name_input.executor": "Run",
+    "Python tests.pytest for test_block_your_order.TestBlockYourOrder.test_contact_info_block_contains_your_comment_input.executor": "Run",
     "Python tests.pytest for test_callback_link.TestCallbackLink.executor": "Run",
     "Python tests.pytest for test_callback_link.TestCallbackLink.test_callback_link.executor": "Run",
     "Python tests.pytest for test_callback_popup_name_input.TestInputName.test_callback_popup_name_input.executor": "Run",
@@ -136,108 +137,116 @@
     "Python tests.pytest for test_text_comment_footer.TestCommentFooter.test_text_comment_footer.executor": "Run",
     "Python tests.pytest for test_title_back_call.TestTitle.executor": "Run",
     "Python tests.pytest for test_title_city.TestCity.test_title_city.executor": "Run",
+    "Python tests.pytest in name_of_company_footer.py.executor": "Run",
     "Python tests.pytest in test_name_input_form_feedback_send_keys.py.executor": "Run",
     "Python tests.pytest in test_phone_input_form_feedback_send_keys.py.executor": "Run",
     "Python.safasf.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "develop",
-    "last_opened_file_path": "/home/nikita/PycharmProjects/Anrex",
+    "last_opened_file_path": "C:/Users/user/PycharmProjects/Diplom_2",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.pytest for name_of_company_footer.TestFooterCompany.test_name_of_company_footer">
-    <configuration name="pytest for name_of_company_footer.TestFooterCompany.test_name_of_company_footer" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Anrex\tests_basket_page" />
+      <recent name="C:\Users\user\Anrex" />
+      <recent name="C:\Users\user\Anrex\tests_main_page" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.pytest for test_block_your_order.TestBlockYourOrder">
+    <configuration name="pytest for test_block_your_order.TestBlockYourOrder" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_basket_page" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;name_of_company_footer.TestFooterCompany.test_name_of_company_footer&quot;" />
+      <option name="_new_target" value="&quot;test_block_your_order.TestBlockYourOrder&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_block_your_order.TestBlockYourOrder.test_contact_info_block_contains_full_name_input" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_basket_page" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_email_input_form_feedback_send_keys.TestEmailInputSendKeys&quot;" />
+      <option name="_new_target" value="&quot;test_block_your_order.TestBlockYourOrder.test_contact_info_block_contains_full_name_input&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_form_feedback_invalid_email_input" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_block_your_order.TestBlockYourOrder.test_contact_info_block_contains_your_comment_input" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_basket_page" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_form_feedback_invalid_email_input&quot;" />
+      <option name="_new_target" value="&quot;test_block_your_order.TestBlockYourOrder.test_contact_info_block_contains_your_comment_input&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_negative_email_input_form_feedback_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_callback_popup_name_input.TestInputName.test_callback_popup_name_input" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_main_page" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_negative_email_input_form_feedback_send_keys&quot;" />
+      <option name="_new_target" value="&quot;test_callback_popup_name_input.TestInputName.test_callback_popup_name_input&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_positive_email_input_form_feedback_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in name_of_company_footer.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_main_page" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_positive_email_input_form_feedback_send_keys&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests_main_page/name_of_company_footer.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for name_of_company_footer.TestFooterCompany.test_name_of_company_footer" />
-        <item itemvalue="Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys" />
-        <item itemvalue="Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_form_feedback_invalid_email_input" />
-        <item itemvalue="Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_negative_email_input_form_feedback_send_keys" />
-        <item itemvalue="Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_positive_email_input_form_feedback_send_keys" />
+        <item itemvalue="Python tests.pytest for test_block_your_order.TestBlockYourOrder" />
+        <item itemvalue="Python tests.pytest for test_block_your_order.TestBlockYourOrder.test_contact_info_block_contains_your_comment_input" />
+        <item itemvalue="Python tests.pytest for test_block_your_order.TestBlockYourOrder.test_contact_info_block_contains_full_name_input" />
+        <item itemvalue="Python tests.pytest in name_of_company_footer.py" />
+        <item itemvalue="Python tests.pytest for test_callback_popup_name_input.TestInputName.test_callback_popup_name_input" />
       </list>
     </recent_temporary>
   </component>
@@ -257,6 +266,35 @@
       <option name="presentableId" value="Default" />
       <updated>1714913138832</updated>
     </task>
+    <task id="LOCAL-00001" summary="anrex">
+      <option name="closed" value="true" />
+      <created>1717083569150</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717083569150</updated>
+    </task>
+    <task id="LOCAL-00002" summary="anrex">
+      <option name="closed" value="true" />
+      <created>1717160081996</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717160081996</updated>
+    </task>
+    <task id="LOCAL-00003" summary="anrex">
+      <option name="closed" value="true" />
+      <created>1717160245951</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1717160245951</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="anrex" />
+    <option name="LAST_COMMIT_MESSAGE" value="anrex" />
   </component>
 </project>

@@ -3,7 +3,7 @@ import pytest
 
 from locators.main_page_locators import popup_back_call, name_error
 from pages.anrex_main_page import MainPage
-from tests.data import CALLBACK_TITLE, HAS_ERROR_NAME
+from tests_main_page.data import CALLBACK_TITLE, HAS_ERROR_NAME
 
 
 class TestNameInputSendKeys:

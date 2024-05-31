@@ -1,7 +1,7 @@
 import allure
 
 from pages.anrex_main_page import MainPage
-from tests.data import EXPECTED_LOGO_SRC
+from tests_main_page.data import EXPECTED_LOGO_SRC
 
 
 class TestLogo:

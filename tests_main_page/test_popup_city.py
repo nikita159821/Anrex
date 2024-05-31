@@ -1,7 +1,7 @@
 import allure
 
 from pages.anrex_main_page import MainPage
-from tests.data import CITY_TITLE
+from tests_main_page.data import CITY_TITLE
 
 
 class TestPopup:

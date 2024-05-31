@@ -3,8 +3,8 @@ import allure
 from locators.main_page_locators import button_right, button_left, button_collections, view_collections, \
     section_collections
 from pages.anrex_main_page import MainPage
-from tests.data import TITLE_VALENCIA, TITLE_JAZZ, TITLE_BUTTON, TITLE_BUTTON_VIEW_COLLECTIONS
-from tests.urls import URL, COLLECTIONS_JAGGER, CHAPTER_COLLECTIONS
+from tests_main_page.data import TITLE_VALENCIA, TITLE_JAZZ, TITLE_BUTTON, TITLE_BUTTON_VIEW_COLLECTIONS
+from tests_main_page.urls import URL, COLLECTIONS_JAGGER, CHAPTER_COLLECTIONS
 
 
 class TestHomepageCollections:

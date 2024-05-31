@@ -6,9 +6,9 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions as EC, expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
-from locators.main_page_locators import slider
-from tests.data import RUSSIAN_LETTERS, PUNCTUATION
-from tests.urls import URL, CHAPTER_CATALOG
+from locators.main_page_locators import slider, button_card, sale_basket
+from tests_main_page.data import RUSSIAN_LETTERS, PUNCTUATION
+from tests_main_page.urls import URL, CHAPTER_CATALOG
 
 
 # Класс для кастомного условия ожидания
@@ -206,3 +206,11 @@ class BasePage:
 
         # Генерируем строку случайных символов заданной длины
         #return ''.join(random.choice(characters) for _ in range(length))
+
+    # Нажимает "Добавить в корзину" у карточки товара
+    def button_click_cards(self):
+        self.click_element(button_card)
+
+    # Нажимает на иконку корзины в шапке
+    def sale_basket_click(self):
+        self.click_element(sale_basket)

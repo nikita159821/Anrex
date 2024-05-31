@@ -1,7 +1,7 @@
 import allure
 
 from pages.anrex_main_page import MainPage
-from tests.data import LOGO_SRC_FOOTER
+from tests_main_page.data import LOGO_SRC_FOOTER
 
 
 class TestLogoFooter:

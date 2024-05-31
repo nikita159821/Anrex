@@ -2,8 +2,8 @@ import allure
 
 from locators.main_page_locators import catalog, by_type_of_furniture_and_room
 from pages.anrex_main_page import MainPage
-from tests.data import CATALOG, FURNITURE_AND_ROOM
-from tests.urls import URL, CHAPTER_TUMBY, CHAPTER_CATALOG
+from tests_main_page.data import CATALOG, FURNITURE_AND_ROOM
+from tests_main_page.urls import URL, CHAPTER_TUMBY, CHAPTER_CATALOG
 
 
 class TestHeaderCatalog:

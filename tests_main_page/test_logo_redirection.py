@@ -1,7 +1,7 @@
 import allure
 
 from pages.anrex_main_page import MainPage
-from tests.urls import URL
+from tests_main_page.urls import URL
 
 
 class TestLogoRedirection:

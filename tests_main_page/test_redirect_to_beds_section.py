@@ -2,7 +2,7 @@ import allure
 
 from locators.main_page_locators import popular_section_banner
 from pages.anrex_main_page import MainPage
-from tests.urls import URL, CHAPTER_CATALOG, CHAPTER_MATRASI
+from tests_main_page.urls import URL, CHAPTER_CATALOG, CHAPTER_MATRASI
 
 
 class TestRedirectBedsSection:

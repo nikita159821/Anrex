@@ -1,7 +1,7 @@
 import allure
 
 from pages.anrex_main_page import MainPage
-from tests.data import DISPLAYS_PHONE
+from tests_main_page.data import DISPLAYS_PHONE
 
 
 class TestDisplaysPhone:

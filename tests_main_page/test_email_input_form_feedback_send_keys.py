@@ -3,7 +3,7 @@ import pytest
 
 from locators.main_page_locators import email_error, button_write, input_email_form_feedback
 from pages.anrex_main_page import MainPage
-from tests.data import HAS_ERROR_EMAIL
+from tests_main_page.data import HAS_ERROR_EMAIL
 
 
 class TestEmailInputSendKeys:

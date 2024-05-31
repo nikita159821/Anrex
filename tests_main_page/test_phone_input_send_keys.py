@@ -3,7 +3,7 @@ import pytest
 
 from locators.main_page_locators import input_phone, phone_error, callback_link
 from pages.anrex_main_page import MainPage
-from tests.data import PHONE_FORM, HAS_ERROR_PHONE
+from tests_main_page.data import PHONE_FORM, HAS_ERROR_PHONE
 
 
 class TestPhoneInputSendKeys:

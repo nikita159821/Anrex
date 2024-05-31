@@ -1,5 +1,5 @@
 from pages.anrex_main_page import MainPage
-from tests.data import COMPANY_FOOTER
+from tests_main_page.data import COMPANY_FOOTER
 import allure
 
 

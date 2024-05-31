@@ -2,8 +2,8 @@ import allure
 
 from locators.main_page_locators import review_cards, reviews, review_button
 from pages.anrex_main_page import MainPage
-from tests.data import REVIEWS_NAME, REVIEWS_DATE, REVIEWS_CONTENT, REVIEWS_BUTTON, READ_REVIEW
-from tests.urls import URL, CHAPTER_REVIEWS
+from tests_main_page.data import REVIEWS_NAME, REVIEWS_DATE, REVIEWS_CONTENT, REVIEWS_BUTTON, READ_REVIEW
+from tests_main_page.urls import URL, CHAPTER_REVIEWS
 
 
 class TestHomepageReviews:

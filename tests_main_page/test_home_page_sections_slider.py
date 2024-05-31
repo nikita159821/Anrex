@@ -2,8 +2,8 @@ import allure
 
 from locators.main_page_locators import img, button_up, button_down
 from pages.anrex_main_page import MainPage
-from tests.data import TEXT_SLIDER_LIVING_ROOMS, TEXT_SLIDER_CABINETS, TITLE_SLIDER
-from tests.urls import URL, IMG
+from tests_main_page.data import TEXT_SLIDER_LIVING_ROOMS, TEXT_SLIDER_CABINETS, TITLE_SLIDER
+from tests_main_page.urls import URL, IMG
 
 
 class TestSectionSlider:

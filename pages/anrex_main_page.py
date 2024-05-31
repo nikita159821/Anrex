@@ -2,7 +2,7 @@ from selenium.webdriver import ActionChains
 
 from locators.main_page_locators import *
 from pages.base_page import BasePage
-from tests.data import NAME, PHONE, PHONE_NEGATIVE, COMMENT
+from tests_main_page.data import NAME, PHONE, PHONE_NEGATIVE, COMMENT
 
 
 class MainPage(BasePage):
@@ -185,14 +185,6 @@ class MainPage(BasePage):
     # Возвращает иконку корзины
     def get_sale_basket(self):
         return self.find_element(*sale_basket)
-
-    # Нажимает на иконку корзины в шапке
-    def sale_basket_click(self):
-        self.click_element(sale_basket)
-
-    # Нажимает "Добавить в корзину" у карточки товара
-    def button_click_cards(self):
-        self.click_element(button_card)
 
     # Скролл до карточки товара
     #def scroll_to_element_and_click(self, element):
