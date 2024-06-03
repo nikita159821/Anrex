@@ -43,5 +43,41 @@ class BasketPage(BasePage):
     def get_input_your_comment(self):
         return self.get_text_of_element(input_your_comment)
 
+    @allure.step('Возвращает плейсхолдер из поля Ваше имя')
+    def get_input_name_placeholder(self):
+        return self.get_attribute_of_element(placeholder_name, 'placeholder')
+
+    @allure.step('Возвращает плейсхолдер из поля Адрес')
+    def get_input_address_placeholder(self):
+        return self.get_attribute_of_element(placeholder_address, 'placeholder')
+
+    @allure.step('Возвращает плейсхолдер из поля Улица')
+    def get_input_street_placeholder(self):
+        return self.get_attribute_of_element(placeholder_street, 'placeholder')
+
+    @allure.step('Возвращает плейсхолдер из поля Дом')
+    def get_input_house_placeholder(self):
+        return self.get_attribute_of_element(placeholder_house, 'placeholder')
+
+    @allure.step('Возвращает плейсхолдер из поля Корпус')
+    def get_input_building_placeholder(self):
+        return self.get_attribute_of_element(placeholder_building, 'placeholder')
+
+    @allure.step('Возвращает плейсхолдер из поля Квартира')
+    def get_input_apartment_placeholder(self):
+        return self.get_attribute_of_element(placeholder_apartment, 'placeholder')
+
+    @allure.step('Возвращает плейсхолдер из поля Номер телефона')
+    def get_input_phone_placeholder(self):
+        return self.get_attribute_of_element(placeholder_phone, 'placeholder')
+
+    @allure.step('Возвращает плейсхолдер из поля E-mail')
+    def get_input_email_placeholder(self):
+        return self.get_attribute_of_element(placeholder_email, 'placeholder')
+
+    @allure.step('Возвращает плейсхолдер из поля Ваш комментарий')
+    def get_input_comment_placeholder(self):
+        return self.get_attribute_of_element(placeholder_comment, 'placeholder')
+
 
 

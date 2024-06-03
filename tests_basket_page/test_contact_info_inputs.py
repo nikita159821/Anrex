@@ -6,7 +6,7 @@ from tests_basket_page.data import INPUT_FULL_NAME, INPUT_DELIVERY_CITY, INPUT_S
     INPUT_FLAT, INPUT_PHONE_NUMBER, INPUT_MAIL, INPUT_YOUR_COMMENT
 
 
-class TestBlockYourOrder:
+class TestBlockContactInput:
     @allure.title('В блоке "Контактные данные" отображается инпут "ФИО"')
     def test_contact_info_block_contains_full_name_input(self, browser):
         block_contains_full_name = BasketPage(browser)
