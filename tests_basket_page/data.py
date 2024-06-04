@@ -20,6 +20,9 @@ INPUT_EMAIL_PLACEHOLDER = 'ivanova@yandex.ru'
 INPUT_COMMENT_PLACEHOLDER = 'Введите Ваш комментарий'
 ORDER_CONFIRMATION = 'Подтверждение заказа'
 ERROR_INPUTS_BASKET = 'Поле заполнено неверно'
+ERROR_INPUT_CITY = 'Минимальная длина поля "Город доставки" не менее 2 символов'
+ERROR_INPUT_STREET = 'Минимальная длина поля "Улица" не менее 3 символов'
+
 
 BASKET_NAME = [
     "Иванов Иван Иванович",
@@ -38,7 +41,6 @@ BASKET_RANDOM_NAME = [
 BASKET_CITY_INPUT = [
     'Москва',
     'Санкт-петербург'
-
 ]
 
 BASKET_RANDOM_CITY = [
@@ -48,9 +50,21 @@ BASKET_RANDOM_CITY = [
     MainPage.generate_random_string(51, 'russian_letters'),
 ]
 
+BASKET_RANDOM_STREET = [
+    MainPage.generate_random_string(3, 'russian_letters'),
+    MainPage.generate_random_string(50, 'russian_letters'),
+    MainPage.generate_random_string(51, 'russian_letters'),
+]
 
-BASKET_CITY = 'Москва'
-STREET = 'Улица Ленина'
+BASKET_STREET_INPUT = [
+    'Проспект Ленина',
+    '250-летия Челябинска',
+    'Арзамасская 3-я'
+]
+
+
+BASKET_CITY = 'М'
+STREET = 'Ул'
 HOUSE = '12'
 BODY = '1'
 FLAT = '101'
@@ -65,9 +79,7 @@ BASKET_RANDOM_NAME_NEGATIVE = [
     ]
 
 
-BASKET_STREET_INPUT = [
-    'Ленина'
-]
+
 
 BASKET_HOUSE_INPUT = [
     10

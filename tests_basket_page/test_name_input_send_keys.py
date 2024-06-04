@@ -26,6 +26,7 @@ class TestNameInputSendKeys:
             assert name_input_send_keys.get_text_order_confirmation() == ORDER_CONFIRMATION
 
     @pytest.mark.parametrize('name', BASKET_RANDOM_NAME_NEGATIVE)
+    @allure.title('Вводим спец. символы, буквы с цифрой, одну букву в имени.')
     def test_negative_name_input_send_keys(self, browser, name):
         negative_name_input_send_keys = BasketPage(browser)
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):

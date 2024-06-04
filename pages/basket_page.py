@@ -192,10 +192,28 @@ class BasketPage(BasePage):
     def get_text_error_name(self):
         return self.get_text_of_element(error_name)
 
+    @allure.step('Возвращает текст ошибки поля "Город доставки".')
+    def get_text_error_city(self):
+        return self.get_text_of_element(error_city)
+
+    @allure.step('Возвращает текст ошибки поля "Улица".')
+    def get_text_error_street(self):
+        return self.get_text_of_element(error_street)
+
     @allure.step('Ожидает текст ошибки поля "Ваше имя"')
     def wait_for_error_name(self):
         return WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located(error_name)
         )
 
+    @allure.step('Ожидает текст ошибки поля "Город доставки"')
+    def wait_for_error_city(self):
+        return WebDriverWait(self.browser, 10).until(
+            EC.visibility_of_element_located(error_city)
+        )
 
+    @allure.step('Ожидает текст ошибки поля "Улица"')
+    def wait_for_error_street(self):
+        return WebDriverWait(self.browser, 10).until(
+            EC.visibility_of_element_located(error_street)
+        )
