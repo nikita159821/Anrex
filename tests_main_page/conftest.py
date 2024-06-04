@@ -1,5 +1,3 @@
-import os
-import sys
 from selenium import webdriver
 import pytest
 from selenium.webdriver.chrome.options import Options as ChromeOptions

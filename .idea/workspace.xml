@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="anrex">
-      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_contact_info_input_placeholders.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_street_input_send_keys.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/locators/basket_page_locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/locators/basket_page_locators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/basket_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/basket_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests_basket_page/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests_basket_page/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests_basket_page/test_block_your_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/test_contact_info_inputs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests_main_page/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_main_page/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests_basket_page/test_city_input_send_keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/test_city_input_send_keys.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests_basket_page/test_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/test_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests_basket_page/test_name_input_send_keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/test_name_input_send_keys.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,11 +80,16 @@
     "Python tests.pytest for test_callback_link.TestCallbackLink.executor": "Run",
     "Python tests.pytest for test_callback_link.TestCallbackLink.test_callback_link.executor": "Run",
     "Python tests.pytest for test_callback_popup_name_input.TestInputName.test_callback_popup_name_input.executor": "Run",
+    "Python tests.pytest for test_city_input_send_keys.TestCityInputSendKeys.test_negative_city_input_send_keys.executor": "Run",
+    "Python tests.pytest for test_city_input_send_keys.TestCityInputSendKeys.test_positive_city_input_send_keys.executor": "Run",
     "Python tests.pytest for test_close_popup_city.TestClosePopup.test_close_popup.executor": "Run",
     "Python tests.pytest for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay.executor": "Run",
     "Python tests.pytest for test_contact_info_input_placeholders.TestBlockContactInputPlaceholders.executor": "Run",
     "Python tests.pytest for test_contact_info_input_placeholders.TestBlockContactInputPlaceholders.test_contact_info_input_email_placeholders.executor": "Run",
     "Python tests.pytest for test_contact_info_input_placeholders.TestBlockContactInputPlaceholders.test_contact_info_input_name_placeholders.executor": "Run",
+    "Python tests.pytest for test_contact_info_inputs.TestBlockContactInput.executor": "Run",
+    "Python tests.pytest for test_contact_info_inputs.TestBlockContactInput.test_contact_info_block_contains_full_name_input.executor": "Run",
+    "Python tests.pytest for test_contact_info_inputs.TestBlockContactInput.test_contact_info_block_contains_your_comment_input.executor": "Run",
     "Python tests.pytest for test_discounted_products.TestDiscountedProducts.test_discounted_products.executor": "Run",
     "Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.executor": "Run",
     "Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_form_feedback_invalid_email_input.executor": "Run",
@@ -96,6 +102,7 @@
     "Python tests.pytest for test_header_basket.TestHeaderBasket.test_basket_count_displayed_after_adding_product.executor": "Run",
     "Python tests.pytest for test_header_basket.TestHeaderBasket.test_header_basket_redirect.executor": "Run",
     "Python tests.pytest for test_header_basket.TestHeaderBasket.test_header_displays_basket.executor": "Run",
+    "Python tests.pytest for test_header_catalog.TestHeaderCatalog.test_header_catalog_visibility.executor": "Run",
     "Python tests.pytest for test_header_sale.TestHeaderSale.executor": "Run",
     "Python tests.pytest for test_header_search.TestDisplaysSearch.executor": "Run",
     "Python tests.pytest for test_header_search.TestDisplaysSearch.test_header_displays_search.executor": "Run",
@@ -128,7 +135,11 @@
     "Python tests.pytest for test_name_input_form_feedback_send_keys.TestNameInputSendKeys.executor": "Run",
     "Python tests.pytest for test_name_input_form_feedback_send_keys.TestNameInputSendKeys.test_negative_name_input_form_feedback_send_keys.executor": "Run",
     "Python tests.pytest for test_name_input_form_feedback_send_keys.TestNameInputSendKeys.test_positive_name_input_form_feedback_send_keys.executor": "Run",
+    "Python tests.pytest for test_name_input_send_keys.TestNameInputSendKeys.executor": "Run",
     "Python tests.pytest for test_name_input_send_keys.TestNameInputSendKeys.test_negative_name_input_send_keys.executor": "Run",
+    "Python tests.pytest for test_name_input_send_keys.TestNameInputSendKeys.test_positive_name_city_street_house_body_flat_phone_mail_comment_input_send_keys.executor": "Run",
+    "Python tests.pytest for test_name_input_send_keys.TestNameInputSendKeys.test_positive_name_city_street_house_flat_phone_mail_comment_input_send_keys.executor": "Run",
+    "Python tests.pytest for test_name_input_send_keys.TestNameInputSendKeys.test_positive_name_input_send_keys.executor": "Run",
     "Python tests.pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.executor": "Run",
     "Python tests.pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.test_negative_phone_form_feedback_input_send_keys.executor": "Run",
     "Python tests.pytest for test_phone_input_form_feedback_send_keys.TestPhoneInputSendKeys.test_negative_phone_form_feedback_input_send_keys_12_digits.executor": "Run",
@@ -141,6 +152,7 @@
     "Python tests.pytest for test_redirect_to_beds_section.TestRedirectBedsSection.executor": "Run",
     "Python tests.pytest for test_redirect_to_beds_section.TestRedirectBedsSection.test_redirect_krovati_i_matrasi.executor": "Run",
     "Python tests.pytest for test_request_callback.TestCallbackRequestTests.executor": "Run",
+    "Python tests.pytest for test_street_input_send_keys.TestStreetInputSendKeys.test_positive_street_input_send_keys.executor": "Run",
     "Python tests.pytest for test_text_comment_footer.TestCommentFooter.executor": "Run",
     "Python tests.pytest for test_text_comment_footer.TestCommentFooter.test_text_comment_footer.executor": "Run",
     "Python tests.pytest for test_title_back_call.TestTitle.executor": "Run",
@@ -155,25 +167,8 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.pytest for test_header_catalog.TestHeaderCatalog.test_header_catalog_visibility">
-    <configuration name="pytest for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="Anrex" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_main_page" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for test_contact_info_input_placeholders.TestBlockContactInputPlaceholders" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.pytest for test_street_input_send_keys.TestStreetInputSendKeys.test_negative_street_input_send_keys">
+    <configuration name="pytest for test_city_input_send_keys.TestCityInputSendKeys.test_negative_city_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -186,11 +181,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_contact_info_input_placeholders.TestBlockContactInputPlaceholders&quot;" />
+      <option name="_new_target" value="&quot;test_city_input_send_keys.TestCityInputSendKeys.test_negative_city_input_send_keys&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_contact_info_input_placeholders.TestBlockContactInputPlaceholders.test_contact_info_input_email_placeholders" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_city_input_send_keys.TestCityInputSendKeys.test_positive_city_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -203,28 +198,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_contact_info_input_placeholders.TestBlockContactInputPlaceholders.test_contact_info_input_email_placeholders&quot;" />
+      <option name="_new_target" value="&quot;test_city_input_send_keys.TestCityInputSendKeys.test_positive_city_input_send_keys&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_header_catalog.TestHeaderCatalog.test_header_catalog_visibility" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="Anrex" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_main_page" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_header_catalog.TestHeaderCatalog.test_header_catalog_visibility&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest in tests_basket_page" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_name_input_send_keys.TestNameInputSendKeys.test_negative_name_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -237,17 +215,51 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests_basket_page&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;test_name_input_send_keys.TestNameInputSendKeys.test_negative_name_input_send_keys&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_street_input_send_keys.TestStreetInputSendKeys.test_negative_street_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Anrex" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_basket_page" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_street_input_send_keys.TestStreetInputSendKeys.test_negative_street_input_send_keys&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_street_input_send_keys.TestStreetInputSendKeys.test_positive_street_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Anrex" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_basket_page" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_street_input_send_keys.TestStreetInputSendKeys.test_positive_street_input_send_keys&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_header_catalog.TestHeaderCatalog.test_header_catalog_visibility" />
-        <item itemvalue="Python tests.pytest in tests_basket_page" />
-        <item itemvalue="Python tests.pytest for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay" />
-        <item itemvalue="Python tests.pytest for test_contact_info_input_placeholders.TestBlockContactInputPlaceholders.test_contact_info_input_email_placeholders" />
-        <item itemvalue="Python tests.pytest for test_contact_info_input_placeholders.TestBlockContactInputPlaceholders" />
+        <item itemvalue="Python tests.pytest for test_street_input_send_keys.TestStreetInputSendKeys.test_negative_street_input_send_keys" />
+        <item itemvalue="Python tests.pytest for test_street_input_send_keys.TestStreetInputSendKeys.test_positive_street_input_send_keys" />
+        <item itemvalue="Python tests.pytest for test_name_input_send_keys.TestNameInputSendKeys.test_negative_name_input_send_keys" />
+        <item itemvalue="Python tests.pytest for test_city_input_send_keys.TestCityInputSendKeys.test_negative_city_input_send_keys" />
+        <item itemvalue="Python tests.pytest for test_city_input_send_keys.TestCityInputSendKeys.test_positive_city_input_send_keys" />
       </list>
     </recent_temporary>
   </component>
@@ -315,7 +327,31 @@
       <option name="project" value="LOCAL" />
       <updated>1717165978980</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="anrex">
+      <option name="closed" value="true" />
+      <created>1717422897829</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717422897829</updated>
+    </task>
+    <task id="LOCAL-00008" summary="anrex">
+      <option name="closed" value="true" />
+      <created>1717485849318</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717485849318</updated>
+    </task>
+    <task id="LOCAL-00009" summary="anrex">
+      <option name="closed" value="true" />
+      <created>1717511532727</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717511532727</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

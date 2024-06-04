@@ -33,6 +33,6 @@ class TestHeaderBasket:
             with allure.step('Нажимаем "Добавить в корзину" у карточки товара'):
                 count_displayed.button_click_cards()
         with allure.step('Ждем пока товар добавится в корзину'):
-            count_displayed.wait_for_element(basket_count)
+            count_displayed.count_one()
         with allure.step('Проверяем, что в корзину добавился один товар'):
             assert count_displayed.basket_count() == '1'
