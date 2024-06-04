@@ -1,12 +1,13 @@
 import random
 import string
 
+import allure
 from selenium.common import TimeoutException, NoSuchElementException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions as EC, expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
-from locators.main_page_locators import slider, button_card, sale_basket
+from locators.main_page_locators import slider, button_card, sale_basket, basket_count
 from tests_main_page.data import RUSSIAN_LETTERS, PUNCTUATION
 from tests_main_page.urls import URL, CHAPTER_CATALOG
 
@@ -193,19 +194,19 @@ class BasePage:
     # Метод генерирует имя или цифры
     #@staticmethod
     #def generate_random_string(length, string_type='russian_letters'):
-        # Русский алфавит в верхнем и нижнем регистре
-        #russian_alphabet = 'абвгдежзийклмнопрстуфхцчшщъыьэюя'
-        #digits = string.digits  # Использование встроенного модуля string для получения цифр
+    # Русский алфавит в верхнем и нижнем регистре
+    #russian_alphabet = 'абвгдежзийклмнопрстуфхцчшщъыьэюя'
+    #digits = string.digits  # Использование встроенного модуля string для получения цифр
 
-        #if string_type == 'russian_letters':
-            #characters = russian_alphabet
-        #elif string_type == 'digits':
-            #characters = digits
-        #else:
-            #raise ValueError('Invalid string_type. Use "russian_letters" or "digits".')
+    #if string_type == 'russian_letters':
+    #characters = russian_alphabet
+    #elif string_type == 'digits':
+    #characters = digits
+    #else:
+    #raise ValueError('Invalid string_type. Use "russian_letters" or "digits".')
 
-        # Генерируем строку случайных символов заданной длины
-        #return ''.join(random.choice(characters) for _ in range(length))
+    # Генерируем строку случайных символов заданной длины
+    #return ''.join(random.choice(characters) for _ in range(length))
 
     # Нажимает "Добавить в корзину" у карточки товара
     def button_click_cards(self):
@@ -214,3 +215,12 @@ class BasePage:
     # Нажимает на иконку корзины в шапке
     def sale_basket_click(self):
         self.click_element(sale_basket)
+
+    def open_basket(self):
+        with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
+            self.open_catalog()
+            self.get_element_scroll_to_element(button_card)
+            self.button_click_cards()
+            self.wait_for_element(basket_count)
+            self.sale_basket_click()
+
