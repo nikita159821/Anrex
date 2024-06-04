@@ -1,10 +1,8 @@
 import allure
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
 from locators.basket_page_locators import *
 from pages.base_page import BasePage
-from tests_basket_page.data import BASKET_CITY, STREET, HOUSE, BODY, FLAT, PHONE_NUMBER, EMAIL, COMMENT
 
 
 class BasketPage(BasePage):
@@ -20,31 +18,31 @@ class BasketPage(BasePage):
         return self.get_text_of_element(input_delivery_city)
 
     @allure.step('Возвращает текст поле "Улица"')
-    def get_input_street(self):
+    def text_input_street(self):
         return self.get_text_of_element(input_street)
 
     @allure.step('Возвращает текст поле "Дом"')
-    def get_input_house(self):
+    def text_input_house(self):
         return self.get_text_of_element(input_house)
 
     @allure.step('Возвращает текст поле "Корпус"')
-    def get_input_body(self):
+    def text_input_body(self):
         return self.get_text_of_element(input_body)
 
     @allure.step('Возвращает текст поле "Квартира"')
-    def get_input_flat(self):
+    def text_input_flat(self):
         return self.get_text_of_element(input_flat)
 
     @allure.step('Возвращает текст поле "Номер телефона"')
-    def get_input_phone_number(self):
+    def text_input_phone_number(self):
         return self.get_text_of_element(input_phone_number)
 
     @allure.step('Возвращает текст поле "E-mail"')
-    def get_input_mail(self):
+    def text_input_mail(self):
         return self.get_text_of_element(input_mail)
 
     @allure.step('Возвращает текст поле "Ваш комментарий"')
-    def get_input_your_comment(self):
+    def text_input_your_comment(self):
         return self.get_text_of_element(input_your_comment)
 
     @allure.step('Возвращает плейсхолдер из поля "Ваше имя"')
@@ -96,75 +94,85 @@ class BasketPage(BasePage):
         return self.find(input_delivery_city_send_keys)
 
     @allure.step('Вводит данные в поле "Город доставки"')
-    def delivery_city_send_keys(self):
-        self.get_input_delivery_city().send_keys(BASKET_CITY)
+    def delivery_city_send_keys(self, city):
+        self.get_input_delivery_city().send_keys(city)
 
     @allure.step('Возвращает поле "Улица"')
     def get_input_street(self):
         return self.find(input_street_send_keys)
 
     @allure.step('Вводит данные в поле "Улица"')
-    def street_send_keys(self):
-        self.get_input_street().send_keys(STREET)
+    def street_send_keys(self, street):
+        self.get_input_street().send_keys(street)
 
     @allure.step('Возвращает поле "Дом"')
     def get_input_house(self):
         return self.find(input_house_send_keys)
 
     @allure.step('Вводит данные в поле "Дом"')
-    def house_send_keys(self):
-        self.get_input_house().send_keys(HOUSE)
+    def house_send_keys(self, house):
+        self.get_input_house().send_keys(house)
 
     @allure.step('Возвращает поле "Корпус"')
     def get_input_body(self):
         return self.find(input_body_send_keys)
 
     @allure.step('Вводит данные в поле "Корпус"')
-    def body_send_keys(self):
-        self.get_input_body().send_keys(BODY)
+    def body_send_keys(self,body):
+        self.get_input_body().send_keys(body)
 
     @allure.step('Возвращает поле "Квартира"')
     def get_input_flat(self):
         return self.find(input_flat_send_keys)
 
     @allure.step('Вводит данные в поле "Квартира"')
-    def flat_send_keys(self):
-        self.get_input_flat().send_keys(FLAT)
+    def flat_send_keys(self,flat):
+        self.get_input_flat().send_keys(flat)
 
     @allure.step('Возвращает поле "Телефон"')
     def get_input_phone_number(self):
         return self.find(input_phone_number_send_keys)
 
     @allure.step('Вводит данные в поле "Телефон"')
-    def phone_number_send_keys(self):
-        self.get_input_phone_number().send_keys(PHONE_NUMBER)
+    def phone_number_send_keys(self,phone):
+        self.get_input_phone_number().send_keys(phone)
 
     @allure.step('Возвращает поле "Email"')
     def get_input_mail(self):
         return self.find(input_mail_send_keys)
 
     @allure.step('Вводит данные в поле "Email"')
-    def mail_send_keys(self):
-        self.get_input_mail().send_keys(EMAIL)
+    def mail_send_keys(self,mail):
+        self.get_input_mail().send_keys(mail)
 
     @allure.step('Возвращает поле "Комментарий"')
     def get_input_your_comment(self):
         return self.find(input_your_comment_send_keys)
 
     @allure.step('Вводит данные в поле "Комментарий"')
-    def your_comment_send_keys(self):
-        self.get_input_your_comment().send_keys(COMMENT)
+    def your_comment_send_keys(self,comment):
+        self.get_input_your_comment().send_keys(comment)
 
     @allure.step('Вводит данные в поля')
-    def fill_fields(self):
-        self.delivery_city_send_keys()
-        self.street_send_keys()
-        self.house_send_keys()
-        self.body_send_keys()
-        self.flat_send_keys()
-        self.phone_number_send_keys()
-        self.mail_send_keys()
-        self.your_comment_send_keys()
+    def fill_form(self, name, city, street, house, body, flat, phone, mail, comment):
+        with allure.step('Заполняем поле "Ваше имя" данными'):
+            self.name_input_send_keys(name)
+        with allure.step('Заполняем поле "Город доставки" данными'):
+            self.delivery_city_send_keys(city)
+        with allure.step('Заполняем поле "Улица" данными'):
+            self.street_send_keys(street)
+        with allure.step('Заполняем поле "Дом" данными'):
+            self.house_send_keys(house)
+        with allure.step('Заполняем поле "Корпус" данными'):
+            self.body_send_keys(body)
+        with allure.step('Заполняем поле "Квартира" данными'):
+            self.flat_send_keys(flat)
+        with allure.step('Заполняем поле "Телефон" данными'):
+            self.phone_number_send_keys(phone)
+        with allure.step('Заполняем поле "Email" данными'):
+            self.mail_send_keys(mail)
+        with allure.step('Заполняем поле "Комментарий" данными'):
+            self.your_comment_send_keys(comment)
 
     @allure.step('Нажимает кнопку "Оформить заказ" в корзине')
     def click_button_arrange_order(self):
@@ -189,3 +197,5 @@ class BasketPage(BasePage):
         return WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located(error_name)
         )
+
+

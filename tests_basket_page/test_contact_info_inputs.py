@@ -11,7 +11,7 @@ class TestBlockContactInput:
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             block_contains_full_name.open_basket()
         with allure.step('Проверяем отображение поля ФИО'):
-            assert block_contains_full_name.get_input_full_name() == INPUT_FULL_NAME
+            assert block_contains_full_name.text_input_full_name() == INPUT_FULL_NAME
 
     @allure.title('В блоке "Контактные данные" отображается инпут "Город доставки"')
     def test_contact_info_block_contains_delivery_city_input(self, browser):
@@ -19,7 +19,7 @@ class TestBlockContactInput:
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             block_contains_delivery_city.open_basket()
         with allure.step('Проверяем отображение поля Город доставки'):
-            assert block_contains_delivery_city.get_input_delivery_city() == INPUT_DELIVERY_CITY
+            assert block_contains_delivery_city.text_input_delivery_city() == INPUT_DELIVERY_CITY
 
     @allure.title('В блоке "Контактные данные" отображается инпут "Улица"')
     def test_contact_info_block_contains_street_input(self, browser):
@@ -27,7 +27,7 @@ class TestBlockContactInput:
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             block_contains_street.open_basket()
         with allure.step('Проверяем отображение поля Улица'):
-            assert block_contains_street.get_input_street() == INPUT_STREET
+            assert block_contains_street.text_input_street() == INPUT_STREET
 
     @allure.title('В блоке "Контактные данные" отображается инпут "Дом"')
     def test_contact_info_block_contains_house_input(self, browser):
@@ -35,7 +35,7 @@ class TestBlockContactInput:
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             block_contains_house.open_basket()
         with allure.step('Проверяем отображение поля Дом'):
-            assert block_contains_house.get_input_house() == INPUT_HOUSE
+            assert block_contains_house.text_input_house() == INPUT_HOUSE
 
     @allure.title('В блоке "Контактные данные" отображается инпут "Корпус"')
     def test_contact_info_block_contains_body_input(self, browser):
@@ -43,7 +43,7 @@ class TestBlockContactInput:
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             block_contains_body.open_basket()
         with allure.step('Проверяем отображение поля Корпус'):
-            assert block_contains_body.get_input_body() == INPUT_BODY
+            assert block_contains_body.text_input_body() == INPUT_BODY
 
     @allure.title('В блоке "Контактные данные" отображается инпут "Квартира"')
     def test_contact_info_block_contains_flat_input(self, browser):
@@ -51,7 +51,7 @@ class TestBlockContactInput:
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             block_contains_flat.open_basket()
         with allure.step('Проверяем отображение поля Квартира'):
-            assert block_contains_flat.get_input_flat() == INPUT_FLAT
+            assert block_contains_flat.text_input_flat() == INPUT_FLAT
 
     @allure.title('В блоке "Контактные данные" отображается инпут "Номер телефона"')
     def test_contact_info_block_contains_phone_number_input(self, browser):
@@ -59,7 +59,7 @@ class TestBlockContactInput:
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             block_contains_phone_number.open_basket()
         with allure.step('Проверяем отображение поля Номер телефона'):
-            assert block_contains_phone_number.get_input_phone_number() == INPUT_PHONE_NUMBER
+            assert block_contains_phone_number.text_input_phone_number() == INPUT_PHONE_NUMBER
 
     @allure.title('В блоке "Контактные данные" отображается инпут "E-mail"')
     def test_contact_info_block_contains_mail_input(self, browser):
@@ -67,7 +67,7 @@ class TestBlockContactInput:
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             block_contains_mail.open_basket()
         with allure.step('Проверяем отображение поля Номер E-mail'):
-            assert block_contains_mail.get_input_mail() == INPUT_MAIL
+            assert block_contains_mail.text_input_mail() == INPUT_MAIL
 
     @allure.title('В блоке "Контактные данные" отображается инпут "Ваш комментарий"')
     def test_contact_info_block_contains_your_comment_input(self, browser):
@@ -75,4 +75,4 @@ class TestBlockContactInput:
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             block_contains_your_comment.open_basket()
         with allure.step('Проверяем отображение поля Номер Ваш комментарий'):
-            assert block_contains_your_comment.get_input_your_comment() == INPUT_YOUR_COMMENT
+            assert block_contains_your_comment.text_input_your_comment() == INPUT_YOUR_COMMENT

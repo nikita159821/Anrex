@@ -216,11 +216,16 @@ class BasePage:
     def sale_basket_click(self):
         self.click_element(sale_basket)
 
+    # Ожидание после добавления товара в корзину
+    def count_one(self):
+        return WebDriverWait(self.browser, 10).until(
+            EC.text_to_be_present_in_element(basket_count, "1")
+        )
+
     def open_basket(self):
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             self.open_catalog()
             self.get_element_scroll_to_element(button_card)
             self.button_click_cards()
-            self.wait_for_element(basket_count)
+            self.count_one()
             self.sale_basket_click()
-
