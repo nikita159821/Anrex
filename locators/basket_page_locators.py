@@ -33,3 +33,4 @@ order_confirmation = (By.XPATH, "//h2[text()='Подтверждение зак�
 error_name = (By.CSS_SELECTOR, '#tooltip-soa-property-1 .tooltip-inner')
 error_city = (By.CSS_SELECTOR, '#tooltip-soa-property-2 .tooltip-inner')
 error_street = (By.CSS_SELECTOR, '#tooltip-soa-property-3 .tooltip-inner')
+error_house = (By.CSS_SELECTOR, '#tooltip-soa-property-4 .tooltip-inner')
