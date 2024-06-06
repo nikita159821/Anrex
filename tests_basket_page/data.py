@@ -51,6 +51,11 @@ BASKET_RANDOM_HOUSE = [
     MainPage.generate_random_string(3, 'digits'),
 ]
 
+BASKET_RANDOM_BODY = [
+    MainPage.generate_random_string(2, 'digits'),
+    MainPage.generate_random_string(5, 'digits')
+]
+
 BASKET_STREET_INPUT = [
     'Проспект Ленина',
     '250-летия Челябинска',
@@ -59,7 +64,7 @@ BASKET_STREET_INPUT = [
 
 # Пока на паузе. Есть баг связанный с вводом слеша в поле дом
 #BASKET_HOUSE_INPUT = [
-    #'10/10'
+#'10/10'
 #]
 
 BASKET_CITY_INPUT = [
@@ -80,22 +85,20 @@ BASKET_RANDOM_NAME_NEGATIVE = [
     'Я Ян'
 ]
 
+BASKET_BODY_INPUT = [
+    '2',
+    '2/2'
+]
 
 BASKET_CITY = 'М'
 STREET = 'Ул'
 HOUSE = '10'
-BODY = '1'
+BODY = '12345'
 FLAT = '101'
 PHONE_NUMBER = '+7 123 456 7890'
 EMAIL = 'example@example.com'
 COMMENT = 'Тестовый комментарий'
 
-
-
-
-BASKET_BODY_INPUT = [
-    '2Б'
-]
 
 BASKET_FLAT_INPUT = [
     '25'

@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="anrex">
-      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_house_input_send_keys.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_body_input_send_keys.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locators/basket_page_locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/locators/basket_page_locators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/basket_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/basket_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests_basket_page/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests_basket_page/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests_basket_page/test_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/test_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests_basket_page/test_street_input_send_keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/test_street_input_send_keys.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +73,10 @@
     "Python tests.pytest for safasf.test_calculate_commission.executor": "Run",
     "Python tests.pytest for test_block_your_order.TestBlockYourOrder.executor": "Run",
     "Python tests.pytest for test_block_your_order.TestBlockYourOrder.test_contact_info_block_contains_full_name_input.executor": "Run",
+    "Python tests.pytest for test_body_input_send_keys.TestBodyInputSendKeys.executor": "Run",
+    "Python tests.pytest for test_body_input_send_keys.TestBodyInputSendKeys.test_input_send_keys_six_numbers.executor": "Run",
+    "Python tests.pytest for test_body_input_send_keys.TestBodyInputSendKeys.test_positive_body_input_send_keys.executor": "Run",
+    "Python tests.pytest for test_body_input_send_keys.TestBodyInputSendKeys.test_positive_house_input_send_keys.executor": "Run",
     "Python tests.pytest for test_callback_link.TestCallbackLink.executor": "Run",
     "Python tests.pytest for test_callback_link.TestCallbackLink.test_callback_link.executor": "Run",
     "Python tests.pytest for test_callback_popup_name_input.TestInputName.test_callback_popup_name_input.executor": "Run",
@@ -170,8 +172,8 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.pytest in tests_basket_page">
-    <configuration name="pytest for test_house_input_send_keys.TestHouseInputSendKeys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.pytest for test_body_input_send_keys.TestBodyInputSendKeys">
+    <configuration name="pytest for test_body_input_send_keys.TestBodyInputSendKeys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -184,11 +186,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_house_input_send_keys.TestHouseInputSendKeys&quot;" />
+      <option name="_new_target" value="&quot;test_body_input_send_keys.TestBodyInputSendKeys&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_house_input_send_keys.TestHouseInputSendKeys.test_negative_house_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_body_input_send_keys.TestBodyInputSendKeys.test_input_send_keys_six_numbers" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -201,11 +203,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_house_input_send_keys.TestHouseInputSendKeys.test_negative_house_input_send_keys&quot;" />
+      <option name="_new_target" value="&quot;test_body_input_send_keys.TestBodyInputSendKeys.test_input_send_keys_six_numbers&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_house_input_send_keys.TestHouseInputSendKeys.test_positive_house_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_body_input_send_keys.TestBodyInputSendKeys.test_positive_body_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -218,11 +220,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_house_input_send_keys.TestHouseInputSendKeys.test_positive_house_input_send_keys&quot;" />
+      <option name="_new_target" value="&quot;test_body_input_send_keys.TestBodyInputSendKeys.test_positive_body_input_send_keys&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in test_name_input_send_keys.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_body_input_send_keys.TestBodyInputSendKeys.test_positive_house_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -235,8 +237,8 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests_basket_page/test_name_input_send_keys.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;test_body_input_send_keys.TestBodyInputSendKeys.test_positive_house_input_send_keys&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="pytest in tests_basket_page" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
@@ -258,11 +260,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test_body_input_send_keys.TestBodyInputSendKeys" />
+        <item itemvalue="Python tests.pytest for test_body_input_send_keys.TestBodyInputSendKeys.test_input_send_keys_six_numbers" />
+        <item itemvalue="Python tests.pytest for test_body_input_send_keys.TestBodyInputSendKeys.test_positive_body_input_send_keys" />
+        <item itemvalue="Python tests.pytest for test_body_input_send_keys.TestBodyInputSendKeys.test_positive_house_input_send_keys" />
         <item itemvalue="Python tests.pytest in tests_basket_page" />
-        <item itemvalue="Python tests.pytest for test_house_input_send_keys.TestHouseInputSendKeys" />
-        <item itemvalue="Python tests.pytest for test_house_input_send_keys.TestHouseInputSendKeys.test_negative_house_input_send_keys" />
-        <item itemvalue="Python tests.pytest for test_house_input_send_keys.TestHouseInputSendKeys.test_positive_house_input_send_keys" />
-        <item itemvalue="Python tests.pytest in test_name_input_send_keys.py" />
       </list>
     </recent_temporary>
   </component>
@@ -362,7 +364,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717514843201</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="anrex">
+      <option name="closed" value="true" />
+      <created>1717591348669</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717591348669</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

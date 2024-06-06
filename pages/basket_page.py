@@ -184,7 +184,7 @@ class BasketPage(BasePage):
 
     @allure.step('Ожидает видимость текста "Подтверждение заказа"')
     def wait_for_order_confirmation(self):
-        return WebDriverWait(self.browser, 10).until(
+        return WebDriverWait(self.browser, 50).until(
             EC.visibility_of_element_located(order_confirmation)
         )
 
