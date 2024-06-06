@@ -204,6 +204,10 @@ class BasketPage(BasePage):
     def get_text_error_house(self):
         return self.get_text_of_element(error_house)
 
+    @allure.step('Возвращает текст ошибки поля "E-mail".')
+    def get_text_error_email(self):
+        return self.get_text_of_element(error_email)
+
     @allure.step('Ожидает текст ошибки поля "Ваше имя"')
     def wait_for_error_name(self):
         return WebDriverWait(self.browser, 10).until(
@@ -226,4 +230,10 @@ class BasketPage(BasePage):
     def wait_for_error_house(self):
         return WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located(error_house)
+        )
+
+    @allure.step('Ожидает текст ошибки поля "E-mail"')
+    def wait_for_error_email(self):
+        return WebDriverWait(self.browser, 10).until(
+            EC.visibility_of_element_located(error_email)
         )

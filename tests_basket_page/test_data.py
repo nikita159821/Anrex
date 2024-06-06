@@ -2,7 +2,7 @@ import random
 import string
 from tests_basket_page.data import BASKET_NAME, BASKET_RANDOM_NAME, BASKET_CITY_INPUT, BASKET_RANDOM_CITY, \
     BASKET_STREET_INPUT, BASKET_RANDOM_STREET, BASKET_RANDOM_HOUSE, BASKET_BODY_INPUT, BASKET_RANDOM_BODY, \
-    BASKET_RANDOM_FLAT, BASKET_FLAT_INPUT
+    BASKET_RANDOM_FLAT, BASKET_FLAT_INPUT, BASKET_EMAIL_INPUT
 from tests_main_page.data import RUSSIAN_LETTERS, PUNCTUATION
 
 
@@ -109,6 +109,19 @@ class TestData:
             body = TestData.generate_random_string(random.randint(2, 3), 'digits')
             phone = TestData.generate_random_string(50, 'digits')
             mail = TestData.generate_random_string(random.randint(5, 20), 'letters') + '@example.com'
+            comment = TestData.generate_random_string(random.randint(10, 50), 'russian_letters')
+            yield name, city, street, house, body, flat, phone, mail, comment
+
+    @staticmethod
+    def generate_test_email():
+        for mail in BASKET_EMAIL_INPUT:
+            city = TestData.generate_random_string(random.randint(5, 20), 'russian_letters')
+            name = TestData.generate_random_string(random.randint(10, 20), 'russian_letters')
+            house = TestData.generate_random_string(random.randint(2, 2), 'digits')
+            street = TestData.generate_random_string(random.randint(3, 5), 'russian_letters')
+            body = TestData.generate_random_string(random.randint(2, 3), 'digits')
+            phone = TestData.generate_random_string(50, 'digits')
+            flat = TestData.generate_random_string(random.randint(2, 3), 'digits')
             comment = TestData.generate_random_string(random.randint(10, 50), 'russian_letters')
             yield name, city, street, house, body, flat, phone, mail, comment
 

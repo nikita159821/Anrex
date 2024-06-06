@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="anrex" />
+    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="anrex">
+      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_email_input_send_keys.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locators/basket_page_locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/locators/basket_page_locators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/basket_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/basket_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests_basket_page/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests_basket_page/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests_basket_page/test_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/test_data.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,6 +97,10 @@
     "Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_form_feedback_invalid_email_input.executor": "Run",
     "Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_negative_email_input_form_feedback_send_keys.executor": "Run",
     "Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_positive_email_input_form_feedback_send_keys.executor": "Run",
+    "Python tests.pytest for test_email_input_send_keys.TestEmailInputSendKeys.executor": "Run",
+    "Python tests.pytest for test_email_input_send_keys.TestEmailInputSendKeys.test_input_send_keys_email_whitespace.executor": "Run",
+    "Python tests.pytest for test_email_input_send_keys.TestEmailInputSendKeys.test_negative_email_input_send_keys.executor": "Run",
+    "Python tests.pytest for test_email_input_send_keys.TestEmailInputSendKeys.test_positive_email_input_send_keys.executor": "Run",
     "Python tests.pytest for test_feedback_form.TestFeedbackForm.executor": "Run",
     "Python tests.pytest for test_feedback_form.TestFeedbackForm.test_write_us_button_opens_feedback_form.executor": "Run",
     "Python tests.pytest for test_flat_input_send_keys.TestFlatInputSendKeys.executor": "Run",
@@ -171,8 +183,8 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.pytest for test_home_page_collections.TestHomepageCollections.test_display_view_all_collections_button">
-    <configuration name="pytest for test_flat_input_send_keys.TestFlatInputSendKeys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.pytest for test_email_input_send_keys.TestEmailInputSendKeys">
+    <configuration name="pytest for test_email_input_send_keys.TestEmailInputSendKeys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -185,11 +197,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_flat_input_send_keys.TestFlatInputSendKeys&quot;" />
+      <option name="_new_target" value="&quot;test_email_input_send_keys.TestEmailInputSendKeys&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_flat_input_send_keys.TestFlatInputSendKeys.test_input_send_keys_six_numbers" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_email_input_send_keys.TestEmailInputSendKeys.test_input_send_keys_email_whitespace" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -202,11 +214,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_flat_input_send_keys.TestFlatInputSendKeys.test_input_send_keys_six_numbers&quot;" />
+      <option name="_new_target" value="&quot;test_email_input_send_keys.TestEmailInputSendKeys.test_input_send_keys_email_whitespace&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_flat_input_send_keys.TestFlatInputSendKeys.test_positive_flat_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_email_input_send_keys.TestEmailInputSendKeys.test_negative_email_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -219,7 +231,24 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_flat_input_send_keys.TestFlatInputSendKeys.test_positive_flat_input_send_keys&quot;" />
+      <option name="_new_target" value="&quot;test_email_input_send_keys.TestEmailInputSendKeys.test_negative_email_input_send_keys&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_email_input_send_keys.TestEmailInputSendKeys.test_positive_email_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Anrex" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_basket_page" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_email_input_send_keys.TestEmailInputSendKeys.test_positive_email_input_send_keys&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -240,30 +269,13 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in tests_basket_page" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="Anrex" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_basket_page" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests_basket_page&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test_email_input_send_keys.TestEmailInputSendKeys" />
+        <item itemvalue="Python tests.pytest for test_email_input_send_keys.TestEmailInputSendKeys.test_negative_email_input_send_keys" />
+        <item itemvalue="Python tests.pytest for test_email_input_send_keys.TestEmailInputSendKeys.test_input_send_keys_email_whitespace" />
+        <item itemvalue="Python tests.pytest for test_email_input_send_keys.TestEmailInputSendKeys.test_positive_email_input_send_keys" />
         <item itemvalue="Python tests.pytest for test_home_page_collections.TestHomepageCollections.test_display_view_all_collections_button" />
-        <item itemvalue="Python tests.pytest for test_flat_input_send_keys.TestFlatInputSendKeys" />
-        <item itemvalue="Python tests.pytest for test_flat_input_send_keys.TestFlatInputSendKeys.test_input_send_keys_six_numbers" />
-        <item itemvalue="Python tests.pytest for test_flat_input_send_keys.TestFlatInputSendKeys.test_positive_flat_input_send_keys" />
-        <item itemvalue="Python tests.pytest in tests_basket_page" />
       </list>
     </recent_temporary>
   </component>
@@ -387,7 +399,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717673627325</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="anrex">
+      <option name="closed" value="true" />
+      <created>1717676221576</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1717676221576</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

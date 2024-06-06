@@ -25,6 +25,7 @@ ERROR_INPUT_STREET = 'Минимальная длина поля "Улица" н
 ERROR_INPUT_HOUSE_digits = 'Максимальное значение поля "Дом" 999'
 ERROR_INPUT_HOUSE_russian_letters = 'Поле "Дом" должно быть числовым'
 ERROR_INPUT_HOUSE_whitespace = 'Поле "Дом" обязательно для заполнения'
+ERROR_INPUT_EMAIl = 'Введен неверный e-mail'
 
 BASKET_RANDOM_NAME = [
     MainPage.generate_random_string(2, 'russian_letters'),
@@ -90,6 +91,7 @@ BASKET_RANDOM_NAME_NEGATIVE = [
     'Я Ян'
 ]
 
+
 BASKET_BODY_INPUT = [
     '2',
     '2/2'
@@ -100,15 +102,30 @@ BASKET_FLAT_INPUT = [
     '2/3'
 ]
 
+BASKET_EMAIL_INPUT = [
+    'test@yandex.ru',
+    'te.st@yandex.ru',
+    'te_st@yandex.ru',
+    'TEST@YANDEX.RU',
+    'test123@yandex.ru',
+    'te-st@yandex.ru'
+]
+
+BASKET_EMAIL_NEGATIVE = [
+    'te...st@yandex.ru',
+    'testyandex.ru',
+    'test@'
+]
+
 BASKET_CITY = 'М'
 STREET = 'Ул'
 HOUSE = '10'
 BODY = '12345'
 FLAT = '12345'
 PHONE_NUMBER = '+7 123 456 7890'
-EMAIL = 'example@example.com'
+EMAIL = 'te st@yandex.ru'
+EXPECTED_EMAIL = 'test@yandex.ru'
 COMMENT = 'Тестовый комментарий'
-
 
 BASKET_PHONE_INPUT = [
     9999999999
