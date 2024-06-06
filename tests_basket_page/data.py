@@ -56,6 +56,11 @@ BASKET_RANDOM_BODY = [
     MainPage.generate_random_string(5, 'digits')
 ]
 
+BASKET_RANDOM_FLAT = [
+    MainPage.generate_random_string(2, 'digits'),
+    MainPage.generate_random_string(5, 'digits')
+]
+
 BASKET_STREET_INPUT = [
     'Проспект Ленина',
     '250-летия Челябинска',
@@ -90,19 +95,20 @@ BASKET_BODY_INPUT = [
     '2/2'
 ]
 
+BASKET_FLAT_INPUT = [
+    '200',
+    '2/3'
+]
+
 BASKET_CITY = 'М'
 STREET = 'Ул'
 HOUSE = '10'
 BODY = '12345'
-FLAT = '101'
+FLAT = '12345'
 PHONE_NUMBER = '+7 123 456 7890'
 EMAIL = 'example@example.com'
 COMMENT = 'Тестовый комментарий'
 
-
-BASKET_FLAT_INPUT = [
-    '25'
-]
 
 BASKET_PHONE_INPUT = [
     9999999999

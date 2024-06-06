@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="anrex">
-      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_body_input_send_keys.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_flat_input_send_keys.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests_basket_page/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests_basket_page/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/data.py" afterDir="false" />
@@ -97,6 +97,9 @@
     "Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_positive_email_input_form_feedback_send_keys.executor": "Run",
     "Python tests.pytest for test_feedback_form.TestFeedbackForm.executor": "Run",
     "Python tests.pytest for test_feedback_form.TestFeedbackForm.test_write_us_button_opens_feedback_form.executor": "Run",
+    "Python tests.pytest for test_flat_input_send_keys.TestFlatInputSendKeys.executor": "Run",
+    "Python tests.pytest for test_flat_input_send_keys.TestFlatInputSendKeys.test_input_send_keys_six_numbers.executor": "Run",
+    "Python tests.pytest for test_flat_input_send_keys.TestFlatInputSendKeys.test_positive_flat_input_send_keys.executor": "Run",
     "Python tests.pytest for test_footer_write_us_button.TestFooterButton.test_footer_write_us_button.executor": "Run",
     "Python tests.pytest for test_header_basket.TestHeaderBasket.executor": "Run",
     "Python tests.pytest for test_header_basket.TestHeaderBasket.test_basket_count_displayed_after_adding_product.executor": "Run",
@@ -165,6 +168,7 @@
     "Python tests.pytest in test_name_input_send_keys.py.executor": "Run",
     "Python tests.pytest in test_phone_input_form_feedback_send_keys.py.executor": "Run",
     "Python tests.pytest in tests_basket_page.executor": "Run",
+    "Python tests.pytest in tests_main_page.executor": "Run",
     "Python.safasf.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "develop",
@@ -172,8 +176,8 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.pytest for test_body_input_send_keys.TestBodyInputSendKeys">
-    <configuration name="pytest for test_body_input_send_keys.TestBodyInputSendKeys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.pytest for test_home_page_collections.TestHomepageCollections.test_display_view_all_collections_button">
+    <configuration name="pytest for test_flat_input_send_keys.TestFlatInputSendKeys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -186,11 +190,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_body_input_send_keys.TestBodyInputSendKeys&quot;" />
+      <option name="_new_target" value="&quot;test_flat_input_send_keys.TestFlatInputSendKeys&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_body_input_send_keys.TestBodyInputSendKeys.test_input_send_keys_six_numbers" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_flat_input_send_keys.TestFlatInputSendKeys.test_input_send_keys_six_numbers" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -203,11 +207,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_body_input_send_keys.TestBodyInputSendKeys.test_input_send_keys_six_numbers&quot;" />
+      <option name="_new_target" value="&quot;test_flat_input_send_keys.TestFlatInputSendKeys.test_input_send_keys_six_numbers&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_body_input_send_keys.TestBodyInputSendKeys.test_positive_body_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_flat_input_send_keys.TestFlatInputSendKeys.test_positive_flat_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -220,24 +224,24 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_body_input_send_keys.TestBodyInputSendKeys.test_positive_body_input_send_keys&quot;" />
+      <option name="_new_target" value="&quot;test_flat_input_send_keys.TestFlatInputSendKeys.test_positive_flat_input_send_keys&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_body_input_send_keys.TestBodyInputSendKeys.test_positive_house_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_home_page_collections.TestHomepageCollections.test_display_view_all_collections_button" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_basket_page" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_main_page" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_body_input_send_keys.TestBodyInputSendKeys.test_positive_house_input_send_keys&quot;" />
+      <option name="_new_target" value="&quot;test_home_page_collections.TestHomepageCollections.test_display_view_all_collections_button&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -260,10 +264,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_body_input_send_keys.TestBodyInputSendKeys" />
-        <item itemvalue="Python tests.pytest for test_body_input_send_keys.TestBodyInputSendKeys.test_input_send_keys_six_numbers" />
-        <item itemvalue="Python tests.pytest for test_body_input_send_keys.TestBodyInputSendKeys.test_positive_body_input_send_keys" />
-        <item itemvalue="Python tests.pytest for test_body_input_send_keys.TestBodyInputSendKeys.test_positive_house_input_send_keys" />
+        <item itemvalue="Python tests.pytest for test_home_page_collections.TestHomepageCollections.test_display_view_all_collections_button" />
+        <item itemvalue="Python tests.pytest for test_flat_input_send_keys.TestFlatInputSendKeys" />
+        <item itemvalue="Python tests.pytest for test_flat_input_send_keys.TestFlatInputSendKeys.test_input_send_keys_six_numbers" />
+        <item itemvalue="Python tests.pytest for test_flat_input_send_keys.TestFlatInputSendKeys.test_positive_flat_input_send_keys" />
         <item itemvalue="Python tests.pytest in tests_basket_page" />
       </list>
     </recent_temporary>
@@ -372,7 +376,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717591348669</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="anrex">
+      <option name="closed" value="true" />
+      <created>1717670382919</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1717670382919</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

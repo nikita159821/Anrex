@@ -84,6 +84,8 @@ class TestHomepageCollections:
             collections_button.open()
         with allure.step('Скроллим до блока "Наши коллекции"'):
             collections_button.get_section_collections()
+        with allure.step('Добавляем ожидание после скролла'):
+            collections_button.wait_for_element(view_collections)
         with allure.step('Проверяем, что отображается кнопка "Смотреть все коллекции"'):
             assert collections_button.get_button_text_view_collections() == TITLE_BUTTON_VIEW_COLLECTIONS
 
