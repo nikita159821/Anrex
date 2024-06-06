@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="anrex">
-      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_flat_input_send_keys.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests_basket_page/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests_basket_page/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests_basket_page/test_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/test_data.py" afterDir="false" />
-    </list>
+    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="anrex" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,6 +106,7 @@
     "Python tests.pytest for test_header_search.TestDisplaysSearch.test_search_click.executor": "Run",
     "Python tests.pytest for test_header_search.TestDisplaysSearch.test_search_click_close.executor": "Run",
     "Python tests.pytest for test_home_page_collections.TestHomepageCollections.executor": "Run",
+    "Python tests.pytest for test_home_page_collections.TestHomepageCollections.test_display_view_all_collections_button.executor": "Run",
     "Python tests.pytest for test_home_page_collections.TestHomepageCollections.test_redirect_collections_button.executor": "Run",
     "Python tests.pytest for test_home_page_reviews.TestHomepageReviews.test_modal_window_opens_when_read_more_link_clicked.executor": "Run",
     "Python tests.pytest for test_homepage_collections.TestHomepageCollections.executor": "Run",
@@ -384,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717670382919</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="anrex">
+      <option name="closed" value="true" />
+      <created>1717673627325</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1717673627325</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
