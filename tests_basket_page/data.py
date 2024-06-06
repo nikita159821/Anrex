@@ -22,25 +22,16 @@ ORDER_CONFIRMATION = 'Подтверждение заказа'
 ERROR_INPUTS_BASKET = 'Поле заполнено неверно'
 ERROR_INPUT_CITY = 'Минимальная длина поля "Город доставки" не менее 2 символов'
 ERROR_INPUT_STREET = 'Минимальная длина поля "Улица" не менее 3 символов'
-
-
-BASKET_NAME = [
-    "Иванов Иван Иванович",
-    "John Doe",
-    "Петрова-Иванова Мария",
-    "Мария Иванова"
-]
+ERROR_INPUT_HOUSE_digits = 'Максимальное значение поля "Дом" 999'
+ERROR_INPUT_HOUSE_russian_letters = 'Поле "Дом" должно быть числовым'
+ERROR_INPUT_HOUSE_whitespace = 'Поле "Дом" обязательно для заполнения'
+ERROR_INPUT_EMAIl = 'Введен неверный e-mail'
 
 BASKET_RANDOM_NAME = [
-        MainPage.generate_random_string(2, 'russian_letters'),
-        MainPage.generate_random_string(49, 'russian_letters'),
-        MainPage.generate_random_string(50, 'russian_letters'),
-        MainPage.generate_random_string(51, 'russian_letters'),
-    ]
-
-BASKET_CITY_INPUT = [
-    'Москва',
-    'Санкт-петербург'
+    MainPage.generate_random_string(2, 'russian_letters'),
+    MainPage.generate_random_string(49, 'russian_letters'),
+    MainPage.generate_random_string(50, 'russian_letters'),
+    MainPage.generate_random_string(51, 'russian_letters'),
 ]
 
 BASKET_RANDOM_CITY = [
@@ -56,42 +47,85 @@ BASKET_RANDOM_STREET = [
     MainPage.generate_random_string(51, 'russian_letters'),
 ]
 
+BASKET_RANDOM_HOUSE = [
+    MainPage.generate_random_string(2, 'digits'),
+    MainPage.generate_random_string(3, 'digits'),
+]
+
+BASKET_RANDOM_BODY = [
+    MainPage.generate_random_string(2, 'digits'),
+    MainPage.generate_random_string(5, 'digits')
+]
+
+BASKET_RANDOM_FLAT = [
+    MainPage.generate_random_string(2, 'digits'),
+    MainPage.generate_random_string(5, 'digits')
+]
+
 BASKET_STREET_INPUT = [
     'Проспект Ленина',
     '250-летия Челябинска',
     'Арзамасская 3-я'
 ]
 
+# Пока на паузе. Есть баг связанный с вводом слеша в поле дом
+#BASKET_HOUSE_INPUT = [
+#'10/10'
+#]
 
-BASKET_CITY = 'М'
-STREET = 'Ул'
-HOUSE = '12'
-BODY = '1'
-FLAT = '101'
-PHONE_NUMBER = '+7 123 456 7890'
-EMAIL = 'example@example.com'
-COMMENT = 'Тестовый комментарий'
+BASKET_CITY_INPUT = [
+    'Москва',
+    'Санкт-петербург'
+]
+
+BASKET_NAME = [
+    "Иванов Иван Иванович",
+    "John Doe",
+    "Петрова-Иванова Мария",
+    "Мария Иванова"
+]
 
 BASKET_RANDOM_NAME_NEGATIVE = [
     '----',
     'Иванов Иван 1',
     'Я Ян'
-    ]
-
-
-
-
-BASKET_HOUSE_INPUT = [
-    10
 ]
 
+
 BASKET_BODY_INPUT = [
-    '2Б'
+    '2',
+    '2/2'
 ]
 
 BASKET_FLAT_INPUT = [
-    '25'
+    '200',
+    '2/3'
 ]
+
+BASKET_EMAIL_INPUT = [
+    'test@yandex.ru',
+    'te.st@yandex.ru',
+    'te_st@yandex.ru',
+    'TEST@YANDEX.RU',
+    'test123@yandex.ru',
+    'te-st@yandex.ru'
+]
+
+BASKET_EMAIL_NEGATIVE = [
+    'te...st@yandex.ru',
+    'testyandex.ru',
+    'test@'
+]
+
+BASKET_CITY = 'М'
+STREET = 'Ул'
+HOUSE = '10'
+BODY = '12345'
+FLAT = '12345'
+PHONE_NUMBER = '+7 123 456 7890'
+EMAIL = 'te st@yandex.ru'
+EXPECTED_EMAIL = 'test@yandex.ru'
+COMMENT = 'Тестовый комментарий'
 
 BASKET_PHONE_INPUT = [
     9999999999

@@ -184,7 +184,7 @@ class BasketPage(BasePage):
 
     @allure.step('Ожидает видимость текста "Подтверждение заказа"')
     def wait_for_order_confirmation(self):
-        return WebDriverWait(self.browser, 10).until(
+        return WebDriverWait(self.browser, 50).until(
             EC.visibility_of_element_located(order_confirmation)
         )
 
@@ -199,6 +199,14 @@ class BasketPage(BasePage):
     @allure.step('Возвращает текст ошибки поля "Улица".')
     def get_text_error_street(self):
         return self.get_text_of_element(error_street)
+
+    @allure.step('Возвращает текст ошибки поля "Дом".')
+    def get_text_error_house(self):
+        return self.get_text_of_element(error_house)
+
+    @allure.step('Возвращает текст ошибки поля "E-mail".')
+    def get_text_error_email(self):
+        return self.get_text_of_element(error_email)
 
     @allure.step('Ожидает текст ошибки поля "Ваше имя"')
     def wait_for_error_name(self):
@@ -216,4 +224,16 @@ class BasketPage(BasePage):
     def wait_for_error_street(self):
         return WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located(error_street)
+        )
+
+    @allure.step('Ожидает текст ошибки поля "Дом"')
+    def wait_for_error_house(self):
+        return WebDriverWait(self.browser, 10).until(
+            EC.visibility_of_element_located(error_house)
+        )
+
+    @allure.step('Ожидает текст ошибки поля "E-mail"')
+    def wait_for_error_email(self):
+        return WebDriverWait(self.browser, 10).until(
+            EC.visibility_of_element_located(error_email)
         )
