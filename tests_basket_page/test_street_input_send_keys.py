@@ -18,7 +18,7 @@ class TestStreetInputSendKeys:
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             street_input_send_keys.open_basket()
         with allure.step('Заполняем поля перед оформлением заказа'):
-            street_input_send_keys.fill_form(name, city, street, house, body, flat, phone, mail, comment)
+            street_input_send_keys.fill_form(name=name, city=city, street=street, house=house, body=body, flat=flat, phone=phone, mail=mail, comment=comment)
         with allure.step('Нажимаем "Оформить заказ"'):
             street_input_send_keys.click_button_arrange_order()
         with allure.step('Ожидаем оформление заказа'):

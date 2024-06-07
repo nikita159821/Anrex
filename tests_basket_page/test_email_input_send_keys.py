@@ -18,7 +18,7 @@ class TestEmailInputSendKeys:
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             email_input_send_keys.open_basket()
         with allure.step('Заполняем поля перед оформлением заказа'):
-            email_input_send_keys.fill_form(name, city, street, house, body, flat, phone, mail, comment)
+            email_input_send_keys.fill_form(name=name, city=city, street=street, house=house, body=body, flat=flat, phone=phone, mail=mail, comment=comment)
             time.sleep(6)
         with allure.step('Нажимаем "Оформить заказ"'):
             email_input_send_keys.click_button_arrange_order()
@@ -45,7 +45,6 @@ class TestEmailInputSendKeys:
             negative_email_input_send_keys.open_basket()
         with allure.step('Заполняем поле E-mail'):
             negative_email_input_send_keys.mail_send_keys(email)
-            time.sleep(5)
         with allure.step('Нажимаем "Оформить заказ"'):
             negative_email_input_send_keys.click_button_arrange_order()
         with allure.step('Ожидаем появления ошибки'):
