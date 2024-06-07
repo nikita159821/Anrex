@@ -19,7 +19,7 @@ class TestCommentsInputSendKeys:
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             comments_input_send_keys.open_basket()
         with allure.step('Заполняем поля перед оформлением заказа'):
-            comments_input_send_keys.fill_form(name, city, street, house, body, flat, phone, mail, comment)
+            comments_input_send_keys.fill_form(name=name, city=city, street=street, house=house, body=body, flat=flat, phone=phone, mail=mail, comment=comment)
         with allure.step('Нажимаем "Оформить заказ"'):
             comments_input_send_keys.click_button_arrange_order()
         with allure.step('Ожидаем оформление заказа'):

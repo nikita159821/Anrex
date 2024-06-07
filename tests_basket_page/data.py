@@ -1,5 +1,3 @@
-import random
-
 from pages.anrex_main_page import MainPage
 
 INPUT_FULL_NAME = "ФИО*"
@@ -29,6 +27,12 @@ ERROR_INPUT_HOUSE_russian_letters = 'Поле "Дом" должно быть ч�
 ERROR_INPUT_HOUSE_whitespace = 'Поле "Дом" обязательно для заполнения'
 ERROR_INPUT_EMAIl = 'Введен неверный e-mail'
 ERROR_INPUT_PHONE_ONE_DIGIT = 'Минимальная длина поля "Номер телефона" не менее 11 символов'
+REQUIRED_CITY_FIELD = 'Поле "Город доставки" обязательно для заполнения'
+REQUIRED_STREET_FIELD = 'Поле "Улица" обязательно для заполнения'
+REQUIRED_HOUSE_FIELD = 'Поле "Дом" обязательно для заполнения'
+REQUIRED_NAME_FIELD = 'Поле "ФИО" обязательно для заполнения'
+REQUIRED_PHONE_FIELD = 'Поле "Номер телефона" обязательно для заполнения'
+
 
 BASKET_RANDOM_NAME = [
     MainPage.generate_random_string(2, 'russian_letters'),
@@ -66,6 +70,15 @@ BASKET_RANDOM_FLAT = [
 ]
 
 BASKET_RANDOM_COMMENT = [
+    MainPage.generate_random_string(4, 'russian_letters'),
+    MainPage.generate_random_string(6, 'digits'),
+    MainPage.generate_random_string(6, 'punctuation'),
+    MainPage.generate_random_string(5, 'letters'),
+    MainPage.generate_random_string(3999, 'letters'),
+    MainPage.generate_random_string(4000, 'letters')
+]
+
+BASKET_CREATE_ORDER = [
     MainPage.generate_random_string(4, 'russian_letters'),
     MainPage.generate_random_string(6, 'digits'),
     MainPage.generate_random_string(6, 'punctuation'),

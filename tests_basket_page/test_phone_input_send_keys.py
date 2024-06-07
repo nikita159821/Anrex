@@ -20,7 +20,7 @@ class TestPhoneInputSendKeys:
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             send_keys_valid_phone.open_basket()
         with allure.step('Заполняем поля перед оформлением заказа'):
-            send_keys_valid_phone.fill_form(name, city, street, house, body, flat, phone, mail, comment)
+            send_keys_valid_phone.fill_form(name=name, city=city, street=street, house=house, body=body, flat=flat, phone=phone, mail=mail, comment=comment)
         with allure.step('Нажимаем "Оформить заказ"'):
             send_keys_valid_phone.click_button_arrange_order()
         with allure.step('Ожидаем оформление заказа'):

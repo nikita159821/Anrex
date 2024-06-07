@@ -127,16 +127,16 @@ class TestData:
 
     @staticmethod
     def generate_test_phone():
-        for phone in BASKET_PHONE_INPUT:
-            city = TestData.generate_random_string(random.randint(5, 20), 'russian_letters')
-            name = TestData.generate_random_string(random.randint(10, 20), 'russian_letters')
-            house = TestData.generate_random_string(random.randint(2, 2), 'digits')
-            street = TestData.generate_random_string(random.randint(3, 5), 'russian_letters')
-            body = TestData.generate_random_string(random.randint(2, 3), 'digits')
-            mail = TestData.generate_random_string(random.randint(5, 20), 'letters') + '@example.com'
-            flat = TestData.generate_random_string(random.randint(2, 3), 'digits')
-            comment = TestData.generate_random_string(random.randint(10, 50), 'russian_letters')
-            yield name, city, street, house, body, flat, phone, mail, comment
+        city = TestData.generate_random_string(random.randint(5, 20), 'russian_letters')
+        name = TestData.generate_random_string(random.randint(10, 20), 'russian_letters')
+        house = TestData.generate_random_string(random.randint(2, 2), 'digits')
+        street = TestData.generate_random_string(random.randint(3, 5), 'russian_letters')
+        body = TestData.generate_random_string(random.randint(2, 3), 'digits')
+        mail = TestData.generate_random_string(random.randint(5, 20), 'letters') + '@example.com'
+        flat = TestData.generate_random_string(random.randint(2, 3), 'digits')
+        phone = TestData.generate_random_string(50, 'digits')
+        comment = TestData.generate_random_string(random.randint(10, 50), 'russian_letters')
+        yield name, city, street, house, body, flat, phone, mail, comment
 
     @staticmethod
     def generate_test_comment():
@@ -150,4 +150,17 @@ class TestData:
             flat = TestData.generate_random_string(random.randint(2, 3), 'digits')
             phone = TestData.generate_random_string(50, 'digits')
             yield name, city, street, house, body, flat, phone, mail, comment
+
+    @staticmethod
+    def generate_test_create_oder():
+        city = TestData.generate_random_string(random.randint(5, 20), 'russian_letters')
+        name = TestData.generate_random_string(random.randint(10, 20), 'russian_letters')
+        house = TestData.generate_random_string(random.randint(2, 2), 'digits')
+        street = TestData.generate_random_string(random.randint(3, 5), 'russian_letters')
+        body = TestData.generate_random_string(random.randint(2, 3), 'digits')
+        mail = TestData.generate_random_string(random.randint(5, 20), 'letters') + '@example.com'
+        flat = TestData.generate_random_string(random.randint(2, 3), 'digits')
+        phone = TestData.generate_random_string(50, 'digits')
+        comment = TestData.generate_random_string(random.randint(10, 50), 'russian_letters')
+        yield name, city, street, house, body, flat, phone, mail, comment
 

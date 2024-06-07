@@ -118,7 +118,7 @@ class BasketPage(BasePage):
         return self.find(input_body_send_keys)
 
     @allure.step('Вводит данные в поле "Корпус"')
-    def body_send_keys(self,body):
+    def body_send_keys(self, body):
         self.get_input_body().send_keys(body)
 
     @allure.step('Возвращает поле "Квартира"')
@@ -126,7 +126,7 @@ class BasketPage(BasePage):
         return self.find(input_flat_send_keys)
 
     @allure.step('Вводит данные в поле "Квартира"')
-    def flat_send_keys(self,flat):
+    def flat_send_keys(self, flat):
         self.get_input_flat().send_keys(flat)
 
     @allure.step('Возвращает поле "Телефон"')
@@ -134,7 +134,7 @@ class BasketPage(BasePage):
         return self.find(input_phone_number_send_keys)
 
     @allure.step('Вводит данные в поле "Телефон"')
-    def phone_number_send_keys(self,phone):
+    def phone_number_send_keys(self, phone):
         self.get_input_phone_number().send_keys(phone)
 
     @allure.step('Возвращает поле "Email"')
@@ -142,7 +142,7 @@ class BasketPage(BasePage):
         return self.find(input_mail_send_keys)
 
     @allure.step('Вводит данные в поле "Email"')
-    def mail_send_keys(self,mail):
+    def mail_send_keys(self, mail):
         self.get_input_mail().send_keys(mail)
 
     @allure.step('Возвращает поле "Комментарий"')
@@ -150,28 +150,29 @@ class BasketPage(BasePage):
         return self.find(input_your_comment_send_keys)
 
     @allure.step('Вводит данные в поле "Комментарий"')
-    def your_comment_send_keys(self,comment):
+    def your_comment_send_keys(self, comment):
         self.get_input_your_comment().send_keys(comment)
 
     @allure.step('Вводит данные в поля')
-    def fill_form(self, name, city, street, house, body, flat, phone, mail, comment):
-        with allure.step('Заполняем поле "Ваше имя" данными'):
+    def fill_form(self, name=None, city=None, street=None, house=None, flat=None, body=None, phone=None, mail=None,
+                  comment=None):
+        if name:
             self.name_input_send_keys(name)
-        with allure.step('Заполняем поле "Город доставки" данными'):
+        if city:
             self.delivery_city_send_keys(city)
-        with allure.step('Заполняем поле "Улица" данными'):
+        if street:
             self.street_send_keys(street)
-        with allure.step('Заполняем поле "Дом" данными'):
+        if house:
             self.house_send_keys(house)
-        with allure.step('Заполняем поле "Корпус" данными'):
-            self.body_send_keys(body)
-        with allure.step('Заполняем поле "Квартира" данными'):
+        if flat:
             self.flat_send_keys(flat)
-        with allure.step('Заполняем поле "Телефон" данными'):
+        if body:
+            self.body_send_keys(body)
+        if phone:
             self.phone_number_send_keys(phone)
-        with allure.step('Заполняем поле "Email" данными'):
+        if mail:
             self.mail_send_keys(mail)
-        with allure.step('Заполняем поле "Комментарий" данными'):
+        if comment:
             self.your_comment_send_keys(comment)
 
     @allure.step('Нажимает кнопку "Оформить заказ" в корзине')
