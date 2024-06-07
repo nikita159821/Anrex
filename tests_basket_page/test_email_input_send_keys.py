@@ -45,7 +45,6 @@ class TestEmailInputSendKeys:
             negative_email_input_send_keys.open_basket()
         with allure.step('Заполняем поле E-mail'):
             negative_email_input_send_keys.mail_send_keys(email)
-            time.sleep(5)
         with allure.step('Нажимаем "Оформить заказ"'):
             negative_email_input_send_keys.click_button_arrange_order()
         with allure.step('Ожидаем появления ошибки'):

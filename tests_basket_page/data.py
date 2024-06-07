@@ -1,3 +1,5 @@
+import random
+
 from pages.anrex_main_page import MainPage
 
 INPUT_FULL_NAME = "ФИО*"
@@ -26,6 +28,7 @@ ERROR_INPUT_HOUSE_digits = 'Максимальное значение поля "
 ERROR_INPUT_HOUSE_russian_letters = 'Поле "Дом" должно быть числовым'
 ERROR_INPUT_HOUSE_whitespace = 'Поле "Дом" обязательно для заполнения'
 ERROR_INPUT_EMAIl = 'Введен неверный e-mail'
+ERROR_INPUT_PHONE_ONE_DIGIT = 'Минимальная длина поля "Номер телефона" не менее 11 символов'
 
 BASKET_RANDOM_NAME = [
     MainPage.generate_random_string(2, 'russian_letters'),
@@ -62,6 +65,15 @@ BASKET_RANDOM_FLAT = [
     MainPage.generate_random_string(5, 'digits')
 ]
 
+BASKET_RANDOM_COMMENT = [
+    MainPage.generate_random_string(4, 'russian_letters'),
+    MainPage.generate_random_string(6, 'digits'),
+    MainPage.generate_random_string(6, 'punctuation'),
+    MainPage.generate_random_string(5, 'letters'),
+    MainPage.generate_random_string(3999, 'letters'),
+    MainPage.generate_random_string(4000, 'letters')
+]
+
 BASKET_STREET_INPUT = [
     'Проспект Ленина',
     '250-летия Челябинска',
@@ -91,7 +103,6 @@ BASKET_RANDOM_NAME_NEGATIVE = [
     'Я Ян'
 ]
 
-
 BASKET_BODY_INPUT = [
     '2',
     '2/2'
@@ -117,12 +128,28 @@ BASKET_EMAIL_NEGATIVE = [
     'test@'
 ]
 
+BASKET_PHONE_NEGATIVE = [
+    '9'
+]
+
+BASKET_PHONE_LETTERS = [
+    'gfdsgagdsdsfgdf'
+]
+
+BASKET_PHONE_TWELVE_DIGIT = [
+    '999999999999'
+]
+
+BASKET_PHONE_INPUT_MASK = [
+    '+7 (9'
+]
+
 BASKET_CITY = 'М'
 STREET = 'Ул'
 HOUSE = '10'
 BODY = '12345'
 FLAT = '12345'
-PHONE_NUMBER = '+7 123 456 7890'
+PHONE_NUMBER = '+7 (999) 999-99-99'
 EMAIL = 'te st@yandex.ru'
 EXPECTED_EMAIL = 'test@yandex.ru'
 COMMENT = 'Тестовый комментарий'
@@ -138,3 +165,4 @@ BASKET_MAIL_INPUT = [
 BASKET_COMMENT_INPUT = [
     'Тестовый комментарий'
 ]
+NEW_COMMENTS = MainPage.generate_random_string(4001, 'russian_letters'),
