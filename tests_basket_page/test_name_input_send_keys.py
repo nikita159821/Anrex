@@ -10,7 +10,7 @@ class TestNameInputSendKeys:
     @pytest.mark.parametrize('name, city, street, house, body, flat, phone, mail, comment',
                              TestData.generate_test_name())
     @allure.title(
-        'В корзине, вводим в поле "Ваше имя" буквы на кириллице, на латинице, с тире, без отчества и в поле "Город доставки" валидные данные, в поле "Улица" валидные данные, в поле "Дом" валидные данные, в поле "Корпус" валидные данные, в поле "Квартира" валидные данные, в поле "Телефон" валидные данные, в поле "Email" валидные данные, в поле "Комментарий" валидные данные')
+        'В корзине, вводим в поле "Ваше имя" буквы на кириллице, на латинице, с тире, без отчества')
     def test_positive_name_input_send_keys(self, browser, name, city,
                                            street, house, body, flat,
                                            phone, mail, comment):

@@ -248,3 +248,27 @@ class BasketPage(BasePage):
         return WebDriverWait(self.browser, 10).until(
             EC.visibility_of_element_located(error_phone)
         )
+
+    @allure.title('Возвращает количество товаров в корзине')
+    def get_text_count_products_basket(self):
+        return self.get_text_of_element(count_products_basket)
+
+    @allure.title('Возвращает текст хлебной крошки "Главная"')
+    def get_text_home_breadcrumb(self):
+        return self.get_text_of_element(home_breadcrumb)
+
+    @allure.title('Возвращает текст хлебной крошки "Корзина"')
+    def get_text_basket_breadcrumb(self):
+        return self.get_text_of_element(basket_breadcrumb)
+
+    @allure.title('Нажимает на текст хлебной крошки "Корзина"')
+    def click_basket_breadcrumb(self):
+        self.click_element(basket_breadcrumb)
+
+    @allure.title('Нажимает на текст хлебной крошки "Главная"')
+    def click_home_breadcrumb(self):
+        self.click_element(home_breadcrumb)
+
+    @allure.title('Возвращает фото карточки товара')
+    def get_img_products_card(self):
+        return self.find(image_card)

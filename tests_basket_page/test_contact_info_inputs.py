@@ -1,4 +1,6 @@
 import allure
+
+from locators.basket_page_locators import image_card
 from pages.basket_page import BasketPage
 from tests_basket_page.data import INPUT_FULL_NAME, INPUT_DELIVERY_CITY, INPUT_STREET, INPUT_HOUSE, INPUT_BODY, \
     INPUT_FLAT, INPUT_PHONE_NUMBER, INPUT_MAIL, INPUT_YOUR_COMMENT
@@ -10,6 +12,8 @@ class TestBlockContactInput:
         block_contains_full_name = BasketPage(browser)
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             block_contains_full_name.open_basket()
+        with allure.step('Ожидание для загрузки страницы'):
+            block_contains_full_name.wait_for_element(image_card)
         with allure.step('Проверяем отображение поля ФИО'):
             assert block_contains_full_name.text_input_full_name() == INPUT_FULL_NAME
 
@@ -18,6 +22,8 @@ class TestBlockContactInput:
         block_contains_delivery_city = BasketPage(browser)
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             block_contains_delivery_city.open_basket()
+        with allure.step('Ожидание для загрузки страницы'):
+            block_contains_delivery_city.wait_for_element(image_card)
         with allure.step('Проверяем отображение поля Город доставки'):
             assert block_contains_delivery_city.text_input_delivery_city() == INPUT_DELIVERY_CITY
 
@@ -26,6 +32,8 @@ class TestBlockContactInput:
         block_contains_street = BasketPage(browser)
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             block_contains_street.open_basket()
+        with allure.step('Ожидание для загрузки страницы'):
+            block_contains_street.wait_for_element(image_card)
         with allure.step('Проверяем отображение поля Улица'):
             assert block_contains_street.text_input_street() == INPUT_STREET
 
@@ -34,6 +42,8 @@ class TestBlockContactInput:
         block_contains_house = BasketPage(browser)
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             block_contains_house.open_basket()
+        with allure.step('Ожидание для загрузки страницы'):
+            block_contains_house.wait_for_element(image_card)
         with allure.step('Проверяем отображение поля Дом'):
             assert block_contains_house.text_input_house() == INPUT_HOUSE
 
@@ -42,6 +52,8 @@ class TestBlockContactInput:
         block_contains_body = BasketPage(browser)
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             block_contains_body.open_basket()
+        with allure.step('Ожидание для загрузки страницы'):
+            block_contains_body.wait_for_element(image_card)
         with allure.step('Проверяем отображение поля Корпус'):
             assert block_contains_body.text_input_body() == INPUT_BODY
 
@@ -50,6 +62,8 @@ class TestBlockContactInput:
         block_contains_flat = BasketPage(browser)
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             block_contains_flat.open_basket()
+        with allure.step('Ожидание для загрузки страницы'):
+            block_contains_flat.wait_for_element(image_card)
         with allure.step('Проверяем отображение поля Квартира'):
             assert block_contains_flat.text_input_flat() == INPUT_FLAT
 
@@ -58,6 +72,8 @@ class TestBlockContactInput:
         block_contains_phone_number = BasketPage(browser)
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             block_contains_phone_number.open_basket()
+        with allure.step('Ожидание для загрузки страницы'):
+            block_contains_phone_number.wait_for_element(image_card)
         with allure.step('Проверяем отображение поля Номер телефона'):
             assert block_contains_phone_number.text_input_phone_number() == INPUT_PHONE_NUMBER
 
@@ -66,6 +82,8 @@ class TestBlockContactInput:
         block_contains_mail = BasketPage(browser)
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             block_contains_mail.open_basket()
+        with allure.step('Ожидание для загрузки страницы'):
+            block_contains_mail.wait_for_element(image_card)
         with allure.step('Проверяем отображение поля Номер E-mail'):
             assert block_contains_mail.text_input_mail() == INPUT_MAIL
 
@@ -74,5 +92,7 @@ class TestBlockContactInput:
         block_contains_your_comment = BasketPage(browser)
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             block_contains_your_comment.open_basket()
+        with allure.step('Ожидание для загрузки страницы'):
+            block_contains_your_comment.wait_for_element(image_card)
         with allure.step('Проверяем отображение поля Номер Ваш комментарий'):
             assert block_contains_your_comment.text_input_your_comment() == INPUT_YOUR_COMMENT
