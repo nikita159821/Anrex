@@ -272,3 +272,47 @@ class BasketPage(BasePage):
     @allure.title('Возвращает фото карточки товара')
     def get_img_products_card(self):
         return self.find(image_card)
+
+    @allure.title('Возвращает название товара в корзине')
+    def get_text_name_products_basket(self):
+        return self.get_text_of_element(name_card_basket)
+
+    @allure.title('Возвращает название товара в каталоге')
+    def get_text_name_products_catalog(self):
+        return self.get_text_of_element(name_card_catalog)
+
+    @allure.title('Возвращает кнопку добавления товара в корзине "+"')
+    def get_plus_button(self):
+        return self.find(plus_button_basket)
+
+    @allure.title('Возвращает кнопку уменьшения количества товаров в корзине "-"')
+    def get_decrease_item_quantity(self):
+        return self.find(decrease_item_quantity)
+
+    @allure.title('Возвращает кнопку удаления товара в корзине')
+    def get_remove_product_button(self):
+        return self.find(remove_product_button)
+
+    @allure.title('Возвращает название коллекции товара в каталоге')
+    def get_text_collection_products_catalog(self):
+        return self.get_text_of_element(catalog_collection)
+
+    @allure.title('Возвращает название коллекции товара в корзине')
+    def get_text_collection_products_basket(self):
+        return self.get_text_of_element(basket_collection)
+
+    @allure.title('Нажимает на название товара в корзине')
+    def click_name_card_basket(self):
+        return self.click_element(name_card_basket)
+
+    @allure.title('Возвращает ссылку товара в корзине')
+    def get_url_products_basket(self):
+        return self.get_attribute_of_element(name_card_url, 'href')
+
+    @allure.title('Нажимает кнопку добавления товара в корзине "+"')
+    def click_plus_button(self):
+        return self.click_element(plus_button_basket)
+
+    @allure.title('Возвращает количество товаров из счетчика в корзине')
+    def get_text_input_count_basket(self):
+        return self.get_attribute_of_element(input_count_basket, 'value')
