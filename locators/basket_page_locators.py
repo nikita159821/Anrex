@@ -36,3 +36,10 @@ error_street = (By.CSS_SELECTOR, '#tooltip-soa-property-3 .tooltip-inner')
 error_house = (By.CSS_SELECTOR, '#tooltip-soa-property-4 .tooltip-inner')
 error_email = (By.CSS_SELECTOR, '#tooltip-soa-property-8 .tooltip-inner')
 error_phone = (By.CSS_SELECTOR, '#tooltip-soa-property-7 .tooltip-inner')
+count_products_basket = (By.XPATH, "//h2[contains(text(), 'товар')]")
+home_breadcrumb = (By.CSS_SELECTOR, '#bx_breadcrumb_0 > a > span')
+basket_breadcrumb = (By.XPATH, "//div[@class='bx-breadcrumb']/div[@class='bx-breadcrumb-item']/span")
+image_card = (By.XPATH, "//div[@class='image-wrap']/a/div[@class='catalog-image-slider']/img")
+image_card_basket = (By.XPATH, "//img[@class='basket-item-image']")
+
+#basket-item-height-aligner-7947 > div > a > img

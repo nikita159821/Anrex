@@ -222,6 +222,11 @@ class BasePage:
             EC.text_to_be_present_in_element(basket_count, "1")
         )
 
+    def count_two(self):
+        return WebDriverWait(self.browser, 10).until(
+            EC.text_to_be_present_in_element(basket_count, "2")
+        )
+
     def open_basket(self):
         with allure.step('Открываем страницу каталога и добавляем товар в корзину'):
             self.open_catalog()

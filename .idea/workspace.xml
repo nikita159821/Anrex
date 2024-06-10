@@ -5,15 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="anrex">
-      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_create_order.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_add_multiple_items_to_basket.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_basket_item_count_displayed.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_breadcrumb_navigation_to_home.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_breadcrumb_section_not_clickable.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_breadcrumbs_in_basket.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_catalog_to_basket.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_display_product_image_in_cart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/python-tests.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/python-tests.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locators/basket_page_locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/locators/basket_page_locators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/base_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/basket_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/basket_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests_basket_page/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests_basket_page/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests_basket_page/test_body_input_send_keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/test_body_input_send_keys.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests_basket_page/test_city_input_send_keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/test_city_input_send_keys.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests_basket_page/test_comments_input_send_keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/test_comments_input_send_keys.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests_basket_page/test_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/test_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests_basket_page/test_email_input_send_keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/test_email_input_send_keys.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests_basket_page/test_contact_info_inputs.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/test_contact_info_inputs.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,15 +81,23 @@
     "Python tests.Python tests for test_title_city.TestCity.executor": "Run",
     "Python tests.pytest for fasfasf.TestBonusService.test_calculate_bonus_with_zero_productivity.executor": "Run",
     "Python tests.pytest for safasf.test_calculate_commission.executor": "Run",
+    "Python tests.pytest for test_add_multiple_items_to_basket.TestAddMultipleItemsToBasket.executor": "Run",
+    "Python tests.pytest for test_add_multiple_items_to_basket.TestAddMultipleItemsToBasket.test_add_multiple_items_to_basket.executor": "Run",
+    "Python tests.pytest for test_basket_item_count_displayed.TestBasketItemCountDisplayed.test_basket_item_count_displayed.executor": "Run",
     "Python tests.pytest for test_block_your_order.TestBlockYourOrder.executor": "Run",
     "Python tests.pytest for test_block_your_order.TestBlockYourOrder.test_contact_info_block_contains_full_name_input.executor": "Run",
     "Python tests.pytest for test_body_input_send_keys.TestBodyInputSendKeys.executor": "Run",
     "Python tests.pytest for test_body_input_send_keys.TestBodyInputSendKeys.test_input_send_keys_six_numbers.executor": "Run",
     "Python tests.pytest for test_body_input_send_keys.TestBodyInputSendKeys.test_positive_body_input_send_keys.executor": "Run",
     "Python tests.pytest for test_body_input_send_keys.TestBodyInputSendKeys.test_positive_house_input_send_keys.executor": "Run",
+    "Python tests.pytest for test_breadcrumb_navigation_to_home.TestBreadcrumbNavigationToHome.test_breadcrumb_navigation_to_home.executor": "Run",
+    "Python tests.pytest for test_breadcrumb_section_not_clickable.TestBreadcrumbSectionNotClickable.test_breadcrumb_section_not_clickable.executor": "Run",
+    "Python tests.pytest for test_breadcrumbs_in_basket.TestBreadcrumbsInBasket.executor": "Run",
+    "Python tests.pytest for test_breadcrumbs_in_basket.TestBreadcrumbsInBasket.test_breadcrumb_basket_in_basket.executor": "Run",
     "Python tests.pytest for test_callback_link.TestCallbackLink.executor": "Run",
     "Python tests.pytest for test_callback_link.TestCallbackLink.test_callback_link.executor": "Run",
     "Python tests.pytest for test_callback_popup_name_input.TestInputName.test_callback_popup_name_input.executor": "Run",
+    "Python tests.pytest for test_catalog_to_basket.TestCatalogToBasket.test_catalog_to_basket.executor": "Run",
     "Python tests.pytest for test_city_input_send_keys.TestCityInputSendKeys.test_negative_city_input_send_keys.executor": "Run",
     "Python tests.pytest for test_city_input_send_keys.TestCityInputSendKeys.test_positive_city_input_send_keys.executor": "Run",
     "Python tests.pytest for test_close_popup_city.TestClosePopup.test_close_popup.executor": "Run",
@@ -97,12 +111,14 @@
     "Python tests.pytest for test_contact_info_input_placeholders.TestBlockContactInputPlaceholders.test_contact_info_input_name_placeholders.executor": "Run",
     "Python tests.pytest for test_contact_info_inputs.TestBlockContactInput.executor": "Run",
     "Python tests.pytest for test_contact_info_inputs.TestBlockContactInput.test_contact_info_block_contains_full_name_input.executor": "Run",
+    "Python tests.pytest for test_contact_info_inputs.TestBlockContactInput.test_contact_info_block_contains_street_input.executor": "Run",
     "Python tests.pytest for test_contact_info_inputs.TestBlockContactInput.test_contact_info_block_contains_your_comment_input.executor": "Run",
     "Python tests.pytest for test_create_order.TestCreateOrder.test_negative_create_orders_with_missing_fields.executor": "Run",
     "Python tests.pytest for test_create_order.TestCreateOrder.test_negative_create_orders_with_missing_name_city_house.executor": "Run",
     "Python tests.pytest for test_create_order.TestCreateOrder.test_negative_create_orders_with_missing_name_street_phone.executor": "Run",
     "Python tests.pytest for test_create_order.TestCreateOrder.test_positive_create_orders.executor": "Run",
     "Python tests.pytest for test_discounted_products.TestDiscountedProducts.test_discounted_products.executor": "Run",
+    "Python tests.pytest for test_display_product_image_in_cart.TestCartPageImageDisplay.test_display_product_image_in_cart.executor": "Run",
     "Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.executor": "Run",
     "Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_form_feedback_invalid_email_input.executor": "Run",
     "Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_negative_email_input_form_feedback_send_keys.executor": "Run",
@@ -189,6 +205,7 @@
     "Python tests.pytest in test_name_input_form_feedback_send_keys.py.executor": "Run",
     "Python tests.pytest in test_name_input_send_keys.py.executor": "Run",
     "Python tests.pytest in test_phone_input_form_feedback_send_keys.py.executor": "Run",
+    "Python tests.pytest in test_phone_input_send_keys.py.executor": "Run",
     "Python tests.pytest in tests_basket_page.executor": "Run",
     "Python tests.pytest in tests_main_page.executor": "Run",
     "Python.safasf.executor": "Run",
@@ -198,8 +215,8 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_send_keys_valid_phone">
-    <configuration name="pytest for test_flat_input_send_keys.TestFlatInputSendKeys.test_positive_flat_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.pytest for test_contact_info_inputs.TestBlockContactInput.test_contact_info_block_contains_street_input">
+    <configuration name="pytest for test_add_multiple_items_to_basket.TestAddMultipleItemsToBasket" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -212,11 +229,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_flat_input_send_keys.TestFlatInputSendKeys.test_positive_flat_input_send_keys&quot;" />
+      <option name="_new_target" value="&quot;test_add_multiple_items_to_basket.TestAddMultipleItemsToBasket&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_house_input_send_keys.TestHouseInputSendKeys.test_positive_house_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_add_multiple_items_to_basket.TestAddMultipleItemsToBasket.test_add_multiple_items_to_basket" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -229,11 +246,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_house_input_send_keys.TestHouseInputSendKeys.test_positive_house_input_send_keys&quot;" />
+      <option name="_new_target" value="&quot;test_add_multiple_items_to_basket.TestAddMultipleItemsToBasket.test_add_multiple_items_to_basket&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_name_input_send_keys.TestNameInputSendKeys.test_positive_name_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_basket_item_count_displayed.TestBasketItemCountDisplayed.test_basket_item_count_displayed" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -246,11 +263,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_name_input_send_keys.TestNameInputSendKeys.test_positive_name_input_send_keys&quot;" />
+      <option name="_new_target" value="&quot;test_basket_item_count_displayed.TestBasketItemCountDisplayed.test_basket_item_count_displayed&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_send_keys_valid_phone" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_contact_info_inputs.TestBlockContactInput.test_contact_info_block_contains_street_input" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -263,11 +280,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_phone_input_send_keys.TestPhoneInputSendKeys.test_send_keys_valid_phone&quot;" />
+      <option name="_new_target" value="&quot;test_contact_info_inputs.TestBlockContactInput.test_contact_info_block_contains_street_input&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in test_phone_input_send_keys.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_display_product_image_in_cart.TestCartPageImageDisplay.test_display_product_image_in_cart" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -280,17 +297,17 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests_basket_page/test_phone_input_send_keys.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;test_display_product_image_in_cart.TestCartPageImageDisplay.test_display_product_image_in_cart&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_phone_input_send_keys.TestPhoneInputSendKeys.test_send_keys_valid_phone" />
-        <item itemvalue="Python tests.pytest in test_phone_input_send_keys.py" />
-        <item itemvalue="Python tests.pytest for test_name_input_send_keys.TestNameInputSendKeys.test_positive_name_input_send_keys" />
-        <item itemvalue="Python tests.pytest for test_house_input_send_keys.TestHouseInputSendKeys.test_positive_house_input_send_keys" />
-        <item itemvalue="Python tests.pytest for test_flat_input_send_keys.TestFlatInputSendKeys.test_positive_flat_input_send_keys" />
+        <item itemvalue="Python tests.pytest for test_contact_info_inputs.TestBlockContactInput.test_contact_info_block_contains_street_input" />
+        <item itemvalue="Python tests.pytest for test_display_product_image_in_cart.TestCartPageImageDisplay.test_display_product_image_in_cart" />
+        <item itemvalue="Python tests.pytest for test_basket_item_count_displayed.TestBasketItemCountDisplayed.test_basket_item_count_displayed" />
+        <item itemvalue="Python tests.pytest for test_add_multiple_items_to_basket.TestAddMultipleItemsToBasket.test_add_multiple_items_to_basket" />
+        <item itemvalue="Python tests.pytest for test_add_multiple_items_to_basket.TestAddMultipleItemsToBasket" />
       </list>
     </recent_temporary>
   </component>
@@ -438,7 +455,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717754709868</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="anrex">
+      <option name="closed" value="true" />
+      <created>1717760547262</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1717760547262</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
