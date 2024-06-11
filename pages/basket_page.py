@@ -311,8 +311,58 @@ class BasketPage(BasePage):
 
     @allure.title('Нажимает кнопку добавления товара в корзине "+"')
     def click_plus_button(self):
-        return self.click_element(plus_button_basket)
+        self.click_element(plus_button_basket)
+
+    @allure.title('Нажимает кнопку уменьшения количества товаров в корзине "-"')
+    def click_decrease_item_quantity(self):
+        self.click_element(decrease_item_quantity)
 
     @allure.title('Возвращает количество товаров из счетчика в корзине')
     def get_text_input_count_basket(self):
-        return self.get_attribute_of_element(input_count_basket, 'value')
+        element = self.find(input_count_basket)
+        wait = WebDriverWait(self.browser, 10)
+        wait.until(EC.presence_of_element_located(input_count_basket))
+        return element.get_attribute('value')
+
+    @allure.title('Вводит количество товаров в инпут счётчика в корзине')
+    def send_keys_input_count_basket(self, text):
+        self.send_keys_text_of_element(input_count_basket, text)
+
+    @allure.title('Возвращает тайтл "Ваша корзина"')
+    def get_text_title_basket(self):
+        return self.get_text_of_element(title_basket)
+
+    @allure.title('Возвращает текст "Вы еще не добавили ни одного товара в Вашу корзину"')
+    def get_text_basket(self):
+        return self.get_text_of_element(text_basket)
+
+    @allure.title('Нажимает кнопку "Начать покупки"')
+    def click_button_shopping(self):
+        self.click_element(button_shopping)
+
+    @allure.title('Возвращает кнопку "Начать покупки"')
+    def get_button_shopping(self):
+        return self.find(button_shopping)
+
+    @allure.title('Возвращает способ оплаты "Наличными при получении*"')
+    def get_text_payment_in_cash(self):
+        return self.get_text_of_element(payment_in_cash)
+
+    @allure.title('Возвращает способ оплаты "Банковской картой"')
+    def get_text_payment_bank_card(self):
+        return self.get_text_of_element(payment_bank_card)
+
+    @allure.title('Возвращает способ оплаты "Рассрочка от Тинькофф"')
+    def get_text_payment_installment(self):
+        return self.get_text_of_element(payment_installment)
+
+    @allure.title('Возвращает способ оплаты "Частями с Яндекс Сплит"')
+    def get_text_payment_yandex_split(self):
+        return self.get_text_of_element(payment_yandex_split)
+
+    def remove_focus_from_input_count(self):
+        return self.find(promo_code_input).click()
+
+    def test(self):
+        return self.find(promo_code_input_2).click()
+

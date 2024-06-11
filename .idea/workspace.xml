@@ -5,17 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="anrex">
-      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_add_single_item_to_cart_using_counter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_decrease_item_quantity_in_cart.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_display_collection_property_for_item_in_cart.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_display_delete_button_for_item_in_cart.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_display_plus_button_in_basket.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_display_product_name_basket.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_redirect_to_product_page_on_click_of_item_name_in_cart.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_cart_catalog_button.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_delete_product_from_basket.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_display_cart_text.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_display_cart_title.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_display_payment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_displayed_cart_shopping_button.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_basket_page/test_input_count_basket.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/locators/basket_page_locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/locators/basket_page_locators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/base_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/basket_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/basket_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests_basket_page/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests_basket_page/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests_basket_page/test_add_single_item_to_cart_using_counter.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/test_add_single_item_to_cart_using_counter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +97,7 @@
     "Python tests.pytest for test_callback_link.TestCallbackLink.executor": "Run",
     "Python tests.pytest for test_callback_link.TestCallbackLink.test_callback_link.executor": "Run",
     "Python tests.pytest for test_callback_popup_name_input.TestInputName.test_callback_popup_name_input.executor": "Run",
+    "Python tests.pytest for test_cart_catalog_button.TestCartCatalogButton.test_cart_catalog_button.executor": "Run",
     "Python tests.pytest for test_catalog_to_basket.TestCatalogToBasket.test_catalog_to_basket.executor": "Run",
     "Python tests.pytest for test_city_input_send_keys.TestCityInputSendKeys.test_negative_city_input_send_keys.executor": "Run",
     "Python tests.pytest for test_city_input_send_keys.TestCityInputSendKeys.test_positive_city_input_send_keys.executor": "Run",
@@ -115,13 +119,20 @@
     "Python tests.pytest for test_create_order.TestCreateOrder.test_negative_create_orders_with_missing_name_street_phone.executor": "Run",
     "Python tests.pytest for test_create_order.TestCreateOrder.test_positive_create_orders.executor": "Run",
     "Python tests.pytest for test_decrease_item_quantity_in_cart.TestDecreaseItemQuantity.test_decrease_item_quantity_in_cart.executor": "Run",
+    "Python tests.pytest for test_delete_product_from_basket.TestDeleteProductFromBasket.test_delete_product_from_basket.executor": "Run",
     "Python tests.pytest for test_discounted_products.TestDiscountedProducts.test_discounted_products.executor": "Run",
+    "Python tests.pytest for test_display_cart_text.TestDisplayCartText.test_display_cart_text.executor": "Run",
+    "Python tests.pytest for test_display_cart_title.TestDisplayCartTitle.test_display_cart_title.executor": "Run",
     "Python tests.pytest for test_display_collection_property_for_item_in_cart.TestDisplayCollectionProperty.test_display_collection_property_for_item_in_cart.executor": "Run",
     "Python tests.pytest for test_display_delete_button_for_item_in_cart.TestDisplayDeleteButton.test_display_delete_button_for_item_in_cart.executor": "Run",
+    "Python tests.pytest for test_display_payment.TestDisplayPaymentMethods.executor": "Run",
+    "Python tests.pytest for test_display_payment.TestDisplayPaymentMethods.test_display_payment_methods.executor": "Run",
+    "Python tests.pytest for test_display_payment_in_cash.TestDisplayPaymentInCash.test_display_payment_in_cash.executor": "Run",
     "Python tests.pytest for test_display_plus_button_in_basket.TestPlusButton.test_display_plus_button_in_basket.executor": "Run",
     "Python tests.pytest for test_display_product_image_in_cart.TestCartPageImageDisplay.test_display_product_image_in_cart.executor": "Run",
     "Python tests.pytest for test_display_product_name_basket.TestCartPageImageDisplay.test_display_product_image_in_cart.executor": "Run",
     "Python tests.pytest for test_display_product_name_basket.TestCartPageImageDisplay.test_display_product_name_basket.executor": "Run",
+    "Python tests.pytest for test_displayed_cart_shopping_button.TestDisplayedCartShoppingButton.test_displayed_cart_shopping_button.executor": "Run",
     "Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.executor": "Run",
     "Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_form_feedback_invalid_email_input.executor": "Run",
     "Python tests.pytest for test_email_input_form_feedback_send_keys.TestEmailInputSendKeys.test_negative_email_input_form_feedback_send_keys.executor": "Run",
@@ -173,6 +184,11 @@
     "Python tests.pytest for test_house_input_send_keys.TestHouseInputSendKeys.executor": "Run",
     "Python tests.pytest for test_house_input_send_keys.TestHouseInputSendKeys.test_negative_house_input_send_keys.executor": "Run",
     "Python tests.pytest for test_house_input_send_keys.TestHouseInputSendKeys.test_positive_house_input_send_keys.executor": "Run",
+    "Python tests.pytest for test_input_count_basket.TestInputCountBasket.executor": "Run",
+    "Python tests.pytest for test_input_count_basket.TestInputCountBasket.test_input_count_basket.executor": "Run",
+    "Python tests.pytest for test_input_count_basket.TestInputCountBasket.test_input_count_basket_0.executor": "Run",
+    "Python tests.pytest for test_input_count_basket.TestInputCountBasket.test_input_count_basket_float.executor": "Run",
+    "Python tests.pytest for test_input_count_basket.TestInputCountBasket.test_input_count_basket_letters.executor": "Run",
     "Python tests.pytest for test_logo_footer_anrex_.TestLogoFooter.test_logo_footer.executor": "Run",
     "Python tests.pytest for test_name_input_form_feedback_send_keys.TestNameInputSendKeys.executor": "Run",
     "Python tests.pytest for test_name_input_form_feedback_send_keys.TestNameInputSendKeys.test_negative_name_input_form_feedback_send_keys.executor": "Run",
@@ -216,11 +232,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "develop",
     "last_opened_file_path": "C:/Users/user/Anrex",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "settings.editor.selected.configurable": "com.github.copilot.settings.ApplicationConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.pytest for test_decrease_item_quantity_in_cart.TestDecreaseItemQuantity.test_decrease_item_quantity_in_cart">
-    <configuration name="pytest for test_add_single_item_to_cart_using_counter.TestAddSingleItem.test_add_single_item_to_cart_using_counter" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.pytest for test_input_count_basket.TestInputCountBasket.test_input_count_basket_letters">
+    <configuration name="pytest for test_input_count_basket.TestInputCountBasket" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -233,11 +249,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_add_single_item_to_cart_using_counter.TestAddSingleItem.test_add_single_item_to_cart_using_counter&quot;" />
+      <option name="_new_target" value="&quot;test_input_count_basket.TestInputCountBasket&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_decrease_item_quantity_in_cart.TestDecreaseItemQuantity.test_decrease_item_quantity_in_cart" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_input_count_basket.TestInputCountBasket.test_input_count_basket" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -250,11 +266,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_decrease_item_quantity_in_cart.TestDecreaseItemQuantity.test_decrease_item_quantity_in_cart&quot;" />
+      <option name="_new_target" value="&quot;test_input_count_basket.TestInputCountBasket.test_input_count_basket&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_display_collection_property_for_item_in_cart.TestDisplayCollectionProperty.test_display_collection_property_for_item_in_cart" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_input_count_basket.TestInputCountBasket.test_input_count_basket_0" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -267,11 +283,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_display_collection_property_for_item_in_cart.TestDisplayCollectionProperty.test_display_collection_property_for_item_in_cart&quot;" />
+      <option name="_new_target" value="&quot;test_input_count_basket.TestInputCountBasket.test_input_count_basket_0&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_display_delete_button_for_item_in_cart.TestDisplayDeleteButton.test_display_delete_button_for_item_in_cart" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_input_count_basket.TestInputCountBasket.test_input_count_basket_float" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -284,11 +300,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_display_delete_button_for_item_in_cart.TestDisplayDeleteButton.test_display_delete_button_for_item_in_cart&quot;" />
+      <option name="_new_target" value="&quot;test_input_count_basket.TestInputCountBasket.test_input_count_basket_float&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_redirect_to_product_page_on_click_of_item_name_in_cart.TestRedirectProductPageOnClick.test_redirect_to_product_page_on_click_of_item_name_in_cart" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_input_count_basket.TestInputCountBasket.test_input_count_basket_letters" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -301,17 +317,17 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_redirect_to_product_page_on_click_of_item_name_in_cart.TestRedirectProductPageOnClick.test_redirect_to_product_page_on_click_of_item_name_in_cart&quot;" />
+      <option name="_new_target" value="&quot;test_input_count_basket.TestInputCountBasket.test_input_count_basket_letters&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_decrease_item_quantity_in_cart.TestDecreaseItemQuantity.test_decrease_item_quantity_in_cart" />
-        <item itemvalue="Python tests.pytest for test_add_single_item_to_cart_using_counter.TestAddSingleItem.test_add_single_item_to_cart_using_counter" />
-        <item itemvalue="Python tests.pytest for test_redirect_to_product_page_on_click_of_item_name_in_cart.TestRedirectProductPageOnClick.test_redirect_to_product_page_on_click_of_item_name_in_cart" />
-        <item itemvalue="Python tests.pytest for test_display_collection_property_for_item_in_cart.TestDisplayCollectionProperty.test_display_collection_property_for_item_in_cart" />
-        <item itemvalue="Python tests.pytest for test_display_delete_button_for_item_in_cart.TestDisplayDeleteButton.test_display_delete_button_for_item_in_cart" />
+        <item itemvalue="Python tests.pytest for test_input_count_basket.TestInputCountBasket.test_input_count_basket_letters" />
+        <item itemvalue="Python tests.pytest for test_input_count_basket.TestInputCountBasket.test_input_count_basket_float" />
+        <item itemvalue="Python tests.pytest for test_input_count_basket.TestInputCountBasket" />
+        <item itemvalue="Python tests.pytest for test_input_count_basket.TestInputCountBasket.test_input_count_basket_0" />
+        <item itemvalue="Python tests.pytest for test_input_count_basket.TestInputCountBasket.test_input_count_basket" />
       </list>
     </recent_temporary>
   </component>
@@ -475,7 +491,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718001638288</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="anrex">
+      <option name="closed" value="true" />
+      <created>1718029241930</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1718029241930</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
