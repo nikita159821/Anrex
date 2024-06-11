@@ -36,6 +36,13 @@ BREADCRUMB_HOME_TEXT = "Главная"
 BREADCRUMB_BASKET_TEXT = "Корзина"
 COUNT_PRODUCT = '1 товар'
 COUNT_PRODUCTS = '2 товара'
+TITLE_BASKET = 'Ваша корзина'
+TEXT_BASKET = 'Вы еще не добавили ни одного товара в Вашу корзину'
+PAYMENT_CASH = 'Наличными при получении*'
+PAYMENT_BANK_CARD = 'Банковской картой'
+PAYMENT_INSTALLMENT = 'Рассрочка от Тинькофф'
+PAYMENT_YANDEX_SPLIT = 'Частями с Яндекс Сплит'
+SEND_KEYS_INPUT_COUNT_BASKET = '3'
 
 
 BASKET_RANDOM_NAME = [

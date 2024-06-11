@@ -3,7 +3,7 @@ import string
 
 import allure
 from selenium.common import TimeoutException, NoSuchElementException
-from selenium.webdriver import ActionChains
+from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.support import expected_conditions as EC, expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -45,6 +45,11 @@ class BasePage:
         element = self.find(locator)
         element.click()
 
+    # Общий метод для нажатия ENTER
+    def click_enter_element(self, locator):
+        element = self.find(locator)
+        element.send_keys(Keys.ENTER)
+
     def wait_for_page_load(self, url):
         """
         Ждет загрузки страницы с указанным URL.
@@ -62,6 +67,12 @@ class BasePage:
     def get_text_of_element(self, locator):
         element = self.find(locator)
         return element.text
+
+    # Общий метод для ввода текста
+    def send_keys_text_of_element(self, locator, text):
+        element = self.find(locator)
+        self.browser.execute_script("arguments[0].value = '';", element)
+        return element.send_keys(text)
 
     # Общий метод для получения текста разделов из шапки
     @staticmethod
