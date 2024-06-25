@@ -51,7 +51,10 @@ jobs:
         run: |
           rm -rf allure-results/*
       - name: Run tests
-        run: tests_basket_page/test_create_order.py --alluredir=allure-results
+        run: |
+          chmod +x tests_basket_page/test_create_order.py
+          python -m pytest tests_basket_page/test_create_order.py --alluredir=allure-results
+
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
