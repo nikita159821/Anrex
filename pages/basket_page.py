@@ -360,9 +360,8 @@ class BasketPage(BasePage):
     def get_text_payment_yandex_split(self):
         return self.get_text_of_element(payment_yandex_split)
 
+    @allure.title('Возвращает поле для ввода промокода')
     def remove_focus_from_input_count(self):
         return self.find(promo_code_input).click()
 
-    def test(self):
-        return self.find(promo_code_input_2).click()
 

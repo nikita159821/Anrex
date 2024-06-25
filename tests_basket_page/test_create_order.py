@@ -20,7 +20,6 @@ class TestCreateOrder:
             create_orders.open_basket()
         with allure.step('Заполняем поля перед оформлением заказа'):
             create_orders.fill_form(name, city, street, house, body, flat, phone, mail, comment)
-            time.sleep(6)
         with allure.step('Нажимаем "Оформить заказ"'):
             create_orders.click_button_arrange_order()
         with allure.step('Ожидаем оформление заказа'):
