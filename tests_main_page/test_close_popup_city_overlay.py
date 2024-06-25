@@ -1,8 +1,7 @@
 import allure
-
 from locators.main_page_locators import slider, title_sale
 from pages.anrex_main_page import MainPage
-from tests_main_page.data import PRODUCT_SALE
+from tests_main_page.data import  PRODUCT_POPULAR
 
 
 class TestClosePopupOverlay:
@@ -18,4 +17,4 @@ class TestClosePopupOverlay:
         with allure.step('Добавляем ожидание'):
             close_popup.wait_for_element(title_sale)
         with allure.step('Проверяем, что модальное окно закрыто. Если получен тайтл - окно закрыто'):
-            assert close_popup.get_title_sale() == PRODUCT_SALE
+            assert close_popup.get_title_popular() == PRODUCT_POPULAR

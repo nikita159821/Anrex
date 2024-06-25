@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="anrex">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/python-tests.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/python-tests.yml" afterDir="false" />
+    <list default="true" id="a47df6a2-6f1d-4110-9779-55f759de9e58" name="Changes" comment="fix test_input_count_basket.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locators/basket_page_locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/locators/basket_page_locators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/basket_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/basket_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests_basket_page/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_basket_page/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locators/main_page_locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/locators/main_page_locators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/anrex_main_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/anrex_main_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests_main_page/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_main_page/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests_main_page/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_main_page/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests_main_page/test_close_popup_city_overlay.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_main_page/test_close_popup_city_overlay.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests_main_page/test_discounted_products.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_main_page/test_discounted_products.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +95,7 @@
     "Python tests.pytest for test_city_input_send_keys.TestCityInputSendKeys.test_negative_city_input_send_keys.executor": "Run",
     "Python tests.pytest for test_city_input_send_keys.TestCityInputSendKeys.test_positive_city_input_send_keys.executor": "Run",
     "Python tests.pytest for test_close_popup_city.TestClosePopup.test_close_popup.executor": "Run",
+    "Python tests.pytest for test_close_popup_city_overlay.TestClosePopupOverlay.executor": "Run",
     "Python tests.pytest for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay.executor": "Run",
     "Python tests.pytest for test_comments_input_send_keys.TestCommentsInputSendKeys.executor": "Run",
     "Python tests.pytest for test_comments_input_send_keys.TestCommentsInputSendKeys.test_comment_field_accepts_valid_input.executor": "Run",
@@ -226,38 +229,38 @@
     "settings.editor.selected.configurable": "com.github.copilot.settings.ApplicationConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.pytest for test_input_count_basket.TestInputCountBasket">
-    <configuration name="pytest for test_create_order.TestCreateOrder.test_positive_create_orders" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.pytest for test_logo_anrex.TestLogo.test_logo">
+    <configuration name="pytest for test_close_popup_city_overlay.TestClosePopupOverlay" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_basket_page" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_main_page" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_create_order.TestCreateOrder.test_positive_create_orders&quot;" />
+      <option name="_new_target" value="&quot;test_close_popup_city_overlay.TestClosePopupOverlay&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_house_input_send_keys.TestHouseInputSendKeys.test_negative_house_input_send_keys" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_basket_page" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_main_page" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_house_input_send_keys.TestHouseInputSendKeys.test_negative_house_input_send_keys&quot;" />
+      <option name="_new_target" value="&quot;test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -295,30 +298,30 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_input_count_basket.TestInputCountBasket.test_input_count_basket_letters" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_logo_anrex.TestLogo.test_logo" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Anrex" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_basket_page" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_main_page" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_input_count_basket.TestInputCountBasket.test_input_count_basket_letters&quot;" />
+      <option name="_new_target" value="&quot;test_logo_anrex.TestLogo.test_logo&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test_logo_anrex.TestLogo.test_logo" />
+        <item itemvalue="Python tests.pytest for test_close_popup_city_overlay.TestClosePopupOverlay.test_close_popup_city_overlay" />
+        <item itemvalue="Python tests.pytest for test_close_popup_city_overlay.TestClosePopupOverlay" />
         <item itemvalue="Python tests.pytest for test_input_count_basket.TestInputCountBasket" />
         <item itemvalue="Python tests.pytest for test_input_count_basket.TestInputCountBasket.test_input_count_basket" />
-        <item itemvalue="Python tests.pytest for test_house_input_send_keys.TestHouseInputSendKeys.test_negative_house_input_send_keys" />
-        <item itemvalue="Python tests.pytest for test_create_order.TestCreateOrder.test_positive_create_orders" />
-        <item itemvalue="Python tests.pytest for test_input_count_basket.TestInputCountBasket.test_input_count_basket_letters" />
       </list>
     </recent_temporary>
   </component>
@@ -546,11 +549,20 @@
       <option name="project" value="LOCAL" />
       <updated>1719297946175</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="fix test_input_count_basket.">
+      <option name="closed" value="true" />
+      <created>1719298579149</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1719298579149</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="anrex" />
-    <option name="LAST_COMMIT_MESSAGE" value="anrex" />
+    <MESSAGE value="fix test_input_count_basket." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix test_input_count_basket." />
   </component>
 </project>

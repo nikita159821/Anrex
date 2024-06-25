@@ -20,6 +20,7 @@ name_error = (By.XPATH, "//div[@class='align-items-center d-flex flex-column inp
 phone_error = (By.XPATH, "//div[@class='align-items-center d-flex flex-column input-field has-error']")
 email_error = (By.XPATH, "//div[@class='form-control input-field form-control-plaintext has-error']")
 title_sale = (By.XPATH, "//b[text()='Товары со скидками']")
+title_popular = (By.XPATH, "//b[text()='Популярные категории']")
 button_send_application = (By.XPATH, "//input[@id='callback_submit']")
 popup_back_call = (By.XPATH, "//p[contains(text(), 'Ваша заявка была направлена')]")
 tel_callback = (By.ID, 'tel-callback')

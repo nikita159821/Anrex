@@ -155,6 +155,10 @@ class MainPage(BasePage):
     def get_title_sale(self):
         return self.get_text_of_element(title_sale)
 
+    # Возвращает тайтл "Популярные категории"
+    def get_title_popular(self):
+        return self.get_text_of_element(title_popular)
+
     # Метод нажимает кнопку "Отправить заявку"
     def click_submit_application_button(self):
         self.click_element(button_send_application)
