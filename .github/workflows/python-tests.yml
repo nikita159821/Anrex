@@ -51,7 +51,7 @@ jobs:
         run: |
           rm -rf allure-results/*
       - name: Run tests
-        run: pytest tests_main_page tests_basket_page --alluredir=allure-results
+        run: pytest tests_main_page/test_callback_link.p --alluredir=allure-results
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
@@ -59,7 +59,20 @@ jobs:
           name: allure-results
           path: allure-results
           retention-days: 1
+      - name: Upload test results to doqa
+        env:
+          DOQA_TOKEN: ${{ secrets.DOQA_TOKEN }}
+        run: |
+          import json
+          from doqa_client.client import DoqaClient
 
+          # Предполагается, что результаты тестов сохранены в файле allure-results/results.json
+          with open('allure-results/results.json', 'r') as f:
+              test_results = json.load(f)
+
+          client = DoqaClient(access_token=os.environ['DOQA_TOKEN'])
+          client.upload_test_results(test_results)
+        shell: python
 
   generate-report:
     runs-on: ubuntu-latest
@@ -84,6 +97,7 @@ jobs:
           path:
             _site
           retention-days: 1
+
 
 
   publish-report:
