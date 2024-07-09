@@ -59,20 +59,36 @@ jobs:
           name: allure-results
           path: allure-results
           retention-days: 1
-      - name: Upload test results to doqa
+      - name: Upload test results
         env:
-          DOQA_TOKEN: ${{ secrets.DOQA_TOKEN }}
+          REPORT_TOKEN: ${{ secrets.REPORT_TOKEN }}
         run: |
-          import json
-          from doqa_client.client import DoqaClient
+          import requests
+          import os
+          from junit_xml import TestSuite, TestCase
 
-          # Предполагается, что результаты тестов сохранены в файле allure-results/results.json
-          with open('allure-results/results.json', 'r') as f:
-              test_results = json.load(f)
+          # Предположим, что результаты тестов сохраняются в папке "allure-results"
+          test_cases = []
+          for root, dirs, files in os.walk('allure-results'):
+              for file in files:
+                  if file.endswith('.xml'):
+                      with open(os.path.join(root, file), 'r') as f:
+                          suite = TestSuite.from_xml(f.read())
+                          test_cases.extend(suite.test_cases)
 
-          client = DoqaClient(access_token=os.environ['DOQA_TOKEN'])
-          client.upload_test_results(test_results)
+          test_suite = TestSuite("Test Suite", test_cases)
+          xml_report = TestSuite.to_xml_string([test_suite])
+
+          url = "https://your-domain.com/api/autotests/upload-report"
+          headers = {
+              "Content-Type": "application/xml",
+              "Authorization": f"Bearer {os.environ['REPORT_TOKEN']}"
+          }
+
+          response = requests.post(url, data=xml_report, headers=headers)
+          response.raise_for_status()
         shell: python
+
 
   generate-report:
     runs-on: ubuntu-latest
