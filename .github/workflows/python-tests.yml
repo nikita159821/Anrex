@@ -76,7 +76,7 @@ jobs:
   generate-report:
     runs-on: ubuntu-latest
     needs: test
-    name: Генерация отчета
+    name: Генерация отчета в Telegram
     steps:
       - uses: actions/setup-java@v3
         with:
@@ -97,11 +97,10 @@ jobs:
             _site
           retention-days: 1
 
-
   publish-report:
     runs-on: ubuntu-latest
     needs: generate-report
-    name: Публикация и отправка
+    name: Публикация и отправка отчёта
     steps:
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
