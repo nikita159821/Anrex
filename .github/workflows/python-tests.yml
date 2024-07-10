@@ -51,7 +51,10 @@ jobs:
         run: |
           rm -rf allure-results/*
       - name: Run tests
-        run: pytest tests_main_page tests_basket_page --alluredir=allure-results
+        run: |
+          pytest tests_main_page tests_basket_page --alluredir=allure-results
+          pytest --junitxml=junit-report.xml
+          python path/to/your_script.py
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
