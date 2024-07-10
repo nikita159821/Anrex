@@ -51,43 +51,36 @@ jobs:
         run: |
           rm -rf allure-results/*
       - name: Run tests
-        run: pytest tests_main_page/test_callback_link.py --alluredir=allure-results
+        run: pytest tests_main_page/test_callback_link.py --junitxml=report.xml
         continue-on-error: true
+      - name: Process XML report
+        run: |
+          # Скрипт на python для обработки отчета
+          import xml.etree.ElementTree as ET
+          tree = ET.parse('report.xml')
+          root = tree.getroot()
+          root.tag = 'root'
+          tree.write('report.xml')
+      - name: Install Go 1.13
+        uses: actions/setup-go@v3
+        with:
+          go-version: '1.13'
+      - name: Build doqa-cli
+        run: |
+          git clone https://code.dev-ittest.ru/ittest/doqa/doqa-cli
+          cd doqa-cli
+          go build
+          go install
+      - name: Send report to server
+        run: |
+          doqa-cli report https://example.com/api/autotests/report abc123 report.xml
       - name: Store allure results
         uses: actions/upload-artifact@v3
         with:
           name: allure-results
           path: allure-results
           retention-days: 1
-      - name: Upload test results
-        env:
-          REPORT_TOKEN: ${{ secrets.REPORT_TOKEN }}
-        run: |
-          import requests
-          import os
-          from junit_xml import TestSuite, TestCase
 
-          # Предположим, что результаты тестов сохраняются в папке "allure-results"
-          test_cases = []
-          for root, dirs, files in os.walk('allure-results'):
-              for file in files:
-                  if file.endswith('.xml'):
-                      with open(os.path.join(root, file), 'r') as f:
-                          suite = TestSuite.from_xml(f.read())
-                          test_cases.extend(suite.test_cases)
-
-          test_suite = TestSuite("Test Suite", test_cases)
-          xml_report = TestSuite.to_xml_string([test_suite])
-
-          url = "https://your-domain.com/api/autotests/upload-report"
-          headers = {
-              "Content-Type": "application/xml",
-              "Authorization": f"Bearer {os.environ['REPORT_TOKEN']}"
-          }
-
-          response = requests.post(url, data=xml_report, headers=headers)
-          response.raise_for_status()
-        shell: python
 
 
   generate-report:
@@ -113,7 +106,6 @@ jobs:
           path:
             _site
           retention-days: 1
-
 
 
   publish-report:
