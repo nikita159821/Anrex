@@ -9,23 +9,6 @@ permissions:
 
 jobs:
 
-  build:
-    runs-on: ubuntu-latest
-    name: Сборка из исходного кода
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Setup Go
-        uses: actions/setup-go@v3
-        with:
-          go-version: '1.13'
-      - name: Сборка проекта
-        run: |
-          git clone https://code.dev-ittest.ru/ittest/doqa/doqa-cli
-          cd doqa-cli
-          go build
-          go install
-
   test:
     needs: build
     runs-on: ubuntu-latest
@@ -69,7 +52,10 @@ jobs:
         run: |
           rm -rf allure-results/*
       - name: Run tests
-        run: pytest tests_main_page tests_basket_page --alluredir=allure-results
+        run: |
+          pytest tests_main_page tests_basket_page --alluredir=allure-results
+          pytest --junitxml=junit-report.xml
+          python path/to/your_script.py
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
@@ -77,7 +63,15 @@ jobs:
           name: allure-results
           path: allure-results
           retention-days: 1
-
+      - name: Store junit report
+        uses: actions/upload-artifact@v3
+        with:
+          name: junit-report
+          path: junit-report.xml
+          retention-days: 1
+      - name: Send junit report
+        run: |
+          doqa-cli report https://rumerkulov.doqa.app/ru/home/detail/2/2/autotests 4677a0f4-656c-4d4c-8130-502c57d747d4 junit-report.xml
 
 
   generate-report:
