@@ -85,10 +85,10 @@ jobs:
           ./doqa-cli report https://rumerkulov.doqa.app/api/autotests/report 4677a0f4-656c-4d4c-8130-502c57d747d4 modified_report.xml
 
 
-  generate-report:
+  generate-and-publish-report:
     runs-on: ubuntu-latest
     needs: test
-    name: Генерация отчета
+    name: Генерация и публикация отчета в Telegram
     steps:
       - uses: actions/setup-java@v3
         with:
@@ -108,13 +108,6 @@ jobs:
           path:
             _site
           retention-days: 1
-
-
-  publish-report:
-    runs-on: ubuntu-latest
-    needs: generate-report
-    name: Публикация и отправка
-    steps:
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
       - name: Upload Pages artifact
@@ -132,7 +125,6 @@ jobs:
           echo "REPORT_NUMBER=$REPORT_NUMBER_2" >> $GITHUB_STEP_SUMMARY
           echo "REPORT_NUMBER_2=$REPORT_NUMBER_2" >> $GITHUB_ENV
           echo "Current REPORT_NUMBER_2 value before update: $REPORT_NUMBER_2"
-          # Обновленное значение
           REPORT_NUMBER_2=$((REPORT_NUMBER_2))
           echo "Current REPORT_NUMBER_2 value after update: $REPORT_NUMBER_2"
       - name: Setup GitHub CLI
@@ -141,7 +133,6 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: pip install requests
-
       - name: Update REPORT_NUMBER_2 Secret
         env:
           REPORT_NUMBER_2: ${{ steps.update_report_number_2.outputs.REPORT_NUMBER_2 }}
@@ -151,9 +142,7 @@ jobs:
           import requests
           import json
           import os
-          # Вывод значения REPORT_NUMBER_2 перед обновлением
           print(f"REPORT_NUMBER_2 value before update: {os.environ['REPORT_NUMBER_2']}")
-          # Обновление секрета
           url = f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/actions/secrets/REPORT_NUMBER_2"
           payload = {
               "encrypted_value": "wtbo12EY4WLpuAQ+WOCc+l42hxp7OzPG9vZUwOgol3AGWjDMCvCl+2mF/GnmEDPdqA==",
@@ -161,21 +150,21 @@ jobs:
           }
           headers = {
               'Accept': 'application/vnd.github+json',
-              'Authorization': f'Bearer {os.environ["GITHUB_TOKEN"]}',
-              'X-GitHub-Api-Version': '2022-11-28'
-          }
-          response = requests.post(url, headers=headers, data=json.dumps(payload))
-          # Вывод ответа от GitHub API
-          print(f"GitHub API response status code: {response.status_code}")
-          print(f"GitHub API response text: {response.text}")
-          if response.status_code == 204:
-              print("Секрет успешно обновлен")
-          else:
-              print(f"Ошибка обновления секрета: {response.status_code} - {response.text}")
-      - name: Send Telegram Notification
-        env:
-          REPORT_NUMBER_2: ${{ steps.update_report_number_2.outputs.REPORT_NUMBER_2 }}
-        run: |
-          curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
-          --header 'Content-Type: application/json' \
-          --data "{\"chat_id\":5030902696,\"text\": \"Report_$REPORT_NUMBER_2 https://nikita159821.github.io/Anrex/\"}"
+          
+                  'Authorization': f'Bearer {os.environ["GITHUB_TOKEN"]}',
+                  'X-GitHub-Api-Version': '2022-11-28'
+              }
+              response = requests.post(url, headers=headers, data=json.dumps(payload))
+              print(f"GitHub API response status code: {response.status_code}")
+              print(f"GitHub API response text: {response.text}")
+              if response.status_code == 204:
+                  print("Секрет успешно обновлен")
+              else:
+                  print(f"Ошибка обновления секрета: {response.status_code} - {response.text}")
+          - name: Send Telegram Notification
+            env:
+              REPORT_NUMBER_2: ${{ steps.update_report_number_2.outputs.REPORT_NUMBER_2 }}
+            run: |
+              curl --location 'https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage' \
+              --header 'Content-Type: application/json' \
+              --data "{\"chat_id\":5030902696,\"text\": \"Report_$REPORT_NUMBER_2 https://nikita159821.github.io/Anrex/\"}"
