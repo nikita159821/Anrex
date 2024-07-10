@@ -59,12 +59,7 @@ jobs:
           name: allure-results
           path: allure-results
           retention-days: 1
-      - name: Store junit report
-        uses: actions/upload-artifact@v3
-        with:
-          name: junit-report
-          path: modified_report.xml
-          retention-days: 1
+
 
   generate-report_2:
     runs-on: ubuntu-latest
@@ -75,6 +70,10 @@ jobs:
         run: |
           wget https://doqa.app/downloads/doqa-cli
           chmod +x doqa-cli
+      - name: Download junit report
+        uses: actions/download-artifact@v3
+        with:
+          name: junit-report
       - name: Send junit report
         run: |
           ./doqa-cli report https://rumerkulov.doqa.app/api/autotests/report 4677a0f4-656c-4d4c-8130-502c57d747d4 modified_report.xml
