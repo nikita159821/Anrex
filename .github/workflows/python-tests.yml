@@ -10,7 +10,6 @@ permissions:
 jobs:
 
   test:
-    needs: build
     runs-on: ubuntu-latest
     name: Запуск тестов
     steps:
@@ -52,10 +51,7 @@ jobs:
         run: |
           rm -rf allure-results/*
       - name: Run tests
-        run: |
-          pytest tests_main_page tests_basket_page --alluredir=allure-results
-          pytest --junitxml=junit-report.xml
-          python path/to/your_script.py
+        run: pytest tests_main_page tests_basket_page --alluredir=allure-results
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
