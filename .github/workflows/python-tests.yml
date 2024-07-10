@@ -55,31 +55,31 @@ jobs:
         continue-on-error: true
       - name: Process XML report
         run: |
-          # Скрипт на python для обработки отчета
           import xml.etree.ElementTree as ET
           tree = ET.parse('report.xml')
           root = tree.getroot()
           root.tag = 'root'
           tree.write('report.xml')
-      - name: Install Go 1.13
-        uses: actions/setup-go@v3
-        with:
-          go-version: '1.13'
-      - name: Build doqa-cli
-        run: |
-          git clone https://code.dev-ittest.ru/ittest/doqa/doqa-cli
-          cd doqa-cli
-          go build
-          go install
-      - name: Send report to server
-        run: |
-          doqa-cli report https://example.com/api/autotests/report abc123 report.xml
-      - name: Store allure results
-        uses: actions/upload-artifact@v3
-        with:
-          name: allure-results
-          path: allure-results
-          retention-days: 1
+        shell: python
+          - name: Install Go 1.13
+            uses: actions/setup-go@v3
+            with:
+              go-version: '1.13'
+          - name: Build doqa-cli
+            run: |
+              git clone https://code.dev-ittest.ru/ittest/doqa/doqa-cli
+              cd doqa-cli
+              go build
+              go install
+          - name: Send report to server
+            run: |
+              doqa-cli report https://example.com/api/autotests/report abc123 report.xml
+          - name: Store allure results
+            uses: actions/upload-artifact@v3
+            with:
+              name: allure-results
+              path: allure-results
+              retention-days: 1
 
 
 
