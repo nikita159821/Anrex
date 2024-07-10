@@ -54,7 +54,7 @@ jobs:
         run: |
           pytest tests_main_page/test_callback_link.py --alluredir=allure-results
           pytest tests_main_page/test_callback_link.py --junitxml=junit-report.xml
-          python path/to/your_script.py
+          python tests_main_page/path/to/your_script.py
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
