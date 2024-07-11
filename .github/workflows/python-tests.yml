@@ -72,7 +72,7 @@ jobs:
           chmod +x doqa-cli
       - name: Send junit report
         run: |
-          ./doqa-cli report v, --verbose https://rumerkulov.doqa.app/api/autotests/report ${{ secrets.TOKEN_DOQA }} modified_report.xml
+          ./doqa-cli report https://rumerkulov.doqa.app/api/autotests/report ${{ secrets.TOKEN_DOQA }} modified_report.xml
   
 
   generate-report:
