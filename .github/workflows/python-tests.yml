@@ -59,7 +59,7 @@ jobs:
               name: allure-results
               path: allure-results
               retention-days: 1
-
+#fsaf
   generate-report:
     runs-on: ubuntu-latest
     needs: test
