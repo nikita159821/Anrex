@@ -50,7 +50,7 @@ jobs:
           rm -rf allure-results/*
       - name: Run tests
         run: |
-          pytest tests_basket_page/test_cart_catalog_button.py --alluredir=allure-results --junitxml=junit-report.xml
+          pytest  tests_basket_page --alluredir=allure-results --junitxml=junit-report.xml
           python tests_basket_page/your_script.py
         continue-on-error: true
       - name: Store allure results
