@@ -45,13 +45,14 @@ jobs:
         run: pip install webdriver_manager
       - name: install dependencies
         run: pip install -r requirements.txt
-      - name: Download all workflow run artifact
-        uses: actions/download-artifact@v3
       - name: Cleanup old artifacts
         run: |
           rm -rf allure-results/*
       - name: Run tests
-        run: pytest tests_main_page tests_basket_page --alluredir=allure-results
+        run: |
+          pytest tests_main_page tests_basket_page --alluredir=allure-results --junitxml=junit-report.xml
+          python tests_basket_page/path/to/your_script.py
+          python tests_main_page/path/to/your_script.py
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
@@ -59,7 +60,20 @@ jobs:
           name: allure-results
           path: allure-results
           retention-days: 1
-
+      - name: Store junit report
+        uses: actions/upload-artifact@v3
+        with:
+          name: junit-report
+          path: modified_report.xml
+          retention-days: 1
+      - name: Download doqa-cli
+        run: |
+          wget https://doqa.app/downloads/doqa-cli
+          chmod +x doqa-cli
+      - name: Send junit report
+        run: |
+          ./doqa-cli report https://rumerkulov.doqa.app/api/autotests/report ${{ secrets.TOKEN_DOQA }} modified_report.xml
+  
 
   generate-report:
     runs-on: ubuntu-latest
@@ -89,7 +103,7 @@ jobs:
   publish-report:
     runs-on: ubuntu-latest
     needs: generate-report
-    name: Публикация и отправка
+    name: Отправка отчета
     steps:
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
@@ -108,11 +122,9 @@ jobs:
           echo "REPORT_NUMBER=$REPORT_NUMBER_2" >> $GITHUB_STEP_SUMMARY
           echo "REPORT_NUMBER_2=$REPORT_NUMBER_2" >> $GITHUB_ENV
           echo "Current REPORT_NUMBER_2 value before update: $REPORT_NUMBER_2"
-
           # Обновленное значение
           REPORT_NUMBER_2=$((REPORT_NUMBER_2))
           echo "Current REPORT_NUMBER_2 value after update: $REPORT_NUMBER_2"
-
       - name: Setup GitHub CLI
         uses: actions/setup-python@v4
         with:
@@ -129,10 +141,8 @@ jobs:
           import requests
           import json
           import os
-
           # Вывод значения REPORT_NUMBER_2 перед обновлением
           print(f"REPORT_NUMBER_2 value before update: {os.environ['REPORT_NUMBER_2']}")
-
           # Обновление секрета
           url = f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/actions/secrets/REPORT_NUMBER_2"
           payload = {
@@ -144,18 +154,14 @@ jobs:
               'Authorization': f'Bearer {os.environ["GITHUB_TOKEN"]}',
               'X-GitHub-Api-Version': '2022-11-28'
           }
-
           response = requests.post(url, headers=headers, data=json.dumps(payload))
-
           # Вывод ответа от GitHub API
           print(f"GitHub API response status code: {response.status_code}")
           print(f"GitHub API response text: {response.text}")
-
           if response.status_code == 204:
               print("Секрет успешно обновлен")
           else:
               print(f"Ошибка обновления секрета: {response.status_code} - {response.text}")
-
       - name: Send Telegram Notification
         env:
           REPORT_NUMBER_2: ${{ steps.update_report_number_2.outputs.REPORT_NUMBER_2 }}
