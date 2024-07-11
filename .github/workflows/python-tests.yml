@@ -41,22 +41,24 @@ jobs:
           ' | sudo tee /etc/apt/preferences.d/mozilla
       - name: Install Firefox
         run: sudo apt update && sudo apt install --allow-downgrades firefox
-      - name: Install webdriver_manager
-        run: pip install webdriver_manager
-      - name: install dependencies
-        run: pip install -r requirements.txt
-      - name: Cleanup old artifacts
-        run: |
-          rm -rf allure-results/*
+          - name: Install webdriver_manager
+            run: pip install webdriver_manager
+          - name: install dependencies
+            run: pip install -r requirements.txt
+          - name: Download all workflow run artifact
+            uses: actions/download-artifact@v3
+          - name: Cleanup old artifacts
+            run: |
+              rm -rf allure-results/*
           - name: Run tests
-          run: pytest tests_basket_page/test_cart_catalog_button.py --alluredir=allure-results
-          continue-on-error: true
+            run: pytest tests_basket_page/test_cart_catalog_button.py --alluredir=allure-results
+            continue-on-error: true
           - name: Store allure results
-          uses: actions/upload-artifact@v3
-          with:
-          name: allure-results
-          path: allure-results
-          retention-days: 1
+            uses: actions/upload-artifact@v3
+            with:
+              name: allure-results
+              path: allure-results
+              retention-days: 1
 
   generate-report:
     runs-on: ubuntu-latest
