@@ -50,8 +50,7 @@ jobs:
           rm -rf allure-results/*
       - name: Run tests
         run: |
-          pytest tests_main_page tests_basket_page --alluredir=allure-results --junitxml=junit-report.xml
-          python tests_basket_page/path/to/your_script.py
+          pytest tests_main_page/name_of_company_footer.py --alluredir=allure-results --junitxml=junit-report.xml
           python tests_main_page/path/to/your_script.py
         continue-on-error: true
       - name: Store allure results
@@ -72,7 +71,7 @@ jobs:
           chmod +x doqa-cli
       - name: Send junit report
         run: |
-          ./doqa-cli report https://rumerkulov.doqa.app/api/autotests/report ${{ secrets.TOKEN_DOQA }} modified_report.xml
+          ./doqa-cli report v, --verbose https://rumerkulov.doqa.app/api/autotests/report ${{ secrets.TOKEN_DOQA }} modified_report.xml
   
 
   generate-report:
