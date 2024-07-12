@@ -118,7 +118,7 @@ jobs:
           rm -rf allure-results/*
       - name: Run tests
         run: |
-          pytest tests_basket_page --alluredir=allure-results --junitxml=junit-report.xml
+          pytest tests_basket_page/test_name_input_send_keys.py --junitxml=tests_basket_page/report.xml  --alluredir=allure-results
           python tests_basket_page/path/to/your_script.py
         continue-on-error: true
       - name: Store allure results
