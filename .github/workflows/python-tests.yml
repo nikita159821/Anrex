@@ -53,7 +53,7 @@ jobs:
           rm -rf allure-results/*
       - name: Run tests
         run: |
-          pytest tests_main_page/test_callback_link.py --junitxml=tests_main_page/report.xml  --alluredir=allure-results
+          pytest tests_main_page/test_callback_link.py --alluredir=allure-results --junitxml=tests_main_page/report.xml  
           python tests_main_page/path/to/your_script.py
         continue-on-error: true
       - name: Store allure results
@@ -118,7 +118,7 @@ jobs:
           rm -rf allure-results/*
       - name: Run tests
         run: |
-          pytest tests_basket_page/test_name_input_send_keys.py --junitxml=tests_basket_page/report.xml  --alluredir=allure-results
+          pytest tests_basket_page/test_name_input_send_keys.py --alluredir=allure-results --junitxml=tests_basket_page/report.xml
           python tests_basket_page/path/to/your_script.py
         continue-on-error: true
       - name: Store allure results
@@ -139,7 +139,7 @@ jobs:
           chmod +x doqa-cli
       - name: Send junit report
         run: |
-          ./doqa-cli report https://rumerkulov.doqa.app/api/autotests/report ${{ secrets.TOKEN_DOQA }} modified_report.xml
+          ./doqa-cli report https://rumerkulov.doqa.app/api/autotests/report ${{ secrets.TOKEN_DOQA }} tests_main_page/modified_report.xml
 
   generate-report:
     runs-on: ubuntu-latest
