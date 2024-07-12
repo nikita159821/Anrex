@@ -53,7 +53,7 @@ jobs:
           rm -rf allure-results/*
       - name: Run tests
         run: |
-          pytest tests_main_page/test_callback_link.py  --alluredir=allure-results --junitxml=junit-report.xml
+          pytest tests_main_page/test_callback_link.py --junitxml=tests_main_page/report.xml  --alluredir=allure-results
           python tests_main_page/path/to/your_script.py
         continue-on-error: true
       - name: Store allure results
