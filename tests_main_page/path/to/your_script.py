@@ -2,10 +2,13 @@ import xml.etree.ElementTree as ET
 import os
 
 # Получаем текущий рабочий каталог
-workspace = os.environ.get('GITHUB_WORKSPACE')
+workspace = os.getcwd()
+
+# Путь к файлу с результатами теста
+junit_report_path = os.path.join(workspace, 'path/to/report.xml')
 
 # Загрузите и проанализируйте XML файл
-tree = ET.parse(os.path.join(workspace, 'junit-report.xml'))
+tree = ET.parse(junit_report_path)
 root = tree.getroot()
 
 # Создайте новый корневой элемент, который будет заменять <testsuites>
@@ -19,4 +22,5 @@ for testsuite in root:
 new_tree = ET.ElementTree(new_root)
 
 # Сохраните изменения в новый файл
-new_tree.write(os.path.join(workspace, 'modified_report.xml'), encoding='utf-8', xml_declaration=True)
+modified_report_path = os.path.join(workspace, 'modified_report.xml')
+new_tree.write(modified_report_path, encoding='utf-8', xml_declaration=True)
