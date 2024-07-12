@@ -4,7 +4,6 @@ on:
   push:
   schedule:
     - cron: '0 */2 * * *' # Запуск каждые два часа
-    - cron: '0 1-23/2 * * *' # Запуск каждые два часа, начиная с первого часа
 
 permissions:
   contents: read
@@ -12,9 +11,10 @@ permissions:
   id-token: write
 
 jobs:
-  test-basket-page:
+
+  test-main-page:
     runs-on: ubuntu-latest
-    name: Запуск тестов для страницы корзины
+    name: Запуск тестов главной страницы
     steps:
       - name: Install Selenium
         run: pip install selenium
@@ -53,8 +53,8 @@ jobs:
           rm -rf allure-results/*
       - name: Run tests
         run: |
-          pytest tests_basket_page/test_add_multiple_items_to_basket.py --alluredir=allure-results --junitxml=junit-report.xml
-          python tests_basket_page/path/to/your_script.py
+          pytest tests_main_page --alluredir=allure-results --junitxml=junit-report.xml
+          python tests_main_page/path/to/your_script.py
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
@@ -76,9 +76,9 @@ jobs:
         run: |
           ./doqa-cli report https://rumerkulov.doqa.app/api/autotests/report ${{ secrets.TOKEN_DOQA }} modified_report.xml
 
-  test-main-page:
+  test-basket-page:
     runs-on: ubuntu-latest
-    name: Запуск тестов для главной страницы
+    name: Запуск тестов корзины
     steps:
       - name: Install Selenium
         run: pip install selenium
@@ -117,8 +117,8 @@ jobs:
           rm -rf allure-results/*
       - name: Run tests
         run: |
-          pytest tests_main_page/test_callback_link.py --alluredir=allure-results --junitxml=junit-report.xml
-          python tests_main_page/path/to/your_script.py
+          pytest tests_basket_page --alluredir=allure-results --junitxml=junit-report.xml
+          python tests_basket_page/path/to/your_script.py
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
