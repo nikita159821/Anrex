@@ -12,69 +12,7 @@ permissions:
 
 jobs:
 
-  test-main-page:
-    runs-on: ubuntu-latest
-    name: Запуск тестов главной страницы
-    steps:
-      - name: Install Selenium
-        run: pip install selenium
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: setup python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.12"
-      - name: Install Chrome
-        run: sudo apt-get install google-chrome-stable
-      - name: Uninstall the Firefox Snap
-        run: sudo snap remove firefox
-      - name: Create an APT keyring
-        run: sudo install -d -m 0755 /etc/apt/keyrings
-      - name: Import the Mozilla APT repo signing key
-        run: wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
-      - name: Add the Mozilla signing key to your sources.list
-        run: |
-          echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
-      - name: Set the Firefox package priority
-        run: |
-          echo '
-          Package: *
-          Pin: origin packages.mozilla.org
-          Pin-Priority: 1000
-          ' | sudo tee /etc/apt/preferences.d/mozilla
-      - name: Install Firefox
-        run: sudo apt update && sudo apt install --allow-downgrades firefox
-      - name: Install webdriver_manager
-        run: pip install webdriver_manager
-      - name: install dependencies
-        run: pip install -r requirements.txt
-      - name: Cleanup old artifacts
-        run: |
-          rm -rf allure-results/*
-      - name: Run tests
-        run: |
-          pytest tests_main_page/test_callback_link.py --alluredir=allure-results --junitxml=tests_main_page/report.xml  
-          python tests_main_page/path/to/your_script.py
-        continue-on-error: true
-      - name: Store allure results
-        uses: actions/upload-artifact@v3
-        with:
-          name: allure-results
-          path: allure-results
-          retention-days: 1
-      - name: Store junit report
-        uses: actions/upload-artifact@v3
-        with:
-          name: junit-report
-          path: modified_report.xml
-          retention-days: 1
-      - name: Download doqa-cli
-        run: |
-          wget https://doqa.app/downloads/doqa-cli
-          chmod +x doqa-cli
-      - name: Send junit report
-        run: |
-          ./doqa-cli report https://rumerkulov.doqa.app/api/autotests/report ${{ secrets.TOKEN_DOQA }} tests_main_page/modified_report.xml
+
   
 
   test-basket-page:
@@ -118,7 +56,7 @@ jobs:
           rm -rf allure-results/*
       - name: Run tests
         run: |
-          pytest tests_basket_page/test_name_input_send_keys.py --alluredir=allure-results --junitxml=tests_basket_page/report.xml
+          pytest tests_basket_page --alluredir=allure-results --junitxml=tests_basket_page/report.xml
           python tests_basket_page/path/to/your_script.py
         continue-on-error: true
       - name: Store allure results
