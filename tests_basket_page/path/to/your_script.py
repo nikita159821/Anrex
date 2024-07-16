@@ -5,8 +5,8 @@ import os
 workspace = os.environ.get('GITHUB_WORKSPACE')
 
 # Определяем пути к файлам
-report_path = os.path.join(workspace, 'tests_main_page', 'report.xml')
-modified_report_path = os.path.join(workspace, 'tests_main_page', 'modified_report.xml')
+report_path = os.path.join(workspace, 'tests_basket_page', 'report.xml')
+modified_report_path = os.path.join(workspace, 'tests_basket_page', 'modified_report.xml')
 
 # Загрузите и проанализируйте XML файл
 if os.path.exists(modified_report_path):
