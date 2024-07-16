@@ -74,7 +74,7 @@ jobs:
           chmod +x doqa-cli
       - name: Send junit report
         run: |
-          ./doqa-cli report https://rumerkulov.doqa.app/api/autotests/report ${{ secrets.TOKEN_DOQA }} tests_main_page/modified_report.xml
+          ./doqa-cli report https://rumerkulov.doqa.app/api/autotests/report ${{ secrets.TOKEN_DOQA_MAIN }} tests_main_page/modified_report.xml
   
 
   test-basket-page:
@@ -139,7 +139,7 @@ jobs:
           chmod +x doqa-cli
       - name: Send junit report
         run: |
-          ./doqa-cli report https://rumerkulov.doqa.app/api/autotests/report ${{ secrets.TOKEN_DOQA }} tests_basket_page/modified_report.xml
+          ./doqa-cli report https://rumerkulov.doqa.app/api/autotests/report ${{ secrets.TOKEN_DOQA_BASKET }} tests_basket_page/modified_report.xml
 
   generate-report:
     runs-on: ubuntu-latest
