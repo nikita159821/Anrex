@@ -40,21 +40,22 @@ class TestFeedbackForm:
         with allure.step('Сохраняем текст из "Форма обратной связи" и сравниваем с ожидаемым'):
             assert description_content.get_text_form_feedback() == TEXT_FORM_FEEDBACK
 
-    @allure.title('В форме обратной связи отображаются радиокнопки')
-    def test_feedback_form_desciption_content(self, browser):
-        description_content = MainPage(browser)
-        with allure.step('Открываем главную страницу'):
-            description_content.open()
-        with allure.step('Скроллим до футера'):
-            description_content.get_section_footer()
-        with allure.step('Добавляем ожидание после скролла'):
-            description_content.wait_for_element(button_write)
-        with allure.step('Нажимаем кнопку "Написать нам"'):
-            description_content.click_button_write()
-        with allure.step('Добавляем ожидание'):
-            description_content.wait_for_element(input_email_form_feedback)
-        with allure.step('Сохраняем текст радиокнопок из "Форма обратной связи" и сравниваем с ожидаемым'):
-            assert description_content.get_text_radio_buttons() == RADIO_BUTTON
+    # Их убрали пока из функционала, возможно потом еще появятся
+    #@allure.title('В форме обратной связи отображаются радиокнопки')
+    #def test_feedback_form_desciption_content(self, browser):
+        #description_content = MainPage(browser)
+        #with allure.step('Открываем главную страницу'):
+            #description_content.open()
+        #with allure.step('Скроллим до футера'):
+            #description_content.get_section_footer()
+        #with allure.step('Добавляем ожидание после скролла'):
+            #description_content.wait_for_element(button_write)
+        #with allure.step('Нажимаем кнопку "Написать нам"'):
+            #description_content.click_button_write()
+        #with allure.step('Добавляем ожидание'):
+            #description_content.wait_for_element(input_email_form_feedback)
+        #with allure.step('Сохраняем текст радиокнопок из "Форма обратной связи" и сравниваем с ожидаемым'):
+            #assert description_content.get_text_radio_buttons() == RADIO_BUTTON
 
     @allure.title('Форма обратной связи закрывается через крестик')
     def test_feedback_form_close(self, browser):
