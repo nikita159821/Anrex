@@ -1,7 +1,7 @@
 import allure
 
 from pages.anrex_main_page import MainPage
-from tests_main_page.data import NAME_PLACEHOLDER
+from tests_main_page.data import NAME_PLACEHOLDER_FORM_CALLBACK
 
 
 class TestInputNamePlaceholder:
@@ -14,4 +14,4 @@ class TestInputNamePlaceholder:
         with allure.step('Нажимаем на "Заказать обратный звонок"'):
             name_placeholder.click_callback_link()
         with allure.step('Проверяем, что в поле "Ваше имя" отображается плейсхолдер'):
-            assert name_placeholder.get_name_input_placeholder() == NAME_PLACEHOLDER
+            assert name_placeholder.get_name_input_placeholder() == NAME_PLACEHOLDER_FORM_CALLBACK
