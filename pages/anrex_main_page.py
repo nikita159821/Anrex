@@ -492,8 +492,9 @@ class MainPage(BasePage):
         return self.find_element(*button_form_feedback)
 
     # Нажимает первую радиокнопку в форме обратной связи
-    def click_checkbox_radio_button(self):
-        self.click_element(checkbox_radio_button)
+    # Пока убрали их из функционала
+    #def click_checkbox_radio_button(self):
+        #self.click_element(checkbox_radio_button)
 
     def text_popup_form_feedback(self):
         return self.remove_newline(popup_form_feedback)

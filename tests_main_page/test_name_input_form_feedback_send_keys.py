@@ -29,8 +29,6 @@ class TestNameInputSendKeys:
             name_input_form_feedback_send_keys.click_button_write()
         with allure.step('Добавляем ожидание'):
             name_input_form_feedback_send_keys.wait_for_element(input_name_form_feedback)
-        with allure.step('Нажимаем первую радиокнопку в форме обратной связи'):
-            name_input_form_feedback_send_keys.click_checkbox_radio_button()
         with allure.step('Заполняем поле "Ваше имя" данными'):
             name_input_form_feedback_send_keys.form_name_input_send_keys(name)
         with allure.step('Заполняем поле "Ваш телефон" данными'):
