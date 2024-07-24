@@ -1,7 +1,8 @@
 import allure
+
 from locators.main_page_locators import slider, title_sale
 from pages.anrex_main_page import MainPage
-from tests_main_page.data import  PRODUCT_POPULAR
+from tests_main_page.data import PRODUCT_POPULAR
 
 
 class TestClosePopupOverlay:

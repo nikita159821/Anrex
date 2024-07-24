@@ -1,6 +1,7 @@
+import allure
+
 from pages.anrex_main_page import MainPage
 from tests_main_page.data import COMPANY_FOOTER
-import allure
 
 
 class TestFooterCompany:

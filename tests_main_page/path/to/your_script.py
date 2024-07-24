@@ -1,5 +1,5 @@
-import xml.etree.ElementTree as ET
 import os
+import xml.etree.ElementTree as ET
 
 # Получаем текущий рабочий каталог
 workspace = os.environ.get('GITHUB_WORKSPACE')

@@ -1,5 +1,3 @@
-import time
-
 import allure
 
 from locators.main_page_locators import button_card
