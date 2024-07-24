@@ -1,4 +1,5 @@
 import allure
+
 from locators.basket_page_locators import image_card, image_card_basket
 from locators.main_page_locators import button_card
 from pages.basket_page import BasketPage

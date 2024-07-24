@@ -1,4 +1,4 @@
-import time
+import allure
 import allure
 import pytest
 

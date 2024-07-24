@@ -2,7 +2,7 @@ import allure
 
 from locators.main_page_locators import form_overlay_close, button_write, input_email_form_feedback
 from pages.anrex_main_page import MainPage
-from tests_main_page.data import TITLE_FORM_FEEDBACK, TEXT_FORM_FEEDBACK, RADIO_BUTTON, NAME_PLACEHOLDER, PHONE_PLACEHOLDER, \
+from tests_main_page.data import TITLE_FORM_FEEDBACK, TEXT_FORM_FEEDBACK, NAME_PLACEHOLDER, PHONE_PLACEHOLDER, \
     QUESTION_PLACEHOLDER, EMAIL_PLACEHOLDER
 
 

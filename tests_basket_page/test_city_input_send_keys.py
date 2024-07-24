@@ -1,5 +1,6 @@
 import allure
 import pytest
+
 from pages.basket_page import BasketPage
 from tests_basket_page.data import ORDER_CONFIRMATION, BASKET_CITY, ERROR_INPUT_CITY
 from tests_basket_page.test_data import TestData

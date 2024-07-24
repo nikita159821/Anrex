@@ -1,6 +1,5 @@
 import allure
 
-from locators.main_page_locators import basket_count
 from pages.anrex_main_page import MainPage
 from tests_main_page.urls import URL, BASKET
 

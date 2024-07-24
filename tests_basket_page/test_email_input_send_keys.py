@@ -1,7 +1,6 @@
-import time
-
 import allure
 import pytest
+
 from locators.basket_page_locators import input_mail_send_keys
 from pages.basket_page import BasketPage
 from tests_basket_page.data import ORDER_CONFIRMATION, EMAIL, EXPECTED_EMAIL, BASKET_EMAIL_NEGATIVE, ERROR_INPUT_EMAIl

@@ -1,5 +1,6 @@
 import allure
 import pytest
+
 from locators.basket_page_locators import input_flat_send_keys
 from pages.basket_page import BasketPage
 from tests_basket_page.data import ORDER_CONFIRMATION, FLAT
