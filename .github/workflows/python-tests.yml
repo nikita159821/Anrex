@@ -2,8 +2,8 @@ name: Run Tests
 
 on:
   push:
-  schedule:
-    - cron: '0 */2 * * *' # Запуск каждые два часа
+#  schedule:
+#    - cron: '0 */2 * * *' # Запуск каждые два часа
 
 permissions:
   contents: read
