@@ -5,29 +5,29 @@ pipeline {
         stage('Checkout') {
             steps {
                 git url: 'https://github.com/nikita159821/Anrex.git',
-                    branch: 'main' // Замените на вашу ветку
+                    branch: 'main'
             }
         }
-        stage('Setup Environment') {  // Установка виртуального окружения
+        stage('Check Python and Pip') {
             steps {
-                sh 'python3 -m venv venv' // Создаем виртуальное окружение
-                sh 'source venv/bin/activate'  // Активируем его (Linux/macOS)
-                // Для Windows используйте:
-                // bat 'venv\\Scripts\\activate'
+                bat 'where python'
+                bat 'where pip'
+            }
+        }
+        stage('Setup Environment') {
+            steps {
+                bat 'python3 -m venv venv'  // Создаем виртуальное окружение
+                bat 'venv\\Scripts\\activate' // Активируем его (Windows)
             }
         }
         stage('Install Dependencies') {
             steps {
-                sh 'source venv/bin/activate && pip install -r requirements.txt' // Устанавливаем зависимости из requirements.txt (Linux/macOS)
-                // Для Windows:
-                // bat 'venv\\Scripts\\activate && pip install -r requirements.txt'
+                bat 'venv\\Scripts\\activate && pip install -r requirements.txt' // Устанавливаем зависимости (Windows)
             }
         }
         stage('Test') {
             steps {
-                sh 'source venv/bin/activate && pytest' // Запускаем тесты с помощью pytest (Linux/macOS)
-                // Для Windows:
-                // bat 'venv\\Scripts\\activate && pytest'
+                bat 'venv\\Scripts\\activate && pytest' // Запускаем тесты (Windows)
             }
         }
     }
