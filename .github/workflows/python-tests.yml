@@ -210,8 +210,8 @@ jobs:
           # Обновление секрета
           url = f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/actions/secrets/REPORT_NUMBER_2"
           payload = {
-              "encrypted_value": "wtbo12EY4WLpuAQ+WOCc+l42hxp7OzPG9vZUwOgol3AGWjDMCvCl+2mF/GnmEDPdqA==",
-              "key_id": "3380204578043523366"
+              "encrypted_value": "*",
+              "key_id": "*"
           }
           headers = {
               'Accept': 'application/vnd.github+json',
